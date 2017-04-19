@@ -1,0 +1,50 @@
+\documentclass[10pt,a4page]{book}
+
+%language related stuff
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%Math stuff
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%graphics and figures
+\usepackage{epsfig}
+\usepackage{graphics}
+%\usepackage[showframe]{geometry} %debug option
+\usepackage{geometry}
+
+
+%Thesis style specific stuff
+\usepackage{style}
+
+
+
+%-------------------------------------------------- 
+\addbibresource{refs.bib}
+
+\input{./defs.tex}
+
+\begin{document}
+\include{./title}
+
+\pagenumbering{roman}
+\include{./thanks}
+\include{./abstract}
+
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+%-------------------------------------------------- 
+\pagenumbering{arabic}
+\include{./intro}
+\include{./eos}
+
+
+%-------------------------------------------------- 
+\include{./biblio}
+\end{document}

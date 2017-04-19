@@ -1,0 +1,187 @@
+\ProvidesPackage{style}
+
+
+%Color related stuff
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{0,0,90}
+\definecolor{darkgreen}{RGB}{0,80,0}
+\definecolor{gray75}{gray}{0.8}
+
+
+%Image captions
+\usepackage[format=hang]{caption}
+\renewcommand{\captionlabelfont}{\fontfamily{phv}\selectfont\bfseries\small}
+
+
+%links and urls (internal AND external)
+\usepackage{hyperref}
+\usepackage{url}
+\hypersetup{colorlinks=true,pdfborder={0 0 0},citecolor=darkblue,linkcolor=darkblue,urlcolor=darkblue}
+
+
+\usepackage[varg]{txfonts}
+
+
+%Titles of content
+\usepackage{tocloft}
+\setcounter{tocdepth}{1}
+
+\renewcommand{\cftdot}{\textcolor[gray]{0.75}{--}}
+\renewcommand{\cftdotsep}{0}
+\renewcommand{\cftchapfont}{\fontfamily{phv}\selectfont\bfseries}
+\renewcommand{\contentsname}{C \hsp \textcolor[gray]{0.75}{ \rule[-0.75ex]{0.08ex}{1.5em} }\hsp Contents}
+
+
+
+%Margin notes
+\usepackage{marginnote}
+
+
+
+
+%Some baseline lengths for styles
+%\usepackage{dblfnote}
+%\DFNalwaysdouble % for this example
+
+\def\hsp{\hspace{10pt}}
+\def\dsp{\hspace{20pt}}
+
+
+%Defining titles with fancy fonts
+\usepackage[compact]{titlesec}
+\titleformat{\section}[hang]{\fontfamily{phv}\selectfont\bfseries}{\thesection\hsp}{0pt}{}{}
+\titleformat{\subsection}[hang]{\fontfamily{phv}\selectfont}{\thesubsection\hsp}{0pt}{}{}
+\titleformat{\subsubsection}[hang]{\fontfamily{phv}\selectfont\itshape}{\hsp}{0pt}{}{}
+
+\titleformat{\chapter}[hang]{\Huge\fontfamily{phv}\selectfont}{\thechapter\hsp{\textcolor{gray75}{\rule[-0.75ex]{0.08ex}{1.5em}}}\hsp}{0pt}{\huge\bfseries}{}
+
+
+%\renewcommand{\titlefont}{\Huge\fontfamily{phv}\selectfont\bfseries}
+\newcommand*{\titlefont}{\Huge\fontfamily{phv}\selectfont\bfseries}
+
+
+
+% page headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\renewcommand{\chaptermark}[1]{\markboth{\fontfamily{phv}\selectfont\chaptername\ \thechapter:\ #1}{}}
+\fancyhead[LE]{\fontfamily{phv}\selectfont \leftmark}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\fancyhead[RO]{\fontfamily{phv}\selectfont \nouppercase\rightmark}
+\renewcommand{\sectionmark}[1]{\markright{\arabic{chapter}.\arabic{section} \, #1}}
+
+
+
+
+
+%-------------------------------------------------- 
+%\usepackage{graphicx,eso-pic}
+%\newcommand\chapterimage[2][]{%
+%  \AddToShipoutPictureBG*{% Add picture to BackGround on this page only
+%    \AtTextUpperLeft{% Position at upper left of text block
+%      \hspace*{\textwidth}% Move over to upper right of text block
+%      \llap{% Ignore horizontal width and overlap to the left
+%        \smash{% Ignore vertical height
+%          \raisebox{-\height}{% Lower so top touches baseline
+%            \includegraphics[#1]{#2}}}}}}}% Include image with options
+
+\usepackage{tikz}% mandatory for the \chapterImage command
+\newcommand\chapterimage[2][]{
+  \begin{tikzpicture}[overlay,
+      picture/.style={anchor=north east,rectangle,inner sep=0pt,outer sep=0pt, shift={(-4cm, -2cm)}}]
+     \node[picture] at (\textwidth,9cm){\includegraphics[#1]{#2}};
+  \end{tikzpicture}
+}
+
+%-------------------------------------------------- 
+%Citation formatting
+\usepackage[style=numeric, 
+            backend=biber,
+            mincitenames=1,
+            maxcitenames=3,
+            maxbibnames=100,
+            backref=true, 
+            sorting=none]{biblatex}
+
+\input{journals}
+
+\renewbibmacro{in:}{}
+
+\DeclareFieldFormat[article]{year}{(#1)}
+\DefineBibliographyStrings{english}{andothers={\emph{et al}\adddot}}
+
+\DeclareCiteCommand{\cite}[\mkbibfootnote]
+{\usebibmacro{prenote}}{
+    \usebibmacro{citeindex}
+    \mkbibbrackets{\usebibmacro{cite}}
+    \setunit{\addnbspace}
+    \printnames{author}
+    \setunit{\labelnamepunct}
+    \printfield{journaltitle}
+    \newunit
+    \printfield{year}
+}
+{\addsemicolon\space}
+{\usebibmacro{postnote}}
+
+
+%Separate driver for the bibliography listing
+\DeclareBibliographyDriver{article}{
+\usebibmacro{bibindex}
+\usebibmacro{begentry}
+\newunit\newblock
+\printnames{author}
+\newunit\newblock
+\usebibmacro{journal}
+\newunit\newblock
+\printfield{volume}
+\newunit\newblock
+\printfield{number}
+\newunit\newblock
+\usebibmacro{note+pages}
+\newunit\newblock
+\printfield{year}
+\newunit\newblock
+\usebibmacro{pageref}
+\newline\newblock
+\printfield{title}
+{\iffieldundef{doi}{
+    {\iffieldundef{url}
+    {}
+    {\newline\newblock
+    \usebibmacro{doi+eprint+url}}
+    {}
+    }
+}
+{\newline\newblock
+\usebibmacro{doi+eprint+url}}
+{}
+}
+\finentry}
+
+\DefineBibliographyStrings{english}{
+backrefpage = {see p.},
+backrefpages = {see pp.}
+}
+
+
+\renewbibmacro*{doi+eprint+url}{
+\iftoggle{bbx:doi}
+{\iffieldundef{url}{\printfield{doi}}{}}{}
+\iftoggle{bbx:eprint}
+{\iffieldundef{doi}{\usebibmacro{eprint}}{}}{}
+\iftoggle{bbx:url}
+{\usebibmacro{url+urldate}}{}
+}
+
+
+
+
+
+
