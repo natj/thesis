@@ -6,6 +6,15 @@ Publish in arxiv to minimize time waste
 Pedagogical introduction to neutron stars
 
 
+# Introduction
+- should present wider context
+- State its significance & novelty
+- Define the research problem
+- Technical methodology
+
+
+
+# Main results and outlook
 
 
 --------------------------------------------------

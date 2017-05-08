@@ -1,0 +1,3 @@
+[submodule "figs/nstar-plot"]
+	path = figs/nstar-plot
+	url = https://github.com/natj/nstar-plot.git

@@ -1,22 +1,122 @@
 \chapter{Introduction} 
 \chapterimage[width=6cm]{wordcloud/chap1.png}
+Neutrons stars are curious objects encompassing many still unsolved problems of modern physics and astrophysics.
+Their unique nature makes them ideal laboratories for many of the most energetic phenomena in space.
+Born from the ashes of a supernova, they begin their life only when some other normal star fades away and dies in a spectacular supernova explosion.%
+\footnote{ {For the pedantic ones, we specify that a supernova is actually an implosion followed by a subsequent explosion.}}
+From there on, they continue their life by devouring the surrounding interstellar matter or an unlucky companion star floating next to them.
+It is not the impressive $\sim 10^{30}$ kilos they weight but the mere $\sim 10 \km$ in radius sphere that they encapsulate this material into that is then able to bend the spacetime itself.
+Such an impressive feat rewards them with a categorization into to a group called \textit{compact objects}.
 
-Blaa
+In the next few sections, we will start by building our intuition of these peculiar objects habiting the space around us.
+
+\section{From first principles to a neutrons star}
+Let us first see, what can we learn from neutron stars using simple estimates and conservation laws.
+
+Suppose a neutron star is, like any normal star, a blob of gas held together by the inwards pulling gravity.
+Gravity does not prefer any direction more than some other and so a stable end-result is an isotropic configuration.
+A pure inward pulling force is, of course, not enough so we also need a countering outward-facing force to resist the compression of the material.
+As an first approximation, there is no need to assume that this force would have any preferred direction either.
+Hence, our expected outcome is a sphere held together by the gravity originating from the mass $M$ of the matter itself.
+Let us, for a while forget the exact origin and nature of the compression-resisting force and see what can we learn solely from the current information only.
+
+Neutrons star are born from the death of a normal star.%
+\mnote{Orders of magnitude}
+Most familiar such a star is our Sun \Ten{1.496}{13} \cm from us.%
+\footnote{Throughout this thesis we will typically present our quantities only up to some fixed precision instead of the full litany of numbers.
+We will also adopt the centimeter-gram-second (cgs) unit system instead of the (maybe) more common SI-system. 
+Such a selection is sure to disappoint some, but try to endure.
+}
+With a mass of $\Msun = \Ten{1.99}{33} \g$ and radius of $R_{\odot} = \Ten{6.96}{10} \cm$, our Sun then introduces us some typical stellar dimensions.
+Curiously, this means that the mean density of the Sun is $\rho_{\odot} \approx 1.41 \gcm$, a mere $1.4\times$ the density of the water.
+It turns out that Sun is also not as stable as one would think:
+With a rotation period of about $25.5$ days it then takes Sun about a month to revolve around itself.
+Similar to a bicycle dynamo hub, this rotation also gives rise to a detectable surface magnetic field of $B_{\odot} \approx 1 \Gauss$.%
+\footnote{A typical refrigerator magnet is about $50\times$ stronger with a magnetic field of $50\Gauss$.}
+
+A typical neutron star, on the other hand, weights about $M \sim 1.5\Msun$ but extends only up to $R \sim 10\km$.
+Such dimensions give us an impressive mean density of $\rho \sim \Ten{7}{14} \gcm$.
+In comparison, a typical nucleon (such as a neutron) weights about $\Ten{1.67}{-24} \g$ and has a radius of about $\Ten{1.25}{-13} \cm$, yielding us a nuclear density of $\nsat \approx \Ten{2}{14} \gcm$.
+Hence, even the mean density inside the star is already on the same order of magnitude as the internal density inside nuclei.
+This suggests us that the composition inside a neutron star is not our typical every-day matter.
+
+
+
+\section{More advanced considerations...}
+
+\subsection{Why neutrons then?}
+Let us first consider ideal gas of degenerate electron-proton-neutron plasma.
+In a degenerate plasma all the quantum states are filled up all the way to the Fermi energy.
+It is the Pauli exclusion principle that then prevents occupying all of these already taken quantum states.
+Normal beta-decay mode for the neutrons, on the other hand, is $n \rightarrow p + e^{-} + \bar{\nu_{e}}$, that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron neutrino $\bar{\nu_{e}}$.
+Such a decay is, however, blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.\cite[see e.g.][]{Phillips94}
+
+Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$.
+Co-existence of neutrons, protons, and electrons is then guaranteed (at zero temperature) if 
 \be
-\mathcal{F} = \frac{1}{\sqrt{1-c^2}}
+\ef(n) = \ef(p) + \ef(e^{-}).
+\ee
+Fermi momentum of a particle is related to its concentration via
+\be
+p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
+\ee
+where $n$ is the number density, and $h$ the Planck constant.
+Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $\nsat$, and hence energy is simply a sum of their rest mass energy and kinetic energy
+\be
+\ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
+\ee
+and
+\be
+\ef(p) \approx m_p c^2 + \frac{p_{\mathrm{F}}(p)^2}{2 m_p }.
+\ee
+Electrons, on the other hand, are already ultra-relativistic, and so
+\be
+\ef(e^{-}) \approx p_{\mathrm{F}}(e^{-}) c^2.
 \ee
 
-\section{Section heading}
-Blaa
-Blaa
-
-\subsection{sub section heading}
-Blaa
-Blaa
-\marginnote{Lorem ipsum doler.}[1cm]
-Blaa
+\red{
+Also note that $n_p = n_e$, as the star is electrically neutral.
+From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \mathrm{MeV}\,c^2$ at $\rho \sim \nsat$.
+}
+Thus, we conclude that the matter inside is neutron rich.
 
 
-Blaa
-Blaa
+
+\subsection{Tolman-Volkoff-Oppenheimer equations}
+Newtonian pressure gradient needed to oppose the gravity is
+\be
+\frac{dP}{dr} = -\frac{G M \rho}{r^2}.
+\ee
+Taking into account the general relativistic corrections we get
+\be
+\frac{dP}{dr} = 
+    -\frac{G M \rho}{r^2} \times 
+    \frac{ (1 + P/\rho c^2)(1+4\pi r^3 P/m c^2) }
+    {1-2 G m /r c^2 }.
+\ee
+Difference originates from the source of gravity:
+in the Newtonian case it is the mass $m$, whereas in the General relativity it is the energy momentum tensor that depend both on the energy density and the pressure.
+As a result, energy and pressure give rise to a gravitational fields.
+
+It has an important consequence to the stability of neutron stars:
+Successive increase in the pressure to counter the gravity is ultimately self-defeating.
+
+\red{
+Solution for a constant density $\rho_0$ gives
+\be
+P(r) = G \frac{2\pi}{3} \rho_0^2 (R^2 - r^2)
+\ee
+whereas the GR gives
+\be
+P(r) = \rho_0^2 c^2 \left[ \frac{ (1-u \left(\frac{r}{R} \right)^2 )^{1/2}
+                        - (1-u)^{1/2} }{
+                        3(1-u)^{1/2} - (1-u \left( \frac{r}{R} \right)^2 )^{1/2} } \right],
+\ee
+where $u = 2GM/Rc^2$.
+}
+
+
+
+
+
 
