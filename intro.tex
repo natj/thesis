@@ -7,8 +7,35 @@ Born from the ashes of a supernova, they begin their life only when some other n
 From there on, they continue their life by devouring the surrounding interstellar matter or an unlucky companion star floating next to them.
 It is not the impressive $\sim 10^{30}$ kilos they weight but the mere $\sim 10 \km$ in radius sphere that they encapsulate this material into that is then able to bend the spacetime itself.
 Such an impressive feat rewards them with a categorization into to a group called \textit{compact objects}.
+These strange objects have been under scientific scrutiny almost for nine decades now.
+Still, some of the most fundamental questions remain:
+What are they made of?
+How big are they?
+In which ways are they actually visible to us?
 
 In the next few sections, we will start by building our intuition of these peculiar objects habiting the space around us.
+
+
+
+\section{Short history: from imagination into a reality}
+Anticipation by theorist before the second World War. \cite{Landau32}
+\begin{displayquote}[Landau]
+...the density of matter becomes so great that atomic nuclei come in close contact, forming one gigantic nucleus.
+\end{displayquote}
+
+Blaablaa\cite{Baade34a}
+\begin{displayquote}[Baade och Zwicky]
+With all reserve we advance the view that a super-nova represents the transition of an ordinary star into a neutron star, consisting mainly of neutrons. Such a star may possess a very small radius and an extremely high density.
+\end{displayquote}
+
+Work of imagination from weird theorists.
+On July 1967 everything changed because of Jocelyn Bell, a graduate student of A. Hewish in Mullard Radio Astronomy Observatory.
+
+She discovered that the signal was pulsing with great regularity, at a rate of about one pulse per second. 
+Temporarily dubbed "Little Green Man 1" (LGM-1) the source (now known as PSR B1919+21) was identified after several years as a rapidly rotating neutron star.
+Later published in Nature 1968 by Hewish. \cite{Hewish68}
+
+
 
 \section{From first principles to a neutrons star}
 Let us first see, what can we learn from neutron stars using simple estimates and conservation laws.
@@ -19,6 +46,7 @@ A pure inward pulling force is, of course, not enough so we also need a counteri
 As an first approximation, there is no need to assume that this force would have any preferred direction either.
 Hence, our expected outcome is a sphere held together by the gravity originating from the mass $M$ of the matter itself.
 Let us, for a while forget the exact origin and nature of the compression-resisting force and see what can we learn solely from the current information only.
+
 
 Neutrons star are born from the death of a normal star.%
 \mnote{Orders of magnitude}
@@ -39,6 +67,23 @@ Such dimensions give us an impressive mean density of $\rho \sim \Ten{7}{14} \gc
 In comparison, a typical nucleon (such as a neutron) weights about $\Ten{1.67}{-24} \g$ and has a radius of about $\Ten{1.25}{-13} \cm$, yielding us a nuclear density of $\nsat \approx \Ten{2}{14} \gcm$.
 Hence, even the mean density inside the star is already on the same order of magnitude as the internal density inside nuclei.
 This suggests us that the composition inside a neutron star is not our typical every-day matter.
+
+
+\section{What do we actually know?}
+
+
+%B=2e15 for SGR 1806-20 from Woods et al. (2006),
+%        http://dx.doi.org/10.1086/507459 .
+%B=10^7 is estimate from P-Pdot diagrams, e.g.
+%        from arxiv.org/abs/1103.4538 
+%
+%
+%716 Hz from Hessels et al. (2006), 
+%    http://dx.doi.org/10.1126/science.1123430 .
+%1/11.79 Hz from Rim and Kaspi (2014),
+%    http://dx.doi.org/10.1088/0004-637X/784/1/37 .
+
+
 
 
 
@@ -116,16 +161,90 @@ where $u = 2GM/Rc^2$.
 }
 
 
+\section{Equation of state}
+
+Often means dependency between $P$ and $\rho$. 
+Or sometimes the associated energy density $\epsilon = \rho c^2$.
+Also depends on $T$ but composed mainly on strongly degenerate fermions so so temperature dependency is negligible.
+
+Bulk property of the sea of fermions.
+
+Eos for $\rho > \nsat$ can not be produced in laboratory.
+Can not be calculated because of the lack of precise many-body theory of strongly interacting particles.
+
+
+Baryon mass $M_b$ that is sum of baryon masses.
+Gravitational mass $M$ that is $M_b$ from where the gravitational binding energy is subtracted. \cite{Zwicky38}
+
+
+\section{Atmosphere}
+Thin layer of plasma
+From centimeters in hot to millimeters in cold 
+Zavlin \& Pavlov 2002
+
+Where spectrum or thermal electromagnetic radiation is formed.
+Spectrum, beaming and polarization of emerging radiation can be determined from radiation transfer problem in atmospheric layers.
+
+Contains information on the parameters of the surface:
+effective temperature
+surface gravity
+chemical composition
+geometry of the system
+mass and radii.
+
+
+Eddington limit of where radiation force exceeds the gravitational one.
+
+
 \section{Crust}
 
 \begin{figure}
 \centering
-\includegraphics[width=16cm]{figs/nstar-plot/crust_plot.png}
+\includegraphics[width=16cm]{figs/nstar-plot/crust_plot_wide.png}
 \caption{\label{fig:crust}
 Molecular simulation of the crust.
 Figure adapted from \url{https://github.com/awsteiner/nstar-plot}.
 }
 \end{figure}
+
+Outer crust
+
+From atmosphere to $\rho_ND \sim \Ten{4}{11} \gcm$.
+In thickness some hundred meters.
+Non degenerate electron gas
+Ultra-relativistic electron gas $\rho > 10^6 \gcm$.
+Pressure provided by electrons here.
+
+In deeper layers ions form a strongly coupled Coulomb system (liquid or solid).
+Hence, crust.
+Fermi energy grows with increasing $\rho$.
+Induces $\beta$ captures and enriches nuclei with neutrons.
+At the base neutrons start to drip out from nuclei.
+
+
+Inner crust
+About one kilometer thick.
+Density from $\rho \sim \rho_{ND}$ (at upper boundary) to $\sim 0.5 \nsat$ at the base.
+Matter consists of electrons, free neutrons $n$ and neutron-rich atomic nuclei.
+Fraction of free $n$ grow with $\rho$.
+
+Finally, nuclei disappear at the crust-core interface.
+
+\section{Core}
+
+Outer core.
+Density ranges $0.5 \nsat < \rho < 2\nsat$.
+Several kilometers.
+Neutrons with several per cent admixture of protons $p$ and electrons $e^{-}$.
+Strongly degenerate.
+Electrons form almost ideal Fermi gas.
+Neutrons and protons, interacting via nuclear forces, constitute a strongly interacting Fermi liquid.
+
+Inner core.
+Where $\rho > 2\nsat$.
+Central density can be around $(10-15)\nsat$.
+Very model dependent.
+Main problem.
 
 
 
