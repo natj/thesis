@@ -109,9 +109,15 @@
 %            \includegraphics[#1]{#2}}}}}}}% Include image with options
 
 \usepackage{tikz}% mandatory for the \chapterImage command
+%\newcommand\chapterimage[2][]{
+%  \begin{tikzpicture}[overlay,
+%      picture/.style={anchor=north east,rectangle,inner sep=0pt,outer sep=0pt, shift={(-4cm, -2cm)}}]
+%     \node[picture] at (\textwidth,9cm){\includegraphics[#1]{#2}};
+%  \end{tikzpicture}
+%}
 \newcommand\chapterimage[2][]{
   \begin{tikzpicture}[overlay,
-      picture/.style={anchor=north east,rectangle,inner sep=0pt,outer sep=0pt, shift={(-4cm, -2cm)}}]
+      picture/.style={anchor=east,rectangle, shift={(0.0cm, -4cm)}}]
      \node[picture] at (\textwidth,9cm){\includegraphics[#1]{#2}};
   \end{tikzpicture}
 }
