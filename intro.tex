@@ -3,7 +3,9 @@
 Neutrons stars are curious objects encompassing many still unsolved problems of modern physics and astrophysics.
 Their unique nature makes them ideal laboratories for many of the most energetic phenomena in space.
 Born from the ashes of a supernova, they begin their life only when some other normal star fades away and dies in a spectacular supernova explosion.%
-\footnote{ {For the pedantic ones, we specify that a supernova is actually an implosion followed by a subsequent explosion.}}
+%\footnote[$\fna$]{
+\footnote{
+    For the pedantic ones, we specify that a supernova is actually an implosion followed by a subsequent explosion.}
 From there on, they continue their life by slowly collecting the surrounding interstellar matter or by devouring an unlucky companion star floating next to them.
 It is not the impressive $\sim 10^{30}$ kilograms they weight but the mere $\sim 10 \km$ in radius sphere that they encapsulate this material into that is then able to bend the spacetime itself.
 Such an impressive feat rewards them with a categorization into a special stellar group called \textit{compact objects}.
@@ -31,34 +33,93 @@ With all reserve we advance the view that a super-nova represents the transition
 \end{displayquote}
 
 Work of imagination from weird theorists.
-On July 1967 everything changed because of Jocelyn Bell, a graduate student of A. Hewish in Mullard Radio Astronomy Observatory.
+On July 1967 everything changed because of Jocelyn Bell, a graduate student of Anthony Hewish in Mullard Radio Astronomy Observatory.
+Primitive antenna of wires strung on stakes in a pasture.
 
-She discovered that the signal was pulsing with great regularity, at a rate of about one pulse per second. 
+She discovered that the signal was pulsing with great regularity, at a rate of about one pulse per second. (1.3s)
 Temporarily dubbed "Little Green Man 1" (LGM-1) the source (now known as PSR B1919+21) was identified after several years as a rapidly rotating neutron star.
+Dupped as pulsar, short of pulsating radio source.
 Later published in Nature 1968 by Hewish. \cite{Hewish68}
+
+
+\subsection{History of degenerate electron gas and Chandrasekhar limit}
+electrons as fermions\cite{Dirac25}
+electron deg. pressure \cite{Fowler26}
+elecs must be relativistic \cite{Anderson29}
+equation of state for uniform density \cite{Stoner30}
+Similar independent study by Landau \cite{Landau32}
+full equation of state of degenerate electron gas unaware of Fowler \cite{Frenkel28} \cite{Yakovlev94}
+
+Finally put together by Chandrasekhar \cite{Cha31} work done 5 years before Stoner.
+
+\subsection{Ideas about neutron stars}
+
 
 
 
 \section{From first principles to a neutrons star}
+
+\subsection{Background: Sun and stars}
 Let us first see, what can we learn from neutron stars using simple estimates and conservation laws.
-
-Suppose a neutron star is, like any normal star, a blob of gas held together by the inwards pulling gravity.
-Gravity does not prefer any direction more than some other and so a stable end-result is an isotropic configuration.
-A pure inward pulling force is, of course, not enough so we also need a countering outward-facing force to resist the compression of the material.
-As an first approximation, there is no need to assume that this force would have any preferred direction either.
-Hence, our expected outcome is a sphere held together by the gravity originating from the mass $M$ of the matter itself.
-Let us, for a while forget the exact origin and nature of the compression-resisting force and see what can we learn solely from the current information only.
-
-
-Neutrons star are born from the death of a normal star.%
-\mnote{Orders of magnitude}
+Neutrons star are born from a death of a normal star.%
+\mnote{Stellar orders of magnitude}
 Most familiar such a star is our Sun \Ten{1.496}{13} \cm from us.%
 \footnote{Throughout this thesis we will typically present our quantities only up to some fixed precision instead of the full litany of numbers.
 We will also adopt the centimeter-gram-second (cgs) unit system instead of the (maybe) more common SI-system. 
 Such a selection is sure to disappoint some, but try to endure.
 }
-With a mass of $\Msun = \Ten{1.99}{33} \g$ and radius of $R_{\odot} = \Ten{6.96}{10} \cm$, our Sun then introduces us some typical stellar dimensions.
-Curiously, this means that the mean density of the Sun is $\rho_{\odot} \approx 1.41 \gcm$, a mere $1.4\times$ the density of the water.
+With a mass of $\Msun = \Ten{1.99}{33} \g$ and radius of $R_{\odot} = \Ten{6.96}{10} \cm$, our Sun gives us an idea of the typical stellar size scales.
+Curiously, these numbers also means that the mean density of the Sun is $\rho_{\odot} \approx 1.41 \gcm$, a mere $1.4\times$ the density of the water.
+
+Like all stars, our Sun is held together by the inward pulling gravity.
+Gravity does not prefer any direction more than some other and, just like we easily observe, a spherical object is expected to form.
+In addition to the inward-facing force, an outward-facing force is needed to balance the system.
+For normal stars this force is originating from the thermal pressure.
+
+We observe stars in the night sky because they shine on us.%
+\mnote{Thermonuclear fusion process}
+This radiation, and also the origin of the thermal pressure, is from the thermonuclear fusion burning inside the star.
+\textit{Thermo} here refers to the temperature and heat, \textit{nuclear} to the atomic nuclei, and \textit{fusion} to the process where elements are fused together.
+During the thermonuclear fusion process, the star's core fuses light elements such as protons into heavier ones like helium.
+Mass of two protons is less than a mass of one helium atom.
+This mass difference between the start and end results is then transferred into energy in accordance to the Einstein's famous formula $E = mc^2$.
+A whole sequence of such a fusions takes place inside the star where lighter elements are merged together building heavier and heavier elements.
+This energy release from the mass-to-energy conversion will then give the star a sufficient thermal pressure support to keep it from not collapsing under the relentless gravity.
+
+The fusion of elements does not continue forever.
+In the beginning, two protons collide two form a helium.
+In the next stage three helium nuclei collide to form a carbon, and so on, until iron is created.
+Production of iron marks the end of the possible fusion chain because fusion of two iron cores does not release energy anymore, it requires it to take place.%
+\footnote{This opens up another possibility of creating energy by splitting heavy elements. Such a process is called fission and is familiarly taken advantage of in earthly nuclear power plants.}
+This iron produced, will then sink to the center of star forming a dead core without any energy input.
+
+Like all big furnaces, at some point the stars will run out of fuel to burn.
+What is then left behind is a inner core of iron with a subsequent onion-like layers of lighter and lighter elements.
+Crucial question to ask next is: 
+What is supporting this iron core now that the thermal pressure from the fusion processes are lost?
+To answer this, we need to look inside the iron atom:
+Iron nucleus, consisting of $26$ protons and $32$ neutrons, and surrounded by $26$ electrons, repulses its neighbors because of the negatively charged electron cloud does not want to get in touch with its neighbors flying next to it in the iron-atom lattice.
+\footnote{More precise consideration shows that nickel ($^{56}_{28}\mathrm{Ni}$) is actually thermodynamically more favored in the core because of the lack of neutrons needed to synthesize iron-58 ($^{58}_{26}\mathrm{Fe}$).
+}
+It is this antisocial behavior originating from the electric charge repulsion that also gives internal support to our everyday materials and prevents us from not falling through the floor.
+Electrons and protons inside the atom itself, on the other hand, are repulsing each other because of the quantum effects.
+\red{explain quantum repulsion}
+
+\subsection{Neutron stars at last}
+From this setup it only takes a short step into realizing the existence of neutron stars.
+What if at some point even these quantum effects are not enough to support the core?
+Let us consider the consequences of this thought play.
+More detailed calculations show that the resulting iron-core sitting at the center of the star is weighting at a maximum of around $\sim \Msun$.
+Hence, there are $M_{\mathrm{core}} / m_{\mathrm{atom}} \sim \Msun / \mproton \approx \Ten{1.99}{33} \g / \Ten{1.67}{-24} \g \sim 10^{57}$ atoms trapped inside the core.
+\footnote{
+    The mass of the atom, $m_{\mathrm{atom}} = \mproton + \me$, is also approximated (to an excellent accuracy) by just considering the central nuclei alone as the electron mass $\me \approx \Ten{9.11}{-28} \g$ is negligible in comparison to the proton mass.
+}
+Here we are already considering not iron atoms but pure hydrogen atoms only to simplify the presentation.
+Working backwards from these numbers, we can estimate the size of the core.
+
+
+
+\subsection{Neutron star dimensions}
 It turns out that Sun is also not as stable as one would think:
 With a rotation period of about $25.5$ days it then takes Sun about a month to revolve around itself.
 Similar to a bicycle dynamo hub, this rotation also gives rise to a detectable surface magnetic field of $B_{\odot} \approx 1 \Gauss$.%
@@ -70,6 +131,13 @@ In comparison, a typical nucleon (such as a neutron) weights about $\Ten{1.67}{-
 Hence, even the mean density inside the star is already on the same order of magnitude as the internal density inside nuclei.
 This suggests us that the composition inside a neutron star is not our typical every-day matter.
 
+
+Suppose a neutron star is, like any normal star, a blob of gas held together by the inwards pulling gravity.
+Gravity does not prefer any direction more than some other and so a stable end-result is an isotropic configuration.
+A pure inward pulling force is, of course, not enough so we also need a countering outward-facing force to resist the compression of the material.
+As an first approximation, there is no need to assume that this force would have any preferred direction either.
+Hence, our expected outcome is a sphere held together by the gravity originating from the mass $M$ of the matter itself.
+Let us, for a while forget the exact origin and nature of the compression-resisting force and see what can we learn solely from the current information only.
 
 \section{What do we actually know?}
 
@@ -86,3 +154,5 @@ This suggests us that the composition inside a neutron star is not our typical e
 %    http://dx.doi.org/10.1088/0004-637X/784/1/37 .
 
 
+\section{Connection to this thesis}
+In this thesis we study many aspects of the neutron stars, their environment and the internal processes that will in the end help us in constraining the behavior of the ultra-dense matter inside the star.
