@@ -1,6 +1,300 @@
-\chapter{First principle physics} 
-\chapterimage[width=6cm]{wordcloud/chap2.png}
+\chapter{Physics of neutron star interiors} 
+\chapterimage[width=15cm]{wordcloud/chap2b.png}
 
 
-Blaa blaa here we ref to \cite{NSK16}.
+
+\section{Equation of state}
+
+Often means dependency between $P$ and $\rho$. 
+Or sometimes the associated energy density $\epsilon = \rho c^2$.
+Also depends on $T$ but composed mainly on strongly degenerate fermions so so temperature dependency is negligible.
+
+Bulk property of the sea of fermions.
+
+Eos for $\rho > \nsat$ can not be produced in laboratory.
+Can not be calculated because of the lack of precise many-body theory of strongly interacting particles.
+
+
+Baryon mass $M_b$ that is sum of baryon masses.
+Gravitational mass $M$ that is $M_b$ from where the gravitational binding energy is subtracted. \cite{Zwicky38}
+
+
+\section{Atmosphere}
+Thin layer of plasma
+From centimeters in hot to millimeters in cold 
+Zavlin \& Pavlov 2002
+
+Where spectrum or thermal electromagnetic radiation is formed.
+Spectrum, beaming and polarization of emerging radiation can be determined from radiation transfer problem in atmospheric layers.
+
+Contains information on the parameters of the surface:
+effective temperature
+surface gravity
+chemical composition
+geometry of the system
+mass and radii.
+
+
+Eddington limit of where radiation force exceeds the gravitational one.
+
+
+\section{Crust}
+
+\begin{figure}
+\centering
+\includegraphics[width=16cm]{figs/nstar-plot/crust_plot_wide.png}
+\caption{\label{fig:crust}
+Molecular simulation of the crust.
+Figure adapted from \url{https://github.com/awsteiner/nstar-plot}.
+}
+\end{figure}
+
+Outer crust
+
+From atmosphere to $\rho_ND \sim \Ten{4}{11} \gcm$.
+In thickness some hundred meters.
+Non degenerate electron gas
+Ultra-relativistic electron gas $\rho > 10^6 \gcm$.
+Pressure provided by electrons here.
+
+Here the equation of state is decribed by the relativistic degenerate electron gas.
+Physics behind this are quite simple and we repeat the calculations here to give the reader ideas about what are the most important physical processes.
+The result also bears some historical value.
+
+We have reached densities where the EoS is dominated mainly by the electrons, hence it is characterized by the electron number density $n_{\mathrm{e}}$ and temperature $T_{\mathrm{e}}$ (hereafter just $T$ in this section).
+Moving on from an ideal plasma, we can start by introducing corrections produced by the closely packed charges.
+In practice we can use the so-called ion-sphere model to describe our Coulomb liquid of ions.
+We now assume that our ions are emerged into a sea of rigid electron background that takes care of the charge neutrality.
+Let us begin by defining a so-called electron sphere radius
+\be
+\erad = \left( \frac{4\pi \nel}{3} \right)^{-1/3}
+\ee
+We can also parameterize the strength between Coulomb (charge) interactions by considering a ratio of potential energy to the kinetic energy with
+\be
+\Ge = \frac{e^2}{\erad kT}.
+\ee
+Similarly, for ion with a charge number of $\Zi$, we can define the ion-sphere radius
+\be
+\irad = \erad \Zi^{1/3}
+\ee
+that encapsulates enough area to be charge neutral, when considering a static electron-induced background from $\nel$.
+Ion Coulomb coupling factor is similarly
+\be
+\Gi = \Ge \Zi^{5/3} = \frac{ (\Zi e)^2}{\irad kT}
+\ee
+In the weak-coupling limit ($\Gi \ll 1$) Debye-H\"uckel results for the free energy are valid\cite{LL80}
+\be
+\frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gamma^{3/2}
+\ee
+Hence, the pressure correction due to the Coulomb interactions is\cite{DeWitt96}
+\be
+\Pii \approx -0.3 n_{\mathrm{i}} \frac{Z^2 e^2}{\irad}.
+\ee
+
+
+
+For a degenerate system it also makes sense to present the Fermi quantities:
+momentum
+\be
+p_{\mathrm{F}} = \hbar (3\pi^2 n_{\mathrm{e}})^{1/3}
+\ee
+energy
+\be
+\epsilon_{\mathrm{F}} = c^2 \sqrt{ ( \me c)^2 + p_{\mathrm{F}}^2 },
+\ee
+and temperature
+\be
+T_{\mathrm{F}} = \frac{\me c^2}{k} \left( \sqrt{1 + \left( \frac{ p_{\mathrm{F}} }{\me c } \right)^2 } - 1 \right)
+= \Tr ( \gammar -1 ),
+\ee
+where we have defined a typical temperature
+\be
+\Tr \equiv \frac{ \me c^2 }{k} \sim \Ten{6}{9} \Kelvin
+\ee
+relativistic scaling factor
+\be
+\gammar \equiv \sqrt{1 + \xr^2},
+\ee
+and typical (dimensionless) momentum
+\be
+\xr \equiv \frac{p_{\mathrm{F}}}{\me c }.
+\ee
+
+Using these definitions, it is easy to characterize our electron gas into regions of 
+\begin{itemize}
+    \item non-relativistic, for which $T \ll \Tr$ and $\xr \ll 1$, 
+    \item mildly-relativistic, $T \sim \Tr$ and $\xr \sim 1$,
+    \item ultra-relativistic, $T \gg \Tr$ and $\xr \gg 1$,
+    \item non-degenerate, $T \gg T_{\mathrm{F}}$,
+    \item mildly degenerate, $T \sim T_{\mathrm{F}}$,
+    \item and strongly degenerate $T \ll T_{\mathrm{F}}$.
+\end{itemize}
+
+Free energy
+\be
+F = (\mu  - \me c^2) \nel - \frac{2}{(2\pi \hbar)^3} \int d\vec{p} \frac{1}{3} \vec{p} \cdot \vec{v} \fFD(\epsilon)
+\ee
+where 
+\be
+\nel = \frac{2}{(2\pi\hbar)^3} \int d\vec{p} \fFD(\epsilon),
+\ee
+and
+\be
+\fFD(\epsilon, T) = \frac{1}{\exp \left( \frac{\epsilon - \mu}{kT} \right) - 1}
+\ee
+and
+\be
+\epsilon = \sqrt{ \me^2 c^4 + p^2 c^2 }
+\ee
+
+Pressure 
+\be
+P = -\left( \frac{ \partial F }{\partial V } \right)_{T, \{N_j \} }
+\ee
+
+Sommerfield expand free energy in powers of $T/T_{\mathrm{F}}$ 
+\be
+\frac{F}{V} = \frac{\me c^2}{\bar{\lambdaC^3}}  \frac{1}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) + \frac{4\pi^2}{9} \tr^2 \xr(\gammar + \gammar^{-1})  \right)  + \mathcal{O}(\tr^4)
+\ee
+and obtain pressure 
+\be
+\Peid = \frac{\Pressr}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) \right)
+\ee
+where again typical pressure
+\be
+\Pressr = \frac{\me c^2}{\lambdaC} \sim \Ten{1.4}{25} \dyncm
+\ee
+
+Hence, it takes the simple polytropic form
+\be
+\Peid \approx \frac{ \Pressr }{9\pi^2 \gammaad} \xr^{3\gammaad}
+\ee
+where the polytropic index $\gammaad = \frac{5}{3}$ for the non-relativistic $\xr \ll 1$ and $\gammaad = \frac{4}{3}$ for the ultra-relativistic case (recall also that $\xr \propto \nel^{1/3}$).
+
+
+Degenerate electron gas pressure accompanied with the ion Coulomb correction will then actually give us a rather good approximation for the equation of state
+\be
+P(\xr) = \Peid + \Pii
+\ee
+this is valid in a large density range of $10^{4} < \rho < 10^{10} \gcm$.
+
+In deeper layers ions form a strongly coupled Coulomb system (liquid or solid).
+Hence, crust.
+Fermi energy grows with increasing $\rho$.
+Induces $\beta$ captures and enriches nuclei with neutrons.
+At the base neutrons start to drip out from nuclei.
+
+
+Inner crust
+About one kilometer thick.
+Density from $\rho \sim \rho_{ND}$ (at upper boundary) to $\sim 0.5 \nsat$ at the base.
+Matter consists of electrons, free neutrons $n$ and neutron-rich atomic nuclei.
+Fraction of free $n$ grow with $\rho$.
+
+Finally, nuclei disappear at the crust-core interface.
+
+\section{Core}
+
+Outer core.
+Density ranges $0.5 \nsat < \rho < 2\nsat$.
+Several kilometers.
+Neutrons with several per cent admixture of protons $p$ and electrons $e^{-}$.
+Strongly degenerate.
+Electrons form almost ideal Fermi gas.
+Neutrons and protons, interacting via nuclear forces, constitute a strongly interacting Fermi liquid.
+
+Inner core.
+Where $\rho > 2\nsat$.
+Central density can be around $(10-15)\nsat$.
+Very model dependent.
+Main problem.
+
+\subsection{Why neutrons then?}
+Let us first consider ideal gas of degenerate electron-proton-neutron plasma.
+In a degenerate plasma all the quantum states are filled up all the way to the Fermi energy.
+It is the Pauli exclusion principle that then prevents occupying all of these already taken quantum states.
+Normal beta-decay mode for the neutrons, on the other hand, is $n \rightarrow p + e^{-} + \bar{\nu_{e}}$, that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron neutrino $\bar{\nu_{e}}$.
+Such a decay is, however, blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.\cite[see e.g.][]{Phillips94}
+
+Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$.
+Co-existence of neutrons, protons, and electrons is then guaranteed (at zero temperature) if 
+\be
+\ef(n) = \ef(p) + \ef(e^{-}).
+\ee
+Fermi momentum of a particle is related to its concentration via
+\be
+p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
+\ee
+where $n$ is the number density, and $h$ the Planck constant.
+Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $\nsat$, and hence energy is simply a sum of their rest mass energy and kinetic energy
+\be
+\ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
+\ee
+and
+\be
+\ef(p) \approx m_p c^2 + \frac{p_{\mathrm{F}}(p)^2}{2 m_p }.
+\ee
+Electrons, on the other hand, are already ultra-relativistic, and so
+\be
+\ef(e^{-}) \approx p_{\mathrm{F}}(e^{-}) c^2.
+\ee
+
+\red{
+Also note that $n_p = n_e$, as the star is electrically neutral.
+From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \mathrm{MeV}\,c^2$ at $\rho \sim \nsat$.
+}
+Thus, we conclude that the matter inside is neutron rich.
+
+
+\subsection{Polytropes}
+\red{Parameterize everything with polytropes.}
+
+
+
+\section{Tolman-Volkoff-Oppenheimer equations}
+Newtonian pressure gradient needed to oppose the gravity is
+\be
+\frac{dP}{dr} = -\frac{G M \rho}{r^2}.
+\ee
+Taking into account the general relativistic corrections we get
+\be
+\frac{dP}{dr} = 
+    -\frac{G M \rho}{r^2} \times 
+    \frac{ (1 + P/\rho c^2)(1+4\pi r^3 P/m c^2) }
+    {1-2 G m /r c^2 }.
+\ee
+Difference originates from the source of gravity:
+in the Newtonian case it is the mass $m$, whereas in the General relativity it is the energy momentum tensor that depend both on the energy density and the pressure.
+As a result, energy and pressure give rise to a gravitational fields.
+
+Severness of the GR corrections can be estimated from the so called compactness parameter
+\be
+x = \frac{GM}{Rc^2} \approx 2.95~M/\Msun \km
+\ee
+
+
+It has an important consequence to the stability of neutron stars:
+Successive increase in the pressure to counter the gravity is ultimately self-defeating.
+
+\red{
+Solution for a constant density $\rho_0$ gives
+\be
+P(r) = G \frac{2\pi}{3} \rho_0^2 (R^2 - r^2)
+\ee
+whereas the GR gives
+\be
+P(r) = \rho_0^2 c^2 \left[ \frac{ (1-u \left(\frac{r}{R} \right)^2 )^{1/2}
+                        - (1-u)^{1/2} }{
+                        3(1-u)^{1/2} - (1-u \left( \frac{r}{R} \right)^2 )^{1/2} } \right],
+\ee
+where $u = 2GM/Rc^2$.
+}
+
+
+
+
+
+
+
+
 
