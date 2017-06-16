@@ -1,3 +1,5 @@
+import numpy as np
+from units import mp
 
 eosLib = {
     'PAL6'  :[ 34.380,  2.227,  2.189,  2.159 ],
@@ -36,7 +38,10 @@ eosLib = {
     'ALF4'  :[ 34.314,  3.009,  3.438,  1.803 ]
 }
 
-def EoS(name, rho):
+def EoS(name, rhos):
+
+    rhos *= (1.66e-24/mp)
+
     ll = eosLib[ name ]
 
     p1 = 10**ll[0]
@@ -44,30 +49,33 @@ def EoS(name, rho):
     g2 = ll[2]
     g3 = ll[3]
 
+    r1 = 2.8e14
     r2 = 10**14.7
     r3 = 10**15.0
 
     #construct normalization constants starting from nuclear saturation depth
-    r1 = 1.0e14
-    K1 = p1/r1**g1
+    K1 = p1/(r1**g1)
     K2 = (K1 * r2**g1)/r2**g2
     K3 = (K2 * r3**g2)/r3**g3
 
-    K = K3
-    g = g3
-    if rho < r3:
-        K = K2
-        g = g2
-        if rho < r2:
-            K = K1
-            g = g1
-            if rho < r1:
+
+    Ps = np.zeros(len(rhos))
+    for i, rho in enumerate(rhos):
+        K = K3
+        g = g3
+        if rho < r3:
+            K = K2
+            g = g2
+            if rho < r2:
                 K = K1
-                g = 1.35692 #SLy crust
+                g = g1
+        Ps[i] = K * rho**g
 
-    return K * rho**g
+    return Ps/10.0
 
-print EoS('SLy', 10e15)
+#print EoS('PAL6', 1e14)
+#print EoS('SLy', 1e14)
+#print EoS('FPS', 1e14)
 
 
 

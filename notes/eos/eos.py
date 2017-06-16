@@ -25,6 +25,7 @@ from scipy.signal import savgol_filter
 from scipy import interpolate
 
 from units import *
+from eoslibrary import EoS
 
 
 class plasma:
@@ -106,8 +107,8 @@ class plasma:
     def PSly(self):
 
         #baryon density as defined in Read 2009
-        #rho = 1.66e-24 * self.nn
-        rho = self.rho
+        rho = 1.66e-24 * self.nn
+        #rho = self.rho
 
         #constants
         K1 = 6.80110e-9
@@ -140,7 +141,7 @@ class plasma:
                     G = G1
 
 
-        return np.pi*(K*rho**G)*c**2
+        return (K*rho**G)*c**2
 
 
 
@@ -276,19 +277,31 @@ def main(argv):
         ax = plt.subplot(gs[i, 0])
         ax.minorticks_on()
         #ax1.set_ylim(0.0, 1.1)
-        ax.set_xlim(1.0e-2, 1.0e16)
+        ax.set_xlim(1.0e1, 1.0e17)
+        ax.set_ylim(1.0e14, 1.0e42)
         ax.set_xscale('log')
         ax.set_yscale('log')
 
         axs.append( ax )
 
-    axs[0].set_xlabel(r'density $\rho$ (g cm$^{-3}$)')
+    axs[0].set_xlabel(r'Density $\rho$ (g cm$^{-3}$)')
+    axs[0].set_ylabel(r'Pressure $P$ (dyne cm$^{-2}$)')
 
 
     # basic parameters
-    rhos = np.logspace(-2, 14, N)
+    rhos = np.logspace(-2, 14.2, N)
     T = 1.0 * kelvin_per_keV #about 10 million kelvins
     Z = 1.0 #hydrogen plasma
+
+
+    #rho_ND
+    rhond = 4.0e11
+
+    #normal nuclear saturation density
+    #rho_n
+    rhon = 2.8e14
+
+
 
     print """ Basic parameters:
              ref pressure P_r: {:3.2e}
@@ -313,17 +326,17 @@ def main(argv):
         
     axs[0].plot(con.d['rho'], con.d['P'], 'b-')
 
-    rho2 = np.logspace(3, 8, 100)
+    rho2 = np.logspace(3, 9, 100)
     Pnonrel = Ppoly(rho2, 5/3)
     Prel = Ppoly(rho2, 4/3)
     axs[0].plot(rho2, Pnonrel, "k", linestyle='dotted')
     axs[0].plot(rho2, Prel, "k", linestyle='dashed')
 
-    #polytropic EoS for the core
-    #rho3 = np.logspace(10, 17, 100)
-    #P1 = EoSpoly(rho3, 2.0)
-    #axs[0].plot(rho3, P4, "k-")
-
+    #Core
+    rho3 = np.logspace(14.2, 16, 100)
+    for i, eoss in enumerate(['PAL6', 'SLy', 'FPS', 'APR1', 'WFF1', 'BBB2', 'ENG', 'MS1', 'PS', 'H1', 'ALF1']):
+        P1 = EoS(eoss, rho3)
+        axs[0].plot(rho3, P1, "k-")
 
 
 
@@ -344,6 +357,64 @@ def main(argv):
             Ge:   {:3.2e}
             Gi:   {:3.2e}
             """.format(rho_xr, rho_tr, rho_thr, rho, rho_phir, rho_Ge, rho_Gi)
+
+    #highlight different regions
+    xmin = 1.0
+    xmax = 1.0e4
+    axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e42, 1e42], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+
+    #outer crust
+    #xmin = 1.0e4
+    #xmax = rhond
+    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+
+    #inner crust
+    xmin = rhond
+    xmax = 0.5*rhon
+    axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e42, 1e42], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+
+    #outer core
+    #xmin = 0.5*rhon
+    #xmax = 2.0*rhon
+    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+
+    #inner core
+    #xmin = 2.0*rhon
+    #xmax = 100.0*rhon
+    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+
+    #different ns structures
+    y_text = 1.0e40
+    axs[0].text(400.0,  y_text, 'Atmosphere', rotation=0, ha='center', va='center', size=10)
+    axs[0].text(1.0e8,  y_text, 'Outer crust', rotation=0, ha='center', va='center', size=10)
+    axs[0].text(6.0e12, y_text, 'Inner\ncrust', rotation=0, ha='center', va='center', size=10)
+    axs[0].text(6.0e15, y_text, 'Core', rotation=0, ha='center', va='center', size=10)
+
+    
+    lstyle = 'dotted'
+    axs[0].plot([rhon, rhon], [1.0e16, 1e40], "k", linestyle=lstyle)
+    txt = axs[0].text(rhon, 2.0e24, r'$\rho_n$', rotation=90, ha='center', va='center', size=8)
+    txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
+
+    axs[0].plot([rhond, rhond], [1.0e16, 1e40], "k", linestyle=lstyle)
+    txt = axs[0].text(rhond, 2.0e24, r'$\rho_{\mathrm{ND}}$', rotation=90, ha='center', va='center', size=8)
+    txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
+
+    axs[0].plot([rho_xr, rho_xr], [1.0e16, 1e38], "k", linestyle=lstyle)
+    txt = axs[0].text(rho_xr, 2.0e28, r'$x_r = 1$', rotation=90, ha='center', va='center', size=8)
+    txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
+
+    axs[0].plot([rho_thr, rho_thr], [1.0e16, 1e28], "k", linestyle=lstyle)
+    txt = axs[0].text(rho_thr, 2.0e22, r'$\Theta_r = 1$', rotation=90, ha='center', va='center', size=8)
+    txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
+
+    axs[0].plot([rho_Ge, rho_Ge], [1.0e16, 1e30], "k", linestyle=lstyle)
+    txt = axs[0].text(rho_Ge, 2.0e26, r'$\Gamma_{\mathrm{e}} = 1$', rotation=90, ha='center', va='center', size=8)
+    txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
+
+
+    axs[0].text(1.0e4, 2.0e18, r'$P \propto \rho^{5/3}$', rotation=22, ha='center', va='center', size=8)
+    axs[0].text(1.0e7, 2.0e25, r'$P \propto \rho^{4/3}$', rotation=27, ha='center', va='center', size=8)
 
 
 
