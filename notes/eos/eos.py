@@ -8,6 +8,9 @@ import os
 import matplotlib
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+from matplotlib.ticker import MultipleLocator
+from matplotlib.ticker import AutoMinorLocator
+
 
 print "Matplotlib version", matplotlib.__version__
 
@@ -26,6 +29,7 @@ from scipy import interpolate
 
 from units import *
 from eoslibrary import EoS
+from eoslibrary import eosLib
 
 
 class plasma:
@@ -37,8 +41,8 @@ class plasma:
         self.Z = Z
 
 
-        #electron number density
-        self.ne = rho/mp
+        #electron number density (assumes Z ~ 2)
+        self.ne = 0.5*rho/mp
 
         #electron Fermi momentum
         self.pFe = hbar*(3*np.pi**2*self.ne)**(1/3)
@@ -86,7 +90,8 @@ class plasma:
 
     #ideal non-relativistic Boltzmann gas
     def Pideal(self):
-        return self.ne * self.kT
+        #additionally divide with the charge number to get number of ions / cm^3
+        return self.nn * self.kT / self.Z
 
     #degenerate relativistic electron gas
     def Pdegenerate(self):
@@ -98,7 +103,7 @@ class plasma:
 
     #Ion coulomb attraction using the ion-sphere model
     def PCoulomb(self):
-        n = self.ne/self.Z #number density of ions
+        n = self.nn/self.Z #number density of ions
         return -0.3 *n*self.Gi * self.kT
 
 
@@ -107,7 +112,7 @@ class plasma:
     def PSly(self):
 
         #baryon density as defined in Read 2009
-        rho = 1.66e-24 * self.nn
+        rho = 1.66e-24 * self.nn 
         #rho = self.rho
 
         #constants
@@ -148,9 +153,26 @@ class plasma:
     #return pressure depending on proper states of the plasma
     def pressure(self):
 
+        if self.rho < 1.0e5:
+            #return self.Pdegenerate()
+            #return self.Pideal()
+
+            #introduce partial Coulomb sreening
+            #x = max(0.0, min( self.Gi, 1.0))
+            x = max(0.0, min( np.log10(self.rho)-4 , 1.0))
+            Pc = x*self.PCoulomb()
+
+            #introduce partial degeneration
+            #y = max(0.0, min( self.Ge, 1.0))
+            y = max(0.0, min( np.log10(self.rho) / 4.0 , 1.0))
+            P = (1-y)*self.Pideal() + y*self.Pdegenerate()
+            return P + Pc
+
+            #return (1-x)*self.Pideal() + x*(self.Pdegenerate() )#+ self.PCoulomb() )
+
         #use (degenerate) electron gas up to neutron drip
         if self.rho < 1.0e8:
-            return self.Pdegenerate() + self.PCoulomb() #+ self.Pneutron()
+            return self.Pdegenerate() + self.PCoulomb()
         else:
             #Skyrm crust
             return self.PSly()
@@ -238,7 +260,7 @@ class container:
 #polytropic pressure relation using the adiabatic index
 # for degenerate electron gases
 def Ppoly(rho, gad):
-    ne = rho/mp
+    ne = 0.5*rho/mp
     pFe = hbar*(3*np.pi**2*ne)**(1/3)
     xr = pFe / me / c
 
@@ -253,7 +275,26 @@ def EoSpoly(rho, gad):
     return (Prn/9/gad/np.pi**2) * yr**(3*gad)
 
 
+#return approximative radius for given density
+def rho_at_R(rad):
+    yy = np.array([0.0,    8.633, 10.416, 10.875, 11.4314, 12.2552, 12.9542, 13.4149, 13.7558, 14,   14.1461, 15.0])
+    xx = np.array([11.736, 11.7,  11.6,   11.5,   11.4,    11.3,    11.2,    11.1,    11.0,    10.9, 10.8,    0.0])
+        
+    xx = np.flipud(xx)
+    yy = np.flipud(yy)
 
+    f = interpolate.UnivariateSpline(xx, yy, k=1, s=0)
+    val = f(rad)
+    return 10**val
+
+#return approximative radius for given density
+def R_at_rho(rho):
+    xx = np.array([0.0,    8.633, 10.416, 10.875, 11.4314, 12.2552, 12.9542, 13.4149, 13.7558, 14,   14.1461, 15.0])
+    yy = np.array([11.736, 11.7,  11.6,   11.5,   11.4,    11.3,    11.2,    11.1,    11.0,    10.9, 10.8,    0.0])
+
+    f = interpolate.UnivariateSpline(xx, yy, k=1, s=0)
+    val = f( np.log10(rho) )
+    return val
 
 
 #--------------------------------------------------
@@ -270,12 +311,11 @@ def main(argv):
     gs = plt.GridSpec(1, 1)
 
     N = 100
-    con = container(N)
 
     axs = []
     for i in range(1):
         ax = plt.subplot(gs[i, 0])
-        ax.minorticks_on()
+        #ax.minorticks_on()
         #ax1.set_ylim(0.0, 1.1)
         ax.set_xlim(1.0e1, 1.0e17)
         ax.set_ylim(1.0e14, 1.0e42)
@@ -284,6 +324,14 @@ def main(argv):
 
         axs.append( ax )
 
+    #axs[0].minorticks_on()
+    #axs[0].tick_params(axis='x',which='minor')
+    #axs[0].tick_params(axis='y',which='minor')
+
+    #minorLocator = MultipleLocator(2)
+    #minorLocator = AutoMinorLocator(5)
+    #ax.xaxis.set_minor_locator(minorLocator)
+
     axs[0].set_xlabel(r'Density $\rho$ (g cm$^{-3}$)')
     axs[0].set_ylabel(r'Pressure $P$ (dyne cm$^{-2}$)')
 
@@ -291,7 +339,7 @@ def main(argv):
     # basic parameters
     rhos = np.logspace(-2, 14.2, N)
     T = 1.0 * kelvin_per_keV #about 10 million kelvins
-    Z = 1.0 #hydrogen plasma
+    Z = 56.0 #hydrogen plasma
 
 
     #rho_ND
@@ -316,27 +364,49 @@ def main(argv):
                  """.format(Pr, Tr, T, lambdaC, Prn, Tn)
 
 
+    con = container(N)
     for i, rho in enumerate( rhos ):
-
-        p = plasma(rho, T, Z)
-        #print(p)
-
+        p = plasma(rho, T*0.1, Z)
         con.append(p)
+    axs[0].plot(con.d['rho'], con.d['P'], 'g-')
 
-        
+    con = container(N)
+    for i, rho in enumerate( rhos ):
+        p = plasma(rho, T*0.5, Z)
+        con.append(p)
     axs[0].plot(con.d['rho'], con.d['P'], 'b-')
+
+    #main plot
+    con = container(N)
+    for i, rho in enumerate( rhos ):
+        p = plasma(rho, T, Z)
+        con.append(p)
+    axs[0].plot(con.d['rho'], con.d['P'], 'k-', linewidth=1.5, alpha=0.8)
+
+
 
     rho2 = np.logspace(3, 9, 100)
     Pnonrel = Ppoly(rho2, 5/3)
     Prel = Ppoly(rho2, 4/3)
-    axs[0].plot(rho2, Pnonrel, "k", linestyle='dotted')
-    axs[0].plot(rho2, Prel, "k", linestyle='dashed')
+    axs[0].plot(rho2, Pnonrel, "b", linestyle='dotted')
+    axs[0].plot(rho2, Prel, "b", linestyle='dotted')
 
     #Core
-    rho3 = np.logspace(14.2, 16, 100)
-    for i, eoss in enumerate(['PAL6', 'SLy', 'FPS', 'APR1', 'WFF1', 'BBB2', 'ENG', 'MS1', 'PS', 'H1', 'ALF1']):
-        P1 = EoS(eoss, rho3)
-        axs[0].plot(rho3, P1, "k-")
+    rho3 = np.logspace(13.0, 16, 100)
+    #for i, eoss in enumerate(['PAL6', 'SLy', 'FPS', 'APR1', 'WFF1', 'BBB2', 'ENG', 'MS1', 'PS', 'H1', 'ALF1']):
+    #    P1 = EoS(eoss, rho3)
+    #    axs[0].plot(rho3, P1, "k-")
+
+    for key, value in eosLib.iteritems():
+        P1 = EoS(key, rho3)
+        if value[4] == 'npem':
+            axs[0].plot(rho3, P1, "k-", alpha = 0.3)
+        if value[4] == 'meson':
+            axs[0].plot(rho3, P1, "b-", alpha = 0.3)
+        if value[4] == 'hyperon':
+            axs[0].plot(rho3, P1, "g-", alpha = 0.3)
+        if value[4] == 'quark':
+            axs[0].plot(rho3, P1, "r-", alpha = 0.3)
 
 
 
@@ -356,32 +426,40 @@ def main(argv):
             phir: {:3.2e}
             Ge:   {:3.2e}
             Gi:   {:3.2e}
-            """.format(rho_xr, rho_tr, rho_thr, rho, rho_phir, rho_Ge, rho_Gi)
+            """.format(rho_xr, rho_tr, rho_thr, rho_phir, rho_Ge, rho_Gi)
+
 
     #highlight different regions
-    xmin = 1.0
+    xmin = 1.0e1
     xmax = 1.0e4
-    axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e42, 1e42], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+    yarrow = 1.0e39
+    col = 'lightgrey'
+    axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e42, 1e42], facecolor=col, color=None, alpha=1.0, edgecolor=col)
+    #plt.annotate(s='', xy=(xmax,yarrow), xytext=(xmin,yarrow), arrowprops=dict(arrowstyle='<->'))
 
     #outer crust
     #xmin = 1.0e4
     #xmax = rhond
-    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor=col, color=None, alpha=0.1, edgecolor=col)
+    #plt.annotate(s='', xy=(xmax,yarrow), xytext=(xmin,yarrow), arrowprops=dict(arrowstyle='<->'))
 
     #inner crust
     xmin = rhond
     xmax = 0.5*rhon
-    axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e42, 1e42], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+    axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e42, 1e42], facecolor=col, color=None, alpha=1.0, edgecolor=col)
+    #plt.annotate(s='', xy=(xmax,yarrow), xytext=(xmin,yarrow), arrowprops=dict(arrowstyle='<->'))
 
     #outer core
     #xmin = 0.5*rhon
     #xmax = 2.0*rhon
-    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor=col, color=None, alpha=0.1, edgecolor=None)
+    #plt.annotate(s='', xy=(xmax,yarrow), xytext=(xmin,yarrow), arrowprops=dict(arrowstyle='<->'))
 
     #inner core
-    #xmin = 2.0*rhon
-    #xmax = 100.0*rhon
-    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor='grey', color=None, alpha=0.1, edgecolor=None)
+    xmin = 2.0*rhon
+    xmax = 100.0*rhon
+    #axs[0].fill_between([xmin, xmax], [1e10, 1e10], [1e40, 1e40], facecolor=col, color=None, alpha=0.1, edgecolor=None)
+    #plt.annotate(s='', xy=(xmax,yarrow), xytext=(xmin,yarrow), arrowprops=dict(arrowstyle='<->'))
 
     #different ns structures
     y_text = 1.0e40
@@ -392,35 +470,74 @@ def main(argv):
 
     
     lstyle = 'dotted'
-    axs[0].plot([rhon, rhon], [1.0e16, 1e40], "k", linestyle=lstyle)
+    axs[0].plot([rhon, rhon], [1.0e16, 1e40], "r", linestyle=lstyle)
     txt = axs[0].text(rhon, 2.0e24, r'$\rho_n$', rotation=90, ha='center', va='center', size=8)
     txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
-    axs[0].plot([rhond, rhond], [1.0e16, 1e40], "k", linestyle=lstyle)
-    txt = axs[0].text(rhond, 2.0e24, r'$\rho_{\mathrm{ND}}$', rotation=90, ha='center', va='center', size=8)
-    txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
+    axs[0].plot([rhond, rhond], [1.0e16, 1e40], "r", linestyle=lstyle)
+    txt = axs[0].text(rhond*0.5, 2.0e24, r'$\rho_{\mathrm{ND}}$', rotation=90, ha='center', va='center', size=8)
+    #txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
-    axs[0].plot([rho_xr, rho_xr], [1.0e16, 1e38], "k", linestyle=lstyle)
+    axs[0].plot([rho_xr, rho_xr], [1.0e16, 1e38], "r", linestyle=lstyle)
     txt = axs[0].text(rho_xr, 2.0e28, r'$x_r = 1$', rotation=90, ha='center', va='center', size=8)
     txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
-    axs[0].plot([rho_thr, rho_thr], [1.0e16, 1e28], "k", linestyle=lstyle)
+    axs[0].plot([rho_thr, rho_thr], [1.0e16, 1e28], "r", linestyle=lstyle)
     txt = axs[0].text(rho_thr, 2.0e22, r'$\Theta_r = 1$', rotation=90, ha='center', va='center', size=8)
-    txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
+    txt.set_bbox(dict(facecolor='lightgrey', edgecolor='none', pad=3))
 
-    axs[0].plot([rho_Ge, rho_Ge], [1.0e16, 1e30], "k", linestyle=lstyle)
+    axs[0].plot([rho_Ge, rho_Ge], [1.0e16, 1e30], "r", linestyle=lstyle)
     txt = axs[0].text(rho_Ge, 2.0e26, r'$\Gamma_{\mathrm{e}} = 1$', rotation=90, ha='center', va='center', size=8)
     txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
 
-    axs[0].text(1.0e4, 2.0e18, r'$P \propto \rho^{5/3}$', rotation=22, ha='center', va='center', size=8)
-    axs[0].text(1.0e7, 2.0e25, r'$P \propto \rho^{4/3}$', rotation=27, ha='center', va='center', size=8)
+    axs[0].text(1.0e4, 2.0e18, r'$P \propto \rho^{5/3}$', rotation=27, ha='center', va='center', size=8)
+    axs[0].text(1.0e7, 2.0e25, r'$P \propto \rho^{4/3}$', rotation=22, ha='center', va='center', size=8)
+
+
+    #validity zones
+    yloc = 5.0e34
+    axs[0].text(5.e2, yloc, r'ideal gas', rotation=90, ha='center', va='center', size=8)
+    axs[0].text(1.e5, yloc, 'non-relativistic\ndegenerate\nelectron gas', rotation=90, ha='center', va='center', size=8)
+    axs[0].text(1.e8, yloc, 'relativistic\ndegenerate\nelectron gas', rotation=90, ha='center', va='center', size=8)
+    axs[0].text(1.e12, yloc, r'neutron drip', rotation=90, ha='center', va='center', size=8)
+    axs[0].text(5.e13, yloc, 'nuclear\npasta', rotation=90, ha='center', va='center', size=8)
+
+
+    ################################################## 
+    #second axis
+    ax2 = axs[0].twiny()
+    ax2.set_xlim(1.0e1, 1.0e17)
+    ax2.set_xscale('log')
+    ax2.set_xlabel(r'Radius $R_{\mathrm{SLy}, 1.4}$ (km)')
+
+    tickloc = []
+    ticklab = []
+    for rad in [11.73, 11.72, 11.71, 11.7, 11.6, 11.3, 10.0,  0.0]:
+        rhor = rho_at_R(rad)
+        tickloc.append(rhor)
+
+        #lab = "{:3.2f}".format(rad)
+        lab = str(rad)
+        ticklab.append(lab)
+
+    ax2.set_xticks( tickloc )
+    ax2.set_xticklabels( ticklab )
+    ax2.minorticks_off()
+
+    axs[0].spines['top'].set_visible(None)
+    axs[0].xaxis.set_ticks_position('bottom')
+
+
+
 
 
 
 if __name__ == "__main__":
     main(sys.argv)
-
     plt.savefig('eos.pdf')
+
+
+
 
 

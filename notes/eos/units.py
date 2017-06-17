@@ -37,7 +37,7 @@ Tn = mn*c**2/kB
 lambdaC = hbar/me/c
 
 #plasma reference pressure
-Pr =0.4* me * c**2 / lambdaC**3
+Pr = me * c**2 / lambdaC**3
 
 #neutron Compton wavelength
 lambdaCn = hbar/mn/c
