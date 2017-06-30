@@ -5,6 +5,14 @@
 
 \section{Equation of state}
 
+\begin{figure}
+\centering
+\includegraphics[width=16cm]{notes/eos/eos.pdf}
+\caption{\label{fig:eos}
+Eos.
+}
+\end{figure}
+
 Often means dependency between $P$ and $\rho$. 
 Or sometimes the associated energy density $\epsilon = \rho c^2$.
 Also depends on $T$ but composed mainly on strongly degenerate fermions so so temperature dependency is negligible.
@@ -194,6 +202,14 @@ Fraction of free $n$ grow with $\rho$.
 Finally, nuclei disappear at the crust-core interface.
 
 \section{Core}
+\begin{figure}
+\centering
+\includegraphics[width=7.5cm]{notes/eos/dense_eos.pdf}
+\includegraphics[width=7.5cm]{notes/tov/mr.pdf}
+\caption{\label{fig:core}
+Core EoS.
+}
+\end{figure}
 
 Outer core.
 Density ranges $0.5 \nsat < \rho < 2\nsat$.
@@ -208,6 +224,39 @@ Where $\rho > 2\nsat$.
 Central density can be around $(10-15)\nsat$.
 Very model dependent.
 Main problem.
+
+Here we consider few (relatively) modern descriptions for the dense matter equation of state.
+%We follow the naming convention selected in Read et al.\cite{Read2010}, and divide the composition into: 
+The EoSs can be divided into few different classes based on the particles that they consist of.
+Here they are divided into matter consisting of
+\begin{itemize}
+    \item plain \npem nuclear matter, 
+    \item normal nuclear matter spiced up with hyperons \hyperon,
+    \item normal nuclear matter together with more exotic particles like pion and kaon condensates \pikaon,
+    \item and matter consisting of (or normal matter spiced up with) quarks \quark.
+\end{itemize}
+
+For \npem we include models computed with
+\begin{itemize}
+    \item potential method using SLy effective nuclear interaction that is of Skyrme-type,\cite{SLy},
+    \item four variational method EoSs, APR3/4\cite{APR} and WFF1/2\cite{WFF},
+    \item two relativistic Brueckner-Hartree-Fock calculations, ENG\cite{ENG} and MPA1\cite{MPA},
+    \item two relativistic mean-field theory, MS1 and MS1b (same as MS1 but with lower symmetry energy)\cite{MS}.
+\end{itemize}
+
+For hyperon models \hyperon we include
+\begin{itemize}
+    \item one variant of relativistic mean-field theory EoS H4\cite{H4}.
+\end{itemize}
+
+EoSs where mesons, like pion and kaon condensates \pikaon, are taken into account end up not being stiff enough.
+
+Finally, for the hybrid nuclear matter and quark matter compositions \quark we include 
+\begin{itemize}
+    \item mixed APR nuclear matter and color-flavor-locked quark matter EoS ALF2.\cite{ALF}
+\end{itemize}
+
+
 
 \subsection{Why neutrons then?}
 Let us first consider ideal gas of degenerate electron-proton-neutron plasma.

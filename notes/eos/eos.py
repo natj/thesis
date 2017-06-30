@@ -31,6 +31,10 @@ from units import *
 from eoslibrary import EoS
 from eoslibrary import eosLib
 
+import tov
+
+
+
 
 class plasma:
 
@@ -107,7 +111,7 @@ class plasma:
         return -0.3 *n*self.Gi * self.kT
 
 
-    #Skyrme crust equation of state
+
     # done with piecewise polytropes from Read 2009
     def PSly(self):
 
@@ -393,12 +397,14 @@ def main(argv):
 
     #Core
     rho3 = np.logspace(13.0, 16, 100)
-    #for i, eoss in enumerate(['PAL6', 'SLy', 'FPS', 'APR1', 'WFF1', 'BBB2', 'ENG', 'MS1', 'PS', 'H1', 'ALF1']):
-    #    P1 = EoS(eoss, rho3)
-    #    axs[0].plot(rho3, P1, "k-")
-
     for key, value in eosLib.iteritems():
-        P1 = EoS(key, rho3)
+        #P1 = EoS(key, rho3)
+        dense_eos = tov.read_eos(key)
+        eos = tov.crust_and_core( tov.SLyCrust, dense_eos )
+
+        P1 = eos.pressures( rho3 )
+
+
         if value[4] == 'npem':
             axs[0].plot(rho3, P1, "k-", alpha = 0.3)
         if value[4] == 'meson':
@@ -407,6 +413,13 @@ def main(argv):
             axs[0].plot(rho3, P1, "g-", alpha = 0.3)
         if value[4] == 'quark':
             axs[0].plot(rho3, P1, "r-", alpha = 0.3)
+
+    rhoc = np.logspace(4.0, 14.0, 100)
+    Pc = tov.SLyCrust.pressures( rhoc )  
+    print "polytropes:", len(tov.SLyCrust.transitions )
+    print np.log10( Pc )
+    axs[0].plot( rhoc, Pc, "r-")
+
 
 
 

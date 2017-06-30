@@ -10,7 +10,8 @@
 #G      = 6.6730831e-11 #gravitational constant
 eVSI     = 1.602176620898e-19 #electron volt/Joule
 pcSI    = 3.08567758149e16 #parsec in m
-Rs     = 2.9532500772e3 #Sch radius of Sun in m
+RsSI     = 2.9532500772e3 #Sch radius of Sun in m
+Rs     = 2.9532500772 #Sch radius of Sun in m
 
 
 c  = 2.99792458e10
@@ -52,6 +53,9 @@ kelvin_per_keV = 1.16045e7
 erg_per_kev = 1.0e-10 / eVSI
 
 
+GeVfm_per_dynecm = 1.e9 * eV / (1.0e-13)**3
+
+
 
 ##################################################
 # Operate in units where G = c = 1.
@@ -82,7 +86,7 @@ cm_per_tenkpc = 1.0e-6 / pcSI
 # other constants
 ##################################################
 #mass of sun
-#Msun   = 1.988435e30
+Msun   = 1.988435e33
 #kg_per_Msun    = 1.988435e30
 
 
