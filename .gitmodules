@@ -1,3 +1,6 @@
 [submodule "figs/nstar-plot"]
 	path = figs/nstar-plot
 	url = https://github.com/natj/nstar-plot.git
+[submodule "figs/tov"]
+	path = figs/tov
+	url = https://github.com/natj/tov.git
