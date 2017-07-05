@@ -180,3 +180,12 @@ TSWLatexianTemp*
 
 # KBibTeX
 *~[0-9]*
+
+# Own additions
+*.pdf
+*.pyc
+*.tar.gz
+*.png
+*.pages
+
+
