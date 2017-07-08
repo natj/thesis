@@ -1,48 +1,77 @@
 \chapter{Physics of neutron star interiors} 
 \chapterimage[width=15cm]{wordcloud/chap2b.png}
 In this chapter, we will study the neutron star interiors in more detail.
-In practice, this means describing the behavior of the matter from a densities of $\sim 10^{-2} \gcm$ to $\sim 10^{16} \gcm$, an impressive $18$ orders of magnitude range starting from a hot and rare electron corona to an ultra-dense neutron liquid.
+In practice, this means describing the behavior of the matter from a densities of $\sim 10^{-2} \gcm$ to $\sim 10^{16} \gcm$, an impressive $18$ orders of magnitude range starting from a hot and rarefied electron corona to an ultra-dense neutron liquid.
 
 The structure of the star can be roughly divided into three distinct sections: atmosphere, crust, and core.
 Neutron star atmosphere holds a negligible amount of matter in comparison to the whole star, but it is important for the radiative processes.
 It is the radiation from the atmosphere that we actually observe.
-Both the crust and the core are typically divided into to two different layers that we call the outer and inner parts.
-Like the name implies, the crust can be understood as a (quasi-)solid layer surrounding the liquid core.
+%Both the crust and the core are typically divided into to two different layers that we call the outer and inner parts.
+The crust, like the name implies, can be understood as a solidified layer surrounding the liquid core.
 Physics describing the crust is relatively well known and same type of matter consisting of ions, protons, and electrons can be found inside white dwarf stars.
-Bulk of the matter, on the other hand, is located on the liquid neutron core.
-Detailed microphysics of the such matter are still unknown and this is then reflected in a large uncertainty in the actual size of the star that is still unconstrained.
+Bulk of the mass, on the other hand, is located on the liquid neutron core.
+Detailed microphysics of such matter are still unknown and this is reflected in a large uncertainty in the actual size of the star that is still unconstrained.
 
 We begin by giving an overview of the characteristics of each of the different layers.
 By combining this information, we can then build different models for the neutron stars and describe some more global aspects of them such as mass and radius.
 For this we need to solve the relativistic equations of hydrostatic equilibrium, that is also discussed.
-This enables us to build a mapping between the (un)known microphysics of the dense matter and the astrophysical observables.
+In the end, this enables us to build a mapping between the (un)known microphysics of the dense matter and the astrophysical observables.
 
 
 \section{Equation of state}
+%Often means dependency between $P$ and $\rho$. 
+%Or sometimes the associated energy density $\epsilon = \rho c^2$.
+%Also depends on $T$ but composed mainly on strongly degenerate fermions so so temperature dependency is negligible.
+%
+%Bulk property of the sea of fermions.
+%
+%Eos for $\rho > \nsat$ can not be produced in laboratory.
+%Can not be calculated because of the lack of precise many-body theory of strongly interacting particles.
+%
+%
+%Baryon mass $M_b$ that is sum of baryon masses.
+%Gravitational mass $M$ that is $M_b$ from where the gravitational binding energy is subtracted. \cite{Zwicky38}
+
+In thermodynamics, we speak of \emph{state variables} that describe a current state of the matter under a given physical conditions.
+These include, for example, the density $\rho$, pressure $P$, and temperature $T$ of the matter.
+Equation of state is a thermodynamical equation connecting these states variables together.
+Often, when focusing on neutron stars, what we mean by EoS is a function connecting the pressure and the density of the matter only, $P(\rho)$.
+
+The dependency on the rest of the variables such as temperature can be often forgotten because the matter is \emph{degenerate}.%
+\mnote{Degenerate matter}
+In contrast to the ``normal'' matter where a statistical moments such as temperature can be used to describe a large ensemble of particles, the degenerate matter is dominated by quantum mechanical effects of single particles.
+Because of the immense densities, a free particle in a degenerate matter is actually bounded into a finite volume.
+Inside this small volume, the energy levels of the particle are restricted to take only a discrete set of values called quantum states, because of the underlying wave-nature of the quantum mechanical description.
+Hence, a notion of temperature, for example, does not make much sense.
+
+Overview of the EoS for the full range of densities relevant to neutron stars is shown in \fig{fig:eos}.
+From here it is easy to see that temperature only plays a role in the very uppermost $\sim 10\,\mathrm{meters}$ of the atmosphere.
+Behavior of the matter is also quite well known all the way up to the crust-core interface, after which we start to see any deviation from different EoS models.
+In the Earthly laboratories we can probe the matter somewhere close to $10^{14} \gcm$, after which the densities becomes too great for us to handle in Earth.%
+\footnote{Maximum densities reached in the Earth are usually obtained by colliding heavy nucleons together, momentarily creating a core of even denser matter.
+The densest naturally occurring element found on top of planet Earth is osmium that has a density of ``just'' $\rho \approx \Ten{2.2}{1}\gcm$.
+}
+On the other hand, it is exactly starting from this density range that the bulk of the neutron star just starts.
+Other curious quirk of Nature is how all of the complicated microphysics gets reduced to simple line segments in the logarithmic scales, also known as polytropic pressure relations.
+In the following sections, we will focus on deriving these simple relations as it helps us in understanding the underlying physics.
+
 
 \begin{figure}
 \centering
-\includegraphics[width=16cm]{notes/eos/eos.pdf}
+\includegraphics[width=17cm]{notes/eos/eos.pdf}
 \caption{\label{fig:eos}
-Eos.
+Overview of the pressure versus density relation for the full range of densities relevant for neutron stars.
+Here the evolution of the pressure is shown against the densities depicted in the bottom vertical axis.
+Green solid line shows the EoS for matter at $T=10^6\Kelvin$, whereas blue line is for $T=\Ten{5}{6}\Kelvin$, and black for $T=10^7 \Kelvin$.
+Additionally, the upper vertical axis shows the evolution of the radial coordinate computed for one particular EoS (SLy, see \sect{sect:core}) and neutron star configuration (mass of $1.4\Msun$).
+Different shaded vertical regions show the corresponding interior structures of the star.
+Additionally, some interesting densities are highlighted with dashed red lines and text labels (see Sects.~\ref{sect:atmos}$-$\ref{sect:core}).
 }
 \end{figure}
 
-Often means dependency between $P$ and $\rho$. 
-Or sometimes the associated energy density $\epsilon = \rho c^2$.
-Also depends on $T$ but composed mainly on strongly degenerate fermions so so temperature dependency is negligible.
-
-Bulk property of the sea of fermions.
-
-Eos for $\rho > \nsat$ can not be produced in laboratory.
-Can not be calculated because of the lack of precise many-body theory of strongly interacting particles.
 
 
-Baryon mass $M_b$ that is sum of baryon masses.
-Gravitational mass $M$ that is $M_b$ from where the gravitational binding energy is subtracted. \cite{Zwicky38}
-
-
-\section{Atmosphere}
+\section{Atmosphere}\label{sect:atmos}
 Thin layer of plasma
 From centimeters in hot to millimeters in cold 
 Zavlin \& Pavlov 2002
@@ -222,7 +251,7 @@ Finally, nuclei disappear at the crust-core interface.
 
 
 
-\section{Liquid core}
+\section{Liquid core}\label{sect:core}
 \begin{figure}
 \centering
 \includegraphics[width=7.5cm]{notes/eos/dense_eos.pdf}
