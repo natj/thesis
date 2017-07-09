@@ -185,13 +185,18 @@ ax2.set_xlim(1.0e36, 1.0e24)
 ax2.set_xscale('log')
 ax2.set_ylim(0.0, 12.0)
 
-ax2.set_xlabel(r'Pressure $P$ (dyne cm$^{-2}$)')
+#ax2.set_ylabel(r'Radius $R$ (km)')
+ax2.set_xlabel(r'Pressure $P$ (dyne cm$^{-2}$)', color='blue')
 ax2.spines['top'].set_visible(None)
-#ax.spines['right'].set_visible(None)
 ax2.spines['left'].set_visible(None)
 ax2.yaxis.set_ticks_position('right')
 ax2.xaxis.set_ticks_position('bottom')
 
+#ticklab = ax2.yaxis.get_ticklabels()[0]
+#trans = ticklab.get_transform()
+#ax2.yaxis.set_label_coords(1.0e25, 6, transform=trans)
+
+ax2.text(1.0e25, 6.0, r'Radius $R$ (km)', rotation=90, size=7, ha='center', va='center')
 
 shadefac = 0.2
 fill_box(ax2, rad_crust, rad_surf, fmt={'facecolor':'k', 'alpha':0.1*shadefac, 'edgecolor':None})
@@ -212,8 +217,23 @@ for i, yloc in enumerate([0.0, 2, 4, 6, 8, 10, 12]):
 # map R to rho & P
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'tov'))
 from crust import SLyCrust
-from eoslib import get_eos, glue_crust_and_core
+from eoslib import get_eos, glue_crust_and_core, eosLib
 from tov import tov
+
+
+
+# other axis
+ax2b = ax2.twiny()
+ax2b.spines["top"].set_position(("outward", 15.0))
+ax2b.minorticks_on()
+ax2b.set_xlim(1.5, -0.07)
+ax2b.set_ylim(0.0, 12.0)
+ax2b.set_xlabel(r'Mass $M$ (M$_{\odot}$)', color='red')
+
+#ax2b.spines['top'].set_visible(None)
+ax2b.spines['left'].set_visible(None)
+#ax2b.yaxis.set_ticks_position('right')
+#ax2b.xaxis.set_ticks_position('bottom')
 
 
 
@@ -224,10 +244,28 @@ t = tov(eos)
 #for i in range(len(mass)):
 #    print mass[i], rad[i], rho[i]
 
-rhoc = 8.90215085445e+14
-rads, press, masses =  t.tovsolve(rhoc)
-rads /= 1.0e5
-ax2.plot(press, rads, "b-")
+#for key, value in eosLib.iteritems():
+for key in ['SLy']:
+    dense_eos = get_eos(key)
+    eos = glue_crust_and_core( SLyCrust, dense_eos )
+    t = tov(eos)
+    mass, rad, rho = t.mass_radius()
+    rhoc = 0.0
+    for i in range(len(mass)):
+        #print mass[i], rad[i], rho[i]
+        if mass[i] >= 1.4:
+            break
+        else:
+            rhoc = rho[i]
+
+    print "central density=", rhoc
+    rads, press, masses =  t.tovsolve(rhoc)
+    rads /= 1.0e5
+    ax2.plot(press, rads, "b-")
+
+    masses /= 1.988e33
+    ax2b.plot(masses, rads, "r-")
+
 
 
 # Remove the last ytick label
@@ -237,6 +275,12 @@ labels = [tick.get_text() for tick in ax2.get_xticklabels()]
 labels[2] = ''
 ax2.set_xticklabels(labels)
 
-plt.subplots_adjust(left=0.15, bottom=0.16, right=0.98, top=0.95, wspace=0.1, hspace=0.1)
+
+
+
+
+
+
+plt.subplots_adjust(left=0.1, bottom=0.12, right=0.98, top=0.85, wspace=0.1, hspace=0.1)
 plt.savefig('slice.pdf')
 
