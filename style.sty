@@ -1,5 +1,7 @@
 \ProvidesPackage{style}
 
+\usepackage{geometry}
+
 
 %Color related stuff
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -24,7 +26,7 @@
 
 %Titles of content
 \usepackage{tocloft}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{3}
 
 \renewcommand{\cftdot}{\textcolor[gray]{0.75}{--}}
 \renewcommand{\cftdotsep}{0}
@@ -34,7 +36,16 @@
 
 
 %Margin notes
-\usepackage{marginnote}
+\usepackage{marginnote,letltxmacro}
+%\usepackage{marginnote}
+\usepackage{etoolbox}
+
+%\renewcommand*{\raggedleftmarginnote}{\centering}
+\renewcommand*{\marginnoteleftadjust}{12.4cm}
+
+%\reversemarginpar
+\renewcommand*{\marginfont}{\footnotesize}
+\LetLtxMacro\mnote\marginnote
 
 
 %symbols for footnotes
