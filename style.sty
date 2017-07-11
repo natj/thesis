@@ -49,20 +49,20 @@
 
 
 %symbols for footnotes
-\usepackage[symbol, perpage]{footmisc}
-\newcommand{\mfootnote}{\fnsymbol{footnote}}
-\makeatletter
-\def\@xfootnote[#1]{%
-  \protected@xdef\@thefnmark{#1}%
-  \@footnotemark\@footnotetext}
-\makeatother
+\usepackage[perpage]{footmisc}
+%\newcommand{\mfootnote}{\fnsymbol{footnote}}
+%\makeatletter
+%\def\@xfootnote[#1]{%
+%  \protected@xdef\@thefnmark{#1}%
+%  \@footnotemark\@footnotetext}
+%\makeatother
 
 
 
 
 %Double column footnotes
-\usepackage{dblfnote}
-\DFNalwaysdouble % for this example
+%\usepackage{dblfnote}
+%\DFNalwaysdouble % for this example
 
 %\usepackage[noreledmac]{eledmac}
 %\usepackage{etoolbox}
@@ -147,13 +147,14 @@
 
 %-------------------------------------------------- 
 %Citation formatting
-\usepackage[style=numeric, 
-            backend=biber,
-            mincitenames=1,
-            maxcitenames=3,
-            maxbibnames=100,
-            backref=true, 
-            sorting=none]{biblatex}
+%\usepackage[style=numeric-comp, 
+%            backend=biber,
+%            mincitenames=1,
+%            maxcitenames=3,
+%            maxbibnames=100,
+%            backref=true, 
+%            sorting=none]{biblatex}
+\usepackage[style=numeric-comp,sorting=none,citetracker,pagetracker=page]{biblatex}
 
 \input{journals}
 
@@ -162,23 +163,126 @@
 \DeclareFieldFormat[article]{year}{(#1)}
 \DefineBibliographyStrings{english}{andothers={\emph{et al}\adddot}}
 
-\DeclareCiteCommand{\cite}[\mkbibfootnote]
-{\usebibmacro{prenote}}{
-    \usebibmacro{citeindex}
-    \mkbibbrackets{\usebibmacro{cite}}
-    \setunit{\addnbspace}
-    \printnames{author}
-    \setunit{\labelnamepunct}
-    \printfield{journaltitle}
-    \newunit
-    \printfield{year}
-}
-{\addsemicolon\space}
-{\usebibmacro{postnote}}
 
 
 
+% https://tex.stackexchange.com/questions/71526/repeat-the-same-reference-in-footnote-on-different-pages
 
+\makeatletter
+% user-level citation command
+\DeclareCiteCommand{\sfcite}[\cbx@superscript]
+  {\usebibmacro{cite:init}%
+   \let\multicitedelim\supercitedelim
+   \iffieldundef{prenote}{}{\BibliographyWarning{Ignoring prenote argument}}%
+   \iffieldundef{postnote}{}{\BibliographyWarning{Ignoring postnote argument}}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:super:foot}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}}
+
+% save instcount, save key and last inline instcount if seen first on page
+\newbibmacro*{cite:super:foot}{%
+  \xdef\cbx@key{\thefield{entrykey}}%
+  \ifsamepage{\value{instcount}}{\csuse{cbx@instcount@\cbx@key}}{}{%
+    \listxadd{\cbx@savelist}{\cbx@key}%
+    \ifnumequal{\value{cbx@tempcntd}}{0}{%
+      \defcounter{cbx@tempcntc}{\value{instcount}}%
+      \loop\ifnum\value{cbx@tempcntc}>0
+        \ifsamepage{\value{instcount}}{\value{cbx@tempcntc}}
+          {\ifcsundef{blx@fnpage@\number\numexpr\value{cbx@tempcntc}}
+             {\setcounter{cbx@tempcntd}{\value{cbx@tempcntc}}}{}%
+           \stepcounter{cbx@tempcntc}}
+          {\setcounter{cbx@tempcntc}{0}}%
+      \repeat}{}}%
+  \csnumgdef{cbx@instcount@\cbx@key}{\value{instcount}}}
+\let\cbx@savelist\@empty
+\newcounter{cbx@tempcntc}
+\newcounter{cbx@tempcntd}
+\setcounter{cbx@tempcntd}{0}
+
+\newrobustcmd*{\cbx@superscript}[1]{%
+  \global\toggletrue{cbx@sfcite}
+  \mkbibsuperscript{#1}%
+  \cbx@footnote%
+  \global\togglefalse{cbx@sfcite}}
+\newtoggle{cbx@sfcite}
+
+\AtEveryCitekey{%
+  \ifciteseen{}{\csnumgdef{cbx@instcount@\thefield{entrykey}}{-1}}%
+  \iftoggle{cbx@sfcite}{}{\cbx@footnote}}
+\AtEveryBibitem{\cbx@footnote}
+\AtEveryLositem{\cbx@footnote}
+
+% defer citation footnotes to last inline reference instance on page
+\newrobustcmd*{\cbx@footnote}{%
+  \ifboolexpr{ not test {\ifdefempty{\cbx@savelist}}
+               and test {\ifnumequal{\value{instcount}}{\value{cbx@tempcntd}}} }
+    {\cbx@sortlist@init%
+     \let\do\cbx@do
+     \dolistloop{\cbx@sortlist}%
+     \global\let\cbx@savelist\@empty
+     \setcounter{cbx@tempcntd}{0}}{}}
+
+% print footnotes in 'sorting' order
+\def\cbx@do#1{%
+  \ifinlist{#1}{\cbx@savelist}
+    {\begingroup
+     \blx@resetdata
+     \blx@getdata@cite{#1}%
+     \blx@setoptions@type\abx@field@entrytype
+     \blx@setoptions@entry
+     \blx@execute
+     \blx@beglang
+     \iffieldundef{shorthand}
+       {\gdef\@thefnmark{\printfield{labelprefix}\printfield{labelnumber}}}
+       {\gdef\@thefnmark{\printfield{shorthand}}}%
+     \gappto\@thefnmark{\blx@initunit}%
+     \ifhyperref
+       {\H@@footnotetext{
+           \printnames{author}
+           \setunit{\labelnamepunct}
+           \printfield{journaltitle}
+           \newunit
+           \printfield{year}
+       }}
+       {\@footnotetext{
+           \printnames{author}
+           \setunit{\labelnamepunct}
+           \printfield{journaltitle}
+           \newunit
+           \printfield{year}
+       }}%
+     \blx@endlang
+     \endgroup}
+    {}}
+
+
+       %{\H@@footnotetext{\blx@driver\abx@field@entrytype}}
+       %{\@footnotetext{\blx@driver\abx@field@entrytype}}%
+
+
+%{\usebibmacro{prenote}}{
+%    \usebibmacro{citeindex}
+%    \mkbibbrackets{\usebibmacro{cite}}
+%    \setunit{\addnbspace}
+%    \printnames{author}
+%    \setunit{\labelnamepunct}
+%    \printfield{journaltitle}
+%    \newunit
+%    \printfield{year}
+%}
+
+% access internal list of sorted entry keys
+\def\cbx@sortlist@init{%
+  \global\letcs{\cbx@sortlist}
+    {blx@slist@entry@\the\c@refsection @\blx@refcontext@context}}
+\let\cbx@sortlist\@empty
+\makeatother
+
+
+% Own citation command
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 
 %Separate driver for the bibliography listing
