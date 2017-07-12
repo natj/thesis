@@ -37,20 +37,18 @@
 
 %Margin notes
 \usepackage{marginnote,letltxmacro}
-%\usepackage{marginnote}
 \usepackage{etoolbox}
 
 %\renewcommand*{\raggedleftmarginnote}{\centering}
 \renewcommand*{\marginnoteleftadjust}{12.4cm}
 
-%\reversemarginpar
 \renewcommand*{\marginfont}{\footnotesize}
 \LetLtxMacro\mnote\marginnote
 
 
 %symbols for footnotes
 \usepackage[symbol, perpage]{footmisc}
-\newcommand{\mfootnote}{\fnsymbol{footnote}}
+%\newcommand{\mfootnote}{\fnsymbol{footnote}}
 \makeatletter
 \def\@xfootnote[#1]{%
   \protected@xdef\@thefnmark{#1}%
@@ -64,25 +62,12 @@
 \usepackage{dblfnote}
 \DFNalwaysdouble % for this example
 
-%\usepackage[noreledmac]{eledmac}
-%\usepackage{etoolbox}
-%\patchcmd{\twocolfootfmtX}{\raggedright}{}{}{}
-%\foottwocolX{A}
-%\let\footnote\footnoteA
-%\usepackage{lipsum}
-%\setlength{\parskip}{0pt}
-
 
 % Quotes
 \usepackage{csquotes}
 
 
-
-
 %Some baseline lengths for styles
-%\usepackage{dblfnote}
-%\DFNalwaysdouble % for this example
-
 \def\hsp{\hspace{10pt}}
 \def\dsp{\hspace{20pt}}
 
@@ -96,7 +81,6 @@
 \titleformat{\chapter}[hang]{\Huge\fontfamily{phv}\selectfont}{\thechapter\hsp{\textcolor{gray75}{\rule[-0.75ex]{0.08ex}{1.5em}}}\hsp}{0pt}{\huge\bfseries}{}
 
 
-%\renewcommand{\titlefont}{\Huge\fontfamily{phv}\selectfont\bfseries}
 \newcommand*{\titlefont}{\Huge\fontfamily{phv}\selectfont\bfseries}
 
 
@@ -121,16 +105,6 @@
 
 
 %-------------------------------------------------- 
-%\usepackage{graphicx,eso-pic}
-%\newcommand\chapterimage[2][]{%
-%  \AddToShipoutPictureBG*{% Add picture to BackGround on this page only
-%    \AtTextUpperLeft{% Position at upper left of text block
-%      \hspace*{\textwidth}% Move over to upper right of text block
-%      \llap{% Ignore horizontal width and overlap to the left
-%        \smash{% Ignore vertical height
-%          \raisebox{-\height}{% Lower so top touches baseline
-%            \includegraphics[#1]{#2}}}}}}}% Include image with options
-
 \usepackage{tikz}% mandatory for the \chapterImage command
 %\newcommand\chapterimage[2][]{
 %  \begin{tikzpicture}[overlay,
@@ -217,7 +191,7 @@
 
 \DefineBibliographyStrings{english}{
 backrefpage = {see p.},
-backrefpages = {see pp.}
+backrefpages = {see pp.},
 }
 
 

@@ -2,6 +2,7 @@ all:
 	pdflatex thesis
 	biber thesis
 	pdflatex thesis
+	pdflatex thesis
 	#dvips paper1
 	#ps2pdf paper1
 	#rm *-eps-converted-to.pdf
