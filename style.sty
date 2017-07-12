@@ -60,9 +60,6 @@
 
 
 
-%Double column footnotes
-%\usepackage{dblfnote}
-%\DFNalwaysdouble % for this example
 
 %\usepackage[noreledmac]{eledmac}
 %\usepackage{etoolbox}
@@ -77,7 +74,20 @@
 \usepackage{csquotes}
 
 
+%\usepackage[noeledmac]{ledmac}
+%%\footthreecolX{A}
+%\foottwocolX{A}
+%\let\footnote\footnoteB
 
+
+\usepackage{bigfoot}
+\DeclareNewFootnote{Default}
+\DeclareNewFootnote{B}[alph]
+\MakeSortedPerPage{B}% perhaps also useful to know about
+
+
+%\usepackage[extrafootnotefeatures]{bidi}
+%\threecolumnfootnotes
 
 %Some baseline lengths for styles
 %\usepackage{dblfnote}
@@ -154,7 +164,7 @@
 %            maxbibnames=100,
 %            backref=true, 
 %            sorting=none]{biblatex}
-\usepackage[style=numeric-comp,sorting=none,citetracker,pagetracker=page]{biblatex}
+\usepackage[style=numeric-comp,sorting=none,citetracker,pagetracker=page, backref=true]{biblatex}
 
 \input{journals}
 
@@ -170,7 +180,7 @@
 
 \makeatletter
 % user-level citation command
-\DeclareCiteCommand{\sfcite}[\cbx@superscript]
+\DeclareCiteCommand{\cite}[\cbx@superscript]
   {\usebibmacro{cite:init}%
    \let\multicitedelim\supercitedelim
    \iffieldundef{prenote}{}{\BibliographyWarning{Ignoring prenote argument}}%
@@ -202,21 +212,21 @@
 \setcounter{cbx@tempcntd}{0}
 
 \newrobustcmd*{\cbx@superscript}[1]{%
-  \global\toggletrue{cbx@sfcite}
+  \global\toggletrue{cbx@cite}
   \mkbibsuperscript{#1}%
   \cbx@footnote%
-  \global\togglefalse{cbx@sfcite}}
-\newtoggle{cbx@sfcite}
+  \global\togglefalse{cbx@cite}}
+\newtoggle{cbx@cite}
 
 \AtEveryCitekey{%
   \ifciteseen{}{\csnumgdef{cbx@instcount@\thefield{entrykey}}{-1}}%
-  \iftoggle{cbx@sfcite}{}{\cbx@footnote}}
+  \iftoggle{cbx@cite}{}{\cbx@footnote}}
 \AtEveryBibitem{\cbx@footnote}
 \AtEveryLositem{\cbx@footnote}
 
 % defer citation footnotes to last inline reference instance on page
 \newrobustcmd*{\cbx@footnote}{%
-  \ifboolexpr{ not test {\ifdefempty{\cbx@savelist}}
+    \ifboolexpr{ not test {\ifdefempty{\cbx@savelist}} 
                and test {\ifnumequal{\value{instcount}}{\value{cbx@tempcntd}}} }
     {\cbx@sortlist@init%
      \let\do\cbx@do
@@ -257,7 +267,6 @@
      \endgroup}
     {}}
 
-
        %{\H@@footnotetext{\blx@driver\abx@field@entrytype}}
        %{\@footnotetext{\blx@driver\abx@field@entrytype}}%
 
@@ -282,8 +291,16 @@
 
 
 % Own citation command
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+%\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
+
+
+
+%Double column footnotes
+%\def\CurrentOption{}
+%\usepackage{dblfnote}
+%\DFNalwaysdouble
+%\DFNtrysingle
 
 %Separate driver for the bibliography listing
 \DeclareBibliographyDriver{article}{
