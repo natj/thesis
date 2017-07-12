@@ -84,9 +84,38 @@ Right side of the figure shows a schematic presentation of the star's interiors 
 \section{Atmosphere}\label{sect:atmos}
 %Thin layer of plasma
 %From centimeters in hot to millimeters in cold 
-%Zavlin \& Pavlov 2002
+%Zavlin \& Pavlov 2002\cite{ZP02}
+\cite{Potekhin14}
 %Where spectrum or thermal electromagnetic radiation is formed.
 %Spectrum, beaming and polarization of emerging radiation can be determined from radiation transfer problem in atmospheric layers.
+%thermal bb 
+%magnetosphere powerlaw-like
+
+radiation espaces to the surrounding space without considerable losses.
+
+Gaseous uppermost layers.
+For strong magnetic field strenghts and low temperatures, the hydrogen can condensate into a liquid or solid surface.
+This is, however, quite rare and usually the hydrogen remains gaseous forming an atmosphere.
+Properties of emergent radiation strongly depend on the chemical composition of the atmosphere.
+Difference to normal stars is that we only expect the composition to consist of the lightest element as heavier ones sink to the bottom.\cite{AI80}
+Consequence of gravitational force.
+Enormous surface gravitational acceleration of $g\sim 10^14$ to $10^{15} \cmss$.
+Strong gravitational field also bends the photon trajectories.\cite{PFC83}
+First low-field models by pioneering work of Romani.\cite{Romani87}
+
+Compactness parameter
+\be
+u = \frac{ R_{\mathrm{S}} }{R}
+\ee
+and
+\be
+R_{\mathrm{S}} = \frac{2 G M}{c^2} \approx 2.95 \frac{M}{\Msun} \km
+\ee
+Gravitational acceleration under general relativistic theory is then
+\be
+g = \frac{G M}{R^2} \frac{1}{\sqrt{1-u}} = \Ten{1.38}{14} \frac{1}{\sqrt{1-u}} \left( \frac{M}{\Msun} \right) \left( \frac{R}{10\km} \right)^2 \cmss
+\ee
+
 
 Atmosphere of a star is the first and uppermost layer responsible for the emergent radiation.
 It consists of a thin layer of plasma and ranges from a few millimeters to couple of centimeters in height.
@@ -100,7 +129,57 @@ geometry of the system
 mass and radii.
 
 
+
+Because the thickness of the atmosphere is much smaller than the radius of the star, the atmosphere can be considered in plane-parallel approximation.
+Rather high densities, on the other hand, allow to consider the plasma of the atmosphere in local thermodynamical equilibrium.
+
+The standard approach in describing the atmosphere structure includes solving three main equations.
+
+Firstly, radiative transfer equation for the specific spectral intensity $I_{\nu}$ is
+\be
+\mu \frac{d I_{\nu}}{dy} = k_{\nu} ( I_{\nu} - S_{\nu})
+\ee
+where $\mu$ is the cosine of the angle $\theta$ between the propagated radiation and the surface normal, $y$ is the column density (mass per area) defined via $dy = \rho dz$, where $z$ is the horizontal distance from the surface, $k_{\nu} = \alpha_{\nu} + \sigma_{\nu}$ is the total radiative opacity including contributions from the ``true'' opacity $\alpha_{\nu}$ and from the scattering opacity $\sigma_{\nu}$.
+In addition we need the source function 
+\be
+S_{\nu} = (\sigma_{\nu} J_{\nu} + \alpha B_{\nu}) k_{\nu}^{-1}
+\ee, that can be described using the mean spectral intensity 
+\be
+J_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu} d\mu
+\ee, and 
+\be
+B_{\nu} = XX
+\ee
+is the thermal Planck function.
+As an boundary conditions for the RTE we can use $I_{\nu} = 0$ for $\mu < 0$ at $y = 0$.
+
+The atmospheres are also usually considered to be in radiative and hydrostatic equilibirum. 
+First requirement can be formulated as 
+\be
+\int_0^{\infty} d\nu \int_{-1}^{+1} \mu I_{\nu} d\mu = \sigma_{\mathrm{SB}} T_{\mathrm{eff}},
+\ee
+where $\sigma_{\mathrm{SB}}$ is the Stefan-Boltzmann constant and $T_{\mathrm{eff}}$ is the effective temperature of the atmosphere.
+The second, hydrostatic equilibrium, demands that
+\be
+\frac{dP}{dy} = g - g_{\mathrm{rad}}
+\ee
+if the radiative pressure forces are neglected.
+
+Finally, we need to supplement these equations with an equation connecting the pressure and density, the EoS.
+For the rarefied atmosphere, the ideal gas law is an excellent approximation
+\be
+P = nkT.
+\ee
+
+
 Eddington limit of where radiation force exceeds the gravitational one.
+\be
+L_{\mathrm{Edd}} = \frac{4\pi G M m_{\mathrm{p}} }{\sigma_{\mathrm{T}} } \approx \Ten{1.3}{38} \left( \frac{M}{\Msun} \right) \ergs
+\ee
+
+
+
+
 
 
 \section{Crust}
