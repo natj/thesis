@@ -14,7 +14,7 @@ Detailed microphysics of such matter are still unknown and this is reflected in 
 
 We begin by giving an overview of the characteristics of each of the different layers.
 By combining this information, we can then build different models for the neutron stars and describe some more global aspects of them such as mass and radius.
-For this we need to solve the relativistic equations of hydrostatic equilibrium, that is also discussed.
+For this we need to solve the relativistic equations of hydrostatic equilibrium, that are also discussed.
 In the end, this enables us to build a mapping between the (un)known microphysics of the dense matter and the astrophysical observables.
 
 
@@ -85,91 +85,116 @@ Right side of the figure shows a schematic presentation of the star's interiors 
 %Thin layer of plasma
 %From centimeters in hot to millimeters in cold 
 %Zavlin \& Pavlov 2002\cite{ZP02}
-\cite{Potekhin14}
+%\cite{Potekhin14}
 %Where spectrum or thermal electromagnetic radiation is formed.
 %Spectrum, beaming and polarization of emerging radiation can be determined from radiation transfer problem in atmospheric layers.
 %thermal bb 
 %magnetosphere powerlaw-like
-
-radiation espaces to the surrounding space without considerable losses.
-
-Gaseous uppermost layers.
-For strong magnetic field strenghts and low temperatures, the hydrogen can condensate into a liquid or solid surface.
-This is, however, quite rare and usually the hydrogen remains gaseous forming an atmosphere.
-Properties of emergent radiation strongly depend on the chemical composition of the atmosphere.
-Difference to normal stars is that we only expect the composition to consist of the lightest element as heavier ones sink to the bottom.\cite{AI80}
-Consequence of gravitational force.
-Enormous surface gravitational acceleration of $g\sim 10^14$ to $10^{15} \cmss$.
-Strong gravitational field also bends the photon trajectories.\cite{PFC83}
-First low-field models by pioneering work of Romani.\cite{Romani87}
-
-Compactness parameter
-\be
-u = \frac{ R_{\mathrm{S}} }{R}
-\ee
-and
-\be
-R_{\mathrm{S}} = \frac{2 G M}{c^2} \approx 2.95 \frac{M}{\Msun} \km
-\ee
-Gravitational acceleration under general relativistic theory is then
-\be
-g = \frac{G M}{R^2} \frac{1}{\sqrt{1-u}} = \Ten{1.38}{14} \frac{1}{\sqrt{1-u}} \left( \frac{M}{\Msun} \right) \left( \frac{R}{10\km} \right)^2 \cmss
-\ee
-
+%radiation espaces to the surrounding space without considerable losses.
+%Gaseous uppermost layers.
+%For strong magnetic field strenghts and low temperatures, the hydrogen can condensate into a liquid or solid surface.
+%This is, however, quite rare and usually the hydrogen remains gaseous forming an atmosphere.
 
 Atmosphere of a star is the first and uppermost layer responsible for the emergent radiation.
 It consists of a thin layer of plasma and ranges from a few millimeters to couple of centimeters in height.
+In most situations the plasma is in a gaseous state, but in some more rare cases when the magnetic field is extraordinarily strong and the temperature is low, the plasma can condensate into a liquid or a solid surface.
+Such condensed surfaces are, however, rare and usually the gaseous description is more than enough.\cite[for a review, see][]{ZP02, Potekhin14}
+
+%Observationally we usually see either thermal radiation originating directly from the star's atmosphere, or a non-thermal power-law like component from the surrounding magnetosphere, or a combination of both.\cite[for a review, see][]{ZP02, Potekhin14}
+%Properties of emergent radiation strongly depend on the chemical composition of the atmosphere.
+%Difference to normal stars is that we only expect the composition to consist of the lightest element as heavier ones sink to the bottom.\cite{AI80}
+%Consequence of gravitational force.
+
+Properties of the emergent thermal radiation strongly depend on the chemical composition of the atmosphere.
+In the atmospheres of normal stars the composition is a mixture of multiple elements.
+The most stable chemical element on the surface of a neutron star is iron.
+However, even a small accreted mass of $10^{-17}\Msun$, originating from the surrounding interstellar medium, is enough to cover the whole star, and hence a variety of elements are also expected in the neutron star atmospheres.
+On the other hand, the enormous gravity results in an effective separation of elements leading to a strong sedimentation of the atmosphere where the lighter elements are expected to lay on top of the heavier ones.\cite{AI80}
+Hence, the atmosphere is usually expected to consist of mainly hydrogen.
 
 
-Contains information on the parameters of the surface:
-effective temperature
-surface gravity
-chemical composition
-geometry of the system
-mass and radii.
+The effects from the gravity can be quantified by considering a so-called compactness parameter
+\be
+u = \frac{ R_{\mathrm{S}} }{R}
+\ee
+where $R$ is the radius of the neutron star and the corresponding Schwarzchild radius is defined as
+\be
+R_{\mathrm{S}} = \frac{2 G M}{c^2} \approx 2.95 \frac{M}{\Msun} \km,
+\ee
+where $G$ is the gravitational constant, $c$ is the speed of light, and $M$ is the mass of the star.
+Hence, a neutrons star has a compactness parameter in the range of $u \approx 1/5$ to $1/2$ resulting in a considerable general relativistic corrections.
+In comparison, the Sun has $u \approx \Ten{4.24}{-6}$.
+Gravitational acceleration under general relativistic theory is
+\be
+g = \frac{G M}{R^2} \frac{1}{\sqrt{1-u}} = \Ten{1.38}{14} \frac{1}{\sqrt{1-u}} \left( \frac{M}{\Msun} \right) \left( \frac{10\km}{R} \right)^2 \cmss.
+\ee
+Hence, a surface gravitational accelerations $g$ of $\sim 10^{14}$ to $\sim 10^{15}\cmss$ are expected for neutron stars.
+By considering a barometric atmosphere we can also estimate the scale height as
+\be
+H_{\mathrm{a}} = \frac{k_{\mathrm{B}} T}{m_i g} \approx \frac{0.83}{A} \left( \frac{T}{10^6\Kelvin} \right) \left( \frac{10^{14} \cmss}{g} \right) \cm
+\ee
+where $k_{\mathrm{B}} = \Ten{1.38}{-16} \erg \unitspace \Kelvin^{-1}$ is the Boltzmann constant, $T$ is the temperature of the atmosphere, $m_i = A m_u$, and $m_u \approx \Ten{1.66}{-24}\g$ is the atomic mass unit.
+From here, the typical scale height values of $\sim 1\cm$ to $\sim 10\cm$ are re-obtained for atmospheres of $T=10^6$ and $10^7\Kelvin$.\cite{ZP02, Potekhin14}
+Strong gravitational field also bends the photon trajectories.\cite{PFC83}
+Hence, in addition to the radius $R$ of the star as measured in the local reference frame, another \emph{apparent} radius, as measured by an observer at infinity, 
+\be
+R_{\infty} = \frac{R}{\sqrt{1-u}},
+\ee
+is usually needed when describing the observable features of the atmosphere.
+From here it is then clear that the atmosphere and the emerging radiation encodes information from the physical parameters of the star.
+More specifically information about the temperature, surface gravity, chemical composition, compactness can be obtained.
 
+The standard approach in describing the atmosphere structure includes solving three main equations of radiative transfer, hydrostatic balance, and energy conservation.
+First low-$B$ field models of neutron star atmospheres were presented in the pioneering work of Romani.\cite{Romani87}
+Let us next see, walk through these equations, as they are rater simple.
+A more general description for the atmosphere model computations are given in \red{Sect.XX}\cite{NKS15}, where the full relativistic electron scattering is also taken into account.
 
-
-Because the thickness of the atmosphere is much smaller than the radius of the star, the atmosphere can be considered in plane-parallel approximation.
+Because the thickness of the atmosphere is much smaller than the radius of the star,%
+\footnote{Recall the scale height of $1$ to $10\cm$ in comparison to the radius of $10^6\cm$.}
+the atmosphere can be considered in plane-parallel approximation.
 Rather high densities, on the other hand, allow to consider the plasma of the atmosphere in local thermodynamical equilibrium.
 
-The standard approach in describing the atmosphere structure includes solving three main equations.
-
-Firstly, radiative transfer equation for the specific spectral intensity $I_{\nu}$ is
+Spectrum, beaming and polarization of emerging radiation can be determined from radiation transfer problem in atmospheric layers.
+Firstly, radiative transfer equation for the specific spectral intensity $I_{\nu}$, of photon frequency $\nu$ is given as
 \be
 \mu \frac{d I_{\nu}}{dy} = k_{\nu} ( I_{\nu} - S_{\nu})
 \ee
 where $\mu$ is the cosine of the angle $\theta$ between the propagated radiation and the surface normal, $y$ is the column density (mass per area) defined via $dy = \rho dz$, where $z$ is the horizontal distance from the surface, $k_{\nu} = \alpha_{\nu} + \sigma_{\nu}$ is the total radiative opacity including contributions from the ``true'' opacity $\alpha_{\nu}$ and from the scattering opacity $\sigma_{\nu}$.
 In addition we need the source function 
 \be
-S_{\nu} = (\sigma_{\nu} J_{\nu} + \alpha B_{\nu}) k_{\nu}^{-1}
-\ee, that can be described using the mean spectral intensity 
+S_{\nu} = (\sigma_{\nu} J_{\nu} + \alpha B_{\nu}) k_{\nu}^{-1},
+\ee
+where the scattering term is proportional to the mean spectral intensity
 \be
 J_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu} d\mu
-\ee, and 
-\be
-B_{\nu} = XX
 \ee
-is the thermal Planck function.
-As an boundary conditions for the RTE we can use $I_{\nu} = 0$ for $\mu < 0$ at $y = 0$.
-
-The atmospheres are also usually considered to be in radiative and hydrostatic equilibirum. 
-First requirement can be formulated as 
+and the ``true'' absorption term to the thermal Planck function
+\be
+B_{\nu}(T) = \frac{\hbar \nu^3}{4 \pi^3 c^2} \frac{1}{\exp \left[ \hbar \nu/(k_{\mathrm{B}}T) \right] -1 },
+\ee
+where $\hbar = h/2\pi = \Ten{1.054}{27} \unitspace \erg \unitspace \mathrm{s}$ is the Planck constant $h$ divided by $2\pi$.
+As an boundary conditions for this equation, we can use $I_{\nu} = 0$ for $\mu < 0$ at $y = 0$ (i.e., the surface).
+The atmospheres are also usually considered to be in radiative and hydrostatic equilibrium, i.e., (quasi-)stationary.
+The first requirement can be formulated as 
 \be
 \int_0^{\infty} d\nu \int_{-1}^{+1} \mu I_{\nu} d\mu = \sigma_{\mathrm{SB}} T_{\mathrm{eff}},
 \ee
 where $\sigma_{\mathrm{SB}}$ is the Stefan-Boltzmann constant and $T_{\mathrm{eff}}$ is the effective temperature of the atmosphere.
-The second, hydrostatic equilibrium, demands that
+The second hydrostatic equilibrium, demands that
 \be
-\frac{dP}{dy} = g - g_{\mathrm{rad}}
+\frac{dP}{dy} = g - g_{\mathrm{rad}},
 \ee
-if the radiative pressure forces are neglected.
-
-Finally, we need to supplement these equations with an equation connecting the pressure and density, the EoS.
+where, in addition to the gravitational acceleration $g$ we need the radiative acceleration
+\be
+g_{\mathrm{rad}} = \frac{d P_{\mathrm{rad}}}{dy} = \frac{2\pi}{c} \frac{d}{dy} \int_0^{\infty} d\nu \int_{-1}^{+1} \mu^2 I_{\nu} d\mu,
+\ee
+where $P_{\mathrm{rad}}$ is the radiative pressure that can be described via the second moment of the radiative transfer equation.
+Finally, we need to supplement these equations with an equation connecting the pressure and density.
 For the rarefied atmosphere, the ideal gas law is an excellent approximation
 \be
-P = nkT.
+P = n k_{\mathrm{B}} T,
 \ee
+where $n$ is the number density of particles.
 
 
 Eddington limit of where radiation force exceeds the gravitational one.
