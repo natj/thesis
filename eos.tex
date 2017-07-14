@@ -32,6 +32,29 @@ In the end, this enables us to build a mapping between the (un)known microphysic
 %Baryon mass $M_b$ that is sum of baryon masses.
 %Gravitational mass $M$ that is $M_b$ from where the gravitational binding energy is subtracted. \cite{Zwicky38}
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=16cm]{figs/slice/atmos.pdf}
+\caption{
+Schematic view of neutron star structure.
+}
+\end{figure}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=16cm]{notes/eos/eos.pdf}
+\caption{\label{fig:eos}
+Overview of the pressure versus density relation for the full range of densities relevant for neutron stars.
+Here the evolution of the pressure is shown against the densities depicted in the bottom vertical axis.
+Green solid line shows the EoS for matter at $T=10^6\Kelvin$, whereas blue line is for $T=\Ten{5}{6}\Kelvin$, and black for $T=10^7 \Kelvin$.
+Additionally, the upper vertical axis shows the evolution of the radial coordinate computed for one particular EoS (SLy, see \sect{sect:core}) and neutron star configuration (mass of $1.4\Msun$).
+Different shaded vertical regions show the corresponding interior structures of the star.
+Additionally, some interesting densities are highlighted with dashed red lines and text labels (see Sects.~\ref{sect:atmos}$-$\ref{sect:core}).
+}
+\end{figure}
+
+
 In thermodynamics, we speak of \emph{state variables} that describe a current state of the matter under a given physical conditions.
 These include, for example, the density $\rho$, pressure $P$, and temperature $T$ of the matter.
 Equation of state is a thermodynamical equation connecting these states variables together.
@@ -45,8 +68,7 @@ Inside this small volume, the energy levels of the particle are restricted to ta
 Hence, a notion of temperature, for example, does not make much sense.
 
 Overview of the EoS for the full range of densities relevant to neutron stars is shown in \fig{fig:eos}.
-Another perspective is shown in \fig{fig:slice} that visualizes the dependency of the pressure and cumulative mass of the star against the radial coordinate as measured starting from the core.
-From here it is easy to see that temperature only plays a role in the very uppermost $\sim 10\,\mathrm{meters}$ of the atmosphere.
+From here it is easy to see that temperature only plays a role in the very uppermost $\sim 10\,\mathrm{meters}$ of the stars interiors.
 Behavior of the matter is also quite well known all the way up to the crust-core interface, after which we start to see larger deviations because of the different EoS models.
 In the Earthly laboratories we can probe the matter somewhere close to $10^{14} \gcm$, after which the densities becomes too great for us to handle in.%
 \footnote{Maximum densities reached in the Earth are usually obtained by colliding heavy nucleons together, momentarily creating a core of even denser matter.
@@ -55,31 +77,6 @@ The densest naturally occurring element found on top of planet Earth is osmium t
 On the other hand, it is exactly starting from this density range that the bulk of the neutron star just starts.
 Another curious quirk of Nature is how all of the complicated microphysics gets reduced to simple line segments in the logarithmic scales, also known as polytropic pressure relations.
 In the following sections, we will focus on deriving these simple relations as it helps us in understanding the underlying physics.
-
-
-\begin{figure}
-\centering
-\includegraphics[width=17cm]{notes/eos/eos.pdf}
-\caption{\label{fig:eos}
-Overview of the pressure versus density relation for the full range of densities relevant for neutron stars.
-Here the evolution of the pressure is shown against the densities depicted in the bottom vertical axis.
-Green solid line shows the EoS for matter at $T=10^6\Kelvin$, whereas blue line is for $T=\Ten{5}{6}\Kelvin$, and black for $T=10^7 \Kelvin$.
-Additionally, the upper vertical axis shows the evolution of the radial coordinate computed for one particular EoS (SLy, see \sect{sect:core}) and neutron star configuration (mass of $1.4\Msun$).
-Different shaded vertical regions show the corresponding interior structures of the star.
-Additionally, some interesting densities are highlighted with dashed red lines and text labels (see Sects.~\ref{sect:atmos}$-$\ref{sect:core}).
-}
-\end{figure}
-
-
-\begin{figure}
-\centering
-\includegraphics[width=17cm]{figs/slice/slice.pdf}
-\caption{\label{fig:slice}
-Overview of the neutron star structure.
-Right side of the figure shows a schematic presentation of the star's interiors against the radial coordinate, whereas the left side shows the pressure (blue; bottom axis) and cumulative mass (red; top axis) evolution from the core to the surface.
-}
-\end{figure}
-
 
 \section{Atmosphere}\label{sect:atmos}
 %Thin layer of plasma
@@ -145,7 +142,7 @@ From here it is then clear that the atmosphere and the emerging radiation encode
 More specifically information about the temperature, surface gravity, chemical composition, compactness can be obtained.
 
 The standard approach in describing the atmosphere structure includes solving three main equations of radiative transfer, hydrostatic balance, and energy conservation.
-First low-$B$ field models of neutron star atmospheres were presented in the pioneering work of Romani.\cite{Romani87}
+First such a low-$B$ field model of neutron star atmospheres were presented in the pioneering work by Romani.\cite{Romani87}
 Let us next see, walk through these equations, as they are rater simple.
 A more general description for the atmosphere model computations are given in \red{Sect.XX}\cite{NKS15}, where the full relativistic electron scattering is also taken into account.
 
@@ -155,40 +152,62 @@ the atmosphere can be considered in plane-parallel approximation.
 Rather high densities, on the other hand, allow to consider the plasma of the atmosphere in local thermodynamical equilibrium.
 
 Spectrum, beaming and polarization of emerging radiation can be determined from radiation transfer problem in atmospheric layers.
-Firstly, radiative transfer equation for the specific spectral intensity $I_{\nu}$, of photon frequency $\nu$ is given as
+Radiation can be understood as an energy flow, i.e., energy $E$ per area $A$, time $t$, frequency $\nu$, and solid angle $\Omega$.
+This is known as the specific spectral intensity which we can mathematically formulate as
 \be
-\mu \frac{d I_{\nu}}{dy} = k_{\nu} ( I_{\nu} - S_{\nu})
+I_{\nu} = \frac{dE}{dA dt d\nu d\Omega}.
 \ee
-where $\mu$ is the cosine of the angle $\theta$ between the propagated radiation and the surface normal, $y$ is the column density (mass per area) defined via $dy = \rho dz$, where $z$ is the horizontal distance from the surface, $k_{\nu} = \alpha_{\nu} + \sigma_{\nu}$ is the total radiative opacity including contributions from the ``true'' opacity $\alpha_{\nu}$ and from the scattering opacity $\sigma_{\nu}$.
+Radiation averaged over the solid angle, or the so-called mean specific intensity (zeroth moment of $I_{\nu}$) is then
+\be
+J_{\nu} = \frac{1}{4\pi} \int_{\Omega} I_{\nu} d\Omega = \frac{1}{4\pi} \int_0^{2\pi} \int_0^{\pi} I_{\nu} \sin\theta d\theta d\phi = \frac{1}{2} \int_{-1}^{+1} I_{\nu} d\mu,
+\ee
+where we have assumed that the radiation does not depend on the azimuthal $\phi$ angle (as is typical for atmosphere calculations) and introduced $\mu = \cos\theta$.
+Net rate of energy flowing across an unit area (for example a photon detector) from \emph{all directions} per time and frequency is known as physical flux.%
+\footnote{
+    Strictly speaking, the first-order moment of $I_{\nu}$ is known as the Eddington flux $H_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu}\mu d\mu$.
+    Physical flux is related to it as $F_{\nu} = 4\pi H_{\nu}$ and sometimes one also encounters the ``astrophysical'' flux defined as $F_{\nu}/\pi$.
+}
+It is proportional to the first-order moment of $I_{\nu}$ and is defined as
+\be
+F_{\nu} = 2\pi \int_{-1}^{+1} I_{\nu} \mu d\mu.
+\ee
+Similarly, the second-order moment of $I_{\nu}$, or a so-called K-integral, is
+\be
+K_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu} \mu^2 d\mu,
+\ee
+which is related to the radiation pressure, as we later on will see.
+
+Now we can introduce the radiative transfer equation for $I_{\nu}$ as
+\be\label{eq:rte}
+\mu \frac{d I_{\nu}}{d\tau} = \frac{\mu}{\kappa_{\nu}} \frac{d I_{\nu} }{dy} = -\frac{\mu}{\rho \kappa_{\nu}} \frac{d I_{\nu} }{dz } = I_{\nu} - S_{\nu}
+\ee
+where $\tau$ is the optical depth, $y$ is the column density (mass per area), $z$ is the horizontal distance from the surface, $\kappa_{\nu} = \alpha_{\nu} + \sigma_{\nu}$ is the total radiative opacity including contributions from the ``true'' opacity $\alpha_{\nu}$ and from the scattering opacity $\sigma_{\nu}$.
+Here the connection between different independent variables is given as
+\be
+d\tau = \kappa_{\nu} dy = -\kappa_{\nu} \rho dz,
+\ee
+relating the optical depth (distance as experienced by the radiation), column density (projected number density of matter along the path of the radiation), and the horizontal height.
 In addition we need the source function 
 \be
-S_{\nu} = (\sigma_{\nu} J_{\nu} + \alpha B_{\nu}) k_{\nu}^{-1},
+S_{\nu} = (\sigma_{\nu} J_{\nu} + \alpha B_{\nu}) \kappa_{\nu}^{-1},
 \ee
-where the scattering term is proportional to the mean spectral intensity
+where the scattering term is proportional to the mean spectral intensity $J_{\nu}$ and the ``true'' absorption term to the thermal Planck function
 \be
-J_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu} d\mu
+B_{\nu}(T) = \frac{2 h \nu^3}{c^2} \frac{1}{\exp \left[ h \nu/(k_{\mathrm{B}}T) \right] -1 },
 \ee
-and the ``true'' absorption term to the thermal Planck function
-\be
-B_{\nu}(T) = \frac{\hbar \nu^3}{4 \pi^3 c^2} \frac{1}{\exp \left[ \hbar \nu/(k_{\mathrm{B}}T) \right] -1 },
-\ee
-where $\hbar = h/2\pi = \Ten{1.054}{27} \unitspace \erg \unitspace \mathrm{s}$ is the Planck constant $h$ divided by $2\pi$.
+where $h = \Ten{6.63}{-27} \unitspace \erg \unitspace \mathrm{s}$ is the Planck constant.
 As an boundary conditions for this equation, we can use $I_{\nu} = 0$ for $\mu < 0$ at $y = 0$ (i.e., the surface).
 The atmospheres are also usually considered to be in radiative and hydrostatic equilibrium, i.e., (quasi-)stationary.
 The first requirement can be formulated as 
 \be
-\int_0^{\infty} d\nu \int_{-1}^{+1} \mu I_{\nu} d\mu = \sigma_{\mathrm{SB}} T_{\mathrm{eff}},
+\int_0^{\infty} d\nu \int_{-1}^{+1} I_{\nu} \mu d\mu = \sigma_{\mathrm{SB}} T_{\mathrm{eff}},
 \ee
-where $\sigma_{\mathrm{SB}}$ is the Stefan-Boltzmann constant and $T_{\mathrm{eff}}$ is the effective temperature of the atmosphere.
+where $\sigma_{\mathrm{SB}} = \Ten{5.67}{-5} \unitspace \g \unitspace \mathrm{s}^{-3} \unitspace \Kelvin^{-4}$ is the Stefan-Boltzmann constant and $T_{\mathrm{eff}}$ is the effective temperature of the atmosphere.
 The second hydrostatic equilibrium, demands that
 \be
 \frac{dP}{dy} = g - g_{\mathrm{rad}},
 \ee
-where, in addition to the gravitational acceleration $g$ we need the radiative acceleration
-\be
-g_{\mathrm{rad}} = \frac{d P_{\mathrm{rad}}}{dy} = \frac{2\pi}{c} \frac{d}{dy} \int_0^{\infty} d\nu \int_{-1}^{+1} \mu^2 I_{\nu} d\mu,
-\ee
-where $P_{\mathrm{rad}}$ is the radiative pressure that can be described via the second moment of the radiative transfer equation.
+where, in addition to the gravitational acceleration $g$ we need the opposing radiative acceleration $g_{\mathrm{rad}}$.
 Finally, we need to supplement these equations with an equation connecting the pressure and density.
 For the rarefied atmosphere, the ideal gas law is an excellent approximation
 \be
@@ -196,13 +215,64 @@ P = n k_{\mathrm{B}} T,
 \ee
 where $n$ is the number density of particles.
 
+\subsection{Eddington limit}
+Usually the atmospheres we calculate are dynamically stable and in hydrostatic balance because large gravity implies $g_{\mathrm{rad}} \ll g$.
+Sometimes, however, the radiation flux might increase to such a strengths that it is able to compete against even the enormous gravity of a neutron star.
+An important limit can then be defined for $g_{\mathrm{rad}} = g$, known as the Eddington limit after a renowned astrophysicist Sir Arthur Eddington.
+Let us now for completeness derive this limit.\cite[for a more in depth discussion, see e.g.,][]{RL79, FKR02}
 
-Eddington limit of where radiation force exceeds the gravitational one.
+We can start by formulating the radiation pressure.
+This can be easily done when we realize that pressure is just momentum flux, and photons carry a momentum of $E/c$.%
+\footnote{
+    Energy of a photon is $E=h\nu=mc^2$, from which we obtain the photon rest mass of $h\nu/c^2 = E/c^2$. 
+    Momentum, on the other hand, is just velocity times the mass, so for a photon it is $E/c^2 \times c = E/c$.
+}
+In terms of $I_{\nu}$ this is then
 \be
-L_{\mathrm{Edd}} = \frac{4\pi G M m_{\mathrm{p}} }{\sigma_{\mathrm{T}} } \approx \Ten{1.3}{38} \left( \frac{M}{\Msun} \right) \ergs
+P_{\mathrm{rad}, \nu} = \frac{1}{c} \int_0^{2\pi} \int_{-1}^{+1} I_{\nu} \mu^2 d\mu = \frac{4\pi}{c} K_{\nu},
 \ee
-
-
+relating the pressure and the second-order moment $K_{\nu}$ together.
+Radiative acceleration is then
+\be\label{eq:grad}
+g_{\mathrm{rad}} = \frac{d P_{\mathrm{rad}}}{dy} = \frac{d}{dy} \int_0^{\infty} P_{\mathrm{rad},\nu} \, d\nu = \frac{4\pi}{c} \frac{d}{dy} \int_0^{\infty} K_{\nu} d\nu.
+\ee
+Let us refine this expression by inserting the definition of $K_{\nu}$ and applying the radiative transfer equation \eq{eq:rte} without the source function $S_{\nu}$.
+In the process we also have to take into account that we are only interested in the outgoing flux, hence the integration limits of $\mu$ need to be changed as $[-1,+1] \rightarrow [0,+1]$.
+We can then simplify the \eq{eq:grad} to 
+\begin{align}\begin{split}
+    g_{\mathrm{rad}} &= \frac{4\pi}{c} \frac{d}{dy} \int_0^{\infty} d\nu \frac{1}{2} \int_{0}^{+1} I_{\nu} ~ \mu^2 d\mu \\
+                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~ \left\{ \mu \frac{d}{dy} I_{\nu} \right\}  \\
+                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~  \kappa_{\nu} I_{\nu} \\
+                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu ~\kappa_{\nu} \int_{0}^{+1} I_{\nu} \mu d\mu \\
+                     &= \frac{1}{c} \int_0^{\infty} ~\kappa_{\nu} F_{\nu} d\nu.
+\end{split}\end{align}
+%\be
+%\int_{-1}^{+1} \kappa_{\nu} S_{\nu} ~\mu d\mu = \int_{0}^{+1} ( \sigma_{\nu} J_{\nu} + \alpha_{\nu} B_{\nu} ) \mu d \mu = 0 + 0,
+%\ee
+%because both $J_{\nu}$ and $B_{\nu}$ are isotropic, i.e. do not depend on the angles.
+If we now integrate over all the frequencies we obtain
+\be
+g_{\mathrm{rad}} = \frac{1}{c} \kappa F
+\ee
+Setting it equal to $g$ we can solve for the Eddington flux as
+\be
+F_{\mathrm{Edd}} = \frac{g c }{\kappa} \frac{1}{\sqrt{1-u}} = \frac{G M c}{R^2 \kappa} \frac{1}{\sqrt{1-u}}.
+\ee
+Usually in many astrophysical scenarios the opacity is dominated by the electron Thomson scattering opacity, $\sigma_{\mathrm{T}} = \Ten{6.65}{-25} \unitspace \mathrm{cm}^{-2}$.
+Mass for a hydrogen plasma is, on the other hand, mainly set by the protons, hence, opacity per mass is then
+\be
+\kappa \approx \frac{ \sigma_{\mathrm{T}} }{m_{\mathrm{p}}}.
+\ee
+Finally, be calculating the total radiation flux through the stellar surface, we can define a quantity called luminosity as
+\be
+L = 4\pi R^2 F(R),
+\ee
+where $F(R)$ is the outcoming radiation flux at the surface.
+Using the aforementioned equation, we can then define the Eddington luminosity for a star as 
+\be
+L_{\mathrm{Edd}} = \frac{4\pi G M c m_{\mathrm{p}} }{\sigma_{\mathrm{T}} } \approx \Ten{1.3}{38} \left( \frac{M}{\Msun} \right) \ergs.
+\ee
+For neutron stars close to $T \sim 10^7 \Kelvin$ this limit can be reached, after which the atmosphere is momentarily blown away.
 
 
 
@@ -518,8 +588,18 @@ where $u = 2GM/Rc^2$.
 }
 
 
+\begin{figure}
+\centering
+\includegraphics[width=17cm]{figs/slice/slice.pdf}
+\caption{\label{fig:slice}
+Overview of the neutron star structure.
+Right side of the figure shows a schematic presentation of the star's interiors against the radial coordinate, whereas the left side shows the pressure (blue; bottom axis) and cumulative mass (red; top axis) evolution from the core to the surface.
+}
+\end{figure}
 
 
+
+Another perspective is shown in \fig{fig:slice} that visualizes the dependency of the pressure and cumulative mass of the star against the radial coordinate as measured starting from the core.
 
 
 
