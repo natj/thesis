@@ -87,13 +87,13 @@ plt.rc('axes', labelsize=7)
 
 
 #fig = plt.figure(figsize=(3.54, 2.19)) #single column fig
-fig = plt.figure(figsize=(7.48, 3.5))  #two column figure
+fig = plt.figure(figsize=(7.48, 2.5))  #two column figure
 gs = plt.GridSpec(1, 1, wspace=0.0)
 
 ax = plt.subplot(gs[0, 0])
 ax.minorticks_on()
 ax.set_xlim(-11, 12.0)
-ax.set_ylim(0.0, 13.0)
+ax.set_ylim(3.0, 13.0)
 ax.axis('off')
 
 #ax.set_yticklabels([])

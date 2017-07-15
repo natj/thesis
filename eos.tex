@@ -32,7 +32,7 @@ In the end, this enables us to build a mapping between the (un)known microphysic
 %Baryon mass $M_b$ that is sum of baryon masses.
 %Gravitational mass $M$ that is $M_b$ from where the gravitational binding energy is subtracted. \cite{Zwicky38}
 
-\begin{figure}[htb]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=16cm]{figs/slice/atmos.pdf}
 \caption{
@@ -41,7 +41,7 @@ Schematic view of neutron star structure.
 \end{figure}
 
 
-\begin{figure}[htb]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=16cm]{notes/eos/eos.pdf}
 \caption{\label{fig:eos}
@@ -110,6 +110,7 @@ On the other hand, the enormous gravity results in an effective separation of el
 Hence, the atmosphere is usually expected to consist of mainly hydrogen.
 
 
+\subsection{General relativistic effects}
 The effects from the gravity can be quantified by considering a so-called compactness parameter
 \be
 u = \frac{ R_{\mathrm{S}} }{R}
@@ -141,6 +142,7 @@ is usually needed when describing the observable features of the atmosphere.
 From here it is then clear that the atmosphere and the emerging radiation encodes information from the physical parameters of the star.
 More specifically information about the temperature, surface gravity, chemical composition, compactness can be obtained.
 
+\subsection{Basic equations of the atmosphere}
 The standard approach in describing the atmosphere structure includes solving three main equations of radiative transfer, hydrostatic balance, and energy conservation.
 First such a low-$B$ field model of neutron star atmospheres were presented in the pioneering work by Romani.\cite{Romani87}
 Let us next see, walk through these equations, as they are rater simple.
@@ -239,7 +241,7 @@ g_{\mathrm{rad}} = \frac{d P_{\mathrm{rad}}}{dy} = \frac{d}{dy} \int_0^{\infty}
 Let us refine this expression by inserting the definition of $K_{\nu}$ and applying the radiative transfer equation \eq{eq:rte} without the source function $S_{\nu}$.
 In the process we also have to take into account that we are only interested in the outgoing flux, hence the integration limits of $\mu$ need to be changed as $[-1,+1] \rightarrow [0,+1]$.
 We can then simplify the \eq{eq:grad} to 
-\begin{align}\begin{split}
+\begin{align}\begin{split}\label{eq:kfgrad}
     g_{\mathrm{rad}} &= \frac{4\pi}{c} \frac{d}{dy} \int_0^{\infty} d\nu \frac{1}{2} \int_{0}^{+1} I_{\nu} ~ \mu^2 d\mu \\
                      &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~ \left\{ \mu \frac{d}{dy} I_{\nu} \right\}  \\
                      &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~  \kappa_{\nu} I_{\nu} \\
@@ -250,6 +252,8 @@ We can then simplify the \eq{eq:grad} to
 %\int_{-1}^{+1} \kappa_{\nu} S_{\nu} ~\mu d\mu = \int_{0}^{+1} ( \sigma_{\nu} J_{\nu} + \alpha_{\nu} B_{\nu} ) \mu d \mu = 0 + 0,
 %\ee
 %because both $J_{\nu}$ and $B_{\nu}$ are isotropic, i.e. do not depend on the angles.
+From the bottom line of Eq. \eq{eq:kfgrad} we see that the K-integral is related to the flux of the radiation $F_{\nu}$.
+Not every photon, however, interacts and collides with the matter, and hence the opacity correction $\kappa_{\nu}$ is also needed, representing effectively the fraction of radiation interacting with the matter.
 If we now integrate over all the frequencies we obtain
 \be
 g_{\mathrm{rad}} = \frac{1}{c} \kappa F
@@ -278,24 +282,95 @@ For neutron stars close to $T \sim 10^7 \Kelvin$ this limit can be reached, afte
 
 
 \section{Crust}
+%Outer crust
+%From atmosphere to $\rho_{\mathrm{ND}} \sim \Ten{4}{11} \gcm$.
+%In thickness some hundred meters.
+%Non degenerate electron gas.
+%Ultra-relativistic electron gas $\rho > 10^6 \gcm$.
+%Pressure provided by electrons here.
+%In deeper layers ions form a strongly coupled Coulomb system (liquid or solid).
+%Hence, crust.
+%At the base neutrons start to drip out from nuclei.
 
-\begin{figure}
-\centering
-\includegraphics[width=16cm]{figs/nstar-plot/crust_plot_wide.png}
-\caption{\label{fig:crust}
-Molecular simulation of the crust.
-Figure adapted from \url{https://github.com/awsteiner/nstar-plot}.
+Below the gaseous atmosphere, a solidified layer of matter exists, called crust.
+Between the atmosphere and crust, a liquid ocean of ions also exists, but the interface is not very strict and the matter is smoothly evolving from an one state to another.
+The solidified crust is also typically divided into an outer and inner layers, but the interface is again ambiguous. 
+The pressure here is almost fully given by the degenerate electrons, and hence the matter is familiar already from white dwarfs.
+In the beginning, the electrons can be taken to be non-relativistic but after about $\rho \sim 10^{6} \gcm$ they turn into ultra-relativistic because of the increasing density.
+
+By definition, the outer crust is a layer in the neutron star interiors where the plasma consists of electrons and nuclei, whereas the inner crust is characterized by an additional appearance of neutrons that start to drip out from the extremely neutron-rich nuclei.
+The density this occurs is called the neutron drip density and is of around $\rho_{\mathrm{ND}} \sim \Ten{4}{11} \gcm$.
+The outer crust, when defined to begin from the atmosphere at $\rho \sim 10^3 \gcm$ and continue to about $\rho_{\mathrm{ND}}$ is only about some hundred meters in thickness.
+The characteristics of the matter are strongly dependent on the Coulomb interactions of charged particles that form a solid Coulomb crystal.
+
+%\subsection{Inner crust}
+%About one kilometer thick.
+%Density from $\rho \sim \rho_{\mathrm{ND}}$ (at upper boundary) to $\sim 0.5 \nsat$ at the base.
+%Matter consists of electrons, free neutrons $n$ and neutron-rich atomic nuclei.
+%Fraction of free $n$ grow with $\rho$.
+%
+%nuclei are immersed in a neutron gas and hence nuclear interactions play a crucial role in defining the matter.
+%Finally, nuclei disappear at the crust-core interface.
+
+The inner crust is taken to continue all the way down to the crust-core interface, where the matter turns liquid again.
+This layer is about one kilometer thick.
+Here, at the bottom of the crust, the density is already close to the nuclear density of $\rho_{\mathrm{n}} = \Ten{2.8}{14} \gcm$ but the exact location of the transition depends on the detailed microphysics of the core.
+The fraction of free neutrons grows with the increasing density.
+Because the normal nuclei nuclei here are immersed into free neutron gas, the nuclear interactions play a crucial role in defining the matter.
+Finally, the nuclei disappear totally when we enter the core.
+Before that, however, the nuclei form complicated structures that evolve together with the density.
+This region is also known as the nuclear pasta phase, as the different molecular structures are named after the pasta types that they resemble.
+
+\subsection{Why neutrons then?}
+%Fermi energy grows with increasing $\rho$.
+%Induces $\beta$ captures and enriches nuclei with neutrons.
+%Fermi energy is also an important concept that can be used to describe the physics of the matter.
+%\red{define Fermi energy}
+%This Fermi energy increases with increasing $\rho$.
+%This, in turn, induces $\beta$ captures and enriches nuclei with neutrons.
+
+Let us first consider ideal gas of degenerate electron-proton-neutron plasma to understand the basics of the crust.
+
+
+In a degenerate plasma all the quantum states are filled up all the way to the Fermi energy.
+It is the Pauli exclusion principle that then prevents occupying all of these already taken quantum states.
+Normal beta-decay mode for the neutrons, on the other hand, is $n \rightarrow p + e^{-} + \bar{\nu_{e}}$, that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron neutrino $\bar{\nu_{e}}$.
+Such a decay is, however, blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.\cite[see e.g.][]{Phillips94}
+
+Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$.
+Co-existence of neutrons, protons, and electrons is then guaranteed (at zero temperature) if 
+\be
+\ef(n) = \ef(p) + \ef(e^{-}).
+\ee
+Fermi momentum of a particle is related to its concentration via
+\be
+p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
+\ee
+where $n$ is the number density, and $h$ the Planck constant.
+Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $\nsat$, and hence energy is simply a sum of their rest mass energy and kinetic energy
+\be
+\ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
+\ee
+and
+\be
+\ef(p) \approx m_p c^2 + \frac{p_{\mathrm{F}}(p)^2}{2 m_p }.
+\ee
+Electrons, on the other hand, are already ultra-relativistic, and so
+\be
+\ef(e^{-}) \approx p_{\mathrm{F}}(e^{-}) c^2.
+\ee
+
+\red{
+Also note that $n_p = n_e$, as the star is electrically neutral.
+From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \mathrm{MeV}\,c^2$ at $\rho \sim \nsat$.
 }
-\end{figure}
+Thus, we conclude that the matter inside is neutron rich.
 
-Outer crust
 
-From atmosphere to $\rho_ND \sim \Ten{4}{11} \gcm$.
-In thickness some hundred meters.
-Non degenerate electron gas
-Ultra-relativistic electron gas $\rho > 10^6 \gcm$.
-Pressure provided by electrons here.
 
+
+%-------------------------------------------------- 
+\subsection{Degenerate electron gas}
 Here the equation of state is decribed by the relativistic degenerate electron gas.
 Physics behind this are quite simple and we repeat the calculations here to give the reader ideas about what are the most important physical processes.
 The result also bears some historical value.
@@ -417,23 +492,19 @@ P(\xr) = \Peid + \Pii
 \ee
 this is valid in a large density range of $10^{4} < \rho < 10^{10} \gcm$.
 
-In deeper layers ions form a strongly coupled Coulomb system (liquid or solid).
-Hence, crust.
-Fermi energy grows with increasing $\rho$.
-Induces $\beta$ captures and enriches nuclei with neutrons.
-At the base neutrons start to drip out from nuclei.
 
+\subsection{Neutron star pasta}
 
-\subsection{Inner crust}
-About one kilometer thick.
-Density from $\rho \sim \rho_{ND}$ (at upper boundary) to $\sim 0.5 \nsat$ at the base.
-Matter consists of electrons, free neutrons $n$ and neutron-rich atomic nuclei.
-Fraction of free $n$ grow with $\rho$.
+\begin{figure}
+\centering
+\includegraphics[width=16cm]{figs/nstar-plot/crust_plot_wide.png}
+\caption{\label{fig:crust}
+Molecular simulation of the crust.
+Figure adapted from \url{https://github.com/awsteiner/nstar-plot}.
+}
+\end{figure}
 
-nuclei are immersed in a neutron gas and hence nuclear interactions play a crucial role in defining the matter.
-
-Finally, nuclei disappear at the crust-core interface.
-
+\red{Molecular dynamic simulation}
 
 
 
@@ -495,42 +566,6 @@ Finally, for the hybrid nuclear matter and quark matter compositions \quark we i
 \end{itemize}
 
 
-
-\subsection{Why neutrons then?}
-Let us first consider ideal gas of degenerate electron-proton-neutron plasma.
-In a degenerate plasma all the quantum states are filled up all the way to the Fermi energy.
-It is the Pauli exclusion principle that then prevents occupying all of these already taken quantum states.
-Normal beta-decay mode for the neutrons, on the other hand, is $n \rightarrow p + e^{-} + \bar{\nu_{e}}$, that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron neutrino $\bar{\nu_{e}}$.
-Such a decay is, however, blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.\cite[see e.g.][]{Phillips94}
-
-Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$.
-Co-existence of neutrons, protons, and electrons is then guaranteed (at zero temperature) if 
-\be
-\ef(n) = \ef(p) + \ef(e^{-}).
-\ee
-Fermi momentum of a particle is related to its concentration via
-\be
-p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
-\ee
-where $n$ is the number density, and $h$ the Planck constant.
-Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $\nsat$, and hence energy is simply a sum of their rest mass energy and kinetic energy
-\be
-\ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
-\ee
-and
-\be
-\ef(p) \approx m_p c^2 + \frac{p_{\mathrm{F}}(p)^2}{2 m_p }.
-\ee
-Electrons, on the other hand, are already ultra-relativistic, and so
-\be
-\ef(e^{-}) \approx p_{\mathrm{F}}(e^{-}) c^2.
-\ee
-
-\red{
-Also note that $n_p = n_e$, as the star is electrically neutral.
-From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \mathrm{MeV}\,c^2$ at $\rho \sim \nsat$.
-}
-Thus, we conclude that the matter inside is neutron rich.
 
 
 \subsection{Polytropes}
