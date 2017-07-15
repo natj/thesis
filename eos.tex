@@ -321,6 +321,91 @@ Finally, the nuclei disappear totally when we enter the core.
 Before that, however, the nuclei form complicated structures that evolve together with the density.
 This region is also known as the nuclear pasta phase, as the different molecular structures are named after the pasta types that they resemble.
 
+\subsection{Degenerate gas and Fermi momentum}
+The matter in the crust is degenerate.
+Let us discuss the physics behind degenerate matter and the related important concept of Fermi energy now.
+Elementary 6-dimensional phase space cell of any particle is bounded by the Heisenberg uncertainty principle as
+\be
+\Delta x \Delta y \Delta z \Delta p_{x} \Delta p_{y} \Delta p_{z} = h^3,
+\ee
+where $\Delta x\Delta y \Delta z$ is the volume in ordinary space, $\Delta p_x \Delta p_y \Delta p_z$ the volume in the momentum space, and $h$ is the previously defined Planck constant.
+In accordance with the quantum mechanics, there is room for only one particle of any kind inside the elementary cell.
+In general the number density is given as
+\be\label{eq:dist}
+n_{\mathrm{av}} = \frac{g}{\exp[ (E-\mu)/k_{\mathrm{B}}T ] \pm 1},
+\ee
+where $+$ is used for fermions (such as electrons and protons), and $-$ for bosons (such as photons).
+Additionally, the $g$ is the number of different quantum states a particle may have inside the cell, $E$ is the total particle energy, and $\mu$ is the chemical potential explained more carefully later on.
+Number of particles with momentum between $p$ and $p+dp$ is 
+\be
+n(p) dp = n_{\mathrm{av}} \frac{4\pi p^2}{h^3} dp,
+\ee
+i.e., particles inside a spherical shell with a surface $4\pi p^2$ and thickness $dp$.
+Number density of particles with all momenta is then
+\be
+n = \int_0^{\infty} n(p) dp
+\ee
+and the density is then simply
+\be
+\rho = n m,
+\ee
+where $m$ is the mass of the particle.
+The energy in equation \eq{eq:dist} is the total energy $E \equiv E_{\mathrm{tot}} = E_0 + E_{\mathrm{k}}$, composed of the rest-mass energy $E_0 = mc^2$ and kinetic energy $E_{\mathrm{k}}$.
+In special relativity, there exists a relation for the total energy as $E_{\mathrm{tot}}^2 = (mc^2)^2 + (pc)^2$, so 
+\be
+E = mc^2 \left[ 1 + \left(\frac{p}{mc} \right)^2 \right]^{1/2},
+\ee
+and the kinetic energy is then simply
+\be
+E_{\mathrm{k}} = mc^2 \left[ \left( 1 + \left(\frac{p}{mc} \right)^2 \right)^{1/2} - 1 \right].
+\ee
+Simple asymptotic limits can be obtained for the kinetic energy as
+\be
+E \approx \frac{p^2}{2m} \quad p \ll mc ~  \text{(non-relativistic case)}
+\ee
+and
+\be
+E \approx pc \quad p \gg mc ~ \text{(ultra-relativistic case)}.
+\ee
+
+Let us now focus on fermions only, and hence select the $+$-sign (Fermi-Dirac distribution) from the Eq. \eq{eq:dist}.
+Fermions are spin $\frac{1}{2}$ particles so we can also set $g=2$.
+The chemical potential $\mu$ in Eq. \eq{eq:dist} is expressed as
+\be
+\mu = mc^2 + \ef
+\ee
+where $\ef$ is now the so-called Fermi energy.
+On the other hand, it can also be defined as
+\be
+E - \mu = E_{\mathrm{k}} - \ef
+\ee
+i.e., difference between the kinetic and Fermi energy.
+Hence, the number density of fermions in general is
+\be\label{eq:FD}
+n_{\mathrm{f}}= \frac{8 \pi}{h^3} \int_0^{\infty} \frac{p^2 dp}{ \exp ( \frac{ E_{\mathrm{k}} - \ef }{ k_{\mathrm{B}} T } ) + 1}.
+\ee
+If Fermi energy $\ef \ll 0$ the distribution will be Maxwellian even for small kinetic energies.
+On the other hand, if $\ef \gg k_{\mathrm{B}}T$ we can divide the integrand of Eq. \eq{eq:FD} into two distinct regions of 
+\be
+n_{\mathrm{f}} = 
+\begin{cases}
+    p^2 \quad \text{if } E_{\mathrm{k}} \ll \ef \\
+    0 \quad   \text{  if } E_{\mathrm{k}} \gg \ef \\
+\end{cases}
+\ee
+where the transition occurs rather sharply at $E_{\mathrm{k}} = \ef$.
+This allows us to define a characteristic momentum related to the transition, called Fermi momentum $p_{\mathrm{F}}$, so that
+\be
+n_{\mathrm{f}} = \frac{8\pi}{h^3} \int_0^{p_{\mathrm{F}}} p^2 dp = \frac{8\pi}{3} \left( \frac{p_{\mathrm{F}}}{h} \right)^3.
+\ee
+Physically this can be interpreted such that when the temperature decreases, the fermions start to occupy all the quantum states starting from the one with lowest energy all the way up to the Fermi energy.
+Because of the Pauli exclusion principle, no more than one fermion can exists in the same quantum state so the levels are filled in order, and all the higher states will remain empty.
+Hence, the highest momenta possible in the degenerate matter is the Fermi momentum
+\be
+p_{\mathrm{F}} = \left( \frac{3 n_{\mathrm{f}}}{8 \pi} \right)^{1/3} h.
+\ee
+
+
 \subsection{Why neutrons then?}
 %Fermi energy grows with increasing $\rho$.
 %Induces $\beta$ captures and enriches nuclei with neutrons.
@@ -329,24 +414,26 @@ This region is also known as the nuclear pasta phase, as the different molecular
 %This Fermi energy increases with increasing $\rho$.
 %This, in turn, induces $\beta$ captures and enriches nuclei with neutrons.
 
-Let us first consider ideal gas of degenerate electron-proton-neutron plasma to understand the basics of the crust.
+Let us first consider an ideal gas of degenerate electron-proton-neutron plasma to understand the basic composition of the crust.\cite[see e.g.][]{Phillips94}
+In a degenerate plasma all the quantum states are filled up all the way to the Fermi energy, as we just learned.
+Normal beta-decay mode for the neutrons, on the other hand, is 
+\be
+n \rightarrow p + e^{-} + \bar{\nu_{e}},
+\ee
+that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron neutrino $\bar{\nu_{e}}$.
+It is because of this decay, that we do not expect to see any free neutron flying around.
+Such a decay is, however, might be blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.
 
-
-In a degenerate plasma all the quantum states are filled up all the way to the Fermi energy.
-It is the Pauli exclusion principle that then prevents occupying all of these already taken quantum states.
-Normal beta-decay mode for the neutrons, on the other hand, is $n \rightarrow p + e^{-} + \bar{\nu_{e}}$, that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron neutrino $\bar{\nu_{e}}$.
-Such a decay is, however, blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.\cite[see e.g.][]{Phillips94}
-
-Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$.
+Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$, where the related particle species is defined inside the parentheses.
 Co-existence of neutrons, protons, and electrons is then guaranteed (at zero temperature) if 
 \be
 \ef(n) = \ef(p) + \ef(e^{-}).
 \ee
-Fermi momentum of a particle is related to its concentration via
-\be
-p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
-\ee
-where $n$ is the number density, and $h$ the Planck constant.
+%Fermi momentum of a particle is related to its concentration via
+%\be
+%p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
+%\ee
+%where $n$ is the number density, and $h$ the Planck constant.
 Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $\nsat$, and hence energy is simply a sum of their rest mass energy and kinetic energy
 \be
 \ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
@@ -359,14 +446,11 @@ Electrons, on the other hand, are already ultra-relativistic, and so
 \be
 \ef(e^{-}) \approx p_{\mathrm{F}}(e^{-}) c^2.
 \ee
-
-\red{
 Also note that $n_p = n_e$, as the star is electrically neutral.
-From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \mathrm{MeV}\,c^2$ at $\rho \sim \nsat$.
-}
-Thus, we conclude that the matter inside is neutron rich.
 
-
+From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \unitspace \mathrm{MeV}\unitspace c^2$ at $\rho \sim \nsat$.
+Thus, we conclude that the matter inside is expected to be neutron rich, even though normally the neutrons would $\beta$-decay back to protons and electrons.
+Not only is the degeneracy then responsible for the pressure but it is also the source of the neutron enrichment. 
 
 
 %-------------------------------------------------- 
