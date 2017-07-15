@@ -453,19 +453,22 @@ Thus, we conclude that the matter inside is expected to be neutron rich, even th
 Not only is the degeneracy then responsible for the pressure but it is also the source of the neutron enrichment. 
 
 
-%-------------------------------------------------- 
 \subsection{Degenerate electron gas}
-Here the equation of state is decribed by the relativistic degenerate electron gas.
-Physics behind this are quite simple and we repeat the calculations here to give the reader ideas about what are the most important physical processes.
-The result also bears some historical value.
+Let us next consider the equation of state for the crust.
+As we have seen, the pressure in the crust originates from the degenerate electron gas.
+Physics behind this are quite simple and we repeat the calculations here to introduce the reader to the topic.
+The result also bears some historical value as these are exactly the equations that were introduced by Dirac\cite{Dirac25}, Fowler\cite{Fowler26}, Stoner\cite{Stoner30}, Anderson\cite{Anderson29}, Frenkel\cite{Frenkel28} and Chandrasekhar\cite{Cha31}.%
+\cite[For a review, see e.g.,][]{LL80, HPY07}
 
-We have reached densities where the EoS is dominated mainly by the electrons, hence it is characterized by the electron number density $n_{\mathrm{e}}$ and temperature $T_{\mathrm{e}}$ (hereafter just $T$ in this section).
-Moving on from an ideal plasma, we can start by introducing corrections produced by the closely packed charges.
-In practice we can use the so-called ion-sphere model to describe our Coulomb liquid of ions.
+The behavior of the matter in the crust is dominated mainly by the electrons. 
+For this reason, it can be characterized by the electron number density $n_{\mathrm{e}}$ and temperature $T_{\mathrm{e}}$, hereafter just $T$ in this section.
+Moving on from an ideal gaseous plasma in the atmosphere, we can start by introducing corrections produced by the closely packed charged particles.
+In practice we use the so-called ion-sphere model to describe our Coulomb liquid of ions.
 We now assume that our ions are emerged into a sea of rigid electron background that takes care of the charge neutrality.
+
 Let us begin by defining a so-called electron sphere radius
 \be
-\erad = \left( \frac{4\pi \nel}{3} \right)^{-1/3}
+\erad = \left( \frac{4\pi \nel}{3} \right)^{-1/3}.
 \ee
 We can also parameterize the strength between Coulomb (charge) interactions by considering a ratio of potential energy to the kinetic energy with
 \be
@@ -473,16 +476,16 @@ We can also parameterize the strength between Coulomb (charge) interactions by c
 \ee
 Similarly, for ion with a charge number of $\Zi$, we can define the ion-sphere radius
 \be
-\irad = \erad \Zi^{1/3}
+\irad = \erad \Zi^{1/3},
 \ee
 that encapsulates enough area to be charge neutral, when considering a static electron-induced background from $\nel$.
 Ion Coulomb coupling factor is similarly
 \be
-\Gi = \Ge \Zi^{5/3} = \frac{ (\Zi e)^2}{\irad kT}
+\Gi = \Ge \Zi^{5/3} = \frac{ (\Zi e)^2}{\irad kT}.
 \ee
-In the weak-coupling limit ($\Gi \ll 1$) Debye-H\"uckel results for the free energy are valid\cite{LL80}
+In the weak-coupling limit ($\Gi \ll 1$) the Debye-H\"uckel results for the free energy are valid\cite{LL80}
 \be
-\frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gamma^{3/2}
+\frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gamma^{3/2}.
 \ee
 Hence, the pressure correction due to the Coulomb interactions is\cite{DeWitt96}
 \be
@@ -491,31 +494,29 @@ Hence, the pressure correction due to the Coulomb interactions is\cite{DeWitt96}
 
 
 
-For a degenerate system it also makes sense to present the Fermi quantities:
-momentum
+For a degenerate system it also makes sense to recall the Fermi quantities:
 \be
 p_{\mathrm{F}} = \hbar (3\pi^2 n_{\mathrm{e}})^{1/3}
 \ee
-energy
 \be
 \epsilon_{\mathrm{F}} = c^2 \sqrt{ ( \me c)^2 + p_{\mathrm{F}}^2 },
 \ee
-and temperature
 \be
 T_{\mathrm{F}} = \frac{\me c^2}{k} \left( \sqrt{1 + \left( \frac{ p_{\mathrm{F}} }{\me c } \right)^2 } - 1 \right)
 = \Tr ( \gammar -1 ),
 \ee
-where we have defined a typical temperature
+defining the momentum, energy, and temperature, respectively.
+For the last expression, we have defined a typical temperature of
 \be
-\Tr \equiv \frac{ \me c^2 }{k} \sim \Ten{6}{9} \Kelvin
+\Tr \equiv \frac{ \me c^2 }{k} \sim \Ten{6}{9} \Kelvin,
 \ee
 relativistic scaling factor
 \be
 \gammar \equiv \sqrt{1 + \xr^2},
 \ee
-and typical (dimensionless) momentum
+and dimensionless Fermi momentum (in units of electron rest mass)
 \be
-\xr \equiv \frac{p_{\mathrm{F}}}{\me c }.
+\xr \equiv \frac{p_{\mathrm{F}}}{\me c}.
 \ee
 
 Using these definitions, it is easy to characterize our electron gas into regions of 
