@@ -401,7 +401,7 @@ n_{\mathrm{f}} = \frac{8\pi}{h^3} \int_0^{p_{\mathrm{F}}} p^2 dp = \frac{8\pi}{
 Physically this can be interpreted such that when the temperature decreases, the fermions start to occupy all the quantum states starting from the one with lowest energy all the way up to the Fermi energy.
 Because of the Pauli exclusion principle, no more than one fermion can exists in the same quantum state so the levels are filled in order, and all the higher states will remain empty.
 Hence, the highest momenta possible in the degenerate matter is the Fermi momentum
-\be
+\be\label{eq:fermimom}
 p_{\mathrm{F}} = \left( \frac{3 n_{\mathrm{f}}}{8 \pi} \right)^{1/3} h.
 \ee
 
@@ -462,18 +462,73 @@ The result also bears some historical value as these are exactly the equations t
 
 The behavior of the matter in the crust is dominated mainly by the electrons. 
 For this reason, it can be characterized by the electron number density $n_{\mathrm{e}}$ and temperature $T_{\mathrm{e}}$, hereafter just $T$ in this section.
+Instead of $n_{\mathrm{e}}$, let us use the electron Fermi momentum $p_{\mathrm{F}}$ \eq{eq:fermimom} as a measure of the number density.
+It is convenient to describe it in the units of electron rest mass, as
+\be
+\xr \equiv \frac{p_{\mathrm{F}}}{\me c},
+\ee
+also known as the relativity parameter.\cite{Salpeter61}
+We will also need the more general relativistic form of the Fermi energy
+\be
+\epsilon_{\mathrm{F}} = c^2 \sqrt{ ( \me c)^2 + p_{\mathrm{F}}^2 },
+\ee
+that for a strongly degenerate gas, has the meaning of the chemical potential $\mu$.
+Finally, the electron Fermi temperature is
+\be
+T_{\mathrm{F}} = \frac{\me c^2}{k_{\mathrm{B}}} \left( \sqrt{1 + \left( \frac{ p_{\mathrm{F}} }{\me c } \right)^2 } - 1 \right)
+= \Tr ( \gammar -1 ),
+\ee
+where a typical temperature is
+\be
+\Tr = \frac{ \me c^2 }{k_{\mathrm{B}}} \sim \Ten{6}{9} \Kelvin,
+\ee
+and a relativistic scaling factor is defined as
+\be
+\gammar \equiv \sqrt{1 + \xr^2}.
+\ee
+Then, the temperature can also be expressed in units of $T_{\mathrm{r}}$ as 
+\be
+t_{\mathrm{r}} \equiv \frac{T}{\Tr}.
+\ee
+Using these definitions, it is easy to characterize how relativistic the electron gas is.
+We can divide it into three regions of 
+\begin{itemize}
+    \item non-relativistic, for which $t_{\mathrm{r}} \ll 1 $ and/or $\xr \ll 1$, 
+    \item mildly-relativistic, $t_{\mathrm{r}} \sim 1$ and/or $\xr \sim 1$,
+    \item ultra-relativistic, $t_{\mathrm{r}} \gg 1$ and/or $\xr \gg 1$.
+\end{itemize}
+
+Similarly, we can scale the temperature with the Fermi temperature to get a so-called degeneracy parameter
+\be\label{eq:Thetar}
+\Theta_{\mathrm{F}} \equiv \frac{T}{T_{\mathrm{F}}}.
+\ee
+It can be then used to characterize the degeneracy of the plasma to regions of 
+\begin{itemize}
+    \item non-degenerate, for which $\Theta_{\mathrm{F}} \gg 1$,
+    \item mildly degenerate, $\Theta_{\mathrm{F}} \sim 1$,
+    \item and strongly degenerate $\Theta_{\mathrm{F}} \ll 1$.
+\end{itemize}
+
+
 Moving on from an ideal gaseous plasma in the atmosphere, we can start by introducing corrections produced by the closely packed charged particles.
 In practice we use the so-called ion-sphere model to describe our Coulomb liquid of ions.
 We now assume that our ions are emerged into a sea of rigid electron background that takes care of the charge neutrality.
+In order to couple the number density of electrons and the mass of the plasma, let us first define the mean charge per mass ratio of the plasma as
+\be
+\Mu = \frac{\bra{Z}}{\bra{A}},
+\ee
+where $\bra{Z}$ is the mean charge number of the atomic nuclei (for an one-component plasma it is simply $Z$), and $\bra{A}$ is the average number of nucleons bound by one nucleus.
+For most plasmas, $\Mu \approx \frac{1}{2}$.
 
-Let us begin by defining a so-called electron sphere radius
+Let us now begin by defining a so-called electron sphere radius as
 \be
 \erad = \left( \frac{4\pi \nel}{3} \right)^{-1/3}.
 \ee
 We can also parameterize the strength between Coulomb (charge) interactions by considering a ratio of potential energy to the kinetic energy with
 \be
-\Ge = \frac{e^2}{\erad kT}.
+\Ge = \frac{e^2}{\erad k_{\mathrm{B}} T} \approx 22.75 \left( \frac{10^6 \Kelvin}{T} \right) \left( \frac{\rho}{10^6 \gcm} \right)^{1/3} \Mu^{1/3},
 \ee
+where $e = \Ten{4.80}{-10} \unitspace \mathrm{esu}$ is the electron charge.
 Similarly, for ion with a charge number of $\Zi$, we can define the ion-sphere radius
 \be
 \irad = \erad \Zi^{1/3},
@@ -481,54 +536,63 @@ Similarly, for ion with a charge number of $\Zi$, we can define the ion-sphere r
 that encapsulates enough area to be charge neutral, when considering a static electron-induced background from $\nel$.
 Ion Coulomb coupling factor is similarly
 \be
-\Gi = \Ge \Zi^{5/3} = \frac{ (\Zi e)^2}{\irad kT}.
+\Gi = \Ge \Zi^{5/3} = \frac{ (\Zi e)^2}{\irad k_{\mathrm{B}} T}.
 \ee
-In the weak-coupling limit ($\Gi \ll 1$) the Debye-H\"uckel results for the free energy are valid\cite{LL80}
+
+At high temperatures, the electrons form a classical Boltzmann gas.
+When the temperature is decreased, the plasma will then, without a phase-transition, become a strongly coupled Coulomb liquid corresponding to the neutron star ocean.
+If the temperature is decreased further, the plasma will then transform into a Coulomb crystal with a phase transition.
+The gaseous regime can be constrained to be at $\Gi \ll 1$, or $T \gg T_{\mathrm{B}}$, where the $T_{\mathrm{B}}$ is given as
 \be
-\frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gamma^{3/2}.
+T_{\mathrm{B}} = \frac{Z^2 e^2}{a_i k_{\mathrm{B}}} \approx \Ten{2.28}{7} \left( \frac{\rho}{10^6 \gcm} \right)^{1/3} \Mu^{1/3} \Kelvin.
 \ee
-Hence, the pressure correction due to the Coulomb interactions is\cite{DeWitt96}
+
+The pressure for such a system can be obtained via the standard thermodynamical relation
+\be\label{eq:press}
+P = \left( \frac{\partial F}{\partial V} \right)_{T},
+\ee
+where $F$ is the Helmholtz free energy and $V$ is the volume of the system.\cite{LL80}
+It is useful to divide the free energy into an ideal part $F_{\mathrm{id}}$ corresponding to non-interacting particles, and to the excess part $F_{\mathrm{ex}}$, leading to a splitting of
+\be
+F(V, T) = F_{\mathrm{id}} + F_{\mathrm{ex}}.
+\ee
+Similarly, we could decompose the ideal effects from ions to $F_{\mathrm{id}}^{(i)}$, and from electrons to $F_{\mathrm{id}}^{(e)}$, giving
+\be
+F(V, T) = F_{\mathrm{id}}^{(i)} + F_{\mathrm{id}}^{(e)} + F_{\mathrm{ex}}.
+\ee
+Most important non-ideal deviation for the plasma is from the Coulomb interaction between ions and electrons, and between electrons in the rigid background $F_{\mathrm{ex}} \approx F_{\mathrm{ii}}$.
+This free energy decomposition then induces similar splitting for the pressure
+\be
+P \approx P_{\mathrm{id}}^{(i)} + P_{\mathrm{id}}^{(e)} +  P_{\mathrm{ii}}.
+\ee
+
+A simple order-of-magnitude estimate for the relative strength of the different terms yields that $P_{\mathrm{id}}^{(e)}$ is the main contributor for the pressure.
+Other terms, given as $|P_{\mathrm{part}}|/P_{\mathrm{id}}^{(e)}$, result in leading order terms of\cite{YS89} 
+\be
+\frac{P_{\mathrm{id}}^{(i)} }{ P_{\mathrm{id}}^{(e)} } \approx \frac{ \Theta_{\mathrm{r}}^{(i)} }{Z}
+\ee
+\be
+\frac{P_{\mathrm{ii}} }{P_{\mathrm{id}}^{(e)}} \approx \alpha_{\mathrm{f}} \frac{ \gammar }{ x_{\mathrm{r}} },
+\ee
+where $\Theta_{\mathrm{i}}^{(i)}$ is the temperature in units of nucleon Fermi temperature (see Eq. \ref{eq:Thetar}), $\alpha_{\mathrm{f}} = e^2 /\hbar c \approx 1/137$ is the fine-structure constant.
+From here it is easy to see that only the Coulomb interaction term $P_{\mathrm{ii}}$, should give a measurable corrections to the pressure at low temperatures, suggesting that for the pressure $P$ we can use the approximation
+\be\label{eq:approxpress}
+P \approx P_{\mathrm{id}}^{(e)} + P_{\mathrm{ii}}.
+\ee
+
+In the weak-coupling limit ($\Gi \ll 1$) the Debye-H\"uckel result for the excess free energy is a sufficiently good approximation giving\cite{LL80, ST83, DeWitt96}
+\be
+\frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gi^{3/2},
+\ee
+where $n_{\mathrm{i}}$ is the ion number density.
+Hence, the pressure correction due to the Coulomb interactions can be simply presented as 
 \be
 \Pii \approx -0.3 n_{\mathrm{i}} \frac{Z^2 e^2}{\irad}.
 \ee
+by using Eq. \eq{eq:press}.
 
-
-
-For a degenerate system it also makes sense to recall the Fermi quantities:
-\be
-p_{\mathrm{F}} = \hbar (3\pi^2 n_{\mathrm{e}})^{1/3}
-\ee
-\be
-\epsilon_{\mathrm{F}} = c^2 \sqrt{ ( \me c)^2 + p_{\mathrm{F}}^2 },
-\ee
-\be
-T_{\mathrm{F}} = \frac{\me c^2}{k} \left( \sqrt{1 + \left( \frac{ p_{\mathrm{F}} }{\me c } \right)^2 } - 1 \right)
-= \Tr ( \gammar -1 ),
-\ee
-defining the momentum, energy, and temperature, respectively.
-For the last expression, we have defined a typical temperature of
-\be
-\Tr \equiv \frac{ \me c^2 }{k} \sim \Ten{6}{9} \Kelvin,
-\ee
-relativistic scaling factor
-\be
-\gammar \equiv \sqrt{1 + \xr^2},
-\ee
-and dimensionless Fermi momentum (in units of electron rest mass)
-\be
-\xr \equiv \frac{p_{\mathrm{F}}}{\me c}.
-\ee
-
-Using these definitions, it is easy to characterize our electron gas into regions of 
-\begin{itemize}
-    \item non-relativistic, for which $T \ll \Tr$ and $\xr \ll 1$, 
-    \item mildly-relativistic, $T \sim \Tr$ and $\xr \sim 1$,
-    \item ultra-relativistic, $T \gg \Tr$ and $\xr \gg 1$,
-    \item non-degenerate, $T \gg T_{\mathrm{F}}$,
-    \item mildly degenerate, $T \sim T_{\mathrm{F}}$,
-    \item and strongly degenerate $T \ll T_{\mathrm{F}}$.
-\end{itemize}
-
+Let us, as a final task, look into the main degenerate electron pressure term $P_{\mathrm{id}}^{(e)}$.
+\red{here...}
 Free energy
 \be
 F = (\mu  - \me c^2) \nel - \frac{2}{(2\pi \hbar)^3} \int d\vec{p} \frac{1}{3} \vec{p} \cdot \vec{v} \fFD(\epsilon)
@@ -545,21 +609,15 @@ and
 \be
 \epsilon = \sqrt{ \me^2 c^4 + p^2 c^2 }
 \ee
-
-Pressure 
-\be
-P = -\left( \frac{ \partial F }{\partial V } \right)_{T, \{N_j \} }
-\ee
-
 Sommerfield expand free energy in powers of $T/T_{\mathrm{F}}$ 
 \be
 \frac{F}{V} = \frac{\me c^2}{\bar{\lambdaC^3}}  \frac{1}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) + \frac{4\pi^2}{9} \tr^2 \xr(\gammar + \gammar^{-1})  \right)  + \mathcal{O}(\tr^4)
 \ee
-and obtain pressure 
+from which it is easy to obtain an expression for the pressure as
 \be
 \Peid = \frac{\Pressr}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) \right)
 \ee
-where again typical pressure
+where again a typical pressure is given as
 \be
 \Pressr = \frac{\me c^2}{\lambdaC} \sim \Ten{1.4}{25} \dyncm
 \ee
