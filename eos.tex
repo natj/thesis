@@ -212,7 +212,7 @@ The second hydrostatic equilibrium, demands that
 where, in addition to the gravitational acceleration $g$ we need the opposing radiative acceleration $g_{\mathrm{rad}}$.
 Finally, we need to supplement these equations with an equation connecting the pressure and density.
 For the rarefied atmosphere, the ideal gas law is an excellent approximation
-\be
+\be\label{eq:idealgaslaw}
 P = n k_{\mathrm{B}} T,
 \ee
 where $n$ is the number density of particles.
@@ -337,7 +337,7 @@ n_{\mathrm{av}} = \frac{g}{\exp[ (E-\mu)/k_{\mathrm{B}}T ] \pm 1},
 where $+$ is used for fermions (such as electrons and protons), and $-$ for bosons (such as photons).
 Additionally, the $g$ is the number of different quantum states a particle may have inside the cell, $E$ is the total particle energy, and $\mu$ is the chemical potential explained more carefully later on.
 Number of particles with momentum between $p$ and $p+dp$ is 
-\be
+\be\label{eq:pshell}
 n(p) dp = n_{\mathrm{av}} \frac{4\pi p^2}{h^3} dp,
 \ee
 i.e., particles inside a spherical shell with a surface $4\pi p^2$ and thickness $dp$.
@@ -352,7 +352,7 @@ and the density is then simply
 where $m$ is the mass of the particle.
 The energy in equation \eq{eq:dist} is the total energy $E \equiv E_{\mathrm{tot}} = E_0 + E_{\mathrm{k}}$, composed of the rest-mass energy $E_0 = mc^2$ and kinetic energy $E_{\mathrm{k}}$.
 In special relativity, there exists a relation for the total energy as $E_{\mathrm{tot}}^2 = (mc^2)^2 + (pc)^2$, so 
-\be
+\be\label{eq:totener}
 E = mc^2 \left[ 1 + \left(\frac{p}{mc} \right)^2 \right]^{1/2},
 \ee
 and the kinetic energy is then simply
@@ -360,13 +360,10 @@ and the kinetic energy is then simply
 E_{\mathrm{k}} = mc^2 \left[ \left( 1 + \left(\frac{p}{mc} \right)^2 \right)^{1/2} - 1 \right].
 \ee
 Simple asymptotic limits can be obtained for the kinetic energy as
-\be
-E \approx \frac{p^2}{2m} \quad p \ll mc ~  \text{(non-relativistic case)}
-\ee
-and
-\be
-E \approx pc \quad p \gg mc ~ \text{(ultra-relativistic case)}.
-\ee
+\begin{align}\begin{split}\label{eq:asymplims}
+    E  \approx \frac{p^2}{2m} \quad & p \ll mc ~  \text{(non-relativistic case)} \\
+    E  \approx pc \quad & p \gg mc ~ \text{(ultra-relativistic case)}. \\
+\end{split}\end{align}
 
 Let us now focus on fermions only, and hence select the $+$-sign (Fermi-Dirac distribution) from the Eq. \eq{eq:dist}.
 Fermions are spin $\frac{1}{2}$ particles so we can also set $g=2$.
@@ -396,7 +393,7 @@ n_{\mathrm{f}} =
 where the transition occurs rather sharply at $E_{\mathrm{k}} = \ef$.
 This allows us to define a characteristic momentum related to the transition, called Fermi momentum $p_{\mathrm{F}}$, so that
 \be
-n_{\mathrm{f}} = \frac{8\pi}{h^3} \int_0^{p_{\mathrm{F}}} p^2 dp = \frac{8\pi}{3} \left( \frac{p_{\mathrm{F}}}{h} \right)^3.
+n_{\mathrm{f}} \approx \frac{8\pi}{h^3} \int_0^{p_{\mathrm{F}}} p^2 dp = \frac{8\pi}{3} \left( \frac{p_{\mathrm{F}}}{h} \right)^3.
 \ee
 Physically this can be interpreted such that when the temperature decreases, the fermions start to occupy all the quantum states starting from the one with lowest energy all the way up to the Fermi energy.
 Because of the Pauli exclusion principle, no more than one fermion can exists in the same quantum state so the levels are filled in order, and all the higher states will remain empty.
@@ -457,8 +454,9 @@ Not only is the degeneracy then responsible for the pressure but it is also the 
 Let us next consider the equation of state for the crust.
 As we have seen, the pressure in the crust originates from the degenerate electron gas.
 Physics behind this are quite simple and we repeat the calculations here to introduce the reader to the topic.
-The result also bears some historical value as these are exactly the equations that were introduced by Dirac\cite{Dirac25}, Fowler\cite{Fowler26}, Stoner\cite{Stoner30}, Anderson\cite{Anderson29}, Frenkel\cite{Frenkel28} and Chandrasekhar\cite{Cha31}.%
-\cite[For a review, see e.g.,][]{LL80, HPY07}
+The result also bears some historical value as these are exactly the equations that were introduced by Dirac\cite{Dirac25}, Fowler\cite{Fowler26}, Frenkel\cite{Frenkel28}, Anderson\cite{Anderson29}, Stoner\cite{Stoner30}, and Chandrasekhar\cite{Cha31}.%
+More thorough discussion of the electron thermodynamics is given, for example, in Refs.\cite{Cha39, Schatzman58, Salpeter61, Tooper69, ZN71, LL80, Blinnikov87, YS89, HPY07}
+%\cite[For a review, see e.g.,][]{Cha39, LL80, HPY07}
 
 The behavior of the matter in the crust is dominated mainly by the electrons. 
 For this reason, it can be characterized by the electron number density $n_{\mathrm{e}}$ and temperature $T_{\mathrm{e}}$, hereafter just $T$ in this section.
@@ -568,19 +566,22 @@ P \approx P_{\mathrm{id}}^{(i)} + P_{\mathrm{id}}^{(e)} +  P_{\mathrm{ii}}.
 
 A simple order-of-magnitude estimate for the relative strength of the different terms yields that $P_{\mathrm{id}}^{(e)}$ is the main contributor for the pressure.
 Other terms, given as $|P_{\mathrm{part}}|/P_{\mathrm{id}}^{(e)}$, result in leading order terms of\cite{YS89} 
-\be
+\be\label{eq:pressvalidity}
 \frac{P_{\mathrm{id}}^{(i)} }{ P_{\mathrm{id}}^{(e)} } \approx \frac{ \Theta_{\mathrm{r}}^{(i)} }{Z}
 \ee
 \be
 \frac{P_{\mathrm{ii}} }{P_{\mathrm{id}}^{(e)}} \approx \alpha_{\mathrm{f}} \frac{ \gammar }{ x_{\mathrm{r}} },
 \ee
-where $\Theta_{\mathrm{i}}^{(i)}$ is the temperature in units of nucleon Fermi temperature (see Eq. \ref{eq:Thetar}), $\alpha_{\mathrm{f}} = e^2 /\hbar c \approx 1/137$ is the fine-structure constant.
-From here it is easy to see that only the Coulomb interaction term $P_{\mathrm{ii}}$, should give a measurable corrections to the pressure at low temperatures, suggesting that for the pressure $P$ we can use the approximation
+where $\Theta_{\mathrm{i}}^{(i)}$ is the temperature in units of nucleon Fermi temperature (see Eq. \ref{eq:Thetar}), $\alpha_{\mathrm{f}} = e^2 /\hbar c \approx 1/137$ is the fine-structure constant, and $\hbar = h/2\pi$.
+From here it is easy to see that only the Coulomb interaction term $P_{\mathrm{ii}}$, should give a measurable corrections to the pressure at low temperatures. 
+This suggests that for the pressure $P$ we can use the approximation
 \be\label{eq:approxpress}
 P \approx P_{\mathrm{id}}^{(e)} + P_{\mathrm{ii}}.
 \ee
 
-In the weak-coupling limit ($\Gi \ll 1$) the Debye-H\"uckel result for the excess free energy is a sufficiently good approximation giving\cite{LL80, ST83, DeWitt96}
+In the weak-coupling limit ($\Gi \ll 1$) the Debye-H\"uckel result for the excess free energy is a sufficiently good approximation, expressed as\cite{DH23, LL80, ST83, DeWitt96}%
+\footnote{Debye-H\"uckel approximation relays on the assumption that the charge density surrounding an ion is described by electrostatics (Poisson's equation) and the distribution of the charge around the ion itself by thermal motions of electrons (Boltzmann's equation).
+}
 \be
 \frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gi^{3/2},
 \ee
@@ -590,64 +591,77 @@ Hence, the pressure correction due to the Coulomb interactions can be simply pre
 \Pii \approx -0.3 n_{\mathrm{i}} \frac{Z^2 e^2}{\irad}.
 \ee
 by using Eq. \eq{eq:press}.
+Note also that $\Gi = \Gi(V)$.
 
 Let us, as a final task, look into the main degenerate electron pressure term $P_{\mathrm{id}}^{(e)}$.
-\red{here...}
-Free energy
+Pressure is defined as a flux of momentum through a surface, hence for one particular wall it is
 \be
-F = (\mu  - \me c^2) \nel - \frac{2}{(2\pi \hbar)^3} \int d\vec{p} \frac{1}{3} \vec{p} \cdot \vec{v} \fFD(\epsilon)
+P = \int_0^{\infty} \bra{v_x p_x} n(p) dp,
 \ee
-where 
+where the number density $n(p)$ is desribed by the Fermi-Dirac distribution, given by Eq.\eq{eq:dist}.
+Velocity can be obtained from the standard expression
 \be
-\nel = \frac{2}{(2\pi\hbar)^3} \int d\vec{p} \fFD(\epsilon),
+v = \frac{dE}{dp} = \frac{p}{ \me } \left[ 1 + \left( \frac{p}{\me c} \right)^2 \right]^{-1/2},
 \ee
-and
+using the energy defined by Eq.\eq{eq:totener}.
+Here we have already inserted the electron mass $m=\me=\Ten{9.11}{-28}\g$ into the equations.
+Hence, in the three-dimensional description the pressure is given as one third of what we would get by applying Eq.\eq{eq:pshell},
 \be
-\fFD(\epsilon, T) = \frac{1}{\exp \left( \frac{\epsilon - \mu}{kT} \right) - 1}
+P = \frac{1}{3} \int_0^{\infty} v(p)\,p\,n(p)~dp = \frac{8\pi}{3 \me h^3} \int_0^{\infty} \frac{p}{\left[ 1 + \left(\frac{p}{\me c} \right)^2 \right]^{1/2} }\,p\,\frac{p^2}{\exp[(E - \mu)/k_{\mathrm{B}} T] + 1} ~dp
 \ee
-and
+Free energy of the system is then equal to what is left from the chemical potential after substracting the electron rest-mass energy and the pressure contribution,
 \be
-\epsilon = \sqrt{ \me^2 c^4 + p^2 c^2 }
+F = (\mu  - \me c^2) \nel - \frac{8\pi}{3\me h^3} \int_0^{\infty} \frac{p^4 dp}{ \left[ 1 + \left(\frac{p}{\me c} \right)^2 \right]^{1/2} } \frac{1}{\exp[(E - \mu)/k_{\mathrm{B}} T] + 1}.
 \ee
-Sommerfield expand free energy in powers of $T/T_{\mathrm{F}}$ 
+Sommerfield expanding the free energy expression in powers of temperature, i.e., $\tr$, we finally obtain\cite[see e.g.,][]{YS89}
+%\cite[see e.g.][]{Nady74} This is fully in russian, e.g., not very helpful?!
 \be
-\frac{F}{V} = \frac{\me c^2}{\bar{\lambdaC^3}}  \frac{1}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) + \frac{4\pi^2}{9} \tr^2 \xr(\gammar + \gammar^{-1})  \right)  + \mathcal{O}(\tr^4)
+\frac{F}{V} = \frac{\me c^2}{\bar{\lambdaC^3}}  \frac{1}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) + \frac{4\pi^2}{3} \tr^2 \xr \gammar  \right)  + \mathcal{O}(\tr^4)
 \ee
-from which it is easy to obtain an expression for the pressure as
-\be
-\Peid = \frac{\Pressr}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) \right)
+from which it is easy to obtain an expression for the pressure by applying Eq.\eq{eq:press},
+\be\label{eq:edegpress}
+\Peid \approx \frac{\Pressr}{8\pi^2} \left( (\frac{2}{3}\xr^2 - 1) \gammar + \ln(\xr + \gammar) + \frac{4\pi^2}{9} \tr^2 \xr (\gammar + \gammar^{-1}) \right)
 \ee
 where again a typical pressure is given as
 \be
-\Pressr = \frac{\me c^2}{\lambdaC} \sim \Ten{1.4}{25} \dyncm
+\Pressr = \frac{\me c^2}{\lambdaC} \approx \Ten{1.4}{25} \dyncm,
 \ee
-
-Hence, it takes the simple polytropic form
-\be
-\Peid \approx \frac{ \Pressr }{9\pi^2 \gammaad} \xr^{3\gammaad}
-\ee
-where the polytropic index $\gammaad = \frac{5}{3}$ for the non-relativistic $\xr \ll 1$ and $\gammaad = \frac{4}{3}$ for the ultra-relativistic case (recall also that $\xr \propto \nel^{1/3}$).
-
-
-Degenerate electron gas pressure accompanied with the ion Coulomb correction will then actually give us a rather good approximation for the equation of state
-\be
-P(\xr) = \Peid + \Pii
-\ee
-this is valid in a large density range of $10^{4} < \rho < 10^{10} \gcm$.
-
-
-\subsection{Neutron star pasta}
-
-\begin{figure}
-\centering
-\includegraphics[width=16cm]{figs/nstar-plot/crust_plot_wide.png}
-\caption{\label{fig:crust}
-Molecular simulation of the crust.
-Figure adapted from \url{https://github.com/awsteiner/nstar-plot}.
+where $\lambdaC = \hbar/\me c = \Ten{3.86}{-11}\cm$ is the reduced electron Compton wavelength.%
+\footnote{
+    Normal Compton wavelength is simply $\lambda_{\mathrm{e}} = 2\pi \times \lambdaC = h/\me c = \Ten{2.43}{-10}\cm$.
 }
-\end{figure}
+Omitting the (small) temperature related term ($\propto \tr^2$) leads to the well-known Chandrasekhar equation of state of for a perfect, completely degenerate electron gas.\cite{Stoner30, Cha35, Cha39}
 
-\red{Molecular dynamic simulation}
+In the non-relativistic and ultra-relativistic regimes we can apply the asymptotic limits of Eq.\eq{eq:asymplims}.
+Then, the pressure given in Eq.\eq{eq:edegpress} takes a simple polytropic form of
+\be
+\Peid \approx \frac{ \Pressr }{9\pi^2 \gammaad} \xr^{3\gammaad},
+\ee
+where the polytropic index is given as $\gammaad = \frac{5}{3}$ or $\gammaad = \frac{4}{3}$ for the non-relativistic ($\xr \ll 1$) and the ultra-relativistic ($\xr \gg 1$) cases, respectively.
+Recall also that $\xr \propto \nel^{1/3} \propto \rho^{1/3}$.
+The transition occures at $\xr \approx 1$, corresponding to about $\rho \sim 10^6 \gcm$.
+
+Finally, as suggested by our analysis given in Eq.\eqref{eq:pressvalidity}, the ideal degenerate electron gas pressure accompanied with the ion Coulomb correction will give us a rather good approximation for the equation of state as
+\be
+P(\xr) \approx \Peid + \Pii = \frac{\Pressr}{8\pi^2} \left( (\frac{2}{3}\xr^2 - 1) \gammar + \ln(\xr + \gammar) \right) -0.3 n_{\mathrm{i}} \frac{Z^2 e^2}{\irad},
+\ee
+remaining valid in a large density range of $10^{4} < \rho < 10^{10} \gcm$.
+Below $\rho < 10^{4} \gcm$ the plasma is gaseous and the ideal gas law description \eq{eq:idealgaslaw} is better suited in modeling the equation of state.
+Beyond $\rho > 10^{10} \gcm$ the densities become so high that nuclear degeneracy pressure and more importantly, the mutual nuclear intearactions start to play an important role.
+This is the topic of our next section.
+
+
+%\subsection{Neutron star pasta}
+%\begin{figure}
+%\centering
+%\includegraphics[width=16cm]{figs/nstar-plot/crust_plot_wide.png}
+%\caption{\label{fig:crust}
+%Molecular simulation of the crust.
+%Figure adapted from \url{https://github.com/awsteiner/nstar-plot}.
+%}
+%\end{figure}
+%
+%\red{Molecular dynamic simulation}
 
 
 
