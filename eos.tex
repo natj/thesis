@@ -431,7 +431,7 @@ Co-existence of neutrons, protons, and electrons is then guaranteed (at zero tem
 %p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
 %\ee
 %where $n$ is the number density, and $h$ the Planck constant.
-Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $\nsat$, and hence energy is simply a sum of their rest mass energy and kinetic energy
+Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $10^{14}\gcm$, and hence energy is simply a sum of their rest mass energy and kinetic energy
 \be
 \ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
 \ee
@@ -445,7 +445,7 @@ Electrons, on the other hand, are already ultra-relativistic, and so
 \ee
 Also note that $n_p = n_e$, as the star is electrically neutral.
 
-From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \unitspace \mathrm{MeV}\unitspace c^2$ at $\rho \sim \nsat$.
+From this we find relation of the $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \unitspace \mathrm{MeV}\unitspace c^2$, for example at $\rho \sim 10^{14} \gcm$.
 Thus, we conclude that the matter inside is expected to be neutron rich, even though normally the neutrons would $\beta$-decay back to protons and electrons.
 Not only is the degeneracy then responsible for the pressure but it is also the source of the neutron enrichment. 
 
@@ -666,30 +666,40 @@ This is the topic of our next section.
 
 
 
-\section{Liquid core}\label{sect:core}
-\begin{figure}
-\centering
-\includegraphics[width=7.5cm]{notes/eos/dense_eos.pdf}
-\includegraphics[width=7.5cm]{notes/tov/mr.pdf}
-\caption{\label{fig:core}
-Core EoS.
-}
-\end{figure}
+\section{Core}\label{sect:core}
 
-Outer core.
-Density ranges $0.5 \nsat < \rho < 2\nsat$.
-Several kilometers.
-Neutrons with several per cent admixture of protons $p$ and electrons $e^{-}$.
-Strongly degenerate.
-Electrons form almost ideal Fermi gas.
-Neutrons and protons, interacting via nuclear forces, constitute a strongly interacting Fermi liquid.
+%Neutrons with several per cent admixture of protons $p$ and electrons $e^{-}$.
+%Strongly degenerate.
+%Electrons form almost ideal Fermi gas.
+%Neutrons and protons, interacting via nuclear forces, constitute a strongly interacting Fermi liquid.
 
-Inner core.
-Where $\rho > 2\nsat$.
-Appearance of muon.
-Central density can be around $(10-15)\nsat$.
-Very model dependent.
-Main problem.
+After the relatively well-known crust, a physical no-man's land begins when we enter the core.
+At about half of the nuclear density, $\nsat \approx \Ten{2.8}{14}\gcm$, the nuclei become so neutron-rich that more neutrons will leak out then what is left bounded.
+Hence, normal atoms can no longer exists, and the matter becomes an uniform plasma of neutrons, protons, and electrons.
+In the end, we will have a liquid sea of free neutrons with a several per cent admixture of protons and electrons.
+The neutrons and protons, interacting via the nuclear forces, constitute a strongly interacting Fermi liquid, whereas electrons form an almost ideal Fermi gas.
+Instead of purely degenerate non-interacting matter, like the electrons in the crust, the nucleons become close enough to interact with each other.
+Hence, a many-body theory is needed in order to describe the equation of state of the core.
+If we take the effective range of strong nuclear forces to be of around $r_{\mathrm{nuc}} \sim 10^{-13}\cm$, we can easily estimate the order-of-magnitude of the density when they become important by equating the mean distance of nucleons with $r_{\mathrm{nuc}}$.
+In this case we obtain $\rho_{\mathrm{nuc}} \sim m_{\mathrm{n}} / V = 3 \times \Ten{1.66}{-24} \g / 4\pi r_{\mathrm{nuc}}^3 \sim \Ten{4}{14} \gcm$, a density range surprisingly close to more sophisticated calculations giving $\rho \sim (1.5 - 2) \times 10^{14} \gcm$.\cite[such estimates were first presented by Hund][]{Hund36}
+
+%Outer core.
+%Density ranges $0.5 \nsat < \rho < 2\nsat$.
+%Several kilometers.
+%Inner core.
+%Where $\rho > 2\nsat$.
+%Appearance of muon.
+%Central density can be around $(10-15)\nsat$.
+%Very model dependent.
+%Main problem.
+
+A density range between $0.5 \nsat < \rho < 2\nsat$ is named the outer core.
+For neutron stars it is already several kilometers thick and constitutes a substantial part of the total mass of the star.
+
+
+
+
+
 
 Here we consider few (relatively) modern descriptions for the dense matter equation of state.
 %We follow the naming convention selected in Read et al.\cite{Read2010}, and divide the composition into: 
@@ -724,6 +734,14 @@ Finally, for the hybrid nuclear matter and quark matter compositions \quark we i
 
 
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=7.5cm]{notes/eos/dense_eos.pdf}
+\includegraphics[width=7.5cm]{notes/tov/mr.pdf}
+\caption{\label{fig:core}
+Core EoS.
+}
+\end{figure}
 
 \subsection{Polytropes}
 \red{Parameterize everything with polytropes.}
