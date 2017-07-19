@@ -156,7 +156,8 @@ x, y = arc(rad_coreb-1.0)
 text = CurvedText(x, y, text=' Inner core', va='top', axes=ax)
 
 #annotate densities
-labs = [r'                  $(3-9) \rho_0$', r'  $\approx 2\rho_0$', r'$\approx 0.5 \rho_0$']
+#labs = [r'                  $(3-9) \rho_0$', r'  $\approx 2\rho_0$', r'$\approx 0.5 \rho_0$']
+labs = [r'            $\approx 3\rho_0$', r'  $\approx 2\rho_0$', r'$\approx 0.5 \rho_0$']
 rads = [0.0, 6.0, 10.5]
 for rad, lab in zip(rads, labs):
     x, y = arc(rad, a1=0.0, a2=pi/2.75)
@@ -266,6 +267,8 @@ for key in ['SLy']:
     masses /= 1.988e33
     ax2b.plot(masses, rads, "r-")
 
+    for i in range(len(rads)):
+        print "r: {} m: {} p: {}".format(rads[i], masses[i]/masses[-1], press[i])
 
 
 # Remove the last ytick label

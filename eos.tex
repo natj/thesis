@@ -34,9 +34,9 @@ In the end, this enables us to build a mapping between the (un)known microphysic
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=16cm]{figs/slice/atmos.pdf}
+\includegraphics[width=15cm]{figs/slice/atmos.pdf}
 \caption{
-Schematic view of neutron star structure.
+Schematic view of neutron star structure illustrating the different internal regions, related densities, and the compositions.
 }
 \end{figure}
 
@@ -292,7 +292,7 @@ For neutron stars close to $T \sim 10^7 \Kelvin$ this limit can be reached, afte
 %Hence, crust.
 %At the base neutrons start to drip out from nuclei.
 
-Below the gaseous atmosphere, a solidified layer of matter exists, called crust.
+Below the gaseous atmosphere, a solidified layer of matter exists, called crust.\cite[for a review, see, e.g.,][]{HPY07, CH08, NSCrust12}
 Between the atmosphere and crust, a liquid ocean of ions also exists, but the interface is not very strict and the matter is smoothly evolving from an one state to another.
 The solidified crust is also typically divided into an outer and inner layers, but the interface is again ambiguous. 
 The pressure here is almost fully given by the degenerate electrons, and hence the matter is familiar already from white dwarfs.
@@ -319,10 +319,13 @@ The fraction of free neutrons grows with the increasing density.
 Because the normal nuclei nuclei here are immersed into free neutron gas, the nuclear interactions play a crucial role in defining the matter.
 Finally, the nuclei disappear totally when we enter the core.
 Before that, however, the nuclei form complicated structures that evolve together with the density.
-This region is also known as the nuclear pasta phase, as the different molecular structures are named after the pasta types that they resemble.
+This region is also known as the nuclear pasta phase, as the different molecular structures are named after the pasta types that they resemble.\cite[see e.g.][]{CH16}
+
+\subsection{Nuclear burning in the ocean}
+
 
 \subsection{Fermi gases}
-The matter in the crust is degenerate.
+The matter in the crust is degenerate.\cite[for a more in depth discussion of the topic, see e.g.,][]{LL80}
 Let us discuss the physics behind degenerate matter and the related important concept of Fermi energy now.
 Elementary 6-dimensional phase space cell of any particle is bounded by the Heisenberg uncertainty principle as
 \be
@@ -806,19 +809,18 @@ The corresponding $P(\rho)$ evolution of these models is shown in \fig{fig:coreG
 Unlike the previously well-defined crust, here the theoretical uncertainties become obvious as there is quite a large scatter in between different models.
 
 
-
-
-
 \section{Tolman-Volkoff-Oppenheimer equations}
-Newtonian pressure gradient needed to oppose the gravity is
-\be
-\frac{dP}{dr} = -\frac{G m \rho}{r^2}.
+Let us, as a final task, try and construct an actual model of a star from the equation of state.
+For this, we require the star to be in hydrostatic equilibrium so that the pressure gradient from opposes the gravity.
+In classical Newtonian form this can be expressed simply as
+\be\label{eq:hydrobal}
+\frac{dP}{dr} = -\frac{G m \rho}{r^2},
 \ee
-
-\be
-\frac{dm}{dr} = 4\pi r^2 \rho,
+where $r$ is the radial coordinate.
+In addition, we will need a connection for the mass $m$ and radius $r$, that in spherical symmetry is 
+\be\label{eq:hydrobalGR}
+\frac{dm}{dr} = 4\pi r^2 \rho.
 \ee
-
 Taking into account the general relativistic corrections we get
 \be
 \frac{dP}{dr} = 
@@ -826,58 +828,74 @@ Taking into account the general relativistic corrections we get
     \frac{ (1 + P/\rho c^2)(1+4\pi r^3 P/m c^2) }
     {1-2 G m /r c^2 }.
 \ee
-Difference originates from the source of gravity:
-in the Newtonian case it is the mass $m$, whereas in the General relativity it is the energy momentum tensor that depend both on the energy density and the pressure.
-As a result, energy and pressure give rise to a gravitational fields.
-
-Severness of the GR corrections can be estimated from the so called compactness parameter
-\be
-x = \frac{GM}{Rc^2} \approx 2.95~M/\Msun \km
-\ee
+This is the relativistic hydrostatic equilibrium equation as first derived by Tolman\cite{Tolman39}, Oppenheimer and Volkoff\cite{OV39}.\cite[for an introduction, see, e.g.,][]{Wald84, Gravitation}
+Difference in respect to the classical formulation originates from the source of gravity:
+in the Newtonian case it is the mass $m$, whereas in the general relativity it is the energy momentum tensor that depend both on the energy density and the pressure.
+As a result, both, energy and pressure, give rise to a gravitational field.
 
 
-It has an important consequence to the stability of neutron stars:
+This has an important consequence for the stability of neutron stars:
 Successive increase in the pressure to counter the gravity is ultimately self-defeating.
-
-\red{
-Solution for a constant density $\rho_0$ gives
+We can get an idea of this, by using an unphysical but analytically easier special case of constant density, i.e. incompressible equation of state, as our model.
+By solving the Eq.\eq{eq:hydrobal} for constant density $\rho(r) = \rho_0$, we obtain
 \be
 P(r) = G \frac{2\pi}{3} \rho_0^2 (R^2 - r^2)
 \ee
-whereas the GR gives
+whereas the general relativistic form described by Eq.\eq{eq:hydrobalGR} gives, after some tedious algebra,
 \be
-P(r) = \rho_0^2 c^2 \left[ \frac{ (1-u \left(\frac{r}{R} \right)^2 )^{1/2}
-                        - (1-u)^{1/2} }{
-                        3(1-u)^{1/2} - (1-u \left( \frac{r}{R} \right)^2 )^{1/2} } \right],
+P(r) = \rho_0^2 c^2  \frac{ \sqrt{1-u \left(\frac{r}{R} \right)^2 } - \sqrt{1-u} }
+                          { 3\sqrt{1-u} - \sqrt{1-u \left( \frac{r}{R} \right)^2 } },
 \ee
-where $u = 2GM/Rc^2$.
-}
+where again the compactness parameter $u = 2GM/Rc^2$, is used.
+Unlike the classical counter-part, the central pressure $P(0)$ here attains a maximum for $u_{\mathrm{max}}=\frac{8}{9}$ equal to 
+\be
+M_{\mathrm{max}} = \frac{4}{9} R c^2 / G \approx 3.01 \left( \frac{R}{10\km} \right) \Msun.
+\ee
+Even though the assumption of constant density is unphysical, the solution shows that the relativistic equations of hydrostatic balance have a maximum mass after which the star becomes unstable.
+This is an important feature of the equations as it can be used to, for example, rule out certain equations of states, given that we have measured some (large) mass to exists in Nature.
+It was also the source of confusion in the 1930s because the degenerate neutron gas equation of state gives $M_{\mathrm{max}} \approx 0.7 \Msun$, while the Chandrasekhar limit, i.e., the maximum mass for white dwarfs with degenerate electrons, give $M_{\mathrm{Ch}} \approx 1.44 \Msun$.
+From these arguments, it would seem that neutron stars can not exists because the maximum mass is less than that of the white dwarfs.
+Now we, of course, already know that it is the nuclear many-body interactions that have a huge impact on the equations of states and subsequently alter the maximum mass to be of around $M_{\mathrm{max}} \approx (1.5-3) \Msun$.
+Similarly, the measurements of $M \approx 2.0\Msun$ neutron stars, that we already used to rule out some equations of states in the previous section, put stringent constraints on the possible behavior of the matter.
 
 
 
-
-\begin{figure}
+\begin{figure}[ht]
 \centering
-\includegraphics[width=17cm]{figs/slice/slice.pdf}
+\includegraphics[width=16cm]{figs/slice/slice.pdf}
 \caption{\label{fig:slice}
-Overview of the neutron star structure.
+Overview of the neutron star structure for the SLy equation of state and core density of $P_{\mathrm{c}} = \Ten{8.9}{14}\gcm$, corresponding to $M=1.4\Msun$.
 Right side of the figure shows a schematic presentation of the star's interiors against the radial coordinate, whereas the left side shows the pressure (blue; bottom axis) and cumulative mass (red; top axis) evolution from the core to the surface.
 }
 \end{figure}
-
-Another perspective is shown in \fig{fig:slice} that visualizes the dependency of the pressure and cumulative mass of the star against the radial coordinate as measured starting from the core.
-
-
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=7.5cm]{figs/tov/core_eos.pdf}
 \includegraphics[width=7.5cm]{figs/tov/mr.pdf}
 \caption{\label{fig:coreMR}
-Core EoS.
+Equation of states and the resulting neutron star mass-radius curves for the different core models.
+\emph{Left side:} Pressure versus density relation, $P(\rho)$.
+\emph{Right side:} Corresponding $M-R$ relations.
+Symbols and colors are the same as in \fig{fig:coreGamma}.
 }
 \end{figure}
 
+Instead of looking at the different quantities, such as the pressure, as a function of the density, let us now finally solve the structure of the star given the derived equations of states.
+The results are obtained by numerically solving the Tolman-Oppenheimer-Volkoff equations using the previously presented crust model and the different equations of states for the core.%
+\footnote{TOV-solver that is used is available from \url{https://github.com/natj/tov}.}
+In \fig{fig:slice} the dependency of the pressure and cumulative mass of the star against the radial coordinate (as measured starting from the core) is visualized for the SLy equation of state for a central density of $P_{\mathrm{c}} = \Ten{8.9}{14}\gcm$, corresponding to $M=1.4\Msun$.
+This visualizes the real dimensions of the neutron stars internal structure:
+Inner core spans about $6\km$ in height from the core while the outer core extends from $6$ to $11\km$.
+The full crust is only about $\sim 1\km$ thick, and the atmosphere is too thin to be even visible.
+The core also consists of more than $99\%$ of the total mass of the star.
+
+
+
+Instead of fixed central pressure, we can let it span a large range, starting from some small value and ending to the pressure corresponding to the maximum mass, to obtain mass$-$radius, $M-R$ curves for the equations of states.
+These are visualized in \fig{fig:coreMR} along with the pressure$-$density relations that yield them.
+From here it is obvious how the large uncertainty in the nuclear physics of the core then translates into a large possible allowed radius range, from about $10$ to $15\km$.
+It also opens up a pathway of probing the nuclear physics with astrophysics because  mass and radius measurements of real neutron stars can set constraints to the equation of state.
 
 
 
