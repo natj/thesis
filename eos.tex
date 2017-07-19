@@ -280,6 +280,34 @@ For neutron stars close to $T \sim 10^7 \Kelvin$ this limit can be reached, afte
 
 
 
+\subsection{Radiative heat transfer}
+Let us also shortly characterize the time-dependency of the energy transfer in the atmosphere.\cite[for a more in depth discussion, see][]{CM04, iZCT14}
+Such an analysis will also be observationally important because in some cases we do see short bursts of energy coming from the neutron stars, called X-ray bursts.\cite[for a review, see e.g.,][]{LvPT93, GMH08}
+
+If we deposit an energy $Q$ into somewhere deep below the atmosphere, this energy will be transferred to the surface, and then freely radiated to us.
+In general, this heat energy is
+\be
+Q = m C_P T,
+\ee
+where $m$ is the mass of the cooling layer, $C_P$ is the specific heat capacity at a constant pressure, and $T$ is the temperature of the layer.
+Assuming, as a first approximation, constant opacity for the atmosphere, the heat is transferred simply according to Stefan-Boltzmann law as
+\be
+\frac{dQ}{dt} =  -A \sigma_{\mathrm{SB}} \frac{ T^4}{\tau} = -A \sigma_{\mathrm{SB}} T_{\mathrm{eff}}^4 ,
+\ee
+where $t$ is now the time, $A$ is the area that the heat radiation propagates through, $T_{\mathrm{eff}}$ is the effective temperature of the atmosphere, and $\tau$ is the optical depth, as given before.
+Temperature solved from this is simply
+\be
+T_{\mathrm{eff}} =\left( \frac{3 A \sigma_{\mathrm{SB}} }{m C_P } t \right)^{-1/3}.
+\ee
+Assuming all of the energy goes into radiation, we then obtain
+\be
+L = -\frac{dQ}{dt} = A \sigma_{\mathrm{SB}} T_{\mathrm{eff}}^4 
+  = (A \sigma_{\mathrm{SB}} )^{-1/3} \left( \frac{3}{m C_P} t \right)^{-4/3}.
+\ee
+Hence, energy deposited below the atmosphere will radiate to us and decay as $\propto t^{-4/3}$.
+In general, the heat capacity is $C_P = C_P(T)$, but the main results hold, that observationally we should see a powerlaw decay of luminosity, if an excess energy is instantaneously injected or released into the deeper layers of the star.
+
+
 
 \section{Crust}
 %Outer crust
@@ -320,8 +348,6 @@ Because the normal nuclei nuclei here are immersed into free neutron gas, the nu
 Finally, the nuclei disappear totally when we enter the core.
 Before that, however, the nuclei form complicated structures that evolve together with the density.
 This region is also known as the nuclear pasta phase, as the different molecular structures are named after the pasta types that they resemble.\cite[see e.g.][]{CH16}
-
-\subsection{Nuclear burning in the ocean}
 
 
 \subsection{Fermi gases}
@@ -651,7 +677,7 @@ P(\xr) \approx \Peid + \Pii = \frac{\Pressr}{8\pi^2} \left( (\frac{2}{3}\xr^2 - 
 remaining valid in a large density range of $10^{4} < \rho < 10^{10} \gcm$.
 Below $\rho < 10^{4} \gcm$ the plasma is gaseous and the ideal gas law description \eq{eq:idealgaslaw} is better suited in modeling the equation of state.
 Beyond $\rho > 10^{10} \gcm$ the densities become so high that nuclear degeneracy pressure and more importantly, the mutual nuclear intearactions start to play an important role.
-This is the topic of our next section.
+%This is the topic of our next section.
 
 
 %\subsection{Neutron star pasta}
@@ -665,6 +691,11 @@ This is the topic of our next section.
 %\end{figure}
 %
 %\red{Molecular dynamic simulation}
+
+
+%\subsection{Nuclear burning in the crust}
+%burning is unstable\cite{Bildsten98, SB10}
+
 
 
 
