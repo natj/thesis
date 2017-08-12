@@ -1,7 +1,7 @@
 \chapter{Physics of neutron star interiors} 
 \chapterimage[width=15cm]{wordcloud/chap2b.png}
 In this chapter, we will study the neutron star interiors in more detail.
-In practice, this means describing the behavior of the matter from a densities of $\sim 10^{-2} \gcm$ to $\sim 10^{16} \gcm$, an impressive $18$ orders of magnitude range starting from a hot and rarefied electron corona to an ultra-dense neutron liquid.
+In practice, this means describing the behavior of the matter from a densities of $\sim 10^{-4} \gcm$ to $\sim 10^{16} \gcm$, an impressive $20$ orders of magnitude range starting from a hot and rarefied electron corona to an ultra-dense neutron liquid.
 
 The structure of the star can be roughly divided into three distinct sections: atmosphere, crust, and core.
 Neutron star atmosphere holds a negligible amount of matter in comparison to the whole star, but it is important for the radiative processes.
@@ -43,34 +43,34 @@ Schematic view of neutron star structure illustrating the different internal reg
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=16cm]{notes/eos/eos.pdf}
+\includegraphics[width=16cm]{figs/eos.pdf}
 \caption{\label{fig:eos}
 Overview of the pressure versus density relation for the full range of densities relevant for neutron stars.
 Here the evolution of the pressure is shown against the densities depicted in the bottom vertical axis.
 Green solid line shows the EoS for matter at $T=10^6\Kelvin$, whereas blue line is for $T=\Ten{5}{6}\Kelvin$, and black for $T=10^7 \Kelvin$.
 Additionally, the upper vertical axis shows the evolution of the radial coordinate computed for one particular EoS (SLy, see \sect{sect:core}) and neutron star configuration (mass of $1.4\Msun$).
 Different shaded vertical regions show the corresponding interior structures of the star.
-Additionally, some interesting densities are highlighted with dashed red lines and text labels (see Sects.~\ref{sect:atmos}$-$\ref{sect:core}).
+Additionally, some interesting densities are highlighted with dashed red lines and text labels (see Sects.~\ref{sect:atmos}$-$\ref{sect:core}). \blue{The two pressure vs. density labels seem to point to the same dotted line. Move the 4/3 line to be below the solid line.}
 }
 \end{figure}
 
 
-In thermodynamics, we speak of \emph{state variables} that describe a current state of the matter under a given physical conditions.
+In thermodynamics, we speak of \emph{state variables} that describe a current state of the matter under given physical conditions. \blue{remove a, or s}\green{JN:done}.
 These include, for example, the density $\rho$, pressure $P$, and temperature $T$ of the matter.
 Equation of state is a thermodynamical equation connecting these states variables together.
 Often, when focusing on neutron stars, what we mean by EoS is a function connecting the pressure and the density of the matter only, $P(\rho)$.
 
 The dependency on the rest of the variables such as temperature can be often forgotten because the matter is \emph{degenerate}.%
 \mnote{Degenerate matter}
-In contrast to the ``normal'' matter where a statistical moments such as temperature can be used to describe a large ensemble of particles, the degenerate matter is dominated by quantum mechanical effects of single particles.
-Because of the immense densities, a free particle in a degenerate matter is actually bounded into a finite volume.
+In contrast to the ``normal'' matter where statistical moments \blue{remove a, or s}\green{JN:done} such as temperature can be used to describe a large ensemble of particles, the degenerate matter is dominated by quantum mechanical effects of single particles.
+Because of the immense densities, a free particle in degenerate matter \blue{remove a}\green{JN:done} is actually bounded into a finite volume.
 Inside this small volume, the energy levels of the particle are restricted to take only a discrete set of values called quantum states, because of the underlying wave-nature of the quantum mechanical description.
 Hence, a notion of temperature, for example, does not make much sense.
 
 Overview of the EoS for the full range of densities relevant to neutron stars is shown in \fig{fig:eos}.
 From here it is easy to see that temperature only plays a role in the very uppermost $\sim 10\,\mathrm{meters}$ of the stars interiors.
 Behavior of the matter is also quite well known all the way up to the crust-core interface, after which we start to see larger deviations because of the different EoS models.
-In the Earthly laboratories we can probe the matter somewhere close to $10^{14} \gcm$, after which the densities becomes too great for us to handle in.%
+In the Earthly laboratories we can probe the matter somewhere close to $10^{14} \gcm$, after which the densities becomes too great for us to manipulate \blue{handle in reads weird}.\green{JN:done}%
 \footnote{Maximum densities reached in the Earth are usually obtained by colliding heavy nucleons together, momentarily creating a core of even denser matter.
 The densest naturally occurring element found on top of planet Earth is osmium that has a density of ``just'' $\rho \approx \Ten{2.2}{1}\gcm$.
 }
@@ -95,7 +95,7 @@ In the following sections, we will focus on deriving these simple relations as i
 Atmosphere of a star is the first and uppermost layer responsible for the emergent radiation.
 It consists of a thin layer of plasma and ranges from a few millimeters to couple of centimeters in height.
 In most situations the plasma is in a gaseous state, but in some more rare cases when the magnetic field is extraordinarily strong and the temperature is low, the plasma can condensate into a liquid or a solid surface.
-Such condensed surfaces are, however, rare and usually the gaseous description is more than enough.\cite[for a review, see][]{ZP02, Potekhin14}
+Such condensed surfaces are, however, rare and usually the gaseous description is more than enough to give an accurate  description of the physics of the atmosphere \blue{enough to do what? accurate enough to xxx?}\green{JN:done}.\cite[for a review, see][]{ZP02, Potekhin14}
 
 %Observationally we usually see either thermal radiation originating directly from the star's atmosphere, or a non-thermal power-law like component from the surrounding magnetosphere, or a combination of both.\cite[for a review, see][]{ZP02, Potekhin14}
 %Properties of emergent radiation strongly depend on the chemical composition of the atmosphere.
@@ -105,7 +105,7 @@ Such condensed surfaces are, however, rare and usually the gaseous description i
 Properties of the emergent thermal radiation strongly depend on the chemical composition of the atmosphere.
 In the atmospheres of normal stars the composition is a mixture of multiple elements.
 The most stable chemical element on the surface of a neutron star is iron.
-However, even a small accreted mass of $10^{-17}\Msun$, originating from the surrounding interstellar medium, is enough to cover the whole star, and hence a variety of elements are also expected in the neutron star atmospheres.
+However, even a small accreted mass of $10^{-17}\Msun$, originating from the surrounding interstellar medium or a binary companion, \blue{I would add here: or a binary companion}\green{JN:done} is enough to cover the whole star, and hence a variety of elements are also expected in the neutron star atmospheres.
 On the other hand, the enormous gravity results in an effective separation of elements leading to a strong sedimentation of the atmosphere where the lighter elements are expected to lay on top of the heavier ones.\cite{AI80}
 Hence, the atmosphere is usually expected to consist of mainly hydrogen.
 
@@ -117,22 +117,22 @@ u = \frac{ R_{\mathrm{S}} }{R}
 \ee
 where $R$ is the radius of the neutron star and the corresponding Schwarzchild radius is defined as
 \be
-R_{\mathrm{S}} = \frac{2 G M}{c^2} \approx 2.95 \frac{M}{\Msun} \km,
+R_{\mathrm{S}} = \frac{2 G M}{c^2} \approx 2.95 \frac{M}{\Msun} \km,
 \ee
-where $G$ is the gravitational constant, $c$ is the speed of light, and $M$ is the mass of the star.
-Hence, a neutrons star has a compactness parameter in the range of $u \approx 1/5$ to $1/2$ resulting in a considerable general relativistic corrections.
+where $G$ is the gravitational constant, $c$ is the speed of light, and $M$ is the mass of the star \blue{is \Msun\ defined yet? The M there should be roman font, as its a unit, not a variable.}\green{JN:done}.
+Hence, neutrons \blue{remove s}\green{JN:done} star has a compactness parameter in the range of $u \approx 1/5$ to $1/2$ resulting in considerable general relativistic corrections \blue{remove a or s}\green{JN:done}.
 In comparison, the Sun has $u \approx \Ten{4.24}{-6}$.
-Gravitational acceleration under general relativistic theory is
+Gravitational acceleration under general relativistic theory is \blue{add reference to a book or classical paper?}
 \be
-g = \frac{G M}{R^2} \frac{1}{\sqrt{1-u}} = \Ten{1.38}{14} \frac{1}{\sqrt{1-u}} \left( \frac{M}{\Msun} \right) \left( \frac{10\km}{R} \right)^2 \cmss.
+g = \frac{G M}{R^2} \frac{1}{\sqrt{1-u}} = \Ten{1.38}{14} \frac{1}{\sqrt{1-u}} \left( \frac{M}{\Msun} \right) \left( \frac{10\km}{R} \right)^2 \cmss.
 \ee
-Hence, a surface gravitational accelerations $g$ of $\sim 10^{14}$ to $\sim 10^{15}\cmss$ are expected for neutron stars.
-By considering a barometric atmosphere we can also estimate the scale height as
+Hence, a surface gravitational acceleration \blue{remove a or s}\green{JN:done} $g$ of $\sim 10^{14}$ to $\sim 10^{15}\cmss$ is expected for neutron stars.
+By considering a barometric atmosphere \blue{what is that?} we can also estimate the scale height as
 \be
 H_{\mathrm{a}} = \frac{k_{\mathrm{B}} T}{m_i g} \approx \frac{0.83}{A} \left( \frac{T}{10^6\Kelvin} \right) \left( \frac{10^{14} \cmss}{g} \right) \cm
 \ee
 where $k_{\mathrm{B}} = \Ten{1.38}{-16} \erg \unitspace \Kelvin^{-1}$ is the Boltzmann constant, $T$ is the temperature of the atmosphere, $m_i = A m_u$, and $m_u \approx \Ten{1.66}{-24}\g$ is the atomic mass unit.
-From here, the typical scale height values of $\sim 1\cm$ to $\sim 10\cm$ are re-obtained for atmospheres of $T=10^6$ and $10^7\Kelvin$.\cite{ZP02, Potekhin14}
+From here, the typical scale height values of $\sim 1\cm$ to $\sim 10\cm$ are re-obtained \blue{remove re?} for atmospheres of $T=10^6$ and $10^7\Kelvin$.\cite{ZP02, Potekhin14}
 Strong gravitational field also bends the photon trajectories.\cite{PFC83}
 Hence, in addition to the radius $R$ of the star as measured in the local reference frame, another \emph{apparent} radius, as measured by an observer at infinity, 
 \be
@@ -140,13 +140,13 @@ R_{\infty} = \frac{R}{\sqrt{1-u}},
 \ee
 is usually needed when describing the observable features of the atmosphere.
 From here it is then clear that the atmosphere and the emerging radiation encodes information from the physical parameters of the star.
-More specifically information about the temperature, surface gravity, chemical composition, compactness can be obtained.
+More specifically information about the temperature, surface gravity, chemical composition, and compactness can be obtained.
 
 \subsection{Basic equations of the atmosphere}
-The standard approach in describing the atmosphere structure includes solving three main equations of radiative transfer, hydrostatic balance, and energy conservation.
+\blue{I have never liked "basic equations", I think its a "Russian" style of starting Section 2; why not use: Radiative transport in the atmosphere, or something like that?} The standard approach in describing the atmosphere structure includes solving three main equations of radiative transfer, hydrostatic balance, and energy conservation.
 First such a low-$B$ field model of neutron star atmospheres were presented in the pioneering work by Romani.\cite{Romani87}
-Let us next see, walk through these equations, as they are rater simple.
-A more general description for the atmosphere model computations are given in \red{Sect.XX}\cite{NKS15}, where the full relativistic electron scattering is also taken into account.
+Let us next walk through these equations, as they are rater simple.
+A more general description for the atmosphere model computations are given in \red{Sect.XX}, where the full relativistic electron scattering is also taken into account.
 
 Because the thickness of the atmosphere is much smaller than the radius of the star,%
 \footnote{Recall the scale height of $1$ to $10\cm$ in comparison to the radius of $10^6\cm$.}
@@ -161,21 +161,21 @@ I_{\nu} = \frac{dE}{dA dt d\nu d\Omega}.
 \ee
 Radiation averaged over the solid angle, or the so-called mean specific intensity (zeroth moment of $I_{\nu}$) is then
 \be
-J_{\nu} = \frac{1}{4\pi} \int_{\Omega} I_{\nu} d\Omega = \frac{1}{4\pi} \int_0^{2\pi} \int_0^{\pi} I_{\nu} \sin\theta d\theta d\phi = \frac{1}{2} \int_{-1}^{+1} I_{\nu} d\mu,
+J_{\nu} = \frac{1}{4\pi} \int_{\Omega} I_{\nu} d\Omega = \frac{1}{4\pi} \int_0^{2\pi} \int_0^{\pi} I_{\nu} \sin\theta d\theta d\phi = \frac{1}{2} \int_{-1}^{+1} I_{\nu} d\mu,
 \ee
-where we have assumed that the radiation does not depend on the azimuthal $\phi$ angle (as is typical for atmosphere calculations) and introduced $\mu = \cos\theta$.
-Net rate of energy flowing across an unit area (for example a photon detector) from \emph{all directions} per time and frequency is known as physical flux.%
+where we have assumed that the radiation does not depend on the azimuthal $\phi$ angle (as is typical for atmosphere calculations) and introduced $\mu = \cos\theta$ \blue{use equiv?}.
+Net rate of energy flowing across an unit area (for example a photon detector) from \emph{all directions} per time and frequency is known as physical flux.%
 \footnote{
-    Strictly speaking, the first-order moment of $I_{\nu}$ is known as the Eddington flux $H_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu}\mu d\mu$.
+    Strictly speaking, the first-order moment of $I_{\nu}$ is known as the Eddington flux $H_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu}\mu d\mu$.
     Physical flux is related to it as $F_{\nu} = 4\pi H_{\nu}$ and sometimes one also encounters the ``astrophysical'' flux defined as $F_{\nu}/\pi$.
 }
 It is proportional to the first-order moment of $I_{\nu}$ and is defined as
 \be
-F_{\nu} = 2\pi \int_{-1}^{+1} I_{\nu} \mu d\mu.
+F_{\nu} = 2\pi \int_{-1}^{+1} I_{\nu} \mu d\mu.
 \ee
 Similarly, the second-order moment of $I_{\nu}$, or a so-called K-integral, is
 \be
-K_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu} \mu^2 d\mu,
+K_{\nu} = \frac{1}{2} \int_{-1}^{+1} I_{\nu} \mu^2 d\mu,
 \ee
 which is related to the radiation pressure, as we later on will see.
 
@@ -183,7 +183,7 @@ Now we can introduce the radiative transfer equation for $I_{\nu}$ as
 \be\label{eq:rte}
 \mu \frac{d I_{\nu}}{d\tau} = \frac{\mu}{\kappa_{\nu}} \frac{d I_{\nu} }{dy} = -\frac{\mu}{\rho \kappa_{\nu}} \frac{d I_{\nu} }{dz } = I_{\nu} - S_{\nu}
 \ee
-where $\tau$ is the optical depth, $y$ is the column density (mass per area), $z$ is the horizontal distance from the surface, $\kappa_{\nu} = \alpha_{\nu} + \sigma_{\nu}$ is the total radiative opacity including contributions from the ``true'' opacity $\alpha_{\nu}$ and from the scattering opacity $\sigma_{\nu}$.
+where $\tau$ is the optical depth, $y$ is the column density (mass per area), $z$ is the horizontal distance from the surface, $\kappa_{\nu} = \alpha_{\nu} + \sigma_{\nu}$ is the total radiative opacity including contributions from the ``true'' opacity $\alpha_{\nu}$ and from the scattering opacity $\sigma_{\nu}$.
 Here the connection between different independent variables is given as
 \be
 d\tau = \kappa_{\nu} dy = -\kappa_{\nu} \rho dz,
@@ -191,7 +191,7 @@ d\tau = \kappa_{\nu} dy = -\kappa_{\nu} \rho dz,
 relating the optical depth (distance as experienced by the radiation), column density (projected number density of matter along the path of the radiation), and the horizontal height.
 In addition we need the source function 
 \be
-S_{\nu} = (\sigma_{\nu} J_{\nu} + \alpha B_{\nu}) \kappa_{\nu}^{-1},
+S_{\nu} = (\sigma_{\nu} J_{\nu} + \alpha B_{\nu}) \kappa_{\nu}^{-1},
 \ee
 where the scattering term is proportional to the mean spectral intensity $J_{\nu}$ and the ``true'' absorption term to the thermal Planck function
 \be
@@ -200,11 +200,11 @@ B_{\nu}(T) = \frac{2 h \nu^3}{c^2} \frac{1}{\exp \left[ h \nu/(k_{\mathrm{B}}T) 
 where $h = \Ten{6.63}{-27} \unitspace \erg \unitspace \mathrm{s}$ is the Planck constant.
 As an boundary conditions for this equation, we can use $I_{\nu} = 0$ for $\mu < 0$ at $y = 0$ (i.e., the surface).
 The atmospheres are also usually considered to be in radiative and hydrostatic equilibrium, i.e., (quasi-)stationary.
-The first requirement can be formulated as 
+The first requirement can be formulated as \blue{rather than requirement, isnt this how Teff is defined?}
 \be
-\int_0^{\infty} d\nu \int_{-1}^{+1} I_{\nu} \mu d\mu = \sigma_{\mathrm{SB}} T_{\mathrm{eff}},
+\int_0^{\infty} d\nu \int_{-1}^{+1} I_{\nu} \mu d\mu = \sigma_{\mathrm{SB}} T_{\mathrm{eff}},
 \ee
-where $\sigma_{\mathrm{SB}} = \Ten{5.67}{-5} \unitspace \g \unitspace \mathrm{s}^{-3} \unitspace \Kelvin^{-4}$ is the Stefan-Boltzmann constant and $T_{\mathrm{eff}}$ is the effective temperature of the atmosphere.
+\blue{power 4 missing!} where $\sigma_{\mathrm{SB}} = \Ten{5.67}{-5} \unitspace \g \unitspace \mathrm{s}^{-3} \unitspace \Kelvin^{-4}$ is the Stefan-Boltzmann constant \blue{I prefer erg/cm2/s/K4 as it shows that it relates temperature to the flux} and $T_{\mathrm{eff}}$ is the effective temperature of the atmosphere.
 The second hydrostatic equilibrium, demands that
 \be
 \frac{dP}{dy} = g - g_{\mathrm{rad}},
@@ -218,7 +218,7 @@ P = n k_{\mathrm{B}} T,
 where $n$ is the number density of particles.
 
 \subsection{Eddington limit}
-Usually the atmospheres we calculate are dynamically stable and in hydrostatic balance because large gravity implies $g_{\mathrm{rad}} \ll g$.
+Usually the atmospheres we calculate are dynamically stable and in hydrostatic balance because large gravity implies $g_{\mathrm{rad}} \ll g$.
 Sometimes, however, the radiation flux might increase to such a strengths that it is able to compete against even the enormous gravity of a neutron star.
 An important limit can then be defined for $g_{\mathrm{rad}} = g$, known as the Eddington limit after a renowned astrophysicist Sir Arthur Eddington.
 Let us now for completeness derive this limit.\cite[for a more in depth discussion, see e.g.,][]{RL79, FKR02}
@@ -231,41 +231,41 @@ This can be easily done when we realize that pressure is just momentum flux, and
 }
 In terms of $I_{\nu}$ this is then
 \be
-P_{\mathrm{rad}, \nu} = \frac{1}{c} \int_0^{2\pi} \int_{-1}^{+1} I_{\nu} \mu^2 d\mu = \frac{4\pi}{c} K_{\nu},
+P_{\mathrm{rad}, \nu} = \frac{1}{c} \int_0^{2\pi} \int_{-1}^{+1} I_{\nu} \mu^2 d\mu = \frac{4\pi}{c} K_{\nu},
 \ee
 relating the pressure and the second-order moment $K_{\nu}$ together.
 Radiative acceleration is then
 \be\label{eq:grad}
-g_{\mathrm{rad}} = \frac{d P_{\mathrm{rad}}}{dy} = \frac{d}{dy} \int_0^{\infty} P_{\mathrm{rad},\nu} \, d\nu = \frac{4\pi}{c} \frac{d}{dy} \int_0^{\infty} K_{\nu} d\nu.
+g_{\mathrm{rad}} = \frac{d P_{\mathrm{rad}}}{dy} = \frac{d}{dy} \int_0^{\infty} P_{\mathrm{rad},\nu} \, d\nu = \frac{4\pi}{c} \frac{d}{dy} \int_0^{\infty} K_{\nu} d\nu.
 \ee
 Let us refine this expression by inserting the definition of $K_{\nu}$ and applying the radiative transfer equation \eq{eq:rte} without the source function $S_{\nu}$.
 In the process we also have to take into account that we are only interested in the outgoing flux, hence the integration limits of $\mu$ need to be changed as $[-1,+1] \rightarrow [0,+1]$.
 We can then simplify the \eq{eq:grad} to 
 \begin{align}\begin{split}\label{eq:kfgrad}
-    g_{\mathrm{rad}} &= \frac{4\pi}{c} \frac{d}{dy} \int_0^{\infty} d\nu \frac{1}{2} \int_{0}^{+1} I_{\nu} ~ \mu^2 d\mu \\
-                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~ \left\{ \mu \frac{d}{dy} I_{\nu} \right\}  \\
-                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~  \kappa_{\nu} I_{\nu} \\
-                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu ~\kappa_{\nu} \int_{0}^{+1} I_{\nu} \mu d\mu \\
-                     &= \frac{1}{c} \int_0^{\infty} ~\kappa_{\nu} F_{\nu} d\nu.
+    g_{\mathrm{rad}} &= \frac{4\pi}{c} \frac{d}{dy} \int_0^{\infty} d\nu \frac{1}{2} \int_{0}^{+1} I_{\nu} ~ \mu^2 d\mu \\
+                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~ \left\{ \mu \frac{d}{dy} I_{\nu} \right\}  \\
+                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu \int_{0}^{+1} \mu \, d\mu ~  \kappa_{\nu} I_{\nu} \\
+                     &= \frac{2\pi}{c} \int_0^{\infty} d\nu ~\kappa_{\nu} \int_{0}^{+1} I_{\nu} \mu d\mu \\
+                     &= \frac{1}{c} \int_0^{\infty} ~\kappa_{\nu} F_{\nu} d\nu.
 \end{split}\end{align}
 %\be
-%\int_{-1}^{+1} \kappa_{\nu} S_{\nu} ~\mu d\mu = \int_{0}^{+1} ( \sigma_{\nu} J_{\nu} + \alpha_{\nu} B_{\nu} ) \mu d \mu = 0 + 0,
+%\int_{-1}^{+1} \kappa_{\nu} S_{\nu} ~\mu d\mu = \int_{0}^{+1} ( \sigma_{\nu} J_{\nu} + \alpha_{\nu} B_{\nu} ) \mu d \mu = 0 + 0,
 %\ee
 %because both $J_{\nu}$ and $B_{\nu}$ are isotropic, i.e. do not depend on the angles.
 From the bottom line of Eq. \eq{eq:kfgrad} we see that the K-integral is related to the flux of the radiation $F_{\nu}$.
 Not every photon, however, interacts and collides with the matter, and hence the opacity correction $\kappa_{\nu}$ is also needed, representing effectively the fraction of radiation interacting with the matter.
 If we now integrate over all the frequencies we obtain
 \be
-g_{\mathrm{rad}} = \frac{1}{c} \kappa F
+g_{\mathrm{rad}} = \frac{1}{c} \kappa F
 \ee
 Setting it equal to $g$ we can solve for the Eddington flux as
 \be
-F_{\mathrm{Edd}} = \frac{g c }{\kappa} \frac{1}{\sqrt{1-u}} = \frac{G M c}{R^2 \kappa} \frac{1}{\sqrt{1-u}}.
+F_{\mathrm{Edd}} = \frac{g c }{\kappa} \frac{1}{\sqrt{1-u}} = \frac{G M c}{R^2 \kappa} \frac{1}{\sqrt{1-u}}.
 \ee
 Usually in many astrophysical scenarios the opacity is dominated by the electron Thomson scattering opacity, $\sigma_{\mathrm{T}} = \Ten{6.65}{-25} \unitspace \mathrm{cm}^{-2}$.
-Mass for a hydrogen plasma is, on the other hand, mainly set by the protons, hence, opacity per mass is then
+Mass for a hydrogen plasma is, on the other hand, mainly set by the protons, hence, opacity per mass \blue{opacity per mass seems an odd way to say this. Isnt it just opacity, or opacity per unit mass} is then
 \be
-\kappa \approx \frac{ \sigma_{\mathrm{T}} }{m_{\mathrm{p}}}.
+\kappa \approx \frac{ \sigma_{\mathrm{T}} }{m_{\mathrm{p}}}.
 \ee
 Finally, be calculating the total radiation flux through the stellar surface, we can define a quantity called luminosity as
 \be
@@ -274,9 +274,9 @@ L = 4\pi R^2 F(R),
 where $F(R)$ is the outcoming radiation flux at the surface.
 Using the aforementioned equation, we can then define the Eddington luminosity for a star as 
 \be
-L_{\mathrm{Edd}} = \frac{4\pi G M c m_{\mathrm{p}} }{\sigma_{\mathrm{T}} } \approx \Ten{1.3}{38} \left( \frac{M}{\Msun} \right) \ergs.
+L_{\mathrm{Edd}} = \frac{4\pi G M c m_{\mathrm{p}} }{\sigma_{\mathrm{T}} } \approx \Ten{1.3}{38} \left( \frac{M}{\Msun} \right) \ergs.
 \ee
-For neutron stars close to $T \sim 10^7 \Kelvin$ this limit can be reached, after which the atmosphere is momentarily blown away.
+For neutron stars close to $T \sim 10^7 \Kelvin$ this limit can be reached, after which the atmosphere is momentarily blown away \blue{blown away isnt the perfect phrase here as we dont have good evidence that it is always blown away}.
 
 
 
@@ -305,7 +305,7 @@ L = -\frac{dQ}{dt} = A \sigma_{\mathrm{SB}} T_{\mathrm{eff}}^4
   = (A \sigma_{\mathrm{SB}} )^{-1/3} \left( \frac{3}{m C_P} t \right)^{-4/3}.
 \ee
 Hence, energy deposited below the atmosphere will radiate to us and decay as $\propto t^{-4/3}$.
-In general, the heat capacity is $C_P = C_P(T)$, but the main results hold, that observationally we should see a powerlaw decay of luminosity, if an excess energy is instantaneously injected or released into the deeper layers of the star.
+In general, the heat capacity is $C_P = C_P(T)$, but the main results hold, that observationally we should see a powerlaw decay of luminosity, if an excess energy is instantaneously injected or released into the deeper layers of the star. \blue{yleiskommenttina totean etta hyvin kirjoitettu ja selkee kappale, mutta ehka osittain jopa vahan turhan yksityiskohtainen; esim. yhtalon 1.19 johtaminen tolleen ei ehka ole tarpeen. }
 
 
 
@@ -321,14 +321,14 @@ In general, the heat capacity is $C_P = C_P(T)$, but the main results hold, that
 %At the base neutrons start to drip out from nuclei.
 
 Below the gaseous atmosphere, a solidified layer of matter exists, called crust.\cite[for a review, see, e.g.,][]{HPY07, CH08, NSCrust12}
-Between the atmosphere and crust, a liquid ocean of ions also exists, but the interface is not very strict and the matter is smoothly evolving from an one state to another.
-The solidified crust is also typically divided into an outer and inner layers, but the interface is again ambiguous. 
-The pressure here is almost fully given by the degenerate electrons, and hence the matter is familiar already from white dwarfs.
-In the beginning, the electrons can be taken to be non-relativistic but after about $\rho \sim 10^{6} \gcm$ they turn into ultra-relativistic because of the increasing density.
+Between the atmosphere and crust, a liquid ocean of ions also exists, but the interface is not very strict and the matter is smoothly evolving from an \blue{remove an, or use a; "an one" is not correct} one state to another.
+The solidified crust is also typically divided into an outer and inner layers \blue{remove an, or s}, but the interface is again ambiguous. 
+The pressure here is almost fully given by the degenerate electrons, and hence the matter is \blue{rephrase after this} familiar already from white dwarfs.
+In the beginning, the electrons can be taken to be non-relativistic but after about $\rho \sim 10^{6} \gcm$ they turn into ultra-relativistic \blue{remove into, or add electrons} because of the increasing density.
 
-By definition, the outer crust is a layer in the neutron star interiors where the plasma consists of electrons and nuclei, whereas the inner crust is characterized by an additional appearance of neutrons that start to drip out from the extremely neutron-rich nuclei.
+By definition, the outer crust is a layer in the neutron star interiors \blue{remove s} where the plasma consists of electrons and nuclei, whereas the inner crust is characterized by an additional appearance of neutrons that start to drip out from the extremely neutron-rich nuclei.
 The density this occurs is called the neutron drip density and is of around $\rho_{\mathrm{ND}} \sim \Ten{4}{11} \gcm$.
-The outer crust, when defined to begin from the atmosphere at $\rho \sim 10^3 \gcm$ and continue to about $\rho_{\mathrm{ND}}$ is only about some hundred meters in thickness.
+The outer crust, when defined to begin from the atmosphere at $\rho \sim 10^3 \gcm$ and continue to about $\rho_{\mathrm{ND}}$ is only about some hundred meters in thickness \blue{change "in thickness" to thick?}.
 The characteristics of the matter are strongly dependent on the Coulomb interactions of charged particles that form a solid Coulomb crystal.
 
 %\subsection{Inner crust}
@@ -344,7 +344,7 @@ The inner crust is taken to continue all the way down to the crust-core interfac
 This layer is about one kilometer thick.
 Here, at the bottom of the crust, the density is already close to the nuclear density of $\rho_{\mathrm{n}} = \Ten{2.8}{14} \gcm$ but the exact location of the transition depends on the detailed microphysics of the core.
 The fraction of free neutrons grows with the increasing density.
-Because the normal nuclei nuclei here are immersed into free neutron gas, the nuclear interactions play a crucial role in defining the matter.
+Because the normal nuclei here are immersed into free neutron gas, the nuclear interactions play a crucial role in defining the matter.
 Finally, the nuclei disappear totally when we enter the core.
 Before that, however, the nuclei form complicated structures that evolve together with the density.
 This region is also known as the nuclear pasta phase, as the different molecular structures are named after the pasta types that they resemble.\cite[see e.g.][]{CH16}
@@ -361,10 +361,10 @@ where $\Delta x\Delta y \Delta z$ is the volume in ordinary space, $\Delta p_x \
 In accordance with the quantum mechanics, there is room for only one particle of any kind inside the elementary cell.
 In general the number density is given as
 \be\label{eq:dist}
-n_{\mathrm{av}} = \frac{g}{\exp[ (E-\mu)/k_{\mathrm{B}}T ] \pm 1},
+n_{\mathrm{av}} = \frac{g}{\exp[ (E-\mu)/k_{\mathrm{B}}T ] \pm 1},
 \ee
 where $+$ is used for fermions (such as electrons and protons), and $-$ for bosons (such as photons).
-Additionally, the $g$ is the number of different quantum states a particle may have inside the cell, $E$ is the total particle energy, and $\mu$ is the chemical potential explained more carefully later on.
+Additionally, the $g$ is the number of different quantum states a particle may have inside the cell, $E$ is the total particle energy, and $\mu$ is the chemical potential explained more carefully later on \blue{note that $\mu$ is already defined as $\mu = \cos \theta$}.
 Number of particles with momentum between $p$ and $p+dp$ is 
 \be\label{eq:pshell}
 n(p) dp = n_{\mathrm{av}} \frac{4\pi p^2}{h^3} dp,
@@ -372,7 +372,7 @@ n(p) dp = n_{\mathrm{av}} \frac{4\pi p^2}{h^3} dp,
 i.e., particles inside a spherical shell with a surface $4\pi p^2$ and thickness $dp$.
 Number density of particles with all momenta is then
 \be
-n = \int_0^{\infty} n(p) dp
+n = \int_0^{\infty} n(p) dp
 \ee
 and the density is then simply
 \be
@@ -411,7 +411,7 @@ Hence, the number density of fermions in general is
 n_{\mathrm{f}}= \frac{8 \pi}{h^3} \int_0^{\infty} \frac{p^2 dp}{ \exp ( \frac{ E_{\mathrm{k}} - \ef }{ k_{\mathrm{B}} T } ) + 1}.
 \ee
 If Fermi energy $\ef \ll 0$ the distribution will be Maxwellian even for small kinetic energies.
-On the other hand, if $\ef \gg k_{\mathrm{B}}T$ we can divide the integrand of Eq. \eq{eq:FD} into two distinct regions of 
+On the other hand, if $\ef \gg k_{\mathrm{B}}T$ we can divide the integrand of Eq. \eq{eq:FD} into two distinct regions of 
 \be
 n_{\mathrm{f}} = 
 \begin{cases}
@@ -422,13 +422,13 @@ n_{\mathrm{f}} =
 where the transition occurs rather sharply at $E_{\mathrm{k}} = \ef$.
 This allows us to define a characteristic momentum related to the transition, called Fermi momentum $p_{\mathrm{F}}$, so that
 \be
-n_{\mathrm{f}} \approx \frac{8\pi}{h^3} \int_0^{p_{\mathrm{F}}} p^2 dp = \frac{8\pi}{3} \left( \frac{p_{\mathrm{F}}}{h} \right)^3.
+n_{\mathrm{f}} \approx \frac{8\pi}{h^3} \int_0^{p_{\mathrm{F}}} p^2 dp = \frac{8\pi}{3} \left( \frac{p_{\mathrm{F}}}{h} \right)^3.
 \ee
 Physically this can be interpreted such that when the temperature decreases, the fermions start to occupy all the quantum states starting from the one with lowest energy all the way up to the Fermi energy.
 Because of the Pauli exclusion principle, no more than one fermion can exists in the same quantum state so the levels are filled in order, and all the higher states will remain empty.
 Hence, the highest momenta possible in the degenerate matter is the Fermi momentum
 \be\label{eq:fermimom}
-p_{\mathrm{F}} = \left( \frac{3 n_{\mathrm{f}}}{8 \pi} \right)^{1/3} h.
+p_{\mathrm{F}} = \left( \frac{3 n_{\mathrm{f}}}{8 \pi} \right)^{1/3} h.
 \ee
 
 
@@ -446,27 +446,27 @@ Normal beta-decay mode for the neutrons, on the other hand, is
 \be
 n \rightarrow p + e^{-} + \bar{\nu_{e}},
 \ee
-that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron neutrino $\bar{\nu_{e}}$.
-It is because of this decay, that we do not expect to see any free neutron flying around.
-Such a decay is, however, might be blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.
+that describes the possible path of how a neutron $n$ will decay into a proton $p$, electron $e^{-}$, and electron \blue{ANTI!} neutrino $\bar{\nu_{e}}$.
+It is because of this decay, that we do not expect to see any free neutrons flying around.
+Such a natural decay, however, might be blocked because there is no room for an emission of an extra electron $e^{-}$ or a proton $p$.
 
-Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$, where the related particle species is defined inside the parentheses.
-Co-existence of neutrons, protons, and electrons is then guaranteed (at zero temperature) if 
+Let us then only focus on the decay of the most energetic neutrons with an energy equal to the Fermi energy $\ef(n)$, where the related particle species is now defined inside the parentheses for clarity.
+Co-existence of neutrons, protons, and electrons is guaranteed (at zero temperature) if 
 \be
-\ef(n) = \ef(p) + \ef(e^{-}).
+\ef(n) = \ef(p) + \ef(e^{-}).
 \ee
 %Fermi momentum of a particle is related to its concentration via
 %\be
 %p_{\mathrm{F}} = \left( \frac{3n}{8\pi} \right)^{1/3} h,
 %\ee
 %where $n$ is the number density, and $h$ the Planck constant.
-Massive neutrons and protons are to a good approximation non-relativistic up to a densities of $10^{14}\gcm$, and hence energy is simply a sum of their rest mass energy and kinetic energy
+Massive neutrons and protons are to a good approximation non-relativistic up to densities of $10^{14}\gcm$, and hence energy is simply a sum of their rest mass energy and kinetic energy
 \be
-\ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
+\ef(n) \approx m_n c^2 + \frac{p_{\mathrm{F}}(n)^2}{2 m_n },
 \ee
 and
 \be
-\ef(p) \approx m_p c^2 + \frac{p_{\mathrm{F}}(p)^2}{2 m_p }.
+\ef(p) \approx m_p c^2 + \frac{p_{\mathrm{F}}(p)^2}{2 m_p }.
 \ee
 Electrons, on the other hand, are already ultra-relativistic, and so
 \be
@@ -483,8 +483,8 @@ Not only is the degeneracy then responsible for the pressure but it is also the 
 Let us next consider the equation of state for the crust.
 As we have seen, the pressure in the crust originates from the degenerate electron gas.
 Physics behind this are quite simple and we repeat the calculations here to introduce the reader to the topic.
-The result also bears some historical value as these are exactly the equations that were introduced by Dirac\cite{Dirac25}, Fowler\cite{Fowler26}, Frenkel\cite{Frenkel28}, Anderson\cite{Anderson29}, Stoner\cite{Stoner30}, and Chandrasekhar\cite{Cha31}.%
-More thorough discussion of the electron thermodynamics is given, for example, in Refs.\cite{Cha39, Schatzman58, Salpeter61, Tooper69, ZN71, LL80, Blinnikov87, YS89, HPY07}
+The result also bears some historical value as these are the equations that were first introduced by Dirac\cite{Dirac25}, Fowler\cite{Fowler26}, Frenkel\cite{Frenkel28}, Anderson\cite{Anderson29}, Stoner\cite{Stoner30}, and Chandrasekhar\cite{Cha31}.
+A more thorough discussion of the electron thermodynamics is given, for example, in Refs.\cite{Cha39, Schatzman58, Salpeter61, Tooper69, ZN71, LL80, Blinnikov87, YS89, HPY07}
 %\cite[For a review, see e.g.,][]{Cha39, LL80, HPY07}
 
 The behavior of the matter in the crust is dominated mainly by the electrons. 
@@ -495,7 +495,7 @@ It is convenient to describe it in the units of electron rest mass, as
 \xr \equiv \frac{p_{\mathrm{F}}}{\me c},
 \ee
 also known as the relativity parameter.\cite{Salpeter61}
-We will also need the more general relativistic form of the Fermi energy
+We will also need the more generic special relativistic form of the Fermi energy
 \be
 \epsilon_{\mathrm{F}} = c^2 \sqrt{ ( \me c)^2 + p_{\mathrm{F}}^2 },
 \ee
@@ -560,14 +560,15 @@ Similarly, for ion with a charge number of $\Zi$, we can define the ion-sphere r
 \be
 \irad = \erad \Zi^{1/3},
 \ee
-that encapsulates enough area to be charge neutral, when considering a static electron-induced background from $\nel$.
+that encapsulates enough volume to be charge neutral, when considering the static electron-induced background from $\nel$.
 Ion Coulomb coupling factor is similarly
 \be
 \Gi = \Ge \Zi^{5/3} = \frac{ (\Zi e)^2}{\irad k_{\mathrm{B}} T}.
 \ee
 
 At high temperatures, the electrons form a classical Boltzmann gas.
-When the temperature is decreased, the plasma will then, without a phase-transition, become a strongly coupled Coulomb liquid corresponding to the neutron star ocean.
+When the temperature is decreased, the plasma will then, without a phase-transition \blue{why no phase transition?
+}, become a strongly coupled Coulomb liquid corresponding to the neutron star ocean.
 If the temperature is decreased further, the plasma will then transform into a Coulomb crystal with a phase transition.
 The gaseous regime can be constrained to be at $\Gi \ll 1$, or $T \gg T_{\mathrm{B}}$, where the $T_{\mathrm{B}}$ is given as
 \be
@@ -602,7 +603,7 @@ Other terms, given as $|P_{\mathrm{part}}|/P_{\mathrm{id}}^{(e)}$, result in lea
 \frac{P_{\mathrm{ii}} }{P_{\mathrm{id}}^{(e)}} \approx \alpha_{\mathrm{f}} \frac{ \gammar }{ x_{\mathrm{r}} },
 \ee
 where $\Theta_{\mathrm{i}}^{(i)}$ is the temperature in units of nucleon Fermi temperature (see Eq. \ref{eq:Thetar}), $\alpha_{\mathrm{f}} = e^2 /\hbar c \approx 1/137$ is the fine-structure constant, and $\hbar = h/2\pi$.
-From here it is easy to see that only the Coulomb interaction term $P_{\mathrm{ii}}$, should give a measurable corrections to the pressure at low temperatures. 
+From here it is easy to see that only the Coulomb interaction term $P_{\mathrm{ii}}$, should give a measurable corrections to the pressure at low temperatures because for the conditions inside neutron stars $\Theta_{\mathrm{i}}^{(i)}$ is very small.
 This suggests that for the pressure $P$ we can use the approximation
 \be\label{eq:approxpress}
 P \approx P_{\mathrm{id}}^{(e)} + P_{\mathrm{ii}}.
@@ -612,7 +613,7 @@ In the weak-coupling limit ($\Gi \ll 1$) the Debye-H\"uckel result for the exces
 \footnote{Debye-H\"uckel approximation relays on the assumption that the charge density surrounding an ion is described by electrostatics (Poisson's equation) and the distribution of the charge around the ion itself by thermal motions of electrons (Boltzmann's equation).
 }
 \be
-\frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gi^{3/2},
+\frac{F_{\mathrm{ex}}}{V} = \frac{1}{\sqrt{3}} n_{\mathrm{i}} kT \Gi^{3/2},
 \ee
 where $n_{\mathrm{i}}$ is the ion number density.
 Hence, the pressure correction due to the Coulomb interactions can be simply presented as 
@@ -620,12 +621,12 @@ Hence, the pressure correction due to the Coulomb interactions can be simply pre
 \Pii \approx -0.3 n_{\mathrm{i}} \frac{Z^2 e^2}{\irad}.
 \ee
 by using Eq. \eq{eq:press}.
-Note also that $\Gi = \Gi(V)$.
+Note also that $\Gi = \Gi(V)$ when taking the derivative in respect to the volume when deriving the expression for the pressure.
 
 Let us, as a final task, look into the main degenerate electron pressure term $P_{\mathrm{id}}^{(e)}$.
 Pressure is defined as a flux of momentum through a surface, hence for one particular wall it is
 \be
-P = \int_0^{\infty} \bra{v_x p_x} n(p) dp,
+P = \int_0^{\infty} \bra{v_x p_x} n(p) dp,
 \ee
 where the number density $n(p)$ is desribed by the Fermi-Dirac distribution, given by Eq.\eq{eq:dist}.
 Velocity can be obtained from the standard expression
@@ -636,7 +637,7 @@ using the energy defined by Eq.\eq{eq:totener}.
 Here we have already inserted the electron mass $m=\me=\Ten{9.11}{-28}\g$ into the equations.
 Hence, in the three-dimensional description the pressure is given as one third of what we would get by applying Eq.\eq{eq:pshell},
 \be
-P = \frac{1}{3} \int_0^{\infty} v(p)\,p\,n(p)~dp = \frac{8\pi}{3 \me h^3} \int_0^{\infty} \frac{p}{\left[ 1 + \left(\frac{p}{\me c} \right)^2 \right]^{1/2} }\,p\,\frac{p^2}{\exp[(E - \mu)/k_{\mathrm{B}} T] + 1} ~dp
+P = \frac{1}{3} \int_0^{\infty} v(p)\,p\,n(p)~dp = \frac{8\pi}{3 \me h^3} \int_0^{\infty} \frac{p}{\left[ 1 + \left(\frac{p}{\me c} \right)^2 \right]^{1/2} }\,p\,\frac{p^2}{\exp[(E - \mu)/k_{\mathrm{B}} T] + 1} ~dp.
 \ee
 Free energy of the system is then equal to what is left from the chemical potential after substracting the electron rest-mass energy and the pressure contribution,
 \be
@@ -647,26 +648,26 @@ Sommerfield expanding the free energy expression in powers of temperature, i.e.,
 \be
 \frac{F}{V} = \frac{\me c^2}{\bar{\lambdaC^3}}  \frac{1}{8\pi^2} \left( \xr(1+2\xr^2) \gammar - \ln(\xr + \gammar) + \frac{4\pi^2}{3} \tr^2 \xr \gammar  \right)  + \mathcal{O}(\tr^4)
 \ee
-from which it is easy to obtain an expression for the pressure by applying Eq.\eq{eq:press},
+from which it is easy to obtain an expression for the degenerate electron pressure by applying Eq.\eq{eq:press},
 \be\label{eq:edegpress}
-\Peid \approx \frac{\Pressr}{8\pi^2} \left( (\frac{2}{3}\xr^2 - 1) \gammar + \ln(\xr + \gammar) + \frac{4\pi^2}{9} \tr^2 \xr (\gammar + \gammar^{-1}) \right)
+\Peid \approx \frac{\Pressr}{8\pi^2} \left( (\frac{2}{3}\xr^2 - 1) \gammar + \ln(\xr + \gammar) + \frac{4\pi^2}{9} \tr^2 \xr (\gammar + \gammar^{-1}) \right),
 \ee
 where again a typical pressure is given as
 \be
 \Pressr = \frac{\me c^2}{\lambdaC} \approx \Ten{1.4}{25} \dyncm,
 \ee
-where $\lambdaC = \hbar/\me c = \Ten{3.86}{-11}\cm$ is the reduced electron Compton wavelength.%
+and $\lambdaC = \hbar/\me c = \Ten{3.86}{-11}\cm$ is the reduced electron Compton wavelength.%
 \footnote{
     Normal Compton wavelength is simply $\lambda_{\mathrm{e}} = 2\pi \times \lambdaC = h/\me c = \Ten{2.43}{-10}\cm$.
 }
 Omitting the (small) temperature related term ($\propto \tr^2$) leads to the well-known Chandrasekhar equation of state of for a perfect, completely degenerate electron gas.\cite{Stoner30, Cha35, Cha39}
 
 In the non-relativistic and ultra-relativistic regimes we can apply the asymptotic limits of Eq.\eq{eq:asymplims}.
-Then, the pressure given in Eq.\eq{eq:edegpress} takes a simple polytropic form of
+Then, the pressure \eq{eq:edegpress} takes a simple polytropic form
 \be
 \Peid \approx \frac{ \Pressr }{9\pi^2 \gammaad} \xr^{3\gammaad},
 \ee
-where the polytropic index is given as $\gammaad = \frac{5}{3}$ or $\gammaad = \frac{4}{3}$ for the non-relativistic ($\xr \ll 1$) and the ultra-relativistic ($\xr \gg 1$) cases, respectively.
+where the polytropic index is given as $\gammaad = \frac{5}{3}$ or $\gammaad = \frac{4}{3}$, for the non-relativistic ($\xr \ll 1$) or the ultra-relativistic ($\xr \gg 1$) electrons, respectively.
 Recall also that $\xr \propto \nel^{1/3} \propto \rho^{1/3}$.
 The transition occures at $\xr \approx 1$, corresponding to about $\rho \sim 10^6 \gcm$.
 
@@ -713,7 +714,7 @@ Hence, normal atoms can no longer exists, and the matter becomes an uniform plas
 In the end, we will have a liquid sea of free neutrons with a several per cent admixture of protons and electrons.
 The neutrons and protons, interacting via the nuclear forces, constitute a strongly interacting Fermi liquid, whereas electrons form an almost ideal Fermi gas.
 Instead of purely degenerate non-interacting matter, like the electrons in the crust, the nucleons become close enough to interact with each other.
-When in close contact, the repulsive short-range neutron-neutron interaction introduces a considerable stiffening of the equation of state.
+When in close contact, the repulsive short-range neutron-neutron interaction introduces a considerable stiffening to the equation of state.
 Hence, a many-body theory is needed in order to describe the matter in the core.
 If we take the effective range of strong nuclear forces to be of around $r_{\mathrm{sn}} \sim 10^{-13}\cm$, we can easily estimate the order-of-magnitude of the density when they become important by equating the mean distance of nucleons with $r_{\mathrm{sn}}$.
 In this case we obtain $\rho_{\mathrm{sn}} \sim m_{\mathrm{n}} / V = 3 \times \Ten{1.66}{-24} \g / 4\pi r_{\mathrm{sn}}^3 \sim \Ten{4}{14} \gcm$, a density range surprisingly close to more sophisticated calculations giving $\rho \sim (1.5 - 2) \times 10^{14} \gcm$.\cite[such estimates were first presented by Hund][]{Hund36}
@@ -735,8 +736,8 @@ The basic physics of this matter is determined by charge neutrality, $\beta$-equ
 Beyond $\rho > 2 \nsat \approx \Ten{5.6}{14}\gcm$, we have the \emph{inner core}.
 Its composition is even more unknown and the results here become heavily model-dependent.
 This is mainly because, in addition to the many-body forces, the exact particle composition is unclear.
-In addition to the $npe\mu$ matter, we might have hyperonization ($\Sigma^{-}$, $\Lambda$, or more generally sometimes labeled as $H$), pion condensation ($\pi$), kaon condensation ($K$), or even a phase-transition to a (pure) quark matter ($q$).
-Inner core of a neutron star can be many kilometers thick and the central densities of the most massive stars can go up to $\rho \approx (10-15) \times \approx (2.8 - 4.2) \times 10^{15} \gcm$.
+In addition to the $npe\mu$ matter, we might have hyperonization ($\Sigma^{-}$, $\Lambda$, or more generally sometimes labeled as $H$), pion condensation ($\pi$), kaon condensation ($K$), or even a phase-transition to a (pure or partial) quark matter ($q$).
+Inner core of a neutron star can be many kilometers thick and the central densities of the most massive stars can go up to $\rho \approx (10-15) \times \nsat \approx (2.8 - 4.2) \times 10^{15} \gcm$.
 
 
 \subsection{Polytropes}
@@ -744,13 +745,13 @@ Inner core of a neutron star can be many kilometers thick and the central densit
 %how strongly the matter responds to an increase in density with an increase in pressure
 %\red{Parameterize everything with polytropes.}
 
-Instead of trying to obtain a very uncertain nuclear physics description of the equation of state, let us take another route.
-As the strongly degenerate equation of state relevant for neutron stars is mainly just the relation between pressure and the density, we can try and phenomenologically parameterize this relation in contrast to describing the accurate but complicated microphysics.
+Instead of trying to obtain a very uncertain nuclear physics description of the equation of state, let us follow an alternative route.
+As the strongly degenerate equation of state relevant for neutron stars is mainly just the relation between the pressure and the density, we can try and phenomenologically parameterize this relation in contrast to describing the accurate but complicated microphysics.
 One such a parameterization is a polytropic presentation of the $P(\rho)$ function defined as
 \be\label{eq:monotrope}
 P(\rho) = K \rho^{\gamma},
 \ee
-where $\gamma$ is a polytropic index and is a measure of the \emph{stiffness} of the matter, and $K$ is just a normalization factor.
+where $\gamma$ is a polytropic index and is a measure of the \emph{stiffness} of the matter, and $K$ is just a normalization factor.
 Instead of settling for only one polytrope (actually called a monotrope then), we can link them together to form a piecewise polytropic description of the equation of state.
 Such a phenomenological description was pioneer by Read et al.\cite{Read09}
 In practice, we can then generalize Eq.\eq{eq:monotrope} such that
@@ -763,7 +764,7 @@ for transition densities $\rho_0 < \rho_1 < \rho_2  < \ldots < \rho_{i-1} < \rho
 Note that $\rho$ here is the rest-mass density.
 The full energy density can be obtained from the first law of thermodynamics as
 \be
-d \frac{\epsilon}{\rho} = -\frac{P}{c^2} d \frac{1}{\rho},
+d \frac{\epsilon}{\rho} = -\frac{P}{c^2} d \frac{1}{\rho},
 \ee
 that has an immediate integral of 
 \be
@@ -783,7 +784,7 @@ where
 \be
 a_i = \frac{ \epsilon(\rho_{i-1}) }{\rho_{i-1}} - 1 - \frac{1}{c^2} \frac{K_i}{\gamma_i -1} \rho_{i-1}^{\gamma_i -1},
 \ee
-defines the energy density continuous.
+defines the energy density to be a continuous function.
 
 \subsection{Library for the equation of state of the core}
 
@@ -820,7 +821,7 @@ Finally, for the hybrid nuclear matter and quark matter compositions ($npe\mu + 
 Again, for pure quark matter composition, the equation of state ends up being too soft. 
 Even in the case of the ALF2, the transition density from the nuclear matter to quark matter is defined at a relatively late phase corresponding to $\rho = 3\nsat$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \centering
 \includegraphics[width=7.5cm]{figs/tov/core_eos_SLy.pdf}
 \includegraphics[width=7.5cm]{figs/tov/core_gamma.pdf}
@@ -842,22 +843,22 @@ Unlike the previously well-defined crust, here the theoretical uncertainties bec
 
 \section{Tolman-Volkoff-Oppenheimer equations}
 Let us, as a final task, try and construct an actual model of a star from the equation of state.
-For this, we require the star to be in hydrostatic equilibrium so that the pressure gradient from opposes the gravity.
+For this, we require the star to be in hydrostatic equilibrium so that the pressure gradient of the matter opposes the gravity.
 In classical Newtonian form this can be expressed simply as
 \be\label{eq:hydrobal}
-\frac{dP}{dr} = -\frac{G m \rho}{r^2},
+\frac{dP}{dr} = -\frac{G m \rho}{r^2},
 \ee
 where $r$ is the radial coordinate.
-In addition, we will need a connection for the mass $m$ and radius $r$, that in spherical symmetry is 
+In addition, we will need a connection for the mass $m$ and radius $r$, that in spherical symmetry is given as
 \be\label{eq:hydrobalGR}
 \frac{dm}{dr} = 4\pi r^2 \rho.
 \ee
 Taking into account the general relativistic corrections we get
 \be
-\frac{dP}{dr} = 
+\frac{dP}{dr} = 
     -\frac{G M \rho}{r^2} \times 
     \frac{ (1 + P/\rho c^2)(1+4\pi r^3 P/m c^2) }
-    {1-2 G m /r c^2 }.
+    {1-2 G m /r c^2 }.
 \ee
 This is the relativistic hydrostatic equilibrium equation as first derived by Tolman\cite{Tolman39}, Oppenheimer and Volkoff\cite{OV39}.\cite[for an introduction, see, e.g.,][]{Wald84, Gravitation}
 Difference in respect to the classical formulation originates from the source of gravity:
@@ -865,7 +866,7 @@ in the Newtonian case it is the mass $m$, whereas in the general relativity it i
 As a result, both, energy and pressure, give rise to a gravitational field.
 
 
-This has an important consequence for the stability of neutron stars:
+This has an important consequence for the stability of compact stars:
 Successive increase in the pressure to counter the gravity is ultimately self-defeating.
 We can get an idea of this, by using an unphysical but analytically easier special case of constant density, i.e. incompressible equation of state, as our model.
 By solving the Eq.\eq{eq:hydrobal} for constant density $\rho(r) = \rho_0$, we obtain
@@ -883,7 +884,7 @@ Unlike the classical counter-part, the central pressure $P(0)$ here attains a ma
 M_{\mathrm{max}} = \frac{4}{9} R c^2 / G \approx 3.01 \left( \frac{R}{10\km} \right) \Msun.
 \ee
 Even though the assumption of constant density is unphysical, the solution shows that the relativistic equations of hydrostatic balance have a maximum mass after which the star becomes unstable.
-This is an important feature of the equations as it can be used to, for example, rule out certain equations of states, given that we have measured some (large) mass to exists in Nature.
+This is an important feature of the equations as it can be used, for example, to rule out certain equations of states, given that we have measured some (large) mass to exists in Nature.
 It was also the source of confusion in the 1930s because the degenerate neutron gas equation of state gives $M_{\mathrm{max}} \approx 0.7 \Msun$, while the Chandrasekhar limit, i.e., the maximum mass for white dwarfs with degenerate electrons, give $M_{\mathrm{Ch}} \approx 1.44 \Msun$.
 From these arguments, it would seem that neutron stars can not exists because the maximum mass is less than that of the white dwarfs.
 Now we, of course, already know that it is the nuclear many-body interactions that have a huge impact on the equations of states and subsequently alter the maximum mass to be of around $M_{\mathrm{max}} \approx (1.5-3) \Msun$.
@@ -923,11 +924,10 @@ The core also consists of more than $99\%$ of the total mass of the star.
 
 
 
-Instead of fixed central pressure, we can let it span a large range, starting from some small value and ending to the pressure corresponding to the maximum mass, to obtain mass$-$radius, $M-R$ curves for the equations of states.
+Instead of fixed central pressure, we can let it span a large range, starting from some small value and ending to the pressure corresponding to the maximum mass, to obtain mass$-$radius, or more succinctly $M-R$, curves for the equations of states.
 These are visualized in \fig{fig:coreMR} along with the pressure$-$density relations that yield them.
 From here it is obvious how the large uncertainty in the nuclear physics of the core then translates into a large possible allowed radius range, from about $10$ to $15\km$.
 It also opens up a pathway of probing the nuclear physics with astrophysics because  mass and radius measurements of real neutron stars can set constraints to the equation of state.
-
 
 
 
