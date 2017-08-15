@@ -164,7 +164,7 @@ class plasma:
             #introduce partial Coulomb sreening
             #x = max(0.0, min( self.Gi, 1.0))
             x = max(0.0, min( np.log10(self.rho)-4 , 1.0))
-            Pc = x*self.PCoulomb()
+            Pc = 0.9*x*self.PCoulomb()
 
             #introduce partial degeneration
             #y = max(0.0, min( self.Ge, 1.0))
@@ -418,7 +418,7 @@ def main(argv):
     Pc = tov.SLyCrust.pressures( rhoc )  
     print "polytropes:", len(tov.SLyCrust.transitions )
     print np.log10( Pc )
-    axs[0].plot( rhoc, Pc, "r-")
+    #axs[0].plot( rhoc, Pc, "k-")
 
 
 
@@ -505,7 +505,7 @@ def main(argv):
 
 
     axs[0].text(1.0e4, 2.0e18, r'$P \propto \rho^{5/3}$', rotation=27, ha='center', va='center', size=8)
-    axs[0].text(1.0e7, 2.0e25, r'$P \propto \rho^{4/3}$', rotation=22, ha='center', va='center', size=8)
+    axs[0].text(2.0e7, 2.0e23, r'$P \propto \rho^{4/3}$', rotation=22, ha='center', va='center', size=8)
 
 
     #validity zones
@@ -526,7 +526,7 @@ def main(argv):
 
     tickloc = []
     ticklab = []
-    for rad in [11.73, 11.72, 11.71, 11.7, 11.6, 11.3, 10.0,  0.0]:
+    for rad in [11.73, 11.72, 11.71, 11.7, 11.6, 11.3, 10.0,  0.1]:
         rhor = rho_at_R(rad)
         tickloc.append(rhor)
 

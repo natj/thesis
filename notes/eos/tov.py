@@ -79,11 +79,11 @@ class polytrope:
 
             ed = trope.edens(transition) 
             pr = trope.pressure(transition)
-            eta= trope.rho_eta(transition)
+            #eta= trope.rho_eta(transition)
 
             self.prs.append( pr )
             self.eds.append( ed )
-            self.etas.append(eta)
+            #self.etas.append(eta)
 
             prev_ed = ed
             prev_tr = transition
@@ -153,9 +153,10 @@ RSLy = [1.e4, 2.44034e7, 3.78358e11, 2.62780e12 ] #transition depths
 tropes = []
 trans = []
 
+
 pm = None
 for (K, G, r) in zip(KSLy, GSLy, RSLy):
-    m = monotrope(K*c*c, G)
+    m = monotrope(K*cgs.c*cgs.c, G)
     #m = monotrope(K, G)
     tropes.append( m )
 
@@ -200,7 +201,7 @@ def read_eos(key):
     K2 = K1 * r2**(g1-g2)
     K3 = K2 * r3**(g2-g3)
 
-    cgsunits = 1.0/c*c
+    cgsunits = 1.0/cgs.c*cgs.c
     tropes = [monotrope(K1*cgsunits, g1),
               monotrope(K2*cgsunits, g2),
               monotrope(K3*cgsunits, g3) ]
@@ -225,7 +226,7 @@ def crust_and_core(crust, core):
 
     #find transition depth
     rho_tr = (tropes_core[0].K / tropes_crust[-1].K )**( 1.0/( tropes_crust[-1].G - tropes_core[0].G ) )
-    print "Transition from core to crust at", rho_tr, np.log10(rho_tr), crust.edens_inv( crust.pressure( rho_tr ) )/GeVfm_per_dynecm
+    print "Transition from core to crust at", rho_tr, np.log10(rho_tr), crust.edens_inv( crust.pressure( rho_tr ) )/cgs.GeVfm_per_dynecm
     trans_core[0] = rho_tr
     #trans_crust[-1] = rho_tr
 
