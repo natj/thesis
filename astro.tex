@@ -1,13 +1,127 @@
-\chapter{Astrophysics around neutrons stars}
+\chapter{Constraining the equation of state with astrophysics}
+%\chapter{Astrophysics around neutrons stars}
 \chapterimage[width=15cm]{wordcloud/chap3b.png}
 
+%As we have now seen, the large uncertainty in the nuclear physics of the neutron star core gives rise to a large 
+%A large uncertainty in the equation of state of the core is ???
+%The main aim of this thesis is
 
-Let us try and estimate the energetics of different phenomena of what we can observe from neutron stars.\mnote{Energy output}
-Few possible stable sources of energy exists: thermal, gravitational, rotational, and magnetic.
-In addition, unstable fusion processes can also power some observable phenomena.
+The main motive for this thesis was to set constraints for the ultra-dense equation of state.
+Instead of starting from the nuclear physics that works on the smallest scales, we use astrophysical observations to study large-scale ``global'' aspects of neutron stars.
+It is then possible to make a step back to the nuclear physics because the size of a compact star is strongly coupled to the composition of its core.
+
+Looking from the astrophysical point of view, it is the size of the neutron star that will define many of its observable features.
+One of the most important characteristics is the compactness of the object that will then define the exact shape of the spacetime surrounding it.
+The strongly curved spacetime, in turn, influences many of the phenomena occurring in the close vicinity of the star and will also leave its distinct imprints on the observations.
+
+The physical phenomena behind the observable features on the other hand, are often highly energetic, otherwise they would not be seen by distant observers, such as us.
+It is these highly energetic physical processes that will then render the neutron stars visible to us, and that at the same time carry a plethora of information from the surroundings of where they originated from.
+This gives birth to a beautiful cosmic connection where the delicate and unattainable nuclear physics of the ultra-dense matter is coupled to vigorous astrophysical phenomena that we can observe.
+The caveat here is that the astrophysical processes are often messy and poorly understood.
+Hence, a thorough understanding of both, the nature of the observed phenomena and how it exactly couples to the nuclear physics, is needed.
+
+In this thesis, we will focus on extracting the information from the so-called X-ray bursts that ignite in the upper layers of neutron stars.
+These bursts originate from the unstable nuclear fusion runaways in the neutron star ocean that produce excessive heat that is then radiated away as photons.
+These photons will then emerge through the atmosphere of the star, travel astronomical distances towards Earth until they will land on one of our scientific instruments, and be recorded by us as X-ray events.
+In theory, this process is very robust, but in practice caution is needed when extracting information from these bursts, as the environment near the neutron star can also play a huge role.
+
+In this final chapter, we will shortly review the relevant astrophysics behind these X-ray bursts, lay out the framework on how observing them can set constraints on the size of the emitting area, and finally draw a connection to the work done for this thesis.
+
+\section{Accretion}
+%infalling matter leads to X-rays \cite{Lewin93}
+
+In the heart of this whole problem is an astrophysical process called accretion.
+
+Gravitational potential energy release
+\be
+\Delta E_{\mathrm{acc}} = \frac{G M m}{R} \sim 10^{20}  \left( \frac{10\km}{R} \right) \left( \frac{M}{\Msun} \right) \unitspace\erg\unitspace\g^{-1}
+\ee
+
+Eddington luminosity
+\be
+L_{\mathrm{Edd}} = \frac{ 4 \pi G M \mproton c }{\sigma_{\mathrm{T}} } \approx \Ten{1.3}{38} \left( \frac{M}{\Msun} \right) \ergs
+\ee
+
+Accretion luminosity
+\be
+L_{\mathrm{acc}} = \frac{G M \Mdot}{R} 
+\ee
+
+
+\subsection{Boundary layers}
+
+\be
+\Omega(R) \approx \Omega_{\mathrm{K}}(R) = \left( \frac{G M}{R^3} \right)^{1/2}
+\ee
+
+Layer of thickness $b$ equals $\Omega(R + b) \approx \Omega_{\mathrm{K}}(R + b)$ that must slow down to $\Omega_{*}$.
+
+Energy difference
+\be
+\dot{E} = \frac{1}{2} \Mdot R^2 (\Omega_{\mathrm{K}}^2 - \Omega_{*}^2) = 
+\frac{1}{2} \Mdot \frac{GM}{R} \left[ 1 - \left(\frac{\Omega_*}{\Omega_{\mathrm{K}}} \right)^2 \right] 
+\ee
+
+Viscous torque $G_{\mathrm{T}} = \Mdot R^2 (\Omega_{\mathrm{K}} - \Omega_*)$
+Hence,
+\be
+\dot{E} = \frac{1}{2} \frac{G M \Mdot}{R} \left( 1 - \frac{\Omega_*}{\Omega_{\mathrm{K}}} \right)^2
+\ee
 
 
 
+
+
+%\begin{itemize}
+%    \item Accretion
+%    \item Disks 
+%    \item Soft and hard states
+%    \item Boundary layers
+%    \item Ignition?
+%    \item X-ray bursts
+%    \item Cooling tail method
+%\end{itemize}
+%
+%Possible layout:
+%
+%v1
+%\begin{enumerate}
+%    \item Accretion
+%    \begin{itemize}
+%        \item Disks
+%        \item Soft and hard states
+%        \item Boundary layers
+%    \end{itemize}
+%    \item X-ray bursts
+%    \begin{itemize}
+%        \item Unstable thermonuclear burning
+%        \item Cooling tail method
+%    \end{itemize}
+%\end{enumerate}
+%
+%v2
+%\begin{enumerate}
+%    \item Accretion disks
+%    \begin{itemize}
+%        \item Accretion
+%        \item ?Roche lobe overflow
+%        \item Soft and hard state
+%        \item Boundary layers
+%    \end{itemize}
+%    \item X-ray bursts
+%    \begin{itemize}
+%        \item Unstable thermonuclear burning
+%        \item Cooling tail method
+%    \end{itemize}
+%\end{enumerate}
+
+
+
+
+
+
+\newpage
+\section{Appendix A}
 
 \begin{figure}[t]
 \centering
@@ -17,9 +131,6 @@ In addition, unstable fusion processes can also power some observable phenomena.
 Roche potential for binary systems.
 }
 \end{figure}
-
-\section{Accretion}
-infalling matter leads to X-rays \cite{Lewin93}
 
 
 \section{Roche lobe overflow}
@@ -59,6 +170,12 @@ LMXB \cite{TH06}
 Hard and soft state \cite{HvdK89}
 
 alterate between these two states \cite{MDF14} \cite{DGK07}
+
+
+\sect{Energetics}
+Let us try and estimate the energetics of different phenomena of what we can observe from neutron stars.\mnote{Energy output}
+Few possible stable sources of energy exists: thermal, gravitational, rotational, and magnetic.
+In addition, unstable fusion processes can also power some observable phenomena.
 
 
 

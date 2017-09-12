@@ -7,32 +7,29 @@ from scipy.optimize import newton
 import sys
 
 #mayavi 3d
-#import pylab as plt
-#from mayavi import mlab # or from enthought.mayavi import mlab
+import pylab as plt
+from mayavi import mlab # or from enthought.mayavi import mlab
+
+
 
 #matplotlib 3d
-import matplotlib.pyplot as plt
-from matplotlib import cm
-from mpl_toolkits.mplot3d import Axes3D
+#import matplotlib.pyplot as plt
+#from matplotlib import cm
+#from mpl_toolkits.mplot3d import Axes3D
 
-fig = plt.figure(figsize=(8.0, 6.0)) #single column fig
+#fig = plt.figure(figsize=(8.0, 6.0)) #single column fig
 #fig = plt.figure(figsize=(3.54, 2.19)) #single column fig
 #fig = plt.figure(figsize=(7.48, 2.5))  #two column figure
-ax = fig.add_subplot(111, projection='3d')
+#ax = fig.add_subplot(111, projection='3d')
 
+#ax.set_xlim(-1.5, 1.5)
+#ax.set_ylim(-1.5, 1.5)
+#ax.set_zlim(-1.5, 1.5)
 
-ax.set_xlim(-1.5, 1.5)
-ax.set_ylim(-1.5, 1.5)
-ax.set_zlim(-1.5, 1.5)
-
-
-
-
-plt.rc('font', family='serif')
+#plt.rc('font', family='serif')
 #plt.rc('xtick', labelsize=5)
 #plt.rc('ytick', labelsize=5)
 #plt.rc('axes', labelsize=5)
-
 
 
 def roche(r,theta,phi,pot,q):
@@ -40,14 +37,11 @@ def roche(r,theta,phi,pot,q):
     return (pot - (1./r  + q*( 1./sqrt(1. - 2*lamr + r**2) - lamr)  + 0.5*(q+1) * r**2 * (1-nu**2) ))
 
 
-
 theta,phi = np.mgrid[0:np.pi:75j,-0.5*pi:1.5*np.pi:150j]
 
 
 pot1,pot2 = 2.88,10.
-q = 0.25
-
-
+q = 0.5
 
 
 r_init = 1e-5
@@ -73,8 +67,10 @@ z2 = r2*np.cos(theta)
 
 #plot
 print "plotting..."
-#mlab.figure()
-#mlab.mesh(x1,y1,z1,scalars=r1)
+mlab.figure()
+mlab.mesh(x1,y1,z1,scalars=r1)
+
+
 
 
 #move secondary to proper place
@@ -96,16 +92,9 @@ x2 += 1 # simple translation
 #ax.plot_wireframe(x1, y1, z2)
 
 
-ax.plot_wireframe(x1, y1, z1)
-ax.plot_wireframe(x2, y2, z2)
 
-
-
-plt.show()
-plt.savefig("roche_surf.pdf")
-
-
-
+#plt.show()
+#plt.savefig("roche_surf.pdf")
 
 #plt.imshow(r1)
 #plt.colorbar()
