@@ -26,7 +26,10 @@ These photons will then emerge through the atmosphere of the star, travel astron
 In theory, this method of using the X-ray bursts to probe the neutron star interiors is robust as we can theoretically model the characteristics of the emerging radiation and these models can be applied to describe the data that we see. 
 In practice, however, caution is needed when applying the models as the environment near the neutron star plays a huge role.
 
-In this final chapter, we will shortly review the relevant astrophysics behind these X-ray bursts, lay out the framework on how observing them can set constraints on the size of the emitting area, and finally draw a connection to the work done for this thesis.
+In this final chapter, we will shortly discuss the complex astrophysical environment surrounding the bursting neutron star.
+We will also review the relevant physics behind the X-ray bursts.
+Finally we will lay out the basics of how observing the burst cooling can set constraints on the size of the emitting area, and in the end, the radius of the neutron star.
+
 
 
 \section{Astrophysics around neutron stars}
@@ -79,7 +82,7 @@ As another option, the system could be a so-called High Mass X-ray Binary (HMXB)
 Here, we will, however, only focus on the LMXB systems, as they provide a relatively stable mass-transfer mechanism.
 
 
-Roche Lobe \cite{PRP02} \cite{LL15}
+%Roche Lobe \cite{PRP02} \cite{LL15}
 How exactly is the material transferred form the companion to the primary star is an interesting problem.
 We can begin to understand the physical setup by considering a general hydrodynamical system of two objects in a rotating frame.
 Here we select the frame such that it co-rotates with the binary system. % with an angular velocity $\omega$.
@@ -98,10 +101,10 @@ Here $M$ is the total mass of the system, i.e., $M = M_1 + M_2$, where $M_1$ and
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=7.5cm]{figs/astro/roche.pdf}
-\includegraphics[width=7.5cm]{figs/astro/roche.pdf}
+\includegraphics[width=16cm]{figs/astro/roche.pdf}
+%\includegraphics[width=7.5cm]{figs/astro/roche.pdf}
 \caption{\label{fig:roche}
-    Two-dimensional Roche potential $\Phi_{\mathrm{R}}(x,y)$ visualized for a binary systems with $M_1/M_2 = $ and $a = $.
+    Two-dimensional Roche potential $\Phi_{\mathrm{R}}(x,y)$ visualized for a binary systems with $M_1/M_2 = $ and $a = $.The nozzle ($L_1$ point) is visible as a valley (or more specifically, a saddle point) between the gravitational wells of the two stars.
 }
 \end{figure}
 
@@ -117,46 +120,161 @@ Typically such a thing can happen when the star evolves and expands at the end o
 
 
 \subsection{Accretion disks}
-accretion disk: machine for slowly lowering material in the graviational potential and extracting energy
+
+When the mass transfer has started via the Roche lobe overflow, and we have stable source of material transferred from the companion, we can next focus on the region where gravitational forces of the neutron star dominate.
+Most importantly, the infalling material has to somehow loose its angular momentum, before it is able to travel all the way to the neutron star surface.
+Nature's mechanism to do this is called an accretion disk.
+
+
+accretion disk: machine for slowly lowering material in the graviational potential and extracting energy.
+
 orbital kinetic energy to heat
-Keplerian rotation law 
+
+Confined to the orbital plane, hence thin-disk approximation is sufficient.
+
+Radial disk structure from Keplerian rotation law 
 \be
 \Omega_{\mathrm{K}}(R) = \left( \frac{G M }{R^3} \right)^{1/2}
 \ee
 implies differential rotation.
+
 Viscous stress from shear viscosicty.
 
-Reynolds number for the disk (inertia / viscous dissipation)
+Disk luminosity:
+
+Conservation of mass and angular momentum
 \be
-\mathcal{R} \sim \frac{ v_{\phi}^2 / R }{\lambda \bar{v} v_{\phi} /R^2} = \frac{R v_{\phi}}{\lambda \bar{v}}
+r \frac{\partial \Sigma}{\partial t} + \frac{\partial}{\partial r}(r \Sigma v_{\mathrm{R}}) = 0
 \ee
-Molecular viscosity for $\lambda \sim \lambda_{\mathrm{D}}$ and $\bar{v} \sim c_{\mathrm{s}}$.
-For typical accretion disk environment molecular $\mathcal{R} > 10^{14}$, i.e. highly turbulent.
-Typical size of the turbulent eddies can not exceed the disk thickness $H$.
-Velocity is most likely below sound speed $c_{\mathrm{s}}$ as otherwise turbulent motions would be thermalized by shocks from the supersonic motion.
-Hence
 \be
-\nu = \alpha c_{\mathrm{s}} H
+r \frac{\partial}{\partial t}(\Sigma r^2 \Omega) + \frac{\partial}{\partial r} (r \Sigma v_{\mathrm{r}} r^2 \Omega) = \frac{1}{2\pi} \frac{\partial G}{\partial r},
 \ee
-and we expect $\alpha \lesssim 1$. 
-Reparameterizaton of our ignorance.
-This is the $\alpha$-prescription by Shakura and Sunyaev.\cite{SS73}
+where $G$ is the viscous torque of the differentially rotating disk.
 
-\cite{Cho98}
-Hydrodynamics of disks.
+Torque, in general, is the net outward angular momentum flux given as
+\be
+\tau_i = \epsilon_{ijk} r_j f_k,
+\ee
+where $\epsilon_{ijk}$ is the Levi-Civita symbol, and $f_k$ is the force density given as
+\be
+f_k = \sigma_{kh} n_h.
+\ee
+Here $\sigma_{kh}$ is the $kh$-component of the shear tensor $\sigma$ and $n_h$ is some surface normal.
+In our case, we can compute the shear in cylindrical coordinate system focusing on $r$ and $\phi$ coordinates only as
+\be
+\sigma_{r\phi} = \rho \nu \left( r \frac{\partial}{dr} \left\{\frac{v_{\phi}}{r}\right\} + \frac{1}{r} \frac{d v_r}{d\phi} \right),
+\ee
+which simplifies to 
+\be
+\sigma_{r\phi} = \rho \nu r \frac{d \Omega}{dr},
+\ee
+when we remember that $v_{\phi} = r \Omega$ and assuming the flow to be symmetric on $\phi$-direction ($\partial v_r/\partial \phi = 0)$.
+Blaablaa \cite[see, e.g.,][]{ChapmanCowling52}
+The total torque exerted by the $2\pi r H$ area corresponding to the disk rim is then
+\be
+G(r,t) = 2\pi r \nu \Sigma r^2 \Omega',
+\ee
+where $\Omega' = d\Omega/dr$.
+
+Combining these and assuming Keplerian rotation $\Omega = \Omega_{\mathrm{K}}$ we get
+\be
+\frac{\partial \Sigma}{\partial t} = \frac{3}{r} \left[ r^{1/2} \frac{\partial}{\partial r} (\nu \Sigma r^{1/2}) \right]
+\ee
+\be
+v_{\mathrm{r}} = -\frac{3}{\Sigma r^{1/2}} \frac{\partial}{\partial r} ( \nu \Sigma r^{1/2}).
+\ee
+In order to continue, we need a description for the viscosity $\nu$.
+
+To get some idea of the disk dynamics, we can, as our zeroth order approximation assume $\nu = \mathrm{const.}$.
+Then, the time-dependent disk structure can be solved for example by assuming as an initial condition a ring of mass $m$ at $r=r_0$,
+\be
+\Sigma(r,t=0) = \frac{m}{2\pi r_0} \delta(r - r_0),
+\ee
+where $\delta$ is the Dirac delta function.
+We then obtain a time-dependent solution that diffuses due to viscosity as
+\be
+\Sigma(x,\tau) = \frac{m}{2\pi r^2} \frac{1}{\tau x^{1/4} } \exp\left[-\frac{(1+x^2)}{\tau}\right] I_{1/4}\left(\frac{2x}{\tau}\right),
+\ee
+where $I_{1/4}$ is the modified Bessel function and radial coordinate $r$ is non-dimensionalized as $x = r/r_0$, and time as $\tau = 12 \nu t /r_0^2$.
+
+Let us next study a steady-state disk solution by setting $\partial/\partial t \rightarrow 0$.
+From angular momentum conservation we then obtain
+\be
+r \Sigma v_{\mathrm{r}} r^2 \Omega = \frac{G}{2\pi} + \frac{C}{2\pi},
+\ee
+with a constant $C$ that physically represent a torque term from the coupling of the inner disk and the star.
+In short, it is given by
+\be
+C = -\Mdot (G M R)^{1/2},
+\ee
+by considering the expression for the mass accretion rate 
+\be
+\Mdot = -\frac{2\pi r \Sigma dr}{dt} = -2\pi r \Sigma v_{\mathrm{r}},
+\ee
+and assuming a thin layer for the zone where inner disk angular velocity is slowed down to the angular velocity of the star.
+Substituting this, and assuming Keplerian velocity again, we obtain
+\be
+\nu \Sigma = \frac{\Mdot}{3\pi} \left[ 1 - \left( \frac{R}{r}^{1/2} \right) \right].
+\ee
+Physically this represents a steady-state solution of a disk with central torque applied to it.
+
+Viscous dissipation rate per unit area is%
+\footnote{Viscous dissipation rate in ring of width $dr$ is $G \Omega' dr$ and the total area of the ring, taking into account both the lower and upper faces, is $4\pi r dr$. Hence, we obtain Eq. \eq{eq:D} as the ratio of these.
+}
+\be\label{eq:D}
+D(r) = \frac{G \Omega'}{4\pi r} = \frac{1}{2} \nu \Sigma r^2 \Omega' = \frac{3 G M \Mdot}{8 \pi r^3} \left[ 1 - \left( \frac{R}{r}^{1/2} \right) \right].
+\ee
+
+Finally, from here we can compute the luminosity of the disk faces due to energy lost by viscous dissipation
+\begin{align}\begin{split}
+    L(r_1, r_2)  &= 2 \int_{r_1}^{r_2} D(r) 2\pi r dr = \frac{3 G M \Mdot}{2} \int_{r_1}^{r_2} \left[ 1 - \left( \frac{R}{r} \right)^{1/2} \right] \frac{dr}{r^2} \\
+ & = \frac{3 G M \Mdot}{2} \left\{ \frac{1}{r_1} \left[ 1 - \frac{2}{3}\left( \frac{R}{r_1} \right)^{1/2} \right] -  \frac{1}{r_2} \left[ 1 - \frac{2}{3}\left( \frac{R}{r_2} \right)^{1/2} \right] \right\}, 
+\end{split}\end{align}
+and by then setting $r_1 \rightarrow R$ and $r_2 \rightarrow \infty$, we get
+\be
+L_{\mathrm{disk}} = \frac{G M \Mdot}{2 R} = \frac{1}{2} L_{\mathrm{acc}}.
+\ee
+Hence, half of the potential energy will be lost by the viscous dissipation and is radiated away by the upper and lower faces of the accretion disk.
+Importantly, the other remaining half will be transferred all the way to the star.
 
 
+%Reynolds number for the disk (inertia / viscous dissipation)
+%\be
+%\mathcal{R} \sim \frac{ v_{\phi}^2 / R }{\lambda \bar{v} v_{\phi} /R^2} = \frac{R v_{\phi}}{\lambda \bar{v}}
+%\ee
+%Molecular viscosity for $\lambda \sim \lambda_{\mathrm{D}}$ and $\bar{v} \sim c_{\mathrm{s}}$.
+%For typical accretion disk environment molecular $\mathcal{R} > 10^{14}$, i.e. highly turbulent.
+%Typical size of the turbulent eddies can not exceed the disk thickness $H$.
+%Velocity is most likely below sound speed $c_{\mathrm{s}}$ as otherwise turbulent motions would be thermalized by shocks from the supersonic motion.
+%Hence
+%\be
+%\nu = \alpha c_{\mathrm{s}} H
+%\ee
+%and we expect $\alpha \lesssim 1$. 
+%Reparameterizaton of our ignorance.
+%This is the $\alpha$-prescription by Shakura and Sunyaev.\cite{SS73}
+%
+%\cite{Cho98}
+%Hydrodynamics of disks.
 
 
-%Roche Lobe \cite{PRP02} \cite{LL15}
-%LMXB \cite{TH06}
 
 Hard and soft state \cite{HvdK89}
 Alternates between these two states \cite{MDF14} \cite{DGK07}
 
 
 
-\subsection{Between the disk and the star: boundary layers}
+\subsection{Boundary layers}
+
+Our simple analysis of accretion disk physics has shown that viscous dissipation can get rid of up to half of the potential energy of the incoming matter.
+Where the other half goes, we shall look next.
+
+Imagine the accretion disk extending all the way down to the central star.
+The angular velocity of this disk rim can be taken to be of around Keplerian velocity $\Omega_{\mathrm{K}}(R) \sim xxx$.
+The star, on the other hand, usually rotates anywhere from $100$ to $600$ revolutions per second.
+Hence, we expect a thin layer in the disk-star interface where angular velocity goes down from XXX to maybe half of that.
+This region we call the boundary layer.
+
 
 \be
 \Omega(R) \approx \Omega_{\mathrm{K}}(R) = \left( \frac{G M}{R^3} \right)^{1/2}
