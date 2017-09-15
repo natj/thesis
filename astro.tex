@@ -99,8 +99,8 @@ where the angular velocity of the binary is
 as given with the unit vector $\vec{e}$ normal to the orbital plane.
 Here $M$ is the total mass of the system, i.e., $M = M_1 + M_2$, where $M_1$ and $M_2$ are the individual masses of the two stars in the system, respectively, and $a$ is their orbital separation.
 
-\begin{figure}[t]
-\centering
+\begin{figure}[th]
+%\centering
 \includegraphics[width=16cm]{figs/astro/roche.pdf}
 %\includegraphics[width=7.5cm]{figs/astro/roche.pdf}
 \caption{\label{fig:roche}
@@ -125,17 +125,17 @@ When the mass transfer has started via the Roche lobe overflow, and we have stab
 Most importantly, the infalling material has to somehow loose its angular momentum, before it is able to travel all the way to the neutron star surface.
 Nature's mechanism to do this is called an accretion disk.
 
+%accretion disk: machine for slowly lowering material in the graviational potential and extracting energy.
+%orbital kinetic energy to heat
 
-accretion disk: machine for slowly lowering material in the graviational potential and extracting energy.
-
-orbital kinetic energy to heat
 
 Confined to the orbital plane, hence thin-disk approximation is sufficient.
 
-Radial disk structure from Keplerian rotation law 
+Radial disk structure can be obtained from Keplerian rotation law as
 \be
-\Omega_{\mathrm{K}}(R) = \left( \frac{G M }{R^3} \right)^{1/2}
+\Omega_{\mathrm{K}}(R) = \left( \frac{G M }{R^3} \right)^{1/2},
 \ee
+yielding an angular velocity as a function of radial coordinate from the disk center.
 implies differential rotation.
 
 Viscous stress from shear viscosicty.
@@ -183,19 +183,20 @@ Combining these and assuming Keplerian rotation $\Omega = \Omega_{\mathrm{K}}$ w
 \be
 v_{\mathrm{r}} = -\frac{3}{\Sigma r^{1/2}} \frac{\partial}{\partial r} ( \nu \Sigma r^{1/2}).
 \ee
-In order to continue, we need a description for the viscosity $\nu$.
+In order to continue, we would need a description for the viscosity $\nu$.
+\red{TODO: nature of MRI}
 
-To get some idea of the disk dynamics, we can, as our zeroth order approximation assume $\nu = \mathrm{const.}$.
-Then, the time-dependent disk structure can be solved for example by assuming as an initial condition a ring of mass $m$ at $r=r_0$,
-\be
-\Sigma(r,t=0) = \frac{m}{2\pi r_0} \delta(r - r_0),
-\ee
-where $\delta$ is the Dirac delta function.
-We then obtain a time-dependent solution that diffuses due to viscosity as
-\be
-\Sigma(x,\tau) = \frac{m}{2\pi r^2} \frac{1}{\tau x^{1/4} } \exp\left[-\frac{(1+x^2)}{\tau}\right] I_{1/4}\left(\frac{2x}{\tau}\right),
-\ee
-where $I_{1/4}$ is the modified Bessel function and radial coordinate $r$ is non-dimensionalized as $x = r/r_0$, and time as $\tau = 12 \nu t /r_0^2$.
+%To get some idea of the disk dynamics, we can, as our zeroth order approximation assume $\nu = \mathrm{const.}$.
+%Then, the time-dependent disk structure can be solved for example by assuming as an initial condition a ring of mass $m$ at $r=r_0$,
+%\be
+%\Sigma(r,t=0) = \frac{m}{2\pi r_0} \delta(r - r_0),
+%\ee
+%where $\delta$ is the Dirac delta function.
+%We then obtain a time-dependent solution that diffuses due to viscosity as
+%\be
+%\Sigma(x,\tau) = \frac{m}{2\pi r^2} \frac{1}{\tau x^{1/4} } \exp\left[-\frac{(1+x^2)}{\tau}\right] I_{1/4}\left(\frac{2x}{\tau}\right),
+%\ee
+%where $I_{1/4}$ is the modified Bessel function and radial coordinate $r$ is non-dimensionalized as $x = r/r_0$, and time as $\tau = 12 \nu t /r_0^2$.
 
 Let us next study a steady-state disk solution by setting $\partial/\partial t \rightarrow 0$.
 From angular momentum conservation we then obtain
@@ -237,6 +238,18 @@ L_{\mathrm{disk}} = \frac{G M \Mdot}{2 R} = \frac{1}{2} L_{\mathrm{acc}}.
 Hence, half of the potential energy will be lost by the viscous dissipation and is radiated away by the upper and lower faces of the accretion disk.
 Importantly, the other remaining half will be transferred all the way to the star.
 
+Temperature of the hottest inner disk can be estimated by assuming a blackbody radiator and using the viscous dissipation rate $D$ as our energy source.
+This innermost region of the disk is quite logically the brightest as there the gravity is the strongest and the dissipation area the smallest.
+Estimate for the disk temperature is then \red{Check $D(r \rightarrow R)$}
+\be
+\sigma T_{\mathrm{disk}}^4 \sim D(R),
+\ee
+where optically thick disk is assumed.
+From here we get
+\be
+T_{\mathrm{disk}} = \frac{3 G M \Mdot}{8 \pi R^3 \sigma}.
+\ee
+
 
 %Reynolds number for the disk (inertia / viscous dissipation)
 %\be
@@ -258,9 +271,21 @@ Importantly, the other remaining half will be transferred all the way to the sta
 %Hydrodynamics of disks.
 
 
+Observationally we see that the disks are, however, not as simple as discussed here.\cite[see][for a review]{DGK07}
+The standard $\alpha$-disk model is in steady-state, whereas in reality the disk evolves in time.
+Most importantly, the mass accretion rate is seen to vary over long timescales.
+From observations we also know that the disks alternate between two states:
+Hard and soft states.\cite{HvdK89, MDF14, DGK07}
 
-Hard and soft state \cite{HvdK89}
-Alternates between these two states \cite{MDF14} \cite{DGK07}
+The soft (also known as ``high'' or ``thermal-dominant'') state is characterized by a strong soft component in the observed spectra.\cite{GZP99}
+There is also, however, a complex non-thermal tail.\cite{MRC00}
+Here the soft component could be interpreted as a thermal radiation from an optically thick disk but the non-thermal tail implies that this picture is not complete.
+The hard (also known as ``low'') state is even more complicated as the observational spectra is dominated by a strong hard X-ray part but some signs of low-temperature thermal disk component is also sometimes visible.\cite[see, e.g.,][]{ZG04}
+
+existence of two very different stable accretion flow structures, with a hot,
+optically thin, geometrically thick flow 
+a cool, optically thick, geometrically thin disc. 
+truncated disc/hot inner flow model
 
 
 
@@ -275,28 +300,100 @@ The star, on the other hand, usually rotates anywhere from $100$ to $600$ revolu
 Hence, we expect a thin layer in the disk-star interface where angular velocity goes down from XXX to maybe half of that.
 This region we call the boundary layer.
 
-
+Let us assume a thin layer of width $b$ so that $\Omega(R + b) \approx \Omega_{\mathrm{K}}(R + b)$ corresponding to the disk rim just before this layer.
+Within this layer, the angular velocity should decrease to $\Omega_*$ as we move from radial location $R+b$ to $R$ on the star's surface.
+The work done by the viscous torque to spin up the star is then
 \be
-\Omega(R) \approx \Omega_{\mathrm{K}}(R) = \left( \frac{G M}{R^3} \right)^{1/2}
+G_{\mathrm{T}} = \Mdot R^2 (\Omega_{\mathrm{K}} - \Omega_*).
 \ee
-
-Layer of thickness $b$ equals $\Omega(R + b) \approx \Omega_{\mathrm{K}}(R + b)$ that must slow down to $\Omega_{*}$.
-
-Energy difference
+Rate of kinetic energy change is
 \be
 \dot{E} = \frac{1}{2} \Mdot R^2 (\Omega_{\mathrm{K}}^2 - \Omega_{*}^2) = 
 \frac{1}{2} \Mdot \frac{GM}{R} \left[ 1 - \left(\frac{\Omega_*}{\Omega_{\mathrm{K}}} \right)^2 \right] 
 \ee
-
-Viscous torque $G_{\mathrm{T}} = \Mdot R^2 (\Omega_{\mathrm{K}} - \Omega_*)$
-Hence,
+For the expression of the total rate of energy change we need to subtract the constant work done by the viscous torque to get
 \be
-\dot{E} = \frac{1}{2} \frac{G M \Mdot}{R} \left( 1 - \frac{\Omega_*}{\Omega_{\mathrm{K}}} \right)^2
+L_{\mathrm{BL}} = \frac{1}{2} \Mdot R^2 (\Omega_{\mathrm{K}}^2 - \Omega_{*}^2) - \Mdot R^2 \Omega_* \Omega_{\mathrm{K}} 
+ = \frac{1}{2} \frac{G M \Mdot}{R} \left( 1 - \frac{\Omega_*}{\Omega_{\mathrm{K}}} \right)^2
 \ee
+In the limit $\Omega_* \ll \Omega_{\mathrm{K}}$ we obtain
+\be
+L_{\mathrm{BL}} = \frac{1}{2}  \frac{G M \Mdot}{R} = \frac{1}{2} L_{\mathrm{acc}},
+\ee
+as is expected.
+
+Let us finally estimate the temperature of the this layer.
+By assuming an optically thick region around the star we get a characteristic blackbody temperature from
+\be\label{eq:BLT}
+A_{\mathrm{BL}} \sigma T_{\mathrm{BL}}^4 \sim L_{\mathrm{acc}},
+\ee
+where $A_{\mathrm{BL}}$ is the area of the emitting region.
+As a reasonable first guess we can use $b \sim H$ so an annulus around the star has an area of $A_{\mathrm{BL}} = 2\times2\pi R H$ taking into account both top and bottom face.
+This corresponds to a temperature of
+\be
+T_{\mathrm{BL}} \sim \left( \frac{G M \Mdot}{8\pi \sigma R^2 H} \right)^{1/4} \sim T_{\mathrm{disk}} \left( \frac{R}{H} \right)^{1/4}
+\ee
+
+As another option we can consider a so-called spreading layer. 
+Instead of assuming that the energy is dissipated in a thin equatorial ring, we can assume that it will spread to cover the whole star.
+In this case, $A_{\mathrm{SL}} \sim 4\pi R^2$, and using Eq. \eq{eq:BLT}, we get 
+\be
+T_{\mathrm{SL}} \sim T_{\mathrm{disk}},
+\ee
+i.e., a smaller temperature ($T_{\mathrm{SL}} < T_{\mathrm{BL}}$) that is comparable to the temperature of the disk.
+
+Hence, we have seen that the astrophysical environment of neutron stars can be very active and lively.
+We have accretion as an energy source and a disk to dissipate this energy.
+Additional complication originates from the boundary/spreading layer that not only can cover the star but also radiates itself.
+These are some of the complications that we face when trying to analyze our neutron star observations, after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
 
 
 \section{X-ray bursts}
-\subsection{Unstable thermonuclear burning on top of neutron stars}
+
+Accretion can be a powerful energy source but this is not end of the material that slowly spirals down to the star.
+After it has traveled all the way to the surface of the neutron star, it will slowly sink and mix with the material in the star's ocean.
+Here this new material --- fresh fuel --- will get compressed and heats up.
+Eventually the kinetic energy of the nuclei is large enough so that the particles will collide, fuse together, and release a tremendous amount of energy.
+This heat injection will then start an unstoppable chain reaction that creates a burning front that eventually covers the whole star.
+This thermonuclear fusion reaction will then last until all the available fuel on the star's upper layers is exhausted and consumed.
+
+Observationally these bursts are classified as type-I X-ray bursts.
+As another option, we might see flaring also from instabilities in the incoming mass flow. 
+These events are classified as type-II bursts, and we do not focus on them, as here we are interested in probing the neutron star itself.
+\red{cite type-II.}
+Let us now look these type-I bursts in more detail.
+
+
+
+\subsection{Unstable thermonuclear burning}
+
+The driving engine of a X-ray burst is the unstable thermonuclear fusion process.
+A typical X-ray burst has a rise time of $~0.1$ to $10$ seconds and a duration of around $1$ minute.
+During this time, it releases $10^{39} - 10^{40} \erg$ of energy.
+
+\cite{Lewin93}
+\cite{SB10}
+
+Typical temperature in the upper layers if of around $T \sim 10^7 \Kelvin$.
+In this case, the burning of hydrogen plasma is dominated by the CNO-cycle.
+For a slightly hotter plasma, $T \approx \Ten{8}{7} \Kelvin$, we have to modify the reaction a bit into a so-called hot CNO-cycle.\cite{FH65}
+
+Alternatively, or together with hydrogen, the helium can burn via the triple-$\alpha$ process ($T \gnsim \Ten{2}{8} \Kelvin$).
+
+In addition, the $\alpha p$-process ($T \gnsim \Ten{5}{8} \Kelvin$) for heavier elements like Ne, Na, and Mg.
+The rp-process for even heavier above $T \sim 10^9 \Kelvin$.  
+\cite{Fujimoto81, Wallace81, Fisker08}
+
+If the accreted material does not have any hydrogen, or if the hot CNO-cycle has enough time to burn all the available hydrogen into helium, the ignition starts in the helium shell.
+On the other hand, if the hot CNO burning of hydrogen is not continuous, it can trigger the runaway in the hydrogen shell, after which the helium shell will also ignite.
+
+
+In addition to the normal type-I bursts, we have also recently detected more rare long-duration bursts, now commonly dubbed as ``superbursts''. \cite{CHK00, Kuulkers02, SB02}
+These are thought to be powered by carbon burning\cite{Cumming01}
+When looking at the duration, there are also a third class of bursts in between the superbursts and normal bursts, named ``intermediate bursts''.\cite{Cumming06}
+
+
+
 
 \subsection{Constraining the size of bursting source}
 
