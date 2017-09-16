@@ -1,4 +1,4 @@
-\chapter{Constraining the equation of state with astrophysics}
+\chapter{Astrophysics of neutron stars}
 %\chapter{Astrophysics around neutrons stars}
 \chapterimage[width=15cm]{wordcloud/chap3b.png}
 
@@ -99,7 +99,7 @@ where the angular velocity of the binary is
 as given with the unit vector $\vec{e}$ normal to the orbital plane.
 Here $M$ is the total mass of the system, i.e., $M = M_1 + M_2$, where $M_1$ and $M_2$ are the individual masses of the two stars in the system, respectively, and $a$ is their orbital separation.
 
-\begin{figure}[th]
+\begin{figure}[t!]
 %\centering
 \includegraphics[width=16cm]{figs/astro/roche.pdf}
 %\includegraphics[width=7.5cm]{figs/astro/roche.pdf}
@@ -271,21 +271,21 @@ T_{\mathrm{disk}} = \frac{3 G M \Mdot}{8 \pi R^3 \sigma}.
 %Hydrodynamics of disks.
 
 
-Observationally we see that the disks are, however, not as simple as discussed here.\cite[see][for a review]{DGK07}
-The standard $\alpha$-disk model is in steady-state, whereas in reality the disk evolves in time.
+Observationally we see that the disks are, however, not as simple as discussed here.\cite[see][,for a review]{DGK07}
+The standard $\alpha$-disk model assumes steady-state, whereas in reality the disk structure evolves in time.
 Most importantly, the mass accretion rate is seen to vary over long timescales.
-From observations we also know that the disks alternate between two states:
-Hard and soft states.\cite{HvdK89, MDF14, DGK07}
+From observations we also know that the disks alternates between two states called hard and soft state.\cite{Mitsuda89, HvdK89, GD02, MC03, MDF14, DGK07}
 
 The soft (also known as ``high'' or ``thermal-dominant'') state is characterized by a strong soft component in the observed spectra.\cite{GZP99}
-There is also, however, a complex non-thermal tail.\cite{MRC00}
+There is, however, also a complex non-thermal tail usually present.\cite{MRC00}
 Here the soft component could be interpreted as a thermal radiation from an optically thick disk but the non-thermal tail implies that this picture is not complete.
 The hard (also known as ``low'') state is even more complicated as the observational spectra is dominated by a strong hard X-ray part but some signs of low-temperature thermal disk component is also sometimes visible.\cite[see, e.g.,][]{ZG04}
 
-existence of two very different stable accretion flow structures, with a hot,
-optically thin, geometrically thick flow 
-a cool, optically thick, geometrically thin disc. 
-truncated disc/hot inner flow model
+The current physical interpretation of this scenario encapsulated into the so-called truncated disk model with a hot inner flow.
+Here the disk, somewhat well-described by the Shakura-Sunyaev $\alpha$-disk model is truncated, i.e., does not always reach the central object.
+The cool and optically thick, geometrically thin, disk is then responsible of the low-energy thermal radiation.
+In the innermost parts the disk turns into hot, optically thin flow, that is also responsible for the non-thermal radiation component.
+Depending on the mass accretion rate, the disk truncation radius varies and so the strength of the thermal disk and non-thermal hot inner flow components can vary.
 
 
 
@@ -296,7 +296,7 @@ Where the other half goes, we shall look next.
 
 Imagine the accretion disk extending all the way down to the central star.
 The angular velocity of this disk rim can be taken to be of around Keplerian velocity $\Omega_{\mathrm{K}}(R) \sim xxx$.
-The star, on the other hand, usually rotates anywhere from $100$ to $600$ revolutions per second.
+The star, on the other hand, usually rotates anywhere from $100$ to $600$ revolutions per second. XXX
 Hence, we expect a thin layer in the disk-star interface where angular velocity goes down from XXX to maybe half of that.
 This region we call the boundary layer.
 
@@ -325,7 +325,7 @@ as is expected.
 Let us finally estimate the temperature of the this layer.
 By assuming an optically thick region around the star we get a characteristic blackbody temperature from
 \be\label{eq:BLT}
-A_{\mathrm{BL}} \sigma T_{\mathrm{BL}}^4 \sim L_{\mathrm{acc}},
+A_{\mathrm{BL}} \sigma T_{\mathrm{BL}}^4 \sim L_{\mathrm{BL}},
 \ee
 where $A_{\mathrm{BL}}$ is the area of the emitting region.
 As a reasonable first guess we can use $b \sim H$ so an annulus around the star has an area of $A_{\mathrm{BL}} = 2\times2\pi R H$ taking into account both top and bottom face.
@@ -342,15 +342,14 @@ T_{\mathrm{SL}} \sim T_{\mathrm{disk}},
 \ee
 i.e., a smaller temperature ($T_{\mathrm{SL}} < T_{\mathrm{BL}}$) that is comparable to the temperature of the disk.
 
-Hence, we have seen that the astrophysical environment of neutron stars can be very active and lively.
-We have accretion as an energy source and a disk to dissipate this energy.
-Additional complication originates from the boundary/spreading layer that not only can cover the star but also radiates itself.
-These are some of the complications that we face when trying to analyze our neutron star observations, after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
+Finally, one should note that the physical processes discussed here assume Newtonian gravity.
+In a general relativistic treatment the energy release in the boundary layer can be almost two times that of the energy released in the disk.\cite{SS86, SS00}
+
 
 
 \section{X-ray bursts}
 
-Accretion can be a powerful energy source but this is not end of the material that slowly spirals down to the star.
+Accretion can be a powerful energy source but this is the not end of the material that slowly spirals down to the star.
 After it has traveled all the way to the surface of the neutron star, it will slowly sink and mix with the material in the star's ocean.
 Here this new material --- fresh fuel --- will get compressed and heats up.
 Eventually the kinetic energy of the nuclei is large enough so that the particles will collide, fuse together, and release a tremendous amount of energy.
@@ -361,7 +360,7 @@ Observationally these bursts are classified as type-I X-ray bursts.
 As another option, we might see flaring also from instabilities in the incoming mass flow. 
 These events are classified as type-II bursts, and we do not focus on them, as here we are interested in probing the neutron star itself.
 \red{cite type-II.}
-Let us now look these type-I bursts in more detail.
+Let us next discuss these type-I bursts in more detail.
 
 
 
@@ -396,6 +395,12 @@ When looking at the duration, there are also a third class of bursts in between 
 
 
 \subsection{Constraining the size of bursting source}
+
+We have seen that the astrophysical environment of neutron stars can be very active and lively.
+In the general picture, we have the accretion as an energy source and the disk to dissipate this energy.
+The disk is, however, not a simple geometrically thin steady layer but can have complex inner flow.
+On the other hand, if the disk does extend all the way down to the star, an additional complication originates from the boundary or spreading layer that can not only cover the star but also radiate on its own.
+These are some of the complications that we face when trying to analyze our neutron star observations, as after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
 
 
 
