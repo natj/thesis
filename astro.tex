@@ -1,18 +1,14 @@
 \chapter{Astrophysics around neutron stars}
 \chapterimage[width=15cm]{wordcloud/chap3b.png}
 
-Let us now discuss the violent environments around neutron stars and the related astrophysics therein.
-These surroundings play an important role when we try to decipher the observations of these stars.
-
-Typically, the neutron stars can be found (or rather seen) either in binary systems where they are accompanied by another star, or as a lonely remnant left behind from a supernova explosion.
-In the latter case it is the neutron star itself that is the source of the energy that renders it visible as it will slowly cool down and radiate away all the left-over heat from the explosion.
-In some cases, the rotating magnetic field of the star can also create radiation when it propels in the medium that is left behind.
-This gives rise to a particle acceleration as the charged plasma is dragged along by the magnetic field producing radiation as the particles try to resist this motion.
-
-In the binary systems, on the other hand, the energy originates not from the neutron star itself but from the companion.
-In the heart of this whole problem is an astrophysical process called accretion.
+Let us next discuss the violent environments around neutron stars and the related astrophysics therein.
+These surroundings also play an important role when we try to decipher various different kinds of observations of neutron stars.
+In the heart of this whole scenery is an astrophysical process called accretion.
 This is a physical process where matter is transferred from one source to another because of the gravitational forces.
-In the following discussion we will focus on these binary systems and on the so-called accretion powered phenomena.
+Most importantly, the infalling material has to somehow loose its angular momentum, before it is able to travel all the way to the neutron star surface.
+Nature's mechanism to do this is called an accretion disk.
+Sometimes the disk also continues all the way to the surface of the neutron star.
+Instead of smoothly joining the star, this process is often violent and leads to another source of radiation as this so-called boundary layer heats up when the rapidly rotating inner disk tries to break down to the velocities similar to that of the more slowly rotating star.
 
 %In this thesis, we will focus on extracting the information from the so-called X-ray bursts that ignite in the upper layers of neutron stars.
 %These bursts originate from the unstable nuclear fusion runaways in the neutron star ocean that produce excessive heat that is then radiated away as photons.
@@ -20,10 +16,12 @@ In the following discussion we will focus on these binary systems and on the so-
 %In theory, this method of using the X-ray bursts to probe the neutron star interiors is robust as we can theoretically model the characteristics of the emerging radiation and these models can be applied to describe the data that we see. 
 %In practice, however, caution is needed when applying the models as the environment near the neutron star plays a huge role.
 
+%In this chapter, we will shortly discuss the complex astrophysical environment surrounding the neutron stars.
 
-In this final chapter, we will shortly discuss the complex astrophysical environment surrounding the bursting neutron star.
-We will also review the relevant physics behind the X-ray bursts.
-
+%Here we will mainly focus on the so-called accretion powered phenomena that takes place in binary systems where the neutron star is accompanied by another star.
+We begin by discussing the basics of the accretion process and present some order-of-magnitude estimates relevant for the accretion disks and boundary layers.
+Most importantly, we try to characterize the strength of the radiation originating from them.
+Lastly, we will also discuss the unstable thermonuclear runaways, X-ray bursts, that can be seen as the end-results of this accretion.
 
 %\section{Astrophysics around neutron stars}
 %Let us begin by discussing the violent environments around the neutron stars as the these surroundings play an important role when we try to decipher the real observations of these stars.
@@ -63,10 +61,17 @@ L_{\mathrm{acc}} = \Mdot \frac{G M}{R} \approx \Ten{1.3}{36} \left( \frac{\Mdot
 where a typical value of $\Mdot \sim 10^{16} \g\unitspace\mathrm{s}^{-1} \approx \Ten{1.5}{-10} \Msun\unitspace\mathrm{yr}^{-1}$ is taken for the accretion rate.
 Hence, depending on the accretion rate, this value can be about the same as the Eddington luminosity \red{Eq. XXX} of a neutron star.
 
-\red{X-rays from blackbody $T$}
+%\red{X-rays from blackbody $T$}
 
 
 \subsection{Roche lobes and mass transfer in binary systems}
+
+%Typically, the neutron stars can be found (or rather seen) either in binary systems where they are accompanied by another star.
+%In the latter case it is the neutron star itself that is the source of the energy that renders it visible as it will slowly cool down and radiate away all the left-over heat from the explosion.
+%In some cases, the rotating magnetic field of the star can also create radiation when it propels in the medium that is left behind.
+%This gives rise to a particle acceleration as the charged plasma is dragged along by the magnetic field producing radiation as the particles try to resist this motion.
+%In the binary systems, on the other hand, the energy originates not from the neutron star itself but from the companion.
+%In the following discussion we will focus on these binary systems and on the so-called accretion powered phenomena.
 
 In order to use the accretion as an energy source, we need mass transfer to occur.
 For the mass transfer to keep on operating, a source of fresh material is needed.
@@ -116,16 +121,16 @@ Typically such a thing can happen when the star evolves and expands at the end o
 
 
 \subsection{Accretion disks}
-
-When the mass transfer has started via the Roche lobe overflow, and we have a stable source of material which transfers matter from the companion to the more massive neutron star, we can next focus on the region where gravitational forces of the neutron star dominate.
-Most importantly, the infalling material has to somehow loose its angular momentum, before it is able to travel all the way to the neutron star surface.
-Nature's mechanism to do this is called an accretion disk.
-
 %accretion disk: machine for slowly lowering material in the graviational potential and extracting energy.
 %orbital kinetic energy to heat
 
-The must flow will be confined into the orbital plane of the binary system, hence, the problem is two dimensional as a first approximation.
-This is known as the so-called thin-disk approximation because we neglect all the structure that the disk might have in the vertical direction.
+When the mass transfer has started via the Roche lobe overflow, and we have a stable source of material which transfers matter from the companion to the more massive neutron star, we can next focus on the region where gravitational forces of the neutron star dominate.
+Originally, we can think of each individual incoming particle having their own circular orbit around the central object.
+The mass flow, i.e., the stream of particles, are confined into the orbital plane of the binary system, hence, the problem of describing the physics of the flow is two dimensional as a first approximation.
+This is known as the so-called thin-disk approximation.
+The nested circular orbits of the plasma can be naturally described in cylindrical coordinates, hence the word ``disk''.
+Secondly, because we neglect all the structure that the accreted layer might have in the vertical direction, we say that the disk is infinitely thin.
+
 Radial structure of the disk can be obtained from the Keplerian rotation law as
 \be
 \Omega_{\mathrm{K}}(R) = \left( \frac{G M }{R^3} \right)^{1/2},
