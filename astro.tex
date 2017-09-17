@@ -121,35 +121,36 @@ Typically such a thing can happen when the star evolves and expands at the end o
 
 \subsection{Accretion disks}
 
-When the mass transfer has started via the Roche lobe overflow, and we have stable source of material transferred from the companion, we can next focus on the region where gravitational forces of the neutron star dominate.
+When the mass transfer has started via the Roche lobe overflow, and we have a stable source of material which transfers matter from the companion to the more massive neutron star, we can next focus on the region where gravitational forces of the neutron star dominate.
 Most importantly, the infalling material has to somehow loose its angular momentum, before it is able to travel all the way to the neutron star surface.
 Nature's mechanism to do this is called an accretion disk.
 
 %accretion disk: machine for slowly lowering material in the graviational potential and extracting energy.
 %orbital kinetic energy to heat
 
-
-Confined to the orbital plane, hence thin-disk approximation is sufficient.
-
-Radial disk structure can be obtained from Keplerian rotation law as
+The must flow will be confined into the orbital plane of the binary system, hence, the problem is two dimensional as a first approximation.
+This is known as the so-called thin-disk approximation because we neglect all the structure that the disk might have in the vertical direction.
+Radial structure of the disk can be obtained from the Keplerian rotation law as
 \be
 \Omega_{\mathrm{K}}(R) = \left( \frac{G M }{R^3} \right)^{1/2},
 \ee
-yielding an angular velocity as a function of radial coordinate from the disk center.
-implies differential rotation.
+describing an angular velocity as a function of radial coordinate from the disk center.
 
-Viscous stress from shear viscosicty.
+There is an important detail hidden here in the Kepler's law:
+Keplerian angular velocity implies differential rotation, i.e., varying angular velocities as a function of the distance from the center of the disk.
+Such a shearing between two adjacent annulus will then lead to viscous stresses when the inner annulus rotates faster than the outer one.
 
-Disk luminosity:
-
-Conservation of mass and angular momentum
+The disk's structure can be obtained from the hydrodynamical equations in cylindrical coordinates.
+Instead of the density $\rho$, let us use the surface density $\Sigma = \rho H$ to describe the mass, where $H$ is the height of the disk.
+Conservation of mass and angular momentum can then be written as\cite[see e.g.,][for full derivation]{Cho98, FKR02}
 \be
-r \frac{\partial \Sigma}{\partial t} + \frac{\partial}{\partial r}(r \Sigma v_{\mathrm{R}}) = 0
+r \frac{\partial \Sigma}{\partial t} + \frac{\partial}{\partial r}(r \Sigma v_r) = 0,
 \ee
+and
 \be
-r \frac{\partial}{\partial t}(\Sigma r^2 \Omega) + \frac{\partial}{\partial r} (r \Sigma v_{\mathrm{r}} r^2 \Omega) = \frac{1}{2\pi} \frac{\partial G}{\partial r},
+r \frac{\partial}{\partial t}(\Sigma r^2 \Omega) + \frac{\partial}{\partial r} (r \Sigma v_r r^2 \Omega) = \frac{1}{2\pi} \frac{\partial G}{\partial r},
 \ee
-where $G$ is the viscous torque of the differentially rotating disk.
+where $v_r$ is the velocity in $r$ direction and $G$ is the viscous torque of the differentially rotating disk.
 
 Torque, in general, is the net outward angular momentum flux given as
 \be
@@ -159,7 +160,7 @@ where $\epsilon_{ijk}$ is the Levi-Civita symbol, and $f_k$ is the force density
 \be
 f_k = \sigma_{kh} n_h.
 \ee
-Here $\sigma_{kh}$ is the $kh$-component of the shear tensor $\sigma$ and $n_h$ is some surface normal.
+Here $\sigma_{kh}$ is the $kh$-component of a shear tensor $\sigma$, and $n_h$ is some surface normal of the area where the shearing takes place.
 In our case, we can compute the shear in cylindrical coordinate system focusing on $r$ and $\phi$ coordinates only as
 \be
 \sigma_{r\phi} = \rho \nu \left( r \frac{\partial}{dr} \left\{\frac{v_{\phi}}{r}\right\} + \frac{1}{r} \frac{d v_r}{d\phi} \right),
@@ -169,37 +170,43 @@ which simplifies to
 \sigma_{r\phi} = \rho \nu r \frac{d \Omega}{dr},
 \ee
 when we remember that $v_{\phi} = r \Omega$ and assuming the flow to be symmetric on $\phi$-direction ($\partial v_r/\partial \phi = 0)$.
-Blaablaa \cite[see, e.g.,][]{ChapmanCowling52}
-The total torque exerted by the $2\pi r H$ area corresponding to the disk rim is then
+The total torque exerted by the $2\pi r H$ area corresponding to the annulus at location $r$ is then
 \be
 G(r,t) = 2\pi r \nu \Sigma r^2 \Omega',
 \ee
 where $\Omega' = d\Omega/dr$.
 
-Combining these and assuming Keplerian rotation $\Omega = \Omega_{\mathrm{K}}$ we get
+Combining the latter expressions and assuming Keplerian rotation $\Omega(r) = \Omega_{\mathrm{K}}(r)$ we can then solve the system to obtain expressions for the surface density and the radial velocity as
 \be
-\frac{\partial \Sigma}{\partial t} = \frac{3}{r} \left[ r^{1/2} \frac{\partial}{\partial r} (\nu \Sigma r^{1/2}) \right]
+\frac{\partial \Sigma}{\partial t} = \frac{3}{r} \left[ r^{1/2} \frac{\partial}{\partial r} (\nu \Sigma r^{1/2}) \right],
 \ee
+and
 \be
 v_{\mathrm{r}} = -\frac{3}{\Sigma r^{1/2}} \frac{\partial}{\partial r} ( \nu \Sigma r^{1/2}).
 \ee
-In order to continue, we would need a description for the viscosity $\nu$.
-\red{TODO: nature of MRI}
+In order to continue further, we would need a description for the viscosity $\nu$.
+This could have its roots on the normal molecular viscosity\cite{ChapmanCowling52} or like the current theories imply, be magnetohydrodynamic in nature.
+The latter is known as the magneto-rotational Instability (MRI) where magnetic stresses of turbulent field lines cause viscosity for the plasma\cite{Cha60, BH91} \red{Velikhov59}
+As another approach, we mention the widely successful $\alpha$ parameterization of Shakura \& Sunyaev, known as the ``standard disk model'' or $\alpha$-disk.\cite{SS73}
+This method is mostly mathematical as we just reparameterize our ignorance of the viscosity into a new parameter called $\alpha$, that is taken to be proportional to the local pressure in the disk.
+Even though mathematical in nature, this formulation has turned out to be extremely successful at helping to explain the basic functionality of accretion disks.
 
-%To get some idea of the disk dynamics, we can, as our zeroth order approximation assume $\nu = \mathrm{const.}$.
-%Then, the time-dependent disk structure can be solved for example by assuming as an initial condition a ring of mass $m$ at $r=r_0$,
-%\be
-%\Sigma(r,t=0) = \frac{m}{2\pi r_0} \delta(r - r_0),
-%\ee
-%where $\delta$ is the Dirac delta function.
-%We then obtain a time-dependent solution that diffuses due to viscosity as
-%\be
-%\Sigma(x,\tau) = \frac{m}{2\pi r^2} \frac{1}{\tau x^{1/4} } \exp\left[-\frac{(1+x^2)}{\tau}\right] I_{1/4}\left(\frac{2x}{\tau}\right),
-%\ee
-%where $I_{1/4}$ is the modified Bessel function and radial coordinate $r$ is non-dimensionalized as $x = r/r_0$, and time as $\tau = 12 \nu t /r_0^2$.
+To get some idea of the disk dynamics, we can, as our zeroth order approximation assume $\nu = \mathrm{const.}$.
+Then, the time-dependent disk structure can be solved for example by assuming as an initial condition a ring of mass $m$ at $r=r_0$,
+\be
+\Sigma(r,t=0) = \frac{m}{2\pi r_0} \delta(r - r_0),
+\ee
+where $\delta$ is the Dirac delta function.
+We then obtain a time-dependent solution that diffuses due to viscosity as
+\be
+\Sigma(x,\tau) = \frac{m}{2\pi r^2} \frac{1}{\tau x^{1/4} } \exp\left[-\frac{(1+x^2)}{\tau}\right] I_{1/4}\left(\frac{2x}{\tau}\right),
+\ee
+where $I_{1/4}$ is the modified Bessel function and radial coordinate $r$ is non-dimensionalized as $x = r/r_0$, and time as $\tau = 12 \nu t /r_0^2$.
+Even from this simplified treatment we can understand the basic physics of how the accretion disks operate:
+The viscous shear stresses help the rotating plasma loose its angular momentum, which will then lead to a mass flow inwards, towards the center.
 
 Let us next study a steady-state disk solution by setting $\partial/\partial t \rightarrow 0$.
-From angular momentum conservation we then obtain
+From angular momentum conservation we obtain
 \be
 r \Sigma v_{\mathrm{r}} r^2 \Omega = \frac{G}{2\pi} + \frac{C}{2\pi},
 \ee
@@ -218,14 +225,12 @@ Substituting this, and assuming Keplerian velocity again, we obtain
 \nu \Sigma = \frac{\Mdot}{3\pi} \left[ 1 - \left( \frac{R}{r}^{1/2} \right) \right].
 \ee
 Physically this represents a steady-state solution of a disk with central torque applied to it.
-
-Viscous dissipation rate per unit area is%
+Viscous dissipation rate per unit area in the disk is then%
 \footnote{Viscous dissipation rate in ring of width $dr$ is $G \Omega' dr$ and the total area of the ring, taking into account both the lower and upper faces, is $4\pi r dr$. Hence, we obtain Eq. \eq{eq:D} as the ratio of these.
 }
 \be\label{eq:D}
 D(r) = \frac{G \Omega'}{4\pi r} = \frac{1}{2} \nu \Sigma r^2 \Omega' = \frac{3 G M \Mdot}{8 \pi r^3} \left[ 1 - \left( \frac{R}{r}^{1/2} \right) \right].
 \ee
-
 Finally, from here we can compute the luminosity of the disk faces due to energy lost by viscous dissipation
 \begin{align}\begin{split}
     L(r_1, r_2)  &= 2 \int_{r_1}^{r_2} D(r) 2\pi r dr = \frac{3 G M \Mdot}{2} \int_{r_1}^{r_2} \left[ 1 - \left( \frac{R}{r} \right)^{1/2} \right] \frac{dr}{r^2} \\
@@ -235,11 +240,11 @@ and by then setting $r_1 \rightarrow R$ and $r_2 \rightarrow \infty$, we get
 \be
 L_{\mathrm{disk}} = \frac{G M \Mdot}{2 R} = \frac{1}{2} L_{\mathrm{acc}}.
 \ee
-Hence, half of the potential energy will be lost by the viscous dissipation and is radiated away by the upper and lower faces of the accretion disk.
+Hence, half of the potential energy will be lost by the viscous shearing and is radiated away by the upper and lower faces of the accretion disk.
 Importantly, the other remaining half will be transferred all the way to the star.
 
-Temperature of the hottest inner disk can be estimated by assuming a blackbody radiator and using the viscous dissipation rate $D$ as our energy source.
-This innermost region of the disk is quite logically the brightest as there the gravity is the strongest and the dissipation area the smallest.
+Temperature of the hottest inner disk can be estimated by assuming a blackbody radiator and using the dissipation rate $D$ as our energy.
+This innermost region of the disk is the brightest as here the gravity is the strongest and the dissipation area the smallest.
 Estimate for the disk temperature is then \red{Check $D(r \rightarrow R)$}
 \be
 \sigma T_{\mathrm{disk}}^4 \sim D(R),
@@ -334,7 +339,7 @@ This corresponds to a temperature of
 T_{\mathrm{BL}} \sim \left( \frac{G M \Mdot}{8\pi \sigma R^2 H} \right)^{1/4} \sim T_{\mathrm{disk}} \left( \frac{R}{H} \right)^{1/4}
 \ee
 
-As another option we can consider a so-called spreading layer. 
+As another option we can consider a so-called spreading layer.\cite{IS99, SP06}
 Instead of assuming that the energy is dissipated in a thin equatorial ring, we can assume that it will spread to cover the whole star.
 In this case, $A_{\mathrm{SL}} \sim 4\pi R^2$, and using Eq. \eq{eq:BLT}, we get 
 \be
@@ -347,7 +352,7 @@ In a general relativistic treatment the energy release in the boundary layer can
 
 
 
-\section{X-ray bursts}
+\section{X-ray bursts as probes of the interiors}
 
 Accretion can be a powerful energy source but this is the not end of the material that slowly spirals down to the star.
 After it has traveled all the way to the surface of the neutron star, it will slowly sink and mix with the material in the star's ocean.
@@ -356,7 +361,7 @@ Eventually the kinetic energy of the nuclei is large enough so that the particle
 This heat injection will then start an unstoppable chain reaction that creates a burning front that eventually covers the whole star.
 This thermonuclear fusion reaction will then last until all the available fuel on the star's upper layers is exhausted and consumed.
 
-Observationally these bursts are classified as type-I X-ray bursts.
+Observationally these bursts are classified as type-I X-ray bursts.\cite[see][for a review]{Lewin93, SB10}
 As another option, we might see flaring also from instabilities in the incoming mass flow. 
 These events are classified as type-II bursts, and we do not focus on them, as here we are interested in probing the neutron star itself.
 \red{cite type-II.}
@@ -366,41 +371,44 @@ Let us next discuss these type-I bursts in more detail.
 
 \subsection{Unstable thermonuclear burning}
 
-The driving engine of a X-ray burst is the unstable thermonuclear fusion process.
-A typical X-ray burst has a rise time of $~0.1$ to $10$ seconds and a duration of around $1$ minute.
+A typical X-ray burst has a rise time of $~0.1$ to $10$ seconds and a duration from $10$ to $100$ seconds.
 During this time, it releases $10^{39} - 10^{40} \erg$ of energy.
+Temperature in the upper layers is of around $T \sim 10^7 \Kelvin$ and the main ingredient of the composition is either hydrogen, helium, or both.
 
-\cite{Lewin93}
-\cite{SB10}
-
-Typical temperature in the upper layers if of around $T \sim 10^7 \Kelvin$.
-In this case, the burning of hydrogen plasma is dominated by the CNO-cycle.
-For a slightly hotter plasma, $T \approx \Ten{8}{7} \Kelvin$, we have to modify the reaction a bit into a so-called hot CNO-cycle.\cite{FH65}
-
-Alternatively, or together with hydrogen, the helium can burn via the triple-$\alpha$ process ($T \gnsim \Ten{2}{8} \Kelvin$).
-
-In addition, the $\alpha p$-process ($T \gnsim \Ten{5}{8} \Kelvin$) for heavier elements like Ne, Na, and Mg.
-The rp-process for even heavier above $T \sim 10^9 \Kelvin$.  
-\cite{Fujimoto81, Wallace81, Fisker08}
+The driving engine for a X-ray burst is the unstable thermonuclear fusion process.\cite{Fujimoto81, Wallace81, Fisker08}
+The burning of hydrogen plasma is dominated by the CNO-cycle if temperature is around $10^7 \Kelvin$.
+For a slightly hotter plasma, $T \gtrsim \Ten{8}{7} \Kelvin$, we have to modify the reaction a bit into a so-called hot CNO-cycle.\cite{FH65}
+Helium plasma, on the other hand, burns via the triple-$\alpha$ process (active when $T \gtrsim \Ten{2}{8} \Kelvin$).
+In addition to these two main reactions, the $\alpha p$-process can operate when $T \gtrsim \Ten{5}{8} \Kelvin$, creating heavier elements like Ne, Na, and Mg.
+The rp-process to synthesize even heavier elements can take place if $T \sim 10^9 \Kelvin$.
 
 If the accreted material does not have any hydrogen, or if the hot CNO-cycle has enough time to burn all the available hydrogen into helium, the ignition starts in the helium shell.
 On the other hand, if the hot CNO burning of hydrogen is not continuous, it can trigger the runaway in the hydrogen shell, after which the helium shell will also ignite.
-
+These minor details have observational importance, as we sometimes see bursts with very short rise times, and other times it might take seconds for the burst to really get going.\cite{SB10}
+This discrepancy is believed to originate from this changing ignition mechanism.
 
 In addition to the normal type-I bursts, we have also recently detected more rare long-duration bursts, now commonly dubbed as ``superbursts''. \cite{CHK00, Kuulkers02, SB02}
 These are thought to be powered by carbon burning\cite{Cumming01}
 When looking at the duration, there are also a third class of bursts in between the superbursts and normal bursts, named ``intermediate bursts''.\cite{Cumming06}
 
-
+All in all, the energy production of bursts appears to be a complex mechanisms that we do not fully understand yet.
+This is also reflected in the large variety of burst durations, energetics, rise times, etc. that we observationally see.\cite{GMH08}
 
 
 \subsection{Constraining the size of bursting source}
 
+Even though the bursts characteristics change from one burst to another, the cooling appears to obey some common trends.
+This means that as long as we have some kind of an energy injection deep below the neutron star's atmosphere, the energy will radiate out and the uppermost layers of the star will then shape into a similar cooling curve, independent of the actual details of the injection.
+If we are then able to model the atmosphere and the processes therein, we can then use the bursts as a probes for the neutron star interiors.
+
+
+
+
+The big caveat here is the surroundings.
 We have seen that the astrophysical environment of neutron stars can be very active and lively.
 In the general picture, we have the accretion as an energy source and the disk to dissipate this energy.
 The disk is, however, not a simple geometrically thin steady layer but can have complex inner flow.
 On the other hand, if the disk does extend all the way down to the star, an additional complication originates from the boundary or spreading layer that can not only cover the star but also radiate on its own.
 These are some of the complications that we face when trying to analyze our neutron star observations, as after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
-
 
 
