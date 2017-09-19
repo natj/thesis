@@ -24,13 +24,11 @@ In this final chapter, we will lay out the basics of how by observing the burst 
 We will also summarize the content of the articles in this thesis, and discuss discuss our work where we try to understand not only the complex role of the astrophysical surroundings but in the end, the composition of the core.
 
 
-\section{Measuring the size of the bursting source}
+\section{Measuring the sizes of the bursting sources}
 
-Even though the bursts characteristics change from one burst to another as we saw in Sect. \red{XXX}, the cooling appears to obey some common trends.
-This means that as long as we have some kind of an energy injection deep below the neutron star's atmosphere, the energy will radiate out and the uppermost layers of the star will then shape into a similar cooling curve, independent of the actual details of the injection.
+Even though the bursts characteristics change from one burst to another as we saw in \sect{sect:bursts}, the cooling appears to obey some common trends.
+This means that as long as we have some kind of an energy injection deep below the neutron star's atmosphere, the energy will radiate out and the uppermost layers of the star will then shape it into a similar cooling curve, independent of the actual details of the injection.
 If we are then able to model the atmosphere and the processes therein, we can then use the bursts as probes for the neutron star interiors.
-
-
 
 
 The big caveat here are the surroundings.
@@ -39,6 +37,99 @@ In the general picture, we have the accretion as an energy source and the disk t
 The disk is, however, not a simple geometrically thin steady layer but can have complex inner flow.
 On the other hand, if the disk does extend all the way down to the star, an additional complication originates from the boundary or spreading layer that can not only cover the star but also radiate on its own.
 These are some of the complications that we face when trying to analyze our neutron star observations, as after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
+
+
+Let us, however, momentarily push these complications aside and assume that when observing the X-rays from the bursts, the radiation detected is dominated by the burst emission from the neutron star surface.
+This allows us to put interesting limits on the size and the mass of the emitting source.
+To begin, let us define three different families of quantities: Observed quantities ($\mathrm{obs}$), theoretical quantities predicted by our model at infinity ($\infty$), and the same theoretical model quantities in the local frame of the star ($*$).
+This is done, because general relativistic effects change the local physical quantities as they travel from the star to a distant observer.
+More specifically, we can connect the temperatures $T$, radii $R$, and luminosities $L$ as
+\be\label{eq:Rz}
+R_{\infty} = R_* (1+z)
+\ee
+\be\label{eq:Tz}
+T_{\infty} = \frac{T_*}{1+z}
+\ee
+\be\label{eq:Lz}
+L_{\infty} = \frac{L_*}{1+z},
+\ee
+where $(1+z$) is the redshift factor that is related to the previously defined compactness $u = 2GM/Rc^2$ as
+\be
+1+z = (1 - u)^{-1/2}.
+\ee
+From the observations, we see that the detected burst spectra are reasonably well-described by the Planck function (blackbody) as
+\be
+F_{E, \mathrm{obs}} \approx \pi B_E(T_{\mathrm{obs}}) K_{\mathrm{obs}},
+\ee
+where $B_E(T_{\mathrm{ obs}})$ is a blackbody function with a measured temperature $T_{\mathrm{obs}}$ and normalization $K_{\mathrm{obs}}$, together with $E$ which is energy that we observe at.
+The normalization for a circular object at a distance $D$ in the sky is
+\be\label{eq:Robs}
+K_{\mathrm{obs}} = \frac{R_{\mathrm{obs}}^2}{D^2}.
+\ee
+Observed bolometric flux is then
+\be
+F_{\mathrm{obs}} = \int_0^{\infty} F_{E, \mathrm{obs}} dE = \sigmaSB T_{\mathrm{obs}}^4 \frac{R_{\mathrm{obs}}}{D^2}.
+\ee
+
+From the atmosphere models of neutron stars, we obtain a similar result.
+The local detailed model spectra is well approximated by a so-called diluted blackbody model given as
+\be
+F_{E,*} \approx \pi w B_E(\fc \Teffs),
+\ee
+where $w$ is the dilution factor, $\fc$ is the color-correction factor, and $\Teffs$ is the effective temperature of the atmosphere.
+This allows us to connect the observed values to the theoretical model values by first redshifting these quantities to infinity.
+From \eq{eq:Tz} we simply obtain that the temperature of the model as seen by a distant observed must be
+\be
+\fc \Teffi = \fc \frac{\Teffs}{1+z}.
+\ee
+Similarly, the area of the star on the sky must be related not to $R_*$ but to $R_{\infty}$ as given by \eq{eq:Rz}
+\be\label{eq:Rmod}
+w \frac{R_{\infty}^2}{D^2} = w \frac{R_*^2 (1+z)^2 }{D^2}.
+\ee
+The latter \eq{eq:Rmod} gives immediate constraints for the radius as it can be equated with the observed size \eqref{eq:Robs} as\cite{Penninx89, vParadijs90}
+\be
+%\frac{R_{\mathrm{obs}}^2}{D^2} =  w \frac{R_{\infty}^2}{D^2} = w \frac{R_*^2 (1+z)^2 }{D^2}.
+R_{\mathrm{obs}}^2 =  w R_{\infty}^2 = w R_*^2 (1+z)^2.
+\ee
+
+
+Additional constraints can be obtained by measuring Eddington limit of the source.
+As we have seen, there exists a flux for which the radiation forces equal to the gravitational forces (see \sect{sect:Eddington}), given as 
+\be
+F_{\mathrm{Edd},*} = \frac{G M c}{\kappa_{\mathrm{T}} R_*^2} (1+z),
+\ee
+where $\kappa_{\mathrm{T}} = 0.2(1+X)\unitspace\cm^2\unitspace\g^{-1}$, is the Thomson electron scattering opacity and $X$ is the hydrogen mass fraction.
+Using this characteristic flux we can also define the Eddington luminosity $L_{\mathrm{Edd},*}$ and the corresponding Eddington temperature $T_{\mathrm{Edd},*}$ as
+\be
+L_{\mathrm{Edd},*} =  4\pi R_*^2 F_{\mathrm{Edd},*} = 4\pi R_*^2 \sigmaSB T_{\mathrm{Edd},*}^4.
+\ee
+These are again quantities defined near the star whereas what one observes at infinity are given by
+\be
+L_{\mathrm{Edd},\infty} = \frac{ L_{\mathrm{Edd},*} }{1+z},
+\ee
+\be
+F_{\mathrm{Edd},\infty} = \frac{L_{\mathrm{Edd},\infty}}{4\pi D^2} = \frac{G M c}{\kappa_{\mathrm{T}} D^2} \frac{1}{1+z},
+\ee
+and
+\be
+T_{\mathrm{Edd},\infty} = \frac{T_{\mathrm{Edd},*}}{1+z}.
+\ee
+
+As a simplest case, we can obtain additional constraints for the radius and mass, besides what we get from $K_{\mathrm{obs}}$, by just measuring the $F_{\mathrm{Edd},\infty}$ somehow.
+This can be done, for example, by equation it with the touchdown flux obtained from the time-dependent burst spectra.
+This is the basis of the so-called ``touchdown method''.\cite{Ebi87, vParadijs90, Ozel06, Ozel16}
+
+A more sophisticated version of this is the so-called ``cooling tail method''.\cite{SPRW11, SPW11, SPW12, PNK14, NSK16}
+Here we can compute the varying color-correction factor $f_{\mathrm{c}}$ from the atmosphere models as a function of $\ell \equiv L_*/L_{\mathrm{Edd,*}}$.
+In this case, the dilution factor was fully omitted as $f_{\mathrm{c}} \approx w^{-4}$.
+The color-correction factor can then be related to multiple $K_{\mathrm{obs}}$ measurements, each obtained from one time snapshot, from the cooling tail.
+As the time time passes and the surface cools down, the flux decreases.
+This allows us to compare the model dependency of $\ell$ vs. $f_{\mathrm{c}}$ to the observations of $F_{\mathrm{obs}} / F_{\mathrm{Edd}, \infty}$ vs. $K_{\mathrm{obs}}^{-1/4}$.
+Hence, extra information from the cooling tail is used because not only do we probe the individual color-correction values but the total evolution of the it.
+The fitting procedure is two dimensional in this case as we fit $F_{\mathrm{Edd},\infty}$ and $R_{\infty}^2/D^2$ simultaneously.
+
+
+
 
 
 \section{Scientific summary of the results}
@@ -77,16 +168,16 @@ The author also prepared the manuscript.
 
 \subsubsection*{Paper V.}
 The author contributed to the main idea of this research and was responsible of the atmosphere modeling of the observations. The Bayesian atmosphere spectral model fitting framework was also independently designed by the author. 
-Author also made significant contributions to the manuscript.
+Author also contributed to the manuscript.
 
 
 \subsubsection*{Paper VI.}
-Author helped in designing the fitting framework, based on his own previous results, and contributed to the scientific and statistical discussions of the paper. 
+Author helped in designing the fitting framework, based on his own previous results, and contributed to the scientific and statistical discussions of the results.. 
 The author also contributed to the manuscript.
 
 
 \subsubsection*{Paper VII.}
-In this paper, the author proposed the usage of the dynamic power-law method and co-supervised the project which was originally based on the Master's thesis of J. Kuuttila. 
+In this paper, the author proposed the usage of the dynamic power-law method and co-supervised the project together with Dr. Jari Kajava. The project is originally related to the Master's thesis of MSc. Jere Kuuttila. 
 Author also made significant contributions to the manuscript.
 
 
@@ -100,7 +191,7 @@ The author independently proposed the idea of applying the split-Hamilton method
 
 
 \subsubsection*{Paper X.}
-The author independently designed the hierarchical Bayesian fitting framework, implemented it into a code together with M.C. Miller and A.W. Steiner, analyzed the data, and, finally, prepared most of the manuscript together with M.C. Miller.
+The author independently designed the hierarchical Bayesian fitting framework, implemented it into a code together with M.C. Miller and A.W. Steiner, analyzed the data, and, finally, prepared the manuscript together with M.C. Miller, with the help from the other co-authors.
 
 
 \subsubsection*{Paper XI.}
