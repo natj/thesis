@@ -11,7 +11,7 @@ The strongly curved spacetime, in turn, influences many of the phenomena occurri
 
 The physical phenomena behind the observable features on the other hand, are often highly energetic, otherwise they would not be seen by distant observers, such as us.
 It is these highly energetic physical processes that will then render the neutron stars visible to us, and that at the same time carry a plethora of information from the surroundings of where they originated from.
-This gives birth to a beautiful cosmic connection where the delicate and unattainable nuclear physics of the ultra-dense matter is coupled to vigorous astrophysical phenomena that we can observe.
+This gives birth to a beautiful connection where the delicate and unattainable nuclear physics of the ultra-dense matter is coupled to vigorous astrophysical phenomena that we can observe.
 The caveat here is that the astrophysical processes are often messy and poorly understood.
 Hence, a thorough understanding of both, the nature of the observed phenomena and how it exactly couples to the nuclear physics, is needed.
 
@@ -28,21 +28,15 @@ We will also summarize the content of the articles in this thesis, and discuss d
 
 Even though the bursts characteristics change from one burst to another as we saw in \sect{sect:bursts}, the cooling appears to obey some common trends.
 This means that as long as we have some kind of an energy injection deep below the neutron star's atmosphere, the energy will radiate out and the uppermost layers of the star will then shape it into a similar cooling curve, independent of the actual details of the injection.
-If we are then able to model the atmosphere and the processes therein, we can then use the bursts as probes for the neutron star interiors.
+If we are then able to model the atmosphere and the processes therein, we can use the bursts as probes for the neutron star interiors.
+Note, however, that not every burst is powerful enough to be of practical use.
+As we shall see, we additionally require that the bursts reach the Eddington limit, which in practice means using the PRE-bursts only.
 
-
-The big caveat here are the surroundings.
-We have seen that the astrophysical environment of neutron stars can be very active and lively.
-In the general picture, we have the accretion as an energy source and the disk to dissipate this energy.
-The disk is, however, not a simple geometrically thin steady layer but can have complex inner flow.
-On the other hand, if the disk does extend all the way down to the star, an additional complication originates from the boundary or spreading layer that can not only cover the star but also radiate on its own.
-These are some of the complications that we face when trying to analyze our neutron star observations, as after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
-
-
-Let us, however, momentarily push these complications aside and assume that when observing the X-rays from the bursts, the radiation detected is dominated by the burst emission from the neutron star surface.
-This allows us to put interesting limits on the size and the mass of the emitting source.
-To begin, let us define three different families of quantities: Observed quantities ($\mathrm{obs}$), theoretical quantities predicted by our model at infinity ($\infty$), and the same theoretical model quantities in the local frame of the star ($*$).
-This is done, because general relativistic effects change the local physical quantities as they travel from the star to a distant observer.
+%Let us, however, momentarily push these complications aside and assume that when observing the X-rays from the bursts, the radiation detected is dominated by the burst emission from the neutron star surface.
+%This allows us to put interesting limits on the size and the mass of the emitting source.
+To begin, let us define three different families of quantities: 
+Observed quantities ($\mathrm{obs}$), theoretical quantities predicted by our model at infinity ($\infty$), and the same theoretical model quantities in the local frame of the star ($*$).
+This is done, because general relativistic effects change the local physical quantities as they travel from the star to a distant observer.\cite[see, e.g.][]{Lewin93}
 More specifically, we can connect the temperatures $T$, radii $R$, and luminosities $L$ as
 \be\label{eq:Rz}
 R_{\infty} = R_* (1+z)
@@ -71,6 +65,24 @@ Observed bolometric flux is then
 F_{\mathrm{obs}} = \int_0^{\infty} F_{E, \mathrm{obs}} dE = \sigmaSB T_{\mathrm{obs}}^4 \frac{R_{\mathrm{obs}}}{D^2}.
 \ee
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=16cm]{figs/constraints/bursts.pdf}
+\caption{\label{fig:bursts}
+Examples of bolometric flux, temperature and blackbody normalization evolution during the hard-state PRE bursts. 
+The black line shows the estimated bolometric flux (left-hand vertical axis) in units of $10^{-7} \unitspace\erg\unitspace\cm^{-2}\unitspace\mathrm{s}^{-1}$.
+The blue ribbon shows the blackbody normalization (outer right-hand vertical axis) in $(\km/10\unitspace\mathrm{kpc})^2$.  
+The red ribbon show the blackbody temperature (inner right-hand vertical axis) in keV. 
+Highlighted gray area marks a typical region of the cooling tail used in the fitting procedures.
+}
+\end{figure}
+
+Some examples of Planck function fit results for X-ray bursts are shown in \fig{fig:bursts}.
+Here the time-dependent spectral fits are shown for one particular source, 4U 1702$-$429.\cite[see][for more detailed description of the data]{NSK16, NMS17}
+All of the bursts shown here are exhibiting the photospheric radius expansion, that can be seen from the characteristic dip in the normalization and of the simultaneous maximum in the temperature.\cite[see, e.g.][for more thorough discussion]{GMH08}
+The flux corresponding to the exact moment when the photosphere collapses back to the neutron star's surface is dubbed the touchdown flux, and it is visualized by the first vertical dotted line in the Figures.
+
+
 From the atmosphere models of neutron stars, we obtain a similar result.
 The local detailed model spectra is well approximated by a so-called diluted blackbody model given as
 \be
@@ -92,13 +104,15 @@ The latter \eq{eq:Rmod} gives immediate constraints for the radius as it can be
 R_{\mathrm{obs}}^2 =  w R_{\infty}^2 = w R_*^2 (1+z)^2.
 \ee
 
-
 Additional constraints can be obtained by measuring Eddington limit of the source.
 As we have seen, there exists a flux for which the radiation forces equal to the gravitational forces (see \sect{sect:Eddington}), given as 
 \be
 F_{\mathrm{Edd},*} = \frac{G M c}{\kappa_{\mathrm{T}} R_*^2} (1+z),
 \ee
 where $\kappa_{\mathrm{T}} = 0.2(1+X)\unitspace\cm^2\unitspace\g^{-1}$, is the Thomson electron scattering opacity and $X$ is the hydrogen mass fraction.
+One should note here that even though we use the Thomson electron scattering opacity in the notation, one is not restricted to assuming this.
+It is, for example, possible to take the Klein-Nishina reduction in the cross-section into account which formally allows for super-Eddington fluxes.\cite{SPW12}
+In reality the Eddington limit is, of course, still respected.
 Using this characteristic flux we can also define the Eddington luminosity $L_{\mathrm{Edd},*}$ and the corresponding Eddington temperature $T_{\mathrm{Edd},*}$ as
 \be
 L_{\mathrm{Edd},*} =  4\pi R_*^2 F_{\mathrm{Edd},*} = 4\pi R_*^2 \sigmaSB T_{\mathrm{Edd},*}^4.
@@ -115,19 +129,51 @@ and
 T_{\mathrm{Edd},\infty} = \frac{T_{\mathrm{Edd},*}}{1+z}.
 \ee
 
-As a simplest case, we can obtain additional constraints for the radius and mass, besides what we get from $K_{\mathrm{obs}}$, by just measuring the $F_{\mathrm{Edd},\infty}$ somehow.
+As the simplest case, we can obtain additional constraints for the radius and mass by just measuring the $F_{\mathrm{Edd},\infty}$ somehow.
 This can be done, for example, by equation it with the touchdown flux obtained from the time-dependent burst spectra.
 This is the basis of the so-called ``touchdown method''.\cite{Ebi87, vParadijs90, Ozel06, Ozel16}
 
-A more sophisticated version of this is the so-called ``cooling tail method''.\cite{SPRW11, SPW11, SPW12, PNK14, NSK16}
+A more sophisticated version of this is the so-called ``cooling tail method''.\cite{SPRW11, SPW11, SPW12, PNK14}
 Here we can compute the varying color-correction factor $f_{\mathrm{c}}$ from the atmosphere models as a function of $\ell \equiv L_*/L_{\mathrm{Edd,*}}$.
 In this case, the dilution factor was fully omitted as $f_{\mathrm{c}} \approx w^{-4}$.
-The color-correction factor can then be related to multiple $K_{\mathrm{obs}}$ measurements, each obtained from one time snapshot, from the cooling tail.
+The color-correction factor can then be related to multiple $K_{\mathrm{obs}}$ measurements, each representing  an one time snapshot from the cooling tail.
 As the time time passes and the surface cools down, the flux decreases.
 This allows us to compare the model dependency of $\ell$ vs. $f_{\mathrm{c}}$ to the observations of $F_{\mathrm{obs}} / F_{\mathrm{Edd}, \infty}$ vs. $K_{\mathrm{obs}}^{-1/4}$.
-Hence, extra information from the cooling tail is used because not only do we probe the individual color-correction values but the total evolution of the it.
+Hence, extra information from the observations is used because not only are the individual color-correction factor values compared against the model but also the mutual dependency of them.
 The fitting procedure is two dimensional in this case as we fit $F_{\mathrm{Edd},\infty}$ and $R_{\infty}^2/D^2$ simultaneously.
+Interestingly, the combination of these two fit parameters then yield a distance-independent quantity, physically corresponding to the Eddington temperature of the source at infinity, and given as\red{check}
+\be
+T_{\mathrm{Edd},\infty} 
+%= 9.81 
+= \Ten{1.14}{8}
+\left( \frac{F_{\mathrm{Edd},\infty}}{10^{-7}\unitspace\erg\cm^{-2}\unitspace\mathrm{s}^{-1}} \right)^{1/4} 
+\left( \frac{(\km/10\unitspace\mathrm{kpc})^2}{R_{\infty}^2/D^2}  \right)^{1/4} 
+\Kelvin.
+%\unitspace\mathrm{keV}.
+\ee
+This corresponds to a parametric relation for the $M$ and $R$ via the compactness $u$, given as
+\begin{align}\begin{split}
+R &= \frac{c^3 u(1-u)^{3/2}}{2\kappa_{\mathrm{T}} \sigmaSB T_{\mathrm{Edd},\infty}^4} 
+\approx 1188 \frac{u(1-u)^{3/2}}{(1+X) T_{\mathrm{Edd},\infty, 7}^4} \km, \\
+M &\approx u \frac{R}{2.95\km} \Msun, \\
+\end{split}\end{align}
+where $T_{\mathrm{Edd},\infty,7} = T_{\mathrm{Edd}, \infty} / 10^7 \Kelvin$.
+Later on, another variant of this was introduces, called ``direct cooling tail method'' where the assumption of $f \approx w^{-4}$ was relaxed, i.e., both $f_{\mathrm{c}}$ and $w$ are considered, and the fitting is done directly via the $M$, $R$ and $D$ parameters.\cite{NSK16, SPN17} 
 
+
+The usage of these methods on X-ray burst data span almost a three decades of scientific work as of now.
+Starting from the early work in the late 80s they have since improved and been applied to various sources to estimate the radius and mass.
+Latest in the family, is the method of fitting the observed data directly with the atmosphere models.\cite{NMS17}
+Although computationally more demanding exercise, it allows us to finally extract every piece of information possible from the data.
+This is based on the additional model dependency on the surface gravity, composition, and detailed spectral shape that slightly deviates from the assumed Planck function.
+
+
+The big caveat here for any of the aforementioned methods are the surroundings.
+We have seen that the astrophysical environment of neutron stars can be very active and lively.
+In the general picture, we have the accretion as an energy source and the disk to dissipate this energy.
+The disk is, however, not a simple geometrically thin steady layer but can have complex inner flow.
+On the other hand, if the disk does extend all the way down to the star, an additional complication originates from the boundary or spreading layer that can not only cover the star but also radiate on its own.
+These are some of the complications that we face when trying to analyze our neutron star observations, as after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
 
 
 
