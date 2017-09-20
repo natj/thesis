@@ -81,9 +81,9 @@ def fill_box(ax, r1, r2, fmt):
 
 
 plt.rc('font', family='serif')
-plt.rc('xtick', labelsize=7)
-plt.rc('ytick', labelsize=7)
-plt.rc('axes', labelsize=7)
+plt.rc('xtick', labelsize=9)
+plt.rc('ytick', labelsize=9)
+plt.rc('axes', labelsize=9)
 
 
 #fig = plt.figure(figsize=(3.54, 2.19)) #single column fig
@@ -161,7 +161,7 @@ labs = [r'            $\approx 3\rho_0$', r'  $\approx 2\rho_0$', r'$\approx 0.5
 rads = [0.0, 6.0, 10.5]
 for rad, lab in zip(rads, labs):
     x, y = arc(rad, a1=0.0, a2=pi/2.75)
-    ax.text(x[-1], y[-1], lab, rotation=-50.0, size=8, va='center', ha='center')
+    ax.text(x[-1], y[-1], lab, rotation=-50.0, size=10, va='center', ha='center')
 
 
 

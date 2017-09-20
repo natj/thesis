@@ -305,9 +305,9 @@ def R_at_rho(rho):
 def main(argv):
 
     plt.rc('font', family='serif')
-    plt.rc('xtick', labelsize=7)
-    plt.rc('ytick', labelsize=7)
-    plt.rc('axes', labelsize=9)
+    plt.rc('xtick', labelsize=10)
+    plt.rc('ytick', labelsize=10)
+    plt.rc('axes', labelsize=10)
     
 
     #fig = plt.figure(figsize=(3.54, 2.19)) #single column fig
@@ -482,9 +482,11 @@ def main(argv):
     axs[0].text(6.0e15, y_text, 'Core', rotation=0, ha='center', va='center', size=10)
 
     
+
+    lsize  = 10
     lstyle = 'dotted'
     axs[0].plot([rhon, rhon], [1.0e16, 1e40], "r", linestyle=lstyle)
-    txt = axs[0].text(rhon, 2.0e24, r'$\rho_n$', rotation=90, ha='center', va='center', size=8)
+    txt = axs[0].text(rhon, 2.0e24, r'$\rho_n$', rotation=90, ha='center', va='center', size=lsize)
     txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
     axs[0].plot([rhond, rhond], [1.0e16, 1e40], "r", linestyle=lstyle)
@@ -492,29 +494,29 @@ def main(argv):
     #txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
     axs[0].plot([rho_xr, rho_xr], [1.0e16, 1e38], "r", linestyle=lstyle)
-    txt = axs[0].text(rho_xr, 2.0e28, r'$x_r = 1$', rotation=90, ha='center', va='center', size=8)
+    txt = axs[0].text(rho_xr, 2.0e28, r'$x_r = 1$', rotation=90, ha='center', va='center', size=lsize)
     txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
     axs[0].plot([rho_thr, rho_thr], [1.0e16, 1e28], "r", linestyle=lstyle)
-    txt = axs[0].text(rho_thr, 2.0e22, r'$\Theta_r = 1$', rotation=90, ha='center', va='center', size=8)
+    txt = axs[0].text(rho_thr, 2.0e22, r'$\Theta_r = 1$', rotation=90, ha='center', va='center', size=lsize)
     txt.set_bbox(dict(facecolor='lightgrey', edgecolor='none', pad=3))
 
     axs[0].plot([rho_Ge, rho_Ge], [1.0e16, 1e30], "r", linestyle=lstyle)
-    txt = axs[0].text(rho_Ge, 2.0e26, r'$\Gamma_{\mathrm{e}} = 1$', rotation=90, ha='center', va='center', size=8)
+    txt = axs[0].text(rho_Ge, 2.0e26, r'$\Gamma_{\mathrm{e}} = 1$', rotation=90, ha='center', va='center', size=lsize)
     txt.set_bbox(dict(facecolor='white', edgecolor='none', pad=3))
 
 
-    axs[0].text(1.0e4, 2.0e18, r'$P \propto \rho^{5/3}$', rotation=27, ha='center', va='center', size=8)
-    axs[0].text(2.0e7, 2.0e23, r'$P \propto \rho^{4/3}$', rotation=22, ha='center', va='center', size=8)
+    axs[0].text(1.0e4, 2.0e18, r'$P \propto \rho^{5/3}$', rotation=27, ha='center', va='center', size=lsize)
+    axs[0].text(2.0e7, 2.0e23, r'$P \propto \rho^{4/3}$', rotation=22, ha='center', va='center', size=lsize)
 
 
     #validity zones
     yloc = 5.0e34
     axs[0].text(5.e2, yloc, r'ideal gas', rotation=90, ha='center', va='center', size=8)
-    axs[0].text(1.e5, yloc, 'non-relativistic\ndegenerate\nelectron gas', rotation=90, ha='center', va='center', size=8)
-    axs[0].text(1.e8, yloc, 'relativistic\ndegenerate\nelectron gas', rotation=90, ha='center', va='center', size=8)
-    axs[0].text(1.e12, yloc, r'neutron drip', rotation=90, ha='center', va='center', size=8)
-    axs[0].text(5.e13, yloc, 'nuclear\npasta', rotation=90, ha='center', va='center', size=8)
+    axs[0].text(1.e5, yloc, 'non-relativistic\ndegenerate\nelectron gas', rotation=90, ha='center', va='center', size=lsize)
+    axs[0].text(1.e8, yloc, 'relativistic\ndegenerate\nelectron gas', rotation=90, ha='center', va='center', size=lsize)
+    axs[0].text(1.e12, yloc, r'neutron drip', rotation=90, ha='center', va='center', size=lsize)
+    axs[0].text(5.e13, yloc, 'nuclear\npasta', rotation=90, ha='center', va='center', size=lsize)
 
 
     ################################################## 

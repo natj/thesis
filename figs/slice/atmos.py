@@ -123,7 +123,8 @@ labels = ['               C O R O N A',
 lstyles = ['dotted', 'dashed', 'solid', 'dashed', 'solid', None]
 
 #for i in range(len(rads)-1):
-for i in range(1,len(rads)-1):
+#for i in range(1,len(rads)-1):
+for i in range(1,6):
     alpha = 0.02 + i*0.1
     r1 = rads[i]
     r2 = rads[i+1]
@@ -210,5 +211,5 @@ ax.text(x,y, 'log$_{10}$ $\\rho$ \n [g cm$^{-3}$]', rotation=-52, ha='right', va
 
 
 plt.subplots_adjust(left=0.1, bottom=0.0, right=0.98, top=0.85, wspace=0.0, hspace=0.0)
-plt.savefig('atmos_1.pdf', bbox_inches='tight')
+plt.savefig('atmos_5.pdf', bbox_inches='tight')
 
