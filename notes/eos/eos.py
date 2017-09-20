@@ -550,7 +550,7 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv)
-    plt.savefig('eos.pdf')
+    plt.savefig('eos.pdf', bbox_inches='tight')
 
 
 
