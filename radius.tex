@@ -141,7 +141,7 @@ As the time time passes and the surface cools down, the flux decreases.
 This allows us to compare the model dependency of $\ell$ vs. $f_{\mathrm{c}}$ to the observations of $F_{\mathrm{obs}} / F_{\mathrm{Edd}, \infty}$ vs. $K_{\mathrm{obs}}^{-1/4}$.
 Hence, extra information from the observations is used because not only are the individual color-correction factor values compared against the model but also the mutual dependency of them.
 The fitting procedure is two dimensional in this case as we fit $F_{\mathrm{Edd},\infty}$ and $R_{\infty}^2/D^2$ simultaneously.
-Interestingly, the combination of these two fit parameters then yield a distance-independent quantity, physically corresponding to the Eddington temperature of the source at infinity, and given as\red{check}
+Interestingly, the combination of these two fit parameters then yield a distance-independent quantity, physically corresponding to the Eddington temperature of the source at infinity, and given as
 \be
 T_{\mathrm{Edd},\infty} 
 %= 9.81 
@@ -188,24 +188,87 @@ The main results are two-folded as we have both
 \end{itemize}
 To be able to do this, we had to develop our observational and statistical methods, do theoretical research in order to understand the astrophysical scenarios better, develop and improve our physical models, and finally apply these new methods and information to real-world observations.
 Because of this, the results and work in this thesis can be divided into three categories that we now discuss in more detail. 
-In short, these include \textit{I}) theoretical work on the models, \textit{II}) understanding the astrophysical environment better, and \textit{III}) applying the models and the new insights to astronomical observations.
+In short, these include \textit{1}) theoretical work on the models, \textit{2}) understanding the astrophysical environment better, and \textit{3}) applying the models and the new insights to astronomical observations.
 
 
 \subsection{Modeling of neutron star atmospheres and emergent radiation}
 
+Computing hot neutron star atmosphere models for the X-ray bursters, is of paramount importance for obtaining the mass and radius measurements from the burst observations.
+More specifically, we are interested in the color correction factor $f_{\mathrm{c}}$ and the dilution factor $w$, in order to compare our knowledge to observations.
+Previous models for hot atmospheres have all assumed simple hydrogen, helium, or solar composition for the plasma.
+In some cases, however, the burning ashes may rise from the burning depths up to the photosphere, leading to the appearance of the metal absorption edges in the spectra.
+These effects may have a substantial impact on the color correction factor and the dilution factor $w$.
+In paper I, we have developed a new atmosphere modeling code to compute the emergent spectra for a composition consisting of any atomic species.
+We find that the metals may change $f_{\mathrm{c}}$ by up to about 40\%.
+The presented models also made possible to determine the NS mass and radii more accurately for cases when we do see signs of burning ashes, and provided a new tool to probe the nuclear burning mechanisms in X-ray bursts.
 
 
+The radiative process that we consider all occur at or near the neutron star.
+Because of this, many general relativistic effects play an important role in shaping the observations.
+In paper II, a theoretical framework for emission originating from rapidly rotating oblate compact objects was described in detail.
+In order to solve the geodesic equation, a new splitted Hamilton-Jacobi formalism was constructed for a metric that is expanded up to second order in rotation and hence includes effects of light bending, frame-dragging, and quadrupole deviations for the photon trajectories.
+We also gave detailed descriptions of the numerical algorithms used and provide an open source implementation of the numerical framework called \textsc{bender}.
+As an application, we study spectral line profiles from rapidly rotating oblate neutron stars. 
+The Full Width at Tenth Maximum and Full Width at Half Maximum for the so-called smearing kernels are also reported for all of the possible viewing angles.
+These can be then used to quantitatively estimate the effects of rotational smearing on the observed spectra.
+%We also calculated pulse profiles and observer skymaps of emission from hot spots on rapidly rotating accreting millisecond pulsars.
+%These allowed us to quantify the strength of the pulse fractions one expects to observe from typical fastly spinning millisecond pulsars.
+%
 
 
 \subsection{Understanding the astrophysical environments of X-ray bursts}
 
+As we have seen, the neutron star environment is an important factor that needs to understood before reliable mass and radius estimates can be obtained from X-ray burst observations.
+In paper III, we study the effects of accretion for an one particular source, LMXB system 4U 1608$-$52.
+We found a strong dependence of the burst properties on the flux and spectral hardness of the persistent emission before burst. 
+Bursts occurring during the low accretion rate (hard) state exhibit evolution of the blackbody normalization consistent with the theoretical predictions of neutron star atmosphere models. 
+However, bursts occurring during the high accretion rate (soft) state show roughly constant normalization, which is inconsistent with the models and therefore these bursts cannot be easily used to determine neutron star parameters. 
+
+In the next paper IV, we continue our analysis further by studying 246 X-ray bursts in total, from 11 different LMXB systems.
+Again, we found a dependence between the persistent spectral properties and the time evolution of the blackbody normalization during the bursts. 
+The neutron star atmosphere model predictions agree with the observations for most bursts occurring in hard, low-luminosity, spectral states, but rarely during soft, high-luminosity, states. 
+We attributed the observed phenomena to the accretion flow, which can influence the cooling of the neutron star especially during the soft state when the accretion rate is high.
+The results had the important implication that only the bursts occurring in the hard, low-luminosity spectral states could be reliably used for mass and radius determination.
+
+
+%The cooling of type-I X-ray bursts can be used to probe the nuclear burning conditions in neutron star envelopes. 
+%The flux decay of the bursts has been traditionally modelled with an exponential, even if theoretical considerations predict power-law-like decays. 
+%We have analysed a total of 540 type-I X-ray bursts from five low-mass X-ray binaries observed with the Rossi X-ray Timing Explorer. 
+%We grouped the bursts according to the source spectral state during which they were observed (hard or soft), flagging those bursts that showed signs of photospheric radius expansion (PRE). 
+%The decay phase of all the bursts were then fitted with a dynamic power-law index method. 
+%This method provides a new way of probing the chemical composition of the accreted material. 
+%Our results show that in the hydrogen-rich sources the power-law decay index is variable during the burst tails and that simple cooling models qualitatively describe the cooling of presumably helium-rich sources 4U 1728-34 and 3A 1820-303. 
+%The cooling in the hydrogen-rich sources 4U 1608-52, 4U 1636-536, and GS 1826-24, instead, is clearly different and depends on the spectral states and whether PRE occurred or not. 
+%Especially the hard state bursts behave differently than the models predict, exhibiting a peculiar rise in the cooling index at low burst fluxes, which suggests that the cooling in the tail is much faster than expected. 
+%Our results indicate that the drivers of the bursting behaviour are not only the accretion rate and chemical composition of the accreted material, but also the cooling that is somehow linked to the spectral states. 
+%The latter suggests that the properties of the burning layers deep in the neutron star envelope might be impacted differently depending on the spectral state.
 
 
 
 
-\subsection{Constraining the mass and radius of neutron stars}
+\subsection{Constraining the mass, radius and composition of neutron stars}
+
+By now applying the atmosphere model results to the X-ray burst data, we can try and set constraints for the size of the emitting source.
+However, here it is crucial to take into account also the accretion rate, i.e., consider bursts that occur during the hard-state only.
+In paper V. we did this analysis for three different LMXB systems: 4U 1702$-$429, 4U 1724$-$307, and SAX J1810.8$-$260. 
+This allows us to set constraints for the masses, radii, compositions, and distances of the neutron stars in those systems.
+We then obtained a parameterized equation of state by comparing the resulting neutron star structures to the radius and mass measurements we had.
+This was done by solving the TOV-equations (see \sect{sect:TOV}) and then using Monte Carlo algorithm within a Bayesian framework to obtain constraints for the underlying equation of state parameters.
+This allows us to set limits on various nuclear parameters and to constrain an empirical pressure-density relationship for the dense matter. 
+Our predicted equation of state leads to a neutron star radius between $10.5$ to $12.8\km$ for a mass of $1.4\Msun$.  
 
 
+The bursts that we considered in the aforementioned publication, were constrained to have an atmosphere consisting of almost fully of hydrogen and helium.
+This is always not the case as explosive nuclear burning can fuse H and He into heavier elements too.
+In paper VI, we presented our analysis of one particularly interesting long burst observed from the neutron star in LMXB system HETE J1900.1-2455. 
+New atmosphere model fits to this bursts indicated that sometimes the photosphere can consist entirely of metals, i.e., nuclear burning ashes.
+These heavy metals like iron and nickel were detected already early on during the burst, which makes it possible that a radiatively driven wind might eject some of these ashes also into the interstellar space.
+Hence, neutron star X-ray bursts might be one possible source of interstellar pollution.
+
+Most previous works on X-ray bursts have used the Planck functions as a proxy to simplify the model vs. data comparison.
+In paper VII, we, for the first time, fitted neutron star atmosphere models directly to the observed spectra.
+This was done using a new nested hierarchical Bayesian model that allowed us to set new limits on mass, radius, composition, and distance of the neutron star in 4U~1702$-$429. 
+We then find a radius of $R = 12.4\pm 0.4~\mathrm{km}$, gravitational mass $M=1.9\pm 0.3\Msun$, distance $D = 5.9 \pm 0.3~\mathrm{kpc}$, and hydrogen mass fraction $X < 0.09$ with a $68\%$ confidence for this source.
 
 
 
@@ -224,31 +287,31 @@ The author of the thesis made contributions to the manuscript, reduced and analy
 \subsubsection*{Paper IV.: The influence of accretion geometry on the spectral evolution during thermonuclear (type I) X-ray bursts}
 The author participated in the reduction and analysis of the observational data, made significant contributions to the development of the data reduction software, and helped in the preparation of the manuscript.
 
-\subsubsection*{Paper V.: Flux decay during thermonuclear X-ray bursts analysed with the dynamic power-law index method}
-In this paper, the author proposed the usage of the dynamic power-law method and co-supervised the project together with Dr. Jari Kajava. The project is originally related to the Master's thesis of MSc. Jere Kuuttila. 
-Author also made significant contributions to the manuscript.
+%\subsubsection*{Paper V.: Flux decay during thermonuclear X-ray bursts analysed with the dynamic power-law index method}
+%In this paper, the author proposed the usage of the dynamic power-law method and co-supervised the project together with Dr. Jari Kajava. The project is originally related to the Master's thesis of MSc. Jere Kuuttila. 
+%Author also made significant contributions to the manuscript.
+%
+%\subsubsection*{Paper VI.: Variable spreading layer in 4U 1608-52 during thermonuclear X-ray bursts in the soft state}
+%The author of the thesis took part in the discussion of the theoretical explanation for the obtained observational results and contributed significantly to the statistical analysis of data. 
+%The author also contributed to the manuscript.
 
-\subsubsection*{Paper VI.: Variable spreading layer in 4U 1608-52 during thermonuclear X-ray bursts in the soft state}
-The author of the thesis took part in the discussion of the theoretical explanation for the obtained observational results and contributed significantly to the statistical analysis of data. 
-The author also contributed to the manuscript.
-
-\subsubsection*{Paper VII.: Equation of state constraints for the cold dense matter inside neutron stars using the cooling tail method}
+\subsubsection*{Paper V.: Equation of state constraints for the cold dense matter inside neutron stars using the cooling tail method}
 The author independently designed the Bayesian fitting framework for the cooling tail method, reduced and analyzed the X-ray observations, and finally led the equation of state modeling from the observations. 
 The author also prepared the manuscript.
 
-\subsubsection*{Paper VIII.: Detection of burning ashes from thermonuclear X-ray bursts}
+\subsubsection*{Paper VI.: Detection of burning ashes from thermonuclear X-ray bursts}
 The author contributed to the main idea of this research and was responsible of the atmosphere modeling of the observations. The Bayesian atmosphere spectral model fitting framework was also independently designed by the author. 
 Author also contributed to the manuscript.
 
-\subsubsection*{Paper IX.: The direct cooling tail method for X-ray burst analysis to constrain neutron star masses and radii}
-Author helped in designing the fitting framework, based on his own previous results, and contributed to the scientific and statistical discussions of the results.. 
-The author also contributed to the manuscript.
+%\subsubsection*{Paper IX.: The direct cooling tail method for X-ray burst analysis to constrain neutron star masses and radii}
+%Author helped in designing the fitting framework, based on his own previous results, and contributed to the scientific and statistical discussions of the results.. 
+%The author also contributed to the manuscript.
+%
+%\subsubsection*{Paper X.: Basic parameters of the helium accreting X-ray bursting neutron star in 4U 1820-30}
+%In this paper, the author took part in the scientific discussion of the results, helped in the statistical analysis and contributed to the manuscript.
 
-\subsubsection*{Paper X.: Basic parameters of the helium accreting X-ray bursting neutron star in 4U 1820-30}
-In this paper, the author took part in the scientific discussion of the results, helped in the statistical analysis and contributed to the manuscript.
 
-
-\subsubsection*{Paper XI.: Atmosphere model fits of thermonuclear X-ray burst cooling tail spectra: new neutron star mass and radius constraints using Bayesian hierarchical modeling}
+\subsubsection*{Paper VII.: Atmosphere model fits of thermonuclear X-ray burst cooling tail spectra: new neutron star mass and radius constraints using Bayesian hierarchical modeling}
 The author independently designed the hierarchical Bayesian fitting framework, implemented it into a code together with M.C. Miller and A.W. Steiner, analyzed the data, and, finally, prepared the manuscript together with M.C. Miller, with the help from the other co-authors.
 
 
