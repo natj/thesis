@@ -87,13 +87,13 @@ plt.rc('axes', labelsize=7)
 
 
 #fig = plt.figure(figsize=(3.54, 2.19)) #single column fig
-fig = plt.figure(figsize=(7.48, 2.5))  #two column figure
+fig = plt.figure(figsize=(7.48, 3.5))  #two column figure
 gs = plt.GridSpec(1, 1, wspace=0.0)
 
 ax = plt.subplot(gs[0, 0])
 ax.minorticks_on()
 ax.set_xlim(-11, 12.0)
-ax.set_ylim(3.0, 13.0)
+ax.set_ylim(0.0, 13.0)
 ax.axis('off')
 
 #ax.set_yticklabels([])
@@ -111,7 +111,7 @@ def pol2xy(r, ang):
     return (x,y)
 
 
-rads = [20.0, 12.0, 10.5, 9.0, 7.5, 6.0, 4.0]
+rads = [20.0, 12.0, 10.5, 9.0, 7.5, 6.0, 0.0]
 labels = ['               C O R O N A',
         '        A T M O S P H E R E',
         '           O C E A N',
@@ -122,7 +122,8 @@ labels = ['               C O R O N A',
 
 lstyles = ['dotted', 'dashed', 'solid', 'dashed', 'solid', None]
 
-for i in range(len(rads)-1):
+#for i in range(len(rads)-1):
+for i in range(1,len(rads)-1):
     alpha = 0.02 + i*0.1
     r1 = rads[i]
     r2 = rads[i+1]
@@ -131,6 +132,8 @@ for i in range(len(rads)-1):
     r = 0.5*(r1+r2)
     if i == 0:
         r = 12.6
+    if i == 5:
+        r = 0.5*(r1 + 4.0) 
 
     x, y = arc(r2, p1, p2)
     lstyle = lstyles[i]
@@ -153,20 +156,21 @@ xloc = 8.0
 #ax.text(xloc, 10.0,  'electrons, ions,\n atoms, molecules \n (gas/liquid)', size = 9, ha='center', va='center')
 
 strings = ['electrons and positrons \n (plasma)',
-        'electrons, ions, atoms, molecules \n (gas/(liquid)',
+        'electrons, ions, \n atoms, molecules \n (gas/liquid)',
         'electrons and nuclei \n (Coulomb liquid)',
         'electrons and nuclei \n (Coulomb crystal)',
         'electrons, neutrons, \n neutron-rich nuclei \n (Coulomb crystal)',
-        'electrons, neutrons, \n protons \n (liquid)',
+        'neutron, electrons, \n protons \n (liquid)',
         ]
 
 arrowang = pi/5.0
 textang = pi/4
-rads = [13.0, 11.3, 9.8,8.0, 6.5, 4.0]
+rads = [13.5, 11.3, 9.6, 8.0, 6.0, 3.2]
 ylocs = [10.0, 8.0, 6.0, 4.0, 2.0]
 
 
-for i in [0,1,2,3,4,5]:
+#for i in [0,1,2,3,4,5]:
+for i in [1,2,3,4,5]:
     xa, ya = pol2xy(rads[i], arrowang)
     x, y = pol2xy(rads[i]-1.0, textang)
     string = strings[i]
@@ -175,7 +179,7 @@ for i in [0,1,2,3,4,5]:
     #            arrowprops=dict(facecolor='black', shrink=0.05, width=0.5, headwidth=5.0, headlength=5),
     #            size=7.0,
     #            )
-    ax.text(xa+2.2, ya, string, size=6.0, ha='center', va='center')
+    ax.text(xa+2.8, ya, string, size=9.0, ha='center', va='center')
 
 
 #x, y = pol2xy(10.5, textang)
@@ -195,7 +199,7 @@ ang = -pi/5
 for i in range(4):
     
     x,y = pol2xy(rads[i], ang)
-    ax.text(x, y, strings2[i], size=8, rotation=38, ha='right', va='top')
+    ax.text(x, y, strings2[i], size=9, rotation=38, ha='right', va='top')
     
 
 x, y = pol2xy(13.0, -pi/5)
@@ -206,5 +210,5 @@ ax.text(x,y, 'log$_{10}$ $\\rho$ \n [g cm$^{-3}$]', rotation=-52, ha='right', va
 
 
 plt.subplots_adjust(left=0.1, bottom=0.0, right=0.98, top=0.85, wspace=0.0, hspace=0.0)
-plt.savefig('atmos.pdf', bbox_inches='tight')
+plt.savefig('atmos_1.pdf', bbox_inches='tight')
 
