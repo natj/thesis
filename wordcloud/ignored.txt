@@ -76,4 +76,26 @@ ee
 gcm
 nsat
 left
+obs
+Edd
+infty
+during
+author
+manuscript
+T_
+F_
+vec
+Hence
+hence
+has
+tilde
+Sigma
+Mdot
+pi
+Omega
+eq
+eqref
+partial
+nu
+Paper
 
