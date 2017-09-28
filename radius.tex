@@ -1,7 +1,7 @@
 \chapter{Probing the ultra-dense matter}
 \chapterimage[width=15cm]{wordcloud/chap4b.png}
 
-The main motive for this thesis was to set constraints for the ultra-dense equation of state.
+The main motive for this thesis was to set constraints for the ultra-dense matter inside neutron stars.
 Instead of starting from the nuclear physics that works on the smallest scales, we use astrophysical observations to study large-scale ``global'' aspects of neutron stars.
 It is then possible to make a step back to the nuclear physics because the size of a compact star is strongly coupled to the composition of its core.
 
@@ -21,7 +21,7 @@ In practice, however, caution is needed when applying the models as the environm
 
 
 In this final chapter, we will lay out the basics of how by observing the burst cooling it is possible to set constraints on the size of the emitting area, and in the end, the radius of the neutron star.
-We will also summarize the content of the articles in this thesis, and discuss discuss our work where we try to understand not only the complex role of the astrophysical surroundings but in the end, the composition of the core.
+We will also summarize the content of the articles in this thesis, and discuss our work where we try to understand not only the complex role of the astrophysical surroundings but in the end, the composition of the core.
 
 
 \section{Measuring the sizes of the bursting sources}
@@ -35,23 +35,23 @@ As we shall see, we additionally require that the bursts reach the Eddington lim
 %Let us, however, momentarily push these complications aside and assume that when observing the X-rays from the bursts, the radiation detected is dominated by the burst emission from the neutron star surface.
 %This allows us to put interesting limits on the size and the mass of the emitting source.
 To begin, let us define three different families of quantities: 
-Observed quantities ($\mathrm{obs}$), theoretical quantities predicted by our model at infinity ($\infty$), and the same theoretical model quantities in the local frame of the star ($*$).
+observed quantities ($\mathrm{obs}$), theoretical quantities predicted by our model at infinity ($\infty$), and the same theoretical model quantities in the local frame of the star ($*$).
 This is done, because general relativistic effects change the local physical quantities as they travel from the star to a distant observer.\cite[see, e.g.][]{Lewin93}
 More specifically, we can connect the temperatures $T$, radii $R$, and luminosities $L$ as
 \be\label{eq:Rz}
-R_{\infty} = R_* (1+z)
+R_{\infty} = R_* (1+z),
 \ee
 \be\label{eq:Tz}
-T_{\infty} = \frac{T_*}{1+z}
+T_{\infty} = \frac{T_*}{1+z},
 \ee
 \be\label{eq:Lz}
-L_{\infty} = \frac{L_*}{1+z},
+L_{\infty}= \frac{L_*}{1+z},
 \ee
 where $(1+z$) is the redshift factor that is related to the previously defined compactness $u = 2GM/Rc^2$ as
 \be
 1+z = (1 - u)^{-1/2}.
 \ee
-From the observations, we see that the detected burst spectra are reasonably well-described by the Planck function (blackbody) as
+From the observations, we see that the detected burst spectra are reasonably well described by the Planck function (blackbody) as
 \be
 F_{E, \mathrm{obs}} \approx \pi B_E(T_{\mathrm{obs}}) K_{\mathrm{obs}},
 \ee
@@ -62,7 +62,7 @@ K_{\mathrm{obs}} = \frac{R_{\mathrm{obs}}^2}{D^2}.
 \ee
 Observed bolometric flux is then
 \be
-F_{\mathrm{obs}} = \int_0^{\infty} F_{E, \mathrm{obs}} dE = \sigmaSB T_{\mathrm{obs}}^4 \frac{R_{\mathrm{obs}}}{D^2}.
+F_{\mathrm{obs}} = \int_0^{\infty}F_{E, \mathrm{obs}} dE = \sigmaSB T_{\mathrm{obs}}^4 \frac{R_{\mathrm{obs}}^2}{D^2}.
 \ee
 
 \begin{figure}[t]
@@ -80,7 +80,7 @@ Highlighted gray area marks a typical region of the cooling tail used in the fit
 Some examples of Planck function fit results for X-ray bursts are shown in \fig{fig:bursts}.
 Here the time-dependent spectral fits are shown for one particular source, 4U 1702$-$429.\cite[see][for more detailed description of the data]{NSK16, NMS17}
 All of the bursts shown here are exhibiting the photospheric radius expansion, that can be seen from the characteristic dip in the normalization and of the simultaneous maximum in the temperature.\cite[see, e.g.][for more thorough discussion]{GMH08}
-The flux corresponding to the exact moment when the photosphere collapses back to the neutron star's surface is dubbed the touchdown flux, and it is visualized by the first vertical dotted line in the Figures.
+The flux corresponding to the exact moment when the photosphere collapses back to the neutron star's surface is dubbed the touchdown flux, and it is visualized by the first vertical dotted line in the figures.
 
 
 From the atmosphere models of neutron stars, we obtain a similar result.
@@ -90,26 +90,26 @@ F_{E,*} \approx \pi w B_E(\fc \Teffs),
 \ee
 where $w$ is the dilution factor, $\fc$ is the color-correction factor, and $\Teffs$ is the effective temperature of the atmosphere.
 This allows us to connect the observed values to the theoretical model values by first redshifting these quantities to infinity.
-From \eq{eq:Tz} we simply obtain that the temperature of the model as seen by a distant observed must be
+From \eq{eq:Tz}\ we simply obtain that the temperature of the model as seen by a distant observer must be
 \be
 \fc \Teffi = \fc \frac{\Teffs}{1+z}.
 \ee
 Similarly, the area of the star on the sky must be related not to $R_*$ but to $R_{\infty}$ as given by \eq{eq:Rz}
 \be\label{eq:Rmod}
-w \frac{R_{\infty}^2}{D^2} = w \frac{R_*^2 (1+z)^2 }{D^2}.
+w \frac{R_{\infty}^2}{D^2}= w \frac{R_*^2 (1+z)^2 }{D^2}.
 \ee
-The latter \eq{eq:Rmod} gives immediate constraints for the radius as it can be equated with the observed size \eqref{eq:Robs} as\cite{Penninx89, vParadijs90}
+The latter \eq{eq:Rmod}\ gives immediate constraints for the radius as it can be equated with the observed size \eqref{eq:Robs}\ as\cite{Penninx89, vParadijs90}
 \be
-%\frac{R_{\mathrm{obs}}^2}{D^2} =  w \frac{R_{\infty}^2}{D^2} = w \frac{R_*^2 (1+z)^2 }{D^2}.
-R_{\mathrm{obs}}^2 =  w R_{\infty}^2 = w R_*^2 (1+z)^2.
+%\frac{R_{\mathrm{obs}}^2}{D^2} =  w \frac{R_{\infty}^2}{D^2}= w \frac{R_*^2 (1+z)^2 }{D^2}.
+R_{\mathrm{obs}}^2 =  w R_{\infty}^2= w R_*^2 (1+z)^2.
 \ee
 
-Additional constraints can be obtained by measuring Eddington limit of the source.
+Additional constraints can be obtained by measuring the Eddington limit of the source.
 As we have seen, there exists a flux for which the radiation forces equal to the gravitational forces (see \sect{sect:Eddington}), given as 
 \be
 F_{\mathrm{Edd},*} = \frac{G M c}{\kappa_{\mathrm{T}} R_*^2} (1+z),
 \ee
-where $\kappa_{\mathrm{T}} = 0.2(1+X)\unitspace\cm^2\unitspace\g^{-1}$, is the Thomson electron scattering opacity and $X$ is the hydrogen mass fraction.
+where $\kappa_{\mathrm{T}} = 0.2(1+X)\unitspace\cm^2\unitspace\g^{-1}$ is the Thomson electron scattering opacity and $X$ is the hydrogen mass fraction.
 One should note here that even though we use the Thomson electron scattering opacity in the notation, one is not restricted to assuming this.
 It is, for example, possible to take the Klein-Nishina reduction in the cross-section into account which formally allows for super-Eddington fluxes.\cite{SPW12}
 In reality the Eddington limit is, of course, still respected.
@@ -130,23 +130,23 @@ T_{\mathrm{Edd},\infty} = \frac{T_{\mathrm{Edd},*}}{1+z}.
 \ee
 
 As the simplest case, we can obtain additional constraints for the radius and mass by just measuring the $F_{\mathrm{Edd},\infty}$ somehow.
-This can be done, for example, by equation it with the touchdown flux obtained from the time-dependent burst spectra.
+This can be done, for example, by equating it with the touchdown flux obtained from the time-dependent burst spectra.
 This is the basis of the so-called ``touchdown method''.\cite{Ebi87, vParadijs90, Ozel06, Ozel16}
 
 A more sophisticated version of this is the so-called ``cooling tail method''.\cite{SPRW11, SPW11, SPW12, PNK14}
 Here we can compute the varying color-correction factor $f_{\mathrm{c}}$ from the atmosphere models as a function of $\ell \equiv L_*/L_{\mathrm{Edd,*}}$.
 In this case, the dilution factor was fully omitted as $f_{\mathrm{c}} \approx w^{-4}$.
-The color-correction factor can then be related to multiple $K_{\mathrm{obs}}$ measurements, each representing  an one time snapshot from the cooling tail.
-As the time time passes and the surface cools down, the flux decreases.
+The color-correction factor can then be related to multiple $K_{\mathrm{obs}}$ measurements, each representing  one time snapshot from the cooling tail.
+As the time passes and the surface cools down, the flux decreases.
 This allows us to compare the model dependency of $\ell$ vs. $f_{\mathrm{c}}$ to the observations of $F_{\mathrm{obs}} / F_{\mathrm{Edd}, \infty}$ vs. $K_{\mathrm{obs}}^{-1/4}$.
-Hence, extra information from the observations is used because not only are the individual color-correction factor values compared against the model but also the mutual dependency of them.
-The fitting procedure is two dimensional in this case as we fit $F_{\mathrm{Edd},\infty}$ and $R_{\infty}^2/D^2$ simultaneously.
-Interestingly, the combination of these two fit parameters then yield a distance-independent quantity, physically corresponding to the Eddington temperature of the source at infinity, and given as
+Hence, extra information from the observations is used because not only are the individual color-correction factor values compared against the model but also their full dynamic evolution as a function of flux is taken into account.
+The fitting procedure is two dimensional in this case as we fit $F_{\mathrm{Edd},\infty}$ and $R_{\infty}^2/D^2$ as free parameters simultaneously.
+Interestingly, the combination of these two fit parameters then yield a distance-independent quantity, physically corresponding to the Eddington temperature of the source at infinity, given as
 \be
 T_{\mathrm{Edd},\infty} 
 %= 9.81 
 = \Ten{1.14}{8}
-\left( \frac{F_{\mathrm{Edd},\infty}}{10^{-7}\unitspace\erg\cm^{-2}\unitspace\mathrm{s}^{-1}} \right)^{1/4} 
+\left( \frac{F_{\mathrm{Edd},\infty}}{10^{-7}\unitspace\erg\cm^{-2}\unitspace\mathrm{s}^{-1}} \right)^{1/4}
 \left( \frac{(\km/10\unitspace\mathrm{kpc})^2}{R_{\infty}^2/D^2}  \right)^{1/4} 
 \Kelvin.
 %\unitspace\mathrm{keV}.
@@ -158,17 +158,17 @@ R &= \frac{c^3 u(1-u)^{3/2}}{2\kappa_{\mathrm{T}} \sigmaSB T_{\mathrm{Edd},\inft
 M &\approx u \frac{R}{2.95\km} \Msun, \\
 \end{split}\end{align}
 where $T_{\mathrm{Edd},\infty,7} = T_{\mathrm{Edd}, \infty} / 10^7 \Kelvin$.
-Later on, another variant of this was introduces, called ``direct cooling tail method'' where the assumption of $f \approx w^{-4}$ was relaxed, i.e., both $f_{\mathrm{c}}$ and $w$ are considered, and the fitting is done directly via the $M$, $R$ and $D$ parameters.\cite{NSK16, SPN17} 
+Later on, another variant of this method was introduced, called ``direct cooling tail method'' where the assumption of $f \approx w^{-4}$ was relaxed, i.e., both $f_{\mathrm{c}}$ and $w$ are considered, and the fitting is done directly via the $M$, $R$ and $D$ parameters.\cite{NSK16, SPN17} 
 
 
-The usage of these methods on X-ray burst data span almost a three decades of scientific work as of now.
+The usage of these methods on X-ray burst data span almost three decades of scientific work as of now.
 Starting from the early work in the late 80s they have since improved and been applied to various sources to estimate the radius and mass.
 Latest in the family, is the method of fitting the observed data directly with the atmosphere models.\cite{NMS17}
 Although computationally more demanding exercise, it allows us to finally extract every piece of information possible from the data.
-This is based on the additional model dependency on the surface gravity, composition, and detailed spectral shape that slightly deviates from the assumed Planck function.
+This is based on the additional model dependency on the surface gravity, composition, and detailed spectral shape that slightly deviates from the Planck function.
 
 
-The big caveat here for any of the aforementioned methods are the surroundings.
+The big caveat here for any of the aforementioned methods is the surroundings.
 We have seen that the astrophysical environment of neutron stars can be very active and lively.
 In the general picture, we have the accretion as an energy source and the disk to dissipate this energy.
 The disk is, however, not a simple geometrically thin steady layer but can have complex inner flow.
@@ -176,11 +176,9 @@ On the other hand, if the disk does extend all the way down to the star, an addi
 These are some of the complications that we face when trying to analyze our neutron star observations, as after all when trying to constrain the mass and radius of the star we must make sure that it is actually the star that we are looking.
 
 
-
-
 \section{Scientific summary of the results}
 
-In this thesis, we have focused on constraining the cool ultra-dense matter inside neutron stars with astrophysical measurements.
+In this thesis, we have focused on constraining the equation of state of the cool ultra-dense matter inside neutron stars with astrophysical measurements.
 The main results are two-folded as we have both
 \begin{itemize}
 \item improved our understanding of ultra-dense matter and have been able to put stringent constraints on the equation of state of the neutron star interiors, and
@@ -193,7 +191,7 @@ In short, these include \textit{1}) theoretical work on the models, \textit{2}) 
 
 \subsection{Modeling of neutron star atmospheres and emergent radiation}
 
-Computing hot neutron star atmosphere models for the X-ray bursters, is of paramount importance for obtaining the mass and radius measurements from the burst observations.
+Computing hot neutron star atmosphere models for the X-ray bursters is of paramount importance for obtaining the mass and radius measurements from the burst observations.
 More specifically, we are interested in the color correction factor $f_{\mathrm{c}}$ and the dilution factor $w$, in order to compare our knowledge to observations.
 Previous models for hot atmospheres have all assumed simple hydrogen, helium, or solar composition for the plasma.
 In some cases, however, the burning ashes may rise from the burning depths up to the photosphere, leading to the appearance of the metal absorption edges in the spectra.
@@ -202,27 +200,24 @@ In paper I, we have developed a new atmosphere modeling code to compute the emer
 We find that the metals may change $f_{\mathrm{c}}$ by up to about 40\%.
 The presented models also made possible to determine the NS mass and radii more accurately for cases when we do see signs of burning ashes, and provided a new tool to probe the nuclear burning mechanisms in X-ray bursts.
 
-
 The radiative process that we consider all occur at or near the neutron star.
 Because of this, many general relativistic effects play an important role in shaping the observations.
 In paper II, a theoretical framework for emission originating from rapidly rotating oblate compact objects was described in detail.
-In order to solve the geodesic equation, a new splitted Hamilton-Jacobi formalism was constructed for a metric that is expanded up to second order in rotation and hence includes effects of light bending, frame-dragging, and quadrupole deviations for the photon trajectories.
+In order to solve the geodesic equation, a new split Hamilton-Jacobi formalism was constructed for a metric that is expanded up to second order in rotation and hence includes effects of light bending, frame-dragging, and quadrupole corrections for the photon trajectories.
 We also gave detailed descriptions of the numerical algorithms used and provide an open source implementation of the numerical framework called \textsc{bender}.
 As an application, we study spectral line profiles from rapidly rotating oblate neutron stars. 
 The Full Width at Tenth Maximum and Full Width at Half Maximum for the so-called smearing kernels are also reported for all of the possible viewing angles.
 These can be then used to quantitatively estimate the effects of rotational smearing on the observed spectra.
-%We also calculated pulse profiles and observer skymaps of emission from hot spots on rapidly rotating accreting millisecond pulsars.
+%We also calculated pulse profiles and observer skymaps of emission from hot spots on rapidly rotatingaccreting millisecond pulsars.
 %These allowed us to quantify the strength of the pulse fractions one expects to observe from typical fastly spinning millisecond pulsars.
-%
 
 
 \subsection{Understanding the astrophysical environments of X-ray bursts}
-
-As we have seen, the neutron star environment is an important factor that needs to understood before reliable mass and radius estimates can be obtained from X-ray burst observations.
-In paper III, we study the effects of accretion for an one particular source, LMXB system 4U 1608$-$52.
+As we have seen, the neutron star environment is an important factor that needs to be understood before reliable mass and radius estimates can be obtained from X-ray burst observations.
+In paper III, we study the effects of accretion for one particular source, LMXB system 4U 1608$-$52.
 We found a strong dependence of the burst properties on the flux and spectral hardness of the persistent emission before burst. 
 Bursts occurring during the low accretion rate (hard) state exhibit evolution of the blackbody normalization consistent with the theoretical predictions of neutron star atmosphere models. 
-However, bursts occurring during the high accretion rate (soft) state show roughly constant normalization, which is inconsistent with the models and therefore these bursts cannot be easily used to determine neutron star parameters. 
+However, bursts occurring during the high accretion rate (soft) state show roughly constant normalization, which is inconsistent with models and therefore these bursts cannot be easily used to determine neutron star parameters. 
 
 In the next paper IV, we continue our analysis further by studying 246 X-ray bursts in total, from 11 different LMXB systems.
 Again, we found a dependence between the persistent spectral properties and the time evolution of the blackbody normalization during the bursts. 
@@ -231,26 +226,14 @@ We attributed the observed phenomena to the accretion flow, which can influence 
 The results had the important implication that only the bursts occurring in the hard, low-luminosity spectral states could be reliably used for mass and radius determination.
 
 
-%The cooling of type-I X-ray bursts can be used to probe the nuclear burning conditions in neutron star envelopes. 
-%The flux decay of the bursts has been traditionally modelled with an exponential, even if theoretical considerations predict power-law-like decays. 
-%We have analysed a total of 540 type-I X-ray bursts from five low-mass X-ray binaries observed with the Rossi X-ray Timing Explorer. 
-%We grouped the bursts according to the source spectral state during which they were observed (hard or soft), flagging those bursts that showed signs of photospheric radius expansion (PRE). 
-%The decay phase of all the bursts were then fitted with a dynamic power-law index method. 
-%This method provides a new way of probing the chemical composition of the accreted material. 
-%Our results show that in the hydrogen-rich sources the power-law decay index is variable during the burst tails and that simple cooling models qualitatively describe the cooling of presumably helium-rich sources 4U 1728-34 and 3A 1820-303. 
-%The cooling in the hydrogen-rich sources 4U 1608-52, 4U 1636-536, and GS 1826-24, instead, is clearly different and depends on the spectral states and whether PRE occurred or not. 
-%Especially the hard state bursts behave differently than the models predict, exhibiting a peculiar rise in the cooling index at low burst fluxes, which suggests that the cooling in the tail is much faster than expected. 
-%Our results indicate that the drivers of the bursting behaviour are not only the accretion rate and chemical composition of the accreted material, but also the cooling that is somehow linked to the spectral states. 
-%The latter suggests that the properties of the burning layers deep in the neutron star envelope might be impacted differently depending on the spectral state.
 
 
 
+\subsection{Constraining the mass and radius of neutron stars}
 
-\subsection{Constraining the mass, radius and composition of neutron stars}
-
-By now applying the atmosphere model results to the X-ray burst data, we can try and set constraints for the size of the emitting source.
+By now applying the atmosphere model results to the X-ray burst data, we can try to set constraints for the size of the emitting source.
 However, here it is crucial to take into account also the accretion rate, i.e., consider bursts that occur during the hard-state only.
-In paper V. we did this analysis for three different LMXB systems: 4U 1702$-$429, 4U 1724$-$307, and SAX J1810.8$-$260. 
+In paper V we did this analysis for three different LMXB systems: 4U 1702$-$429, 4U 1724$-$307, and SAX J1810.8$-$260. 
 This allows us to set constraints for the masses, radii, compositions, and distances of the neutron stars in those systems.
 We then obtained a parameterized equation of state by comparing the resulting neutron star structures to the radius and mass measurements we had.
 This was done by solving the TOV-equations (see \sect{sect:TOV}) and then using Monte Carlo algorithm within a Bayesian framework to obtain constraints for the underlying equation of state parameters.
@@ -268,7 +251,8 @@ Hence, neutron star X-ray bursts might be one possible source of interstellar po
 Most previous works on X-ray bursts have used the Planck functions as a proxy to simplify the model vs. data comparison.
 In paper VII, we, for the first time, fitted neutron star atmosphere models directly to the observed spectra.
 This was done using a new nested hierarchical Bayesian model that allowed us to set new limits on mass, radius, composition, and distance of the neutron star in 4U~1702$-$429. 
-We then find a radius of $R = 12.4\pm 0.4~\mathrm{km}$, gravitational mass $M=1.9\pm 0.3\Msun$, distance $D = 5.9 \pm 0.3~\mathrm{kpc}$, and hydrogen mass fraction $X < 0.09$ with a $68\%$ confidence for this source.
+We then find a radius of $R = 12.4\pm 0.4~\mathrm{km}$, gravitational mass $M=1.9\pm 0.3\Msun$, distance $5.1 < D/\mathrm{kpc} < 6.2$, and hydrogen mass fraction $X < 0.09$ with a $68\%$ confidence for this source.
+
 
 
 
@@ -313,7 +297,6 @@ Author also contributed to the manuscript.
 
 \subsubsection*{Paper VII.: Atmosphere model fits of thermonuclear X-ray burst cooling tail spectra: new neutron star mass and radius constraints using Bayesian hierarchical modeling}
 The author independently designed the hierarchical Bayesian fitting framework, implemented it into a code together with M.C. Miller and A.W. Steiner, analyzed the data, and, finally, prepared the manuscript together with M.C. Miller, with the help from the other co-authors.
-
 
 
 
