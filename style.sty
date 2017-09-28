@@ -136,6 +136,10 @@
 \input{journals}
 
 \renewbibmacro{in:}{}
+\renewcommand*{\finalnamedelim}{\addspace\&\space}
+
+%\renewcommand{\footnotesize}{\scriptsize}
+
 
 \DeclareFieldFormat[article]{year}{(#1)}
 \DefineBibliographyStrings{english}{andothers={\emph{et al}\adddot}}
@@ -145,18 +149,33 @@
     \usebibmacro{citeindex}
     \mkbibbrackets{\usebibmacro{cite}}
     \setunit{\addnbspace}
-    \printnames{author}
+    \printnames[labelname]{author}
     \setunit{\labelnamepunct}
-    \printfield{journaltitle}
+    %\printfield{journaltitle}
     \newunit
-    \printfield{year}
+    \printfield[parens]{year}
 }
-{\addsemicolon\space}
+{\addsemicolon\par\hspace{1.1em}}
 {\usebibmacro{postnote}}
 
 
+%{\addsemicolon\space\par}
 
-
+%\makeatletter
+%\renewcommand{\@makefntext}[1]{%
+%  \setlength{\parindent}{0pt}%
+%  \begin{list}{}{\setlength{\labelwidth}{1.5em}%
+%    \setlength{\leftmargin}{\labelwidth}%
+%    \setlength{\labelsep}{3pt}%
+%    \setlength{\itemsep}{0pt}%
+%    \setlength{\parsep}{0pt}%
+%    \setlength{\topsep}{0pt}%
+%%   \setlength{\rightmargin}{0.2\textwidth}%
+%    \footnotesize}%
+%    \item[\@makefnmark\hfil]#1%
+%  \end{list}%
+%}
+%\makeatother
 
 
 %Separate driver for the bibliography listing
