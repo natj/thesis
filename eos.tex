@@ -33,7 +33,7 @@ In the end, this enables us to build a mapping between the (un)known microphysic
 %Baryon mass $M_b$ that is sum of baryon masses.
 %Gravitational mass $M$ that is $M_b$ from where the gravitational binding energy is subtracted. \cite{Zwicky38}
 
-\begin{figure}[t]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=15cm]{figs/slice/atmos.pdf}
 \caption{
@@ -42,7 +42,7 @@ Schematic view of neutron star structure illustrating the different internal reg
 \end{figure}
 
 
-\begin{figure}[t]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=15cm]{figs/eos/eos.pdf}
 \caption{\label{fig:eos}
@@ -505,7 +505,7 @@ Electrons, on the other hand, are already ultra-relativistic, and so
 \ee
 Also note that $n_p = n_e$, as the star is electrically neutral.
 
-From this we find relation $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \unitspace \mathrm{MeV}\unitspace c^2$, for example at $\rho \sim 10^{14} \gcm$.
+From this we find relation $n_n/n_p \sim 1/200$ by taking into account the rest mass difference $m_p - m_n = 2.6 \unitspace\mathrm{MeV}\unitspace c^2$, for example at $\rho \sim 10^{14} \gcm$.
 Thus, we conclude that the matter inside is expected to be neutron rich, even though normally the neutrons would $\beta$-decay back to protons and electrons.
 Not only is the degeneracy then responsible for the pressure but it is also the source of the neutron enrichment. 
 
@@ -690,7 +690,7 @@ and $\blambdaC = \hbar/\me c = \Ten{3.86}{-11}\cm$ is the reduced electron Compt
 \footnote{
     Normal Compton wavelength is simply $\lambda_{\mathrm{e}} = 2\pi \times \blambdaC = h/\me c = \Ten{2.43}{-10}\cm$.
 }
-Omitting the (small) temperature related term ($\propto \tr^2$) leads to the well-known Chandrasekhar equation of state of for a perfect, completely degenerate electron gas.\cite{Stoner30, Cha35, Cha39}
+Omitting the (small) temperature related term ($\propto \tr^2$) leads to the well-known Chandrasekhar equation of state for a perfect, completely degenerate electron gas.\cite{Stoner30, Cha35, Cha39}
 
 In the non-relativistic and ultra-relativistic regimes we can apply the asymptotic limits of Eq.\eq{eq:asymplims}.
 Then, the pressure \eq{eq:edegpress} takes a simple polytropic form
@@ -701,9 +701,9 @@ where the polytropic index is given as $\gammaad = \frac{5}{3}$ or $\gammaad = \
 Recall also that $\xr \propto \nel^{1/3} \propto \rho^{1/3}$.
 The transition occures at $\xr \approx 1$, corresponding to about $\rho \sim 10^6 \gcm$.
 
-Finally, as suggested by our analysis given in Eq.\eqref{eq:pressvalidity}, the ideal degenerate electron gas pressure accompanied with the ion Coulomb correction will give us a rather good approximation for the equation of state as
+Finally, as suggested by our analysis given in Eq.\eqref{eq:pressvalidity}, the ideal degenerate electron gas pressure accompanied with the ion Coulomb correction will give us a rather good approximation for the equation of state as %TODO add \tr term
 \be
-P(\xr) \approx \Peid + \Pii = \frac{\Pressr}{8\pi^2} \left( (\frac{2}{3}\xr^2 - 1) \gammar + \ln(\xr + \gammar) \right) -0.3 n_{\mathrm{i}} \frac{Z^2 e^2}{\irad},
+P(\xr) \approx \Peid + \Pii = \frac{\Pressr}{8\pi^2} \left(\xr (\frac{2}{3}\xr^2 - 1) \gammar + \ln(\xr + \gammar) \right) -0.3 n_{\mathrm{i}} \frac{Z^2 e^2}{\irad},
 \ee
 remaining valid in a large density range of $10^{4} < \rho < 10^{10} \gcm$.
 Below $\rho < 10^{4} \gcm$ the plasma is gaseous and the ideal gas law description \eq{eq:idealgaslaw} is better suited in modeling the equation of state.
@@ -851,7 +851,7 @@ Finally, for the hybrid nuclear matter and quark matter compositions ($npe\mu + 
 Again, for pure quark matter composition, the equation of state ends up being too soft. 
 Even in the case of the ALF2, the transition density from the nuclear matter to quark matter is defined at a relatively late phase corresponding to $\rho = 3\nsat$.
 
-\begin{figure}[t]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=12cm]{figs/tov/core_eos_SLy.pdf}
 \includegraphics[width=12cm]{figs/tov/core_gamma.pdf}
@@ -909,7 +909,7 @@ P(r) = \rho_0 c^2  \frac{ \sqrt{1-u \left(\frac{r}{R} \right)^2 } - \sqrt{1-u} }
                           { 3\sqrt{1-u} - \sqrt{1-u \left( \frac{r}{R} \right)^2 } },
 \ee
 where again the compactness parameter $u = 2GM/Rc^2$ is used.
-Unlike the classical counter-part, the general relativistic central pressure $P(0)$ is undefined for $u > u_{\mathrm{max}}=\frac{8}{9}$ equal to
+Unlike the classical counter-part, the general relativistic central pressure $P(0)$ is undefined for $u \ge u_{\mathrm{max}}=\frac{8}{9}$, which is equal to
 \be
 M_{\mathrm{max}} = \frac{4}{9} R c^2 / G \approx 3.01 \left( \frac{R}{10\km} \right) \Msun.
 \ee
