@@ -35,7 +35,7 @@ In the end, this enables us to build a mapping between the (un)known microphysic
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=15cm]{figs/slice/atmos.pdf}
+\includegraphics[width=15.5cm]{figs/slice/atmos.pdf}
 \caption{
 Schematic view of neutron star structure illustrating the different internal regions, related densities, and the compositions.
 }
@@ -44,7 +44,7 @@ Schematic view of neutron star structure illustrating the different internal reg
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=15cm]{figs/eos/eos.pdf}
+\includegraphics[width=15.5cm]{figs/eos/eos.pdf}
 \caption{\label{fig:eos}
 Overview of the pressure versus density relation for the full range of densities relevant for neutron stars.
 Here the evolution of the pressure is shown against the densities depicted in the bottom vertical axis.
@@ -383,13 +383,13 @@ Elementary 6-dimensional phase space cell of any particle is bounded by the Heis
 \Delta x \Delta y \Delta z \Delta p_{x} \Delta p_{y} \Delta p_{z} = h^3,
 \ee
 where $\Delta x\Delta y \Delta z$ is the volume in ordinary space, $\Delta p_x \Delta p_y \Delta p_z$ the volume in the momentum space, and $h$ is the previously defined Planck constant.
-In accordance with the quantum mechanics, there is room for only one fermion inside the elementary cell. %TODO
 In general the number density is given as
 \be\label{eq:dist}
 n_{\mathrm{av}} = \frac{g}{\exp[ (E-\mu)/k_{\mathrm{B}}T ] \pm 1},
 \ee
 where $+$ is used for fermions (such as electrons and protons), and $-$ for bosons (such as photons).
 Additionally, the $g$ is the number of different quantum states a particle may have inside the cell, $E$ is the total particle energy, and $\mu$ is the chemical potential explained more carefully later on.
+In accordance with the quantum mechanics, there is room for only one fermion inside the elementary cell.
 %\footnote{Note that the chemical potential $\mu$ defined here should not be mixed with the cosine of the normal angle, as defined in the previous section when dealing with atmospheres.
 %The difference should be clear from the context so same variable name is used here.}
 Number of particles per unit volume with momentum between $p$ and $p+dp$ is 
@@ -816,7 +816,7 @@ defines the energy density to be a continuous function.
 
 \subsection{Library for the equation of state of the core}
 
-As noticed by Read et al., in most cases, just three piecewise polytropes are enough to give a faithful description of the accurately calculated equations of states, up to a rms error of about $2\%$ in pressure.
+As noticed by Read et al.\cite{Read09}, in most cases, just three piecewise polytropes are enough to give a faithful description of the accurately calculated equations of states, up to a rms error of about $2\%$ in pressure.
 Here we consider few (relatively) modern descriptions for the dense matter equation of state and parameterize them with polytropes.
 %We follow the naming convention selected in Read et al.\cite{Read2010}, and divide the composition into: 
 We follow the naming convention presented in the previous section and divide the compositions into
@@ -827,18 +827,18 @@ We follow the naming convention presented in the previous section and divide the
     \item matter consisting of (or normal matter spiced up with) quarks ($q$ or $npe\mu + q$).
 \end{itemize}
 
-The different equations of states we describe here are mainly presented and used in Refs.\cite{LP01, Bejger05, H4} and fitted with polytropes by Ref.\cite{Read09} %TODO
+The different equations of states we describe here are commonly used in the literature\cite{LP01, Bejger05, H4} and are fitted with polytropes by Read et al.\cite{Read09}
 Additionally, we require that the maximum mass of the equation of state fulfills the $2\Msun$ mass limit as set by astrophysical measurements of binary pulsars.\cite{DPR10, AFW13, Fonseca16}
 For $npe\mu$ composition we include models computed with
 \begin{itemize}
-    \item potential method using SLy effective nuclear interaction that is of Skyrme-type\cite{SLy},
-    \item four variational method EoSs, APR3/4\cite{APR} and WFF1/2\cite{WFF},
-    \item two relativistic Brueckner-Hartree-Fock calculations, ENG\cite{ENG} and MPA1\cite{MPA}, and
-    \item two relativistic mean-field theory models, MS1 and MS1b (same as MS1 but with lower symmetry energy)\cite{MS}.
+    \item potential method using SLy effective nuclear interaction that is of Skyrme-type,\cite{SLy}
+    \item four variational method EoSs, APR3/4\cite{APR} and WFF1/2,\cite{WFF}
+    \item two relativistic Brueckner-Hartree-Fock calculations, ENG\cite{ENG} and MPA1,\cite{MPA} and
+    \item two relativistic mean-field theory models, MS1 and MS1b (same as MS1 but with lower symmetry energy).\cite{MS}
 \end{itemize}
 For hyperon models ($npe\mu + H$) we include
 \begin{itemize}
-    \item one variant of relativistic mean-field theory model, H4\cite{H4}.
+    \item one variant of relativistic mean-field theory model, H4.\cite{H4}
 \end{itemize}
 Here the introduction of hyperons into the matter considerably softens the equation of state and the stars constructed with these models do not end up reaching the $2\Msun$ limit.
 Similarly, models where mesons, like pion and kaon condensates ($npe\mu + \pi$ and/or $npe\mu + K$) are taken into account, end up not being stiff enough.
@@ -851,8 +851,8 @@ Even in the case of the ALF2, the transition density from the nuclear matter to 
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=12cm]{figs/tov/core_eos_SLy.pdf}
-\includegraphics[width=12cm]{figs/tov/core_gamma.pdf}
+\includegraphics[width=11.5cm]{figs/tov/core_eos_SLy.pdf}
+\includegraphics[width=11.5cm]{figs/tov/core_gamma_SLy.pdf}
 \caption{\label{fig:coreGamma}
 Equation of states for the core.
 \emph{Top:} Pressure versus density relation, $P(\rho)$.
