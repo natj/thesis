@@ -21,19 +21,49 @@
 %Thesis style specific stuff
 \usepackage{style}
 
+%for title page
+\usepackage{titling}
 
+
+%\usepackage{transparent}
+%\usepackage{eso-pic}
+
+%\newcommand\BackgroundPic{%
+%\put(0,0){%
+%\parbox[b][\paperheight]{\paperwidth}{%
+%\vfill
+%\centering
+%\includegraphics[width=\paperwidth,height=\paperheight,%
+%keepaspectratio]{figs/title.pdf}%
+%\vfill
+%}}}
+
+%\newcommand\BackgroundPic{%
+%\put(0,0){%
+%\parbox[b][\paperheight]{\paperwidth}{%
+%\vfill
+%\centering
+%{\transparent{0.1} \includegraphics[width=\paperwidth,height=\paperheight,%
+%keepaspectratio]{figs/title.pdf}}%
+%\vfill
+%}}}
 
 %-------------------------------------------------- 
 \addbibresource{refs.bib}
 
 \input{./defs.tex}
 
+
 \begin{document}
+%\AddToShipoutPicture*{\BackgroundPic}
+
+
 \include{./title}
+
+
 
 \pagenumbering{roman}
 \include{./short_list_of_pubs}
-%\include{./list_of_pubs}
 %\include{./thanks}
 %\include{./abstract}
 
@@ -43,6 +73,7 @@
 %\listoftables
 
 %-------------------------------------------------- 
+\clearpage
 \pagenumbering{arabic}
 \include{./intro}
 \include{./eos}
