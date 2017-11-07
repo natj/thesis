@@ -31,8 +31,10 @@
 
 
 \usepackage[normalem]{ulem}
-\newcommand{\refe}[1]{\textbf{#1}}
-\newcommand{\refedel}[1]{\sout{#1}}
+%\usepackage{soul}
+\usepackage{xcolor}
+\newcommand{\refe}[1]{\colorbox{green}{{\textbf{#1}}}}
+\newcommand{\refedel}[1]{\colorbox{red}{\sout{#1}}}
 
 
 \begin{document}
