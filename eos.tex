@@ -81,7 +81,7 @@ Because of the immense densities, a free particle in degenerate matter is actual
 Inside this small volume, the energy levels of the particle are restricted to take only a discrete set of values called quantum states, because of the underlying wave-nature of the quantum\refe{-}mechanical description.
 Hence, a notion of temperature, for example, does not make much sense.
 
-\refe{The} overview of the EoS for the full range of densities relevant to neutron stars is shown in \fig{fig:eos}.
+\refe{An} overview of the EoS for the full range of densities relevant to neutron stars is shown in \fig{fig:eos}.
 From here it is easy to see that temperature only plays a role in the very uppermost $\osim 10\,\mathrm{meters}$ of the stars interiors.
 Behavior of the matter is also quite well known all the way up to the crust-core interface, after which we start to see larger deviations because of the different EoS models.
 In the laboratories on Earth\refe{,} we can probe the matter somewhere close to $10^{14} \gcm$, after which the densities become\refedel{s} too great for us to manipulate.%
@@ -383,7 +383,7 @@ This region is also known as the nuclear pasta phase, as the different structure
 The matter in the crust is degenerate.\cite[see e.g.,][]{LL80}
 Let us discuss the physics behind degenerate matter and the related important concept of Fermi energy now.
 Elementary 6-dimensional phase space cell of any particle is bounded by the Heisenberg uncertainty principle as
-\be
+\be\label{eq:pcell}
 \Delta x \Delta y \Delta z \Delta p_{x} \Delta p_{y} \Delta p_{z} = h^3,
 \ee
 where $\Delta x\Delta y \Delta z$ is the volume in ordinary space, $\Delta p_x \Delta p_y \Delta p_z$ the volume in the momentum space, and $h$ is the previously defined Planck constant.
@@ -392,8 +392,8 @@ In general the number density is given as
 n_{\mathrm{av}} = \frac{g}{\exp[ (E-\mu)/k_{\mathrm{B}}T ] \pm 1},
 \ee
 where $+$ is used for fermions (such as electrons and protons), and $-$ for bosons (such as photons).
-Additionally, the $g$ is the number of different quantum states a particle may have inside the cell, $E$ is the total particle energy, and $\mu$ is the chemical potential explained more carefully later on.
-In accordance with the quantum mechanics, there is room for only one fermion inside the elementary cell.
+Additionally, the $g$ is the number of different quantum states a particle may have inside the cell, $E$ is the total particle energy, and $\mu$ is the chemical potential \refe{that describes} the free energy content of the \refe{system} per particle. %explained more carefully later on.
+\refedel{In} \refedel{accordance} \refedel{with} \refedel{the} \refedel{quantum} \refedel{mechanics,} \refedel{there} \refedel{is} \refedel{room} \refedel{for} \refedel{only} \refedel{one} \refedel{fermion} \refedel{inside} \refedel{the} \refedel{elementary} \refedel{cell}.
 %\footnote{Note that the chemical potential $\mu$ defined here should not be mixed with the cosine of the normal angle, as defined in the previous section when dealing with atmospheres.
 %The difference should be clear from the context so same variable name is used here.}
 Number of particles per unit volume with momentum between $p$ and $p+dp$ is 
@@ -429,22 +429,26 @@ E_{\mathrm{k}} \approx
 \ee
 
 Let us now focus on fermions only\refedel{,} and select the $+$-sign (Fermi-Dirac distribution) in Eq. \eqref{eq:dist}.
-Fermions are spin $\frac{1}{2}$ particles so we can also set $g=2$.
-The chemical potential $\mu$ in Eq. \eq{eq:dist} is expressed as
+Fermions are characterized as spin-$\frac{1}{2}$ particles.
+\refe{In accordance} with the quantum mechanics, there is room for only one fermion inside an elementary cell \eqref{eq:pcell}.
+\refe{The} degeneracy parameter $g$ is then equal to $2$ because we can have particles of spin $-\frac{1}{2}$ and $+\frac{1}{2}$ in the same ``physical location'' ($\Delta x \Delta y \Delta z$), as they still have different ``momentum locations'' ($\Delta p_x \Delta p_y \Delta p_z$) in phase space because of the non-equal spins.
+
+The chemical potential $\mu$ in Eq. \eq{eq:dist} can be expressed as
 \be
-\mu = mc^2 + \ef
+\mu = \ef +  (E -  E_{\mathrm{k}}),
 \ee
-where $\ef$ is now the so-called Fermi energy.
-On the other hand, it can also be defined as
-\be
-E - \mu = E_{\mathrm{k}} - \ef
-\ee
-i.e., difference between the kinetic and Fermi energy.
+where $\ef$ is a reference energy level known as the Fermi energy.
+\refe{This} reflects how the chemical potential is equal to the amount of energy that the can be liberated from the system, also known as chemical energy.
+%On the other hand, the chemical potential can also be written as
+%\be
+%E - \mu = E_{\mathrm{k}} - \ef
+%\ee
+%i.e., difference between the kinetic and Fermi energy.
 Hence, the number density of fermions in general is
 \be\label{eq:FD}
 n_{\mathrm{f}}= \frac{8 \pi}{h^3} \int_0^{\infty} \frac{p^2 dp}{ \exp ( \frac{ E_{\mathrm{k}} - \ef }{ k_{\mathrm{B}} T } ) + 1}.
 \ee
-If Fermi energy $\ef \ll k_{\mathrm{B}} T$ the distribution will be Maxwellian even for small kinetic energies.
+If the Fermi energy $\ef \ll k_{\mathrm{B}} T$, the distribution will be Maxwellian even for small kinetic energies.
 On the other hand, if $\ef \gg k_{\mathrm{B}}T$ we can divide the integrand of Eq. \eqref{eq:FD} into two distinct regions of 
 \be
 \frac{p^2}{ \exp ( \frac{ E_{\mathrm{k}} - \ef }{ k_{\mathrm{B}} T } ) + 1} \approx 
@@ -454,16 +458,21 @@ On the other hand, if $\ef \gg k_{\mathrm{B}}T$ we can divide the integrand of E
 \end{cases}
 \ee
 with a sharp transition in between at $E_{\mathrm{k}} \approx \ef$.
-This allows us to define a characteristic momentum related to the transition, called Fermi momentum $p_{\mathrm{F}}$, so that
+This allows us to define a characteristic momentum related to the transition energy $\ef$, called Fermi momentum $p_{\mathrm{F}}$, so that
 \be
 n_{\mathrm{f}} \approx \frac{8\pi}{h^3} \int_0^{p_{\mathrm{F}}} p^2 dp = \frac{8\pi}{3} \left( \frac{p_{\mathrm{F}}}{h} \right)^3.
 \ee
 Physically this can be interpreted such that when the temperature decreases, the fermions start to occupy all the quantum states starting from the one with the lowest energy all the way up to the Fermi energy.
 Because of the Pauli exclusion principle, no more than one fermion can exist\refedel{s} in the same quantum state so the levels are filled in order, and all the higher states will remain empty.
-Hence, the highest momenta possible in the fully degenerate matter is the Fermi momentum
+Hence, the highest momenta possible in the fully degenerate matter is the Fermi momentum given as 
 \be\label{eq:fermimom}
 p_{\mathrm{F}} = \left( \frac{3 n_{\mathrm{f}}}{8 \pi} \right)^{1/3} h.
 \ee
+\refe{It is,} of course, also related to the Fermi energy simply as
+\be
+\ef = \frac{1}{2} \frac{ p_{\mathrm{F}}^2 }{ m }.
+\ee
+
 
 
 \subsection{Why neutrons then?}
@@ -577,7 +586,7 @@ In order to couple the number density of electrons and the mass of the plasma, l
 \be
 \Mu = \frac{\bra{Z}}{\bra{A}},
 \ee
-where $\bra{Z}$ is the mean charge number of the atomic nuclei (for \refe{a} one-component plasma it is simply $Z$), and $\bra{A}$ is the average number of nucleons bound by one nucleus.
+where $\bra{Z}$ is the mean charge number of the atomic nuclei (for \refedel{an}\refe{a} one-component plasma it is simply $Z$), and $\bra{A}$ is the average number of nucleons bound by one nucleus.
 For most plasmas, $\Mu \approx \frac{1}{2}$.
 
 Let us now begin by defining a so-called electron sphere radius as
@@ -826,9 +835,9 @@ Here we consider few (relatively) modern descriptions for the dense matter equat
 We follow the naming convention presented in the previous section and divide the compositions into
 \begin{itemize}
     \item normal nuclear matter \npem,
-    \item normal nuclear matter spiced up with hyperons ($npe\mu + H$),
+    \item normal nuclear matter \refedel{spiced up}\refe{mixed} with hyperons ($npe\mu + H$),
     \item normal nuclear matter together with more exotic particles like pion and kaon condensates ($npe\mu + \pi + K$), and
-    \item matter consisting of (or normal matter spiced up with) quarks ($q$ or $npe\mu + q$).
+    \item matter consisting of (or normal matter \refedel{spiced up}\refe{mixed} with) quarks ($q$ or $npe\mu + q$).
 \end{itemize}
 
 The different equations of states we describe here are commonly used in the literature\cite{LP01, Bejger05, H4} and are fitted with polytropes by Read et al.\cite{Read09}
