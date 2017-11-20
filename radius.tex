@@ -9,25 +9,70 @@ Looking from the astrophysical point of view, it is the size of the neutron star
 One of the most important characteristics is the compactness of the object that will then define the exact shape of the spacetime surrounding it.
 The strongly curved spacetime, in turn, influences many of the phenomena occurring in the close vicinity of the star and will also leave its distinct imprints on the observations.
 
-The physical phenomena behind the observable features on the other hand, are often highly energetic, otherwise they would not be seen by distant observers, such as us.
+The physical phenomena behind the observable features, on the other hand, are often highly energetic, otherwise they would not be seen by distant observers, such as us.
 It is these highly energetic physical processes that will then render the neutron stars visible to us, and that at the same time carry a plethora of information from the surroundings of where they originated from.
 This gives birth to a beautiful connection where the delicate and unattainable nuclear physics of the ultra-dense matter is coupled to vigorous astrophysical phenomena that we can observe.
 The caveat here is that the astrophysical processes are often messy and poorly understood.
 Hence, a thorough understanding of both, the nature of the observed phenomena and how it exactly couples to the nuclear physics, is needed.
 
-In this thesis, we will focus on extracting the information from the X-ray bursts.
-In theory, this method of using the X-ray bursts to probe the neutron star interiors is robust as we can theoretically model the characteristics of the emerging radiation and these models can be applied to describe the data that we see. 
+In this thesis, we will focus on extracting information from neutron stars using astrophysical phenomena called X-ray bursts.
+They are produced by an unstable thermonuclear runaways in the surface layers of the star and can be seen as end-results of accretion.
+In theory, using the X-ray bursts to probe the neutron star interiors is a robust way to study the matter inside the star as we can theoretically model the characteristics of the emerging radiation and these models can be applied to describe the data that we see. 
 In practice, however, caution is needed when applying the models as the environment and the astrophysics near the neutron star play a huge role.
 
 
-In this final chapter, we will lay out the basics of how by observing the burst cooling it is possible to set constraints on the size of the emitting area, and in the end, the radius of the neutron star.
-We will also summarize the content of the articles in this thesis\refedel{,} and discuss our work where we try to understand not only the complex role of the astrophysical surroundings but in the end, the composition of the core.
+In this final chapter, we will lay out the basics of how observing the burst cooling it is possible to set constraints on the size of the emitting area, and in the end, on the radius of the neutron star.
+We will also summarize the content of the articles in this thesis and discuss our work where we try to understand not only the complex role of the astrophysical surroundings but in the end, the composition of the core.
+
+
+\section{X-ray bursts and unstable thermonuclear burning}\label{sect:bursts}
+
+Accretion can be a powerful energy source but this is not the end of the material that slowly spirals down into the star.
+After it has traveled all the way to the surface of the neutron star, it will slowly sink and mix with the material in the star's upper layers.
+Here this new material compresses and heats up, acting as fresh fuel.
+Eventually the kinetic energy of the nuclei is large enough so that the protons will collide, fuse together, and release a fraction of their rest-mass energy.
+This heat injection will then start an unstoppable chain reaction that creates a burning front that eventually covers the whole star.
+Thermonuclear fusion reaction will then last until all the available fuel on the star's upper layers is exhausted and consumed.
+This is the basic picture of an unstable nuclear burning taking place in the neutron star's upper layers.
+One should also note that a stable, continuous burning is also possible via a similar mechanism. 
+Generally, however, the nuclear burning reaction rates have a very strong temperature dependency, and hence, the plasma is very unstable for local perturbations that might then start the explosive burning.
+
+The explosive burning front rapidly expands and momentarily engulfs the whole star.
+This hot shell will then cool down and shine X-rays to us.
+Observationally these bursts are classified as type-I X-ray bursts.\cite[see e.g.,][for a review]{Lewin93, SB10}
+As another option, we might see flaring also from instabilities in the incoming mass flow. 
+These events are classified as type-II bursts, and we do not focus on them, as here we are interested in probing the neutron star itself.
+%TODO \red{cite type-II.}
+A typical X-ray burst has a rise time of $~0.1$ to $10$ seconds and a duration from $10$ to $100$ seconds.
+During this time, it releases $10^{39} - 10^{40} \erg$ of energy.
+Temperature in the upper layers is of around $T \sim 10^7 \Kelvin$ and the main ingredient for the fusion process is either hydrogen, helium, or both.
+
+The driving engine for an X-ray burst is the unstable thermonuclear fusion process.\cite{Fujimoto81, Wallace81, Fisker08}
+The burning of hydrogen plasma is dominated by the CNO-cycle if temperature is around $10^7 \Kelvin$.
+For a slightly hotter plasma, $T \gtrsim \Ten{8}{7} \Kelvin$, we have to modify the reaction a bit into a so-called hot CNO-cycle.\cite{FH65}
+Helium plasma, on the other hand, burns via the triple-$\alpha$ process (active when $T \gtrsim \Ten{2}{8} \Kelvin$).
+In addition to these two main reactions, the $\alpha p$-process can operate when $T \gtrsim \Ten{5}{8} \Kelvin$, creating heavier elements like Ne, Na, and Mg.
+The rp-process to synthesize even heavier elements can take place if $T \sim 10^9 \Kelvin$.
+In the end, the accreted matter is fused together into heavier elements, and at the same time, energy is released into the neutron star envelope.
+
+If the accreted material does not have any hydrogen, or if the hot CNO-cycle has enough time to burn all the available hydrogen into helium, the ignition starts in the helium shell.
+On the other hand, if the hot CNO burning of hydrogen is not continuous, it can trigger the runaway in the hydrogen shell, after which the helium shell will also ignite.
+These minor details have observational importance, as we sometimes see bursts with very short rise times, and other times it might take seconds for the burst to really get going.%\cite{SB10}
+
+This discrepancy is believed to originate from this changing ignition mechanism.
+In addition to the normal type-I bursts, we have also recently detected more rare long-duration bursts, now commonly dubbed as ``superbursts''.\cite{CHK00, Kuulkers02, SB02}
+These are thought to be powered by carbon burning.\cite{Cumming01}
+When looking at the duration, there are also a third class of bursts in between the superbursts and normal bursts, named ``intermediate bursts''.\cite{Cumming06}
+
+All in all, the energy production of bursts appears to be a complex mechanism that we do not fully understand yet.\cite{Kuuttila17, intZand17}
+This is also reflected in the large variety of burst durations, energetics, and rise times that we have observationally detected.\cite[see e.g.,][]{GMH08}
+
 
 
 \section{Measuring the sizes of the bursting sources}
 
 Even though the bursts characteristics change from one burst to another as we saw in \sect{sect:bursts}, the cooling appears to obey some common trends.
-This means that as long as we have some kind of \refedel{an} energy injection deep below the neutron star's atmosphere, the energy will radiate out and the uppermost layers of the star will then shape it into a similar cooling curve, independent of the actual details of the injection.
+This means that as long as we have some kind of energy injection deep below the neutron star's atmosphere, the energy will radiate out and the uppermost layers of the star will then shape it into a similar cooling curve, independent of the actual details of the injection.
 If we are then able to model the atmosphere and the processes therein, we can use the bursts as probes for the neutron star interiors.
 Note, however, that not every burst is powerful enough to be of practical use.
 As we shall see, we additionally require that the bursts reach the Eddington limit, which in practice means using the PRE-bursts only.
@@ -55,8 +100,8 @@ From the observations, we see that the detected burst spectra are reasonably wel
 \be
 F_{E, \mathrm{obs}} \approx \pi B_E(T_{\mathrm{obs}}) K_{\mathrm{obs}},
 \ee
-where $B_E(T_{\mathrm{ obs}})$ is a blackbody function with a measured temperature $T_{\mathrm{obs}}$ and normalization $K_{\mathrm{obs}}$, together with $E$ which is \refe{the photon} energy that we observe at.
-The normalization for an \refedel{circular} object at a distance $D$ in the sky is
+where $B_E(T_{\mathrm{ obs}})$ is a blackbody function with a measured temperature $T_{\mathrm{obs}}$ and normalization $K_{\mathrm{obs}}$, together with $E$ which is the photon energy that we observe at.
+The normalization for an object at a distance $D$ in the sky is
 \be\label{eq:Robs}
 K_{\mathrm{obs}} = \frac{R_{\mathrm{obs}}^2}{D^2}.
 \ee
@@ -72,7 +117,7 @@ F_{\mathrm{obs}} = \int_0^{\infty}F_{E, \mathrm{obs}} dE = \sigmaSB T_{\mathrm{o
 Examples of bolometric flux, temperature and blackbody normalization evolution during the hard-state PRE bursts. 
 The black line shows the estimated bolometric flux (left-hand vertical axis) in units of $10^{-7} \unitspace\erg\unitspace\cm^{-2}\unitspace\mathrm{s}^{-1}$.
 The blue ribbon shows the blackbody normalization (outer right-hand vertical axis) in $(\km/10\unitspace\mathrm{kpc})^2$.  
-The red ribbon show\refe{s} the blackbody temperature (inner right-hand vertical axis) in keV. 
+The red ribbon shows the blackbody temperature (inner right-hand vertical axis) in keV. 
 Highlighted gray area marks a typical region of the cooling tail used in the fitting procedures.
 }
 \end{figure}
@@ -84,7 +129,7 @@ The flux corresponding to the exact moment when the photosphere collapses back t
 
 
 From the atmosphere models of neutron stars, we obtain a similar result.
-The local detailed model spectra \refe{are} well approximated by a so-called diluted blackbody model given as
+The local detailed model spectra are well approximated by a so-called diluted blackbody model given as
 \be
 F_{E,*} \approx \pi w B_E(\fc \Teffs),
 \ee
@@ -163,7 +208,7 @@ Later on, another variant of this method was introduced, called ``direct cooling
 
 The usage of these methods on X-ray burst data span almost three decades of scientific work as of now.
 Starting from the early work in the late 80s they have since improved and been applied to various sources to estimate the radius and mass.
-Latest in the family\refedel{,} is the method of fitting the observed data directly with the atmosphere models.\cite{NMS17}
+Latest in the family is the method of fitting the observed data directly with the atmosphere models.\cite{NMS17}
 Although computationally more demanding exercise, it allows us to finally extract every piece of information possible from the data.
 This is based on the additional model dependency on the surface gravity, composition, and detailed spectral shape that slightly deviates from the Planck function.
 
@@ -204,7 +249,7 @@ The radiative process that we consider all occur at or near the neutron star.
 Because of this, many general relativistic effects play an important role in shaping the observations.
 In paper II, a theoretical framework for emission originating from rapidly rotating oblate compact objects was described in detail.
 In order to solve the geodesic equation, a new split Hamilton-Jacobi formalism was constructed for a metric that is expanded up to second order in rotation and hence includes effects of light bending, frame-dragging, and quadrupole corrections for the photon trajectories.
-We also gave detailed descriptions of the numerical algorithms used and provide an open\refe{-}source implementation of the numerical framework called \textsc{bender}.
+We also gave detailed descriptions of the numerical algorithms used and provide an open-source implementation of the numerical framework called \textsc{bender}.
 As an application, we study spectral line profiles from rapidly rotating oblate neutron stars. 
 The Full Width at Tenth Maximum and Full Width at Half Maximum for the so-called smearing kernels are also reported for all of the possible viewing angles.
 These can be then used to quantitatively estimate the effects of rotational smearing on the observed spectra.
@@ -245,7 +290,7 @@ Our predicted equation of state leads to a neutron star radius between $10.5$ to
 The bursts that we considered in the aforementioned publication, were constrained to have an atmosphere consisting of almost fully of hydrogen and helium.
 This is always not the case as explosive nuclear burning can fuse H and He into heavier elements too.
 In paper VI, we presented our analysis of one particularly interesting long burst observed from the neutron star in LMXB system HETE J1900.1$-$2455. 
-New atmosphere model fits to \refe{these} bursts indicated that sometimes the photosphere can consist entirely of metals, i.e., nuclear burning ashes.
+New atmosphere model fits to these bursts indicated that sometimes the photosphere can consist entirely of metals, i.e., nuclear burning ashes.
 These heavy metals like iron and nickel were detected already early on during the burst, which makes it possible that a radiatively driven wind might eject some of these ashes also into the interstellar space.
 Hence, neutron star X-ray bursts might be one possible source of interstellar pollution.
 

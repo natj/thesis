@@ -4,7 +4,7 @@
 Let us next discuss the violent environments of neutron stars and the related astrophysics therein.
 These surroundings also play an important role when we try to decipher different kinds of observations of neutron stars.
 In the heart of this whole problem is an astrophysical process called accretion.
-This is a process where matter is transferred from \refe{a one star} to another because of the gravitational forces.
+This is a process where matter is transferred from a one star to another because of the gravitational forces.
 Most importantly, the infalling material has to somehow lose its angular momentum before it is able to travel all the way to the neutron star surface.
 Nature's platform for this is called an accretion disk.
 Sometimes the disk also continues all the way to the surface of the neutron star.
@@ -12,16 +12,16 @@ Instead of smoothly joining the star, this process is often violent and leads to
 
 We begin by discussing the basics of the accretion process and present some order-of-magnitude estimates relevant for the accretion disks and boundary layers.
 Most importantly, we try to characterize the strength of the radiation originating from them.
-Lastly, we will also discuss the unstable thermonuclear runaways, X-ray bursts, that can be seen as the end-results of this accretion.
+%Lastly, we will also discuss the unstable thermonuclear runaways, X-ray bursts, that can be seen as the end-results of this accretion.
 
 
 \section{Accretion}
 
-Accretion is an astrophysical process that has its roots in the gravity. \refedel{potential energy.}
+Accretion is an astrophysical process that has its roots in the gravity. 
 It can be a source of an enormous amount of energy if the central object is compact, because the depth of a gravitational well is directly proportional to the compactness of the central source.
 Hence, it is an important, and often dominating, process for neutron stars.\cite[see e.g.,][]{FKR02}
 
-Gravitational potential energy release for a mass $m$ that is accreted onto a compact object of \refe{a} radius $R$ and \refe{a} mass $M$ is
+Gravitational potential energy release for a mass $m$ that is accreted onto a compact object of a radius $R$ and a mass $M$ is
 \be
 \Delta E_{\mathrm{acc}} = m \frac{G M}{R} \sim 10^{20} \left( \frac{m}{\g} \right) \left( \frac{10\km}{R} \right) \left( \frac{M}{\Msun} \right) \erg,
 \ee
@@ -45,7 +45,7 @@ For the mass transfer to keep on operating, a source of fresh material is needed
 In binary systems with two stars, the companions star is the obvious fuel resource.
 Here we will focus on the so-called Low Mass X-ray Binary (LMXB) systems where the companion, like the name implies, is a relatively low-mass star with a mass $M \lesssim 1 \Msun$.\cite{TH06}
 %Typically, it is a normal or a late-type star with a mass $M \lesssim 1 \Msun$.
-Such a setup leads to a mass-transfer quite naturally as the heavier neutron star will just rip out the outer layers of its poor companion and starts slowly \refe{consuming} it. \refedel{until nothing is left.}
+Such a setup leads to a mass-transfer quite naturally as the heavier neutron star will just rip out the outer layers of its poor companion and starts slowly consuming it. 
 As another option, the system could be a so-called High Mass X-ray Binary (HMXB) system, where the companion of the neutron star has $M \sim 10\Msun$, and the accretion happens, for example, via a neutron star capturing the strong wind from the companion.
 Here in this thesis, we will, however, only focus on the LMXB systems.
 
@@ -71,7 +71,7 @@ Here $M$ is the total mass of the system, i.e., $M = M_1 + M_2$, where $M_1$ and
 %\centering
 \includegraphics[width=16cm]{figs/astro/roche.pdf}
 \caption{\label{fig:roche}
-    Two-dimensional Roche potential $\Phi_{\mathrm{R}}(x,y)$ visualized for a binary system\refedel{s} with $M_1/M_2 = 0.25$ and $a = 1$. 
+    Two-dimensional Roche potential $\Phi_{\mathrm{R}}(x,y)$ visualized for a binary system with $M_1/M_2 = 0.25$ and $a = 1$. 
     The nozzle ($L_1$ point) is visible as a valley (or more specifically, a saddle point) between the gravitational wells of the two stars.
 }
 \end{figure}
@@ -80,11 +80,11 @@ The effects originating from the gravitation and from the centrifugal forces are
 \be
 \Phi_{\mathrm{R}}(\vec{r}) = -\frac{G M_1}{|\vec{r} - \vec{r_1}|} -\frac{G M_2}{|\vec{r} - \vec{r_2}|} - \frac{1}{2} ( \vec{ \omega } \times \vec{r} )^2,
 \ee
-where the location\refe{s} of the stars are given with $\vec{r_1}$ and $\vec{r_2}$.
+where the locations of the stars are given with $\vec{r_1}$ and $\vec{r_2}$.
 By studying the shape of the potential, we see that in between the two stars, in the so-called $L_1$ point there exists a location where the countering gravitational forces from the two stars are balanced.
 This can be thought of as a physical nozzle in the system from which the less massive star will leak material into the more massive star.
 Such a mass transfer, also known as a Roche lobe overflow, will then occur if the companion star's radius exceeds the size of its own individual Roche lobe visualized in \fig{fig:roche}.
-Typically\refe{,} such a thing can happen when the star evolves and expands at the end of its life cycle. 
+Typically, such a thing can happen when the star evolves and expands at the end of its life cycle. 
 
 
 \subsection{Accretion disks}
@@ -189,14 +189,14 @@ The viscous shear stresses help the rotating plasma redistribute its angular mom
 
 
 Let us next study a steady-state disk solution by setting $\partial/\partial t \rightarrow 0$.
-From the angular momentum conservation \eqref{eq:disk_2}\refe{,} we obtain
+From the angular momentum conservation \eqref{eq:disk_2}, we obtain
 \be\label{eq:ssdisk}
 r \Sigma v_{r} r^2 \Omega = \frac{\tau}{2\pi} + \frac{C}{2\pi},
 \ee
 with a constant $C$ that physically represent a torque term from the coupling of the inner disk and the star at $r \approx R$.
 In short,%
 \footnote{Torque is alternatively defined via the linear momentum $\vec{p} = m v_{\phi} \vec{\hat{e}_{\phi}}$, as $\tau = d(\vec{r} \times \vec{p})/dt = r v_{\phi} dm/dt = r^2 \Omega \Mdot$. 
-This \refe{again} represents the flow of angular momentum in the system.
+This again represents the flow of angular momentum in the system.
 }
 it is given by
 \be\label{eq:visc_torque}
@@ -206,7 +206,7 @@ with the expression for the mass accretion rate given in terms of the radial vel
 \be
 \Mdot(r) = -\frac{2\pi r \Sigma dr}{dt} = -2\pi r \Sigma v_r,
 \ee
-and assuming a thin layer for the zone where the inner disk angular velocity is slowed down to the angular velocity of the star (otherwise\refe{,} we could not set $r \rightarrow R$).
+and assuming a thin layer for the zone where the inner disk angular velocity is slowed down to the angular velocity of the star (otherwise, we could not set $r \rightarrow R$).
 Substituting this into \eqref{eq:ssdisk}, and assuming Keplerian angular velocity profile, we obtain
 \be
 \nu \Sigma = \frac{\Mdot}{3\pi} \left[ 1 - \left( \frac{R}{r}\right)^{1/2}  \right].
@@ -231,8 +231,8 @@ Hence, half of the potential energy will be lost by the viscous shearing and is 
 Importantly, the other remaining half will be transferred all the way to the star.
 
 Temperature of the hottest inner disk can be estimated by assuming an optically thick media and using the dissipation rate $D$ as the surface flux.
-This innermost region of the disk is the brightest \refe{because} here the gravity is the strongest and the dissipation area the smallest.
-\refe{An} estimate for the disk surface temperature can then be obtained from
+This innermost region of the disk is the brightest because here the gravity is the strongest and the dissipation area the smallest.
+An estimate for the disk surface temperature can then be obtained from
 \be
 \sigma_{\mathrm{SB}} T_{\mathrm{disk}}^4(r) \sim D(r).
 \ee
@@ -281,13 +281,13 @@ is a typical temperature in the innermost regions of the disk.
 Observationally we see that the disks are, however, not as simple as discussed here.\cite[see e.g.,][for a review]{DGK07}
 The standard $\alpha$-disk model assumes steady-state, whereas in reality the disk structure evolves in time.
 Most importantly, the mass accretion rate is seen to vary over long timescales.
-From observations\refe{,} we also know that the disks alternates between three states called, quiescent, hard and soft state.\cite{Mitsuda89, HvdK89, GD02, MC03, MDF14, DGK07}
+From observations, we also know that the disks alternates between three states called, quiescent, hard and soft state.\cite{Mitsuda89, HvdK89, GD02, MC03, MDF14, DGK07}
 
 The soft (also known as ``high'' or ``thermal-dominant'') state is characterized by a strong soft component in the observed spectra.\cite[see e.g.,][]{GZP99}
 There is, however, also a complex non-thermal tail usually present.\cite{MRC00}
 Here the soft component could be interpreted as a thermal radiation from an optically thick disk but the non-thermal tail implies that this picture is not complete.
 The hard (also known as ``low'') state is even more complicated as the observational spectra is dominated by a strong hard X-ray component but some signs of a low-temperature thermal disk is also sometimes visible.\cite{ZG04}
-\refe{In the final quiescent}, or ``off'' state, the observed flux typically drops below the detection limit and we do not see anything.
+In the final quiescent, or ``off'' state, the observed flux typically drops below the detection limit and we do not see anything.
 
 
 The current physical interpretation of these two states can be satisfactorily explained by a truncated disk model with a hot inner flow.
@@ -296,7 +296,7 @@ The cool and optically thick, geometrically thin, disk is then responsible of th
 In the innermost parts, the disk turns into hot, optically thin flow, that is also responsible for the non-thermal radiation component.
 Depending on the mass accretion rate, the disk truncation radius varies and so the strength of the thermal disk and hot inner flow components can vary.
 To simplify, this means that hard state typically corresponds to a low accretion rate and soft state to a high mass accretion rate.
-\refe{In the quiescent} state, the flow of matter might then come to a halt completely.
+In the quiescent state, the flow of matter might then come to a halt completely.
 
 
 \subsection{Boundary layers}
@@ -305,7 +305,7 @@ Our simple analysis of accretion disk physics has shown that viscous dissipation
 Where the other half goes, we shall look next.
 
 Imagine the accretion disk extending all the way down to the central star.
-The \refe{spin} frequency of this disk edge can be taken to be Keplerian, $\Omega_{\mathrm{K}}(R)/2\pi \sim 1500 \unitspace\mathrm{Hz}$.
+The spin frequency of this disk edge can be taken to be Keplerian, $\Omega_{\mathrm{K}}(R)/2\pi \sim 1500 \unitspace\mathrm{Hz}$.
 The star, on the other hand, usually rotates anywhere from $100$ to $600$ revolutions per second.\cite{Watts12, PTR14}
 Hence, we expect a thin interface between the star and the disk where angular velocity changes by a factor of $\sim 3$ to $15$.
 This region we call the boundary layer.
@@ -355,45 +355,3 @@ Finally, one should note that the physical processes discussed here assume Newto
 In a general relativistic treatment the energy release in the boundary layer can be almost two times that of the energy released in the disk.\cite{SS86, SS00}
 
 
-
-\section{X-ray bursts and unstable thermonuclear burning}\label{sect:bursts}
-
-Accretion can be a powerful energy source but this is not \refe{the} end of the material that slowly spirals down into the star.
-After it has traveled all the way to the surface of the neutron star, it will slowly sink and mix with the material in the star's upper layers.
-Here this new material compresses and heats up, acting as fresh fuel.
-Eventually the kinetic energy of the nuclei is large enough so that the protons will collide, fuse together, and release a fraction of their rest-mass energy.
-This heat injection will then start an unstoppable chain reaction that creates a burning front that eventually covers the whole star.
-Thermonuclear fusion reaction will then last until all the available fuel on the star's upper layers is exhausted and consumed.
-This is the basic picture of an unstable nuclear burning taking place in the neutron star's upper layers.
-One should also note that a stable, continuous burning is also possible via a similar mechanism. 
-Generally, however, the nuclear burning reaction rates have a very strong temperature dependency, and hence, the plasma is very unstable for local perturbations that might then start the explosive burning.
-
-The explosive burning front rapidly expands and momentarily engulfs the whole star.
-This hot shell will then cool down and shine X-rays to us.
-Observationally these bursts are classified as type-I X-ray bursts.\cite[see e.g.,][for a review]{Lewin93, SB10}
-As another option, we might see flaring also from instabilities in the incoming mass flow. 
-These events are classified as type-II bursts, and we do not focus on them, as here we are interested in probing the neutron star itself.
-%TODO \red{cite type-II.}
-A typical X-ray burst has a rise time of $~0.1$ to $10$ seconds and a duration from $10$ to $100$ seconds.
-During this time, it releases $10^{39} - 10^{40} \erg$ of energy.
-Temperature in the upper layers is of around $T \sim 10^7 \Kelvin$ and the main ingredient for the fusion process is either hydrogen, helium, or both.
-
-The driving engine for an X-ray burst is the unstable thermonuclear fusion process.\cite{Fujimoto81, Wallace81, Fisker08}
-The burning of hydrogen plasma is dominated by the CNO-cycle if temperature is around $10^7 \Kelvin$.
-For a slightly hotter plasma, $T \gtrsim \Ten{8}{7} \Kelvin$, we have to modify the reaction a bit into a so-called hot CNO-cycle.\cite{FH65}
-Helium plasma, on the other hand, burns via the triple-$\alpha$ process (active when $T \gtrsim \Ten{2}{8} \Kelvin$).
-In addition to these two main reactions, the $\alpha p$-process can operate when $T \gtrsim \Ten{5}{8} \Kelvin$, creating heavier elements like Ne, Na, and Mg.
-The rp-process to synthesize even heavier elements can take place if $T \sim 10^9 \Kelvin$.
-\refe{In the end,} the accreted matter is fused together into heavier elements, and at the same time, energy is released into the neutron star envelope.
-
-If the accreted material does not have any hydrogen, or if the hot CNO-cycle has enough time to burn all the available hydrogen into helium, the ignition starts in the helium shell.
-On the other hand, if the hot CNO burning of hydrogen is not continuous, it can trigger the runaway in the hydrogen shell, after which the helium shell will also ignite.
-These minor details have observational importance, as we sometimes see bursts with very short rise times, and other times it might take seconds for the burst to really get going.%\cite{SB10}
-
-This discrepancy is believed to originate from this changing ignition mechanism.
-In addition to the normal type-I bursts, we have also recently detected more rare long-duration bursts, now commonly dubbed as ``superbursts''.\cite{CHK00, Kuulkers02, SB02}
-These are thought to be powered by carbon burning.\cite{Cumming01}
-When looking at the duration, there are also a third class of bursts in between the superbursts and normal bursts, named ``intermediate bursts''.\cite{Cumming06}
-
-All in all, the energy production of bursts appears to be a complex mechanism\refedel{s} that we do not fully understand yet.\cite{Kuuttila17, intZand17}
-This is also reflected in the large variety of burst durations, energetics, and rise times that we have observationally detected.\cite[see e.g.,][]{GMH08}

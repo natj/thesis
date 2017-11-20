@@ -9,17 +9,15 @@ follow.
 Here are some comments, first some general ones and then some on details.
 
 
-
->  There sometimes is a striking contrast between a fairly deep level of
->  discussion and a loose and incidentally inaccurate use of
->  language. Examples of this are "For the pedantics", "bunch of weird
->  astronomers", "litany of numbers", "quark matter, though*...*", "Like
->  all big furnaces", "star floating (in space)", "excluding dark matter
->  though...", "poor companion and slowly devours it", "spiced up",
->  "angular frequency", "try to endure", "pines theorem" and "circular
->  object". This may be a matter of taste/style, but it sometimes goes a
->  little beyond that I would say.
-
+There sometimes is a striking contrast between a fairly deep level of
+discussion and a loose and incidentally inaccurate use of
+language. Examples of this are "For the pedantics", "bunch of weird
+astronomers", "litany of numbers", "quark matter, though*...*", "Like
+all big furnaces", "star floating (in space)", "excluding dark matter
+though...", "poor companion and slowly devours it", "spiced up",
+"angular frequency", "try to endure", "pines theorem" and "circular
+object". This may be a matter of taste/style, but it sometimes goes a
+little beyond that I would say.
 
 inaccurate use of language:
 x "For the pedantics", 
@@ -35,7 +33,8 @@ x "angular frequency",
 x "try to endure", 
 o "pines theorem" 
 x "circular object". 
-
+DONE: Corrected ones with (x). 
+DONE: Left ones with (o) as I personally think some color can be put into the text.
 
 
 There are a considerable amount of minor language errors, in
@@ -113,7 +112,7 @@ p.16
 - Earthly laboratories -> laboratories on Earth
 - footnote: it may be a bit confusing to discuss an atomic density of
  the element of Osmium when elsewhere nuclear densities are discussed
- Done
+Done
 
 p.17
 caption: upper *horizontal* axis
