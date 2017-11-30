@@ -2,7 +2,18 @@
 
 \usepackage{geometry}
 %\geometry{heightrounded}
+%\usepackage[paperheight=9in,paperwidth=6in,top=1in,bottom=1in,right=1in,left=1in,heightrounded,showframe]{geometry}
+%\usepackage[b5paper, showframe]{geometry}
 
+\geometry{
+    paper=b5paper,
+    inner=20mm,         % Inner margin
+    outer=20mm,         % Outer margin
+    bindingoffset=10mm, % Binding offset
+    top=18mm,           % Top margin
+    bottom=21mm,        % Bottom margin
+%    showframe,          % show how the type block is set on the page
+}
 
 %Color related stuff
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -83,7 +94,8 @@
 
 \titleformat{\chapter}[hang]{\Huge\fontfamily{phv}\selectfont}{\thechapter\hsp{\textcolor{gray75}{\rule[-0.75ex]{0.08ex}{1.5em}}}\hsp}{0pt}{\huge\bfseries}{}
 
-\titleformat{name=\chapter,numberless}[display]{\Huge\fontfamily{phv}\selectfont\filcenter}{}{1ex}{\vspace{-6cm}}[\vspace{1ex}]
+%\titleformat{name=\chapter,numberless}[display]{\Huge\fontfamily{phv}\selectfont\filcenter}{}{1ex}{\vspace{-6cm}}[\vspace{1ex}]
+\titleformat{name=\chapter,numberless}[display]{\Huge\fontfamily{phv}\selectfont\filcenter}{}{1ex}{\vspace{-4.5cm}}[\vspace{1ex}]
 
 
 
@@ -121,8 +133,8 @@
 %}
 \newcommand\chapterimage[2][]{
   \begin{tikzpicture}[overlay,
-      picture/.style={anchor=east,rectangle, shift={(0.0cm, -4cm)}}]
-     \node[picture] at (\textwidth,9cm){\includegraphics[#1]{#2}};
+      picture/.style={anchor=north east,rectangle, shift={( 0.3cm, -1.0cm)}}]
+     \node[picture] at (\textwidth,7cm){\includegraphics[#1]{#2}};
   \end{tikzpicture}
 }
 
